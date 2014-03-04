@@ -5,7 +5,9 @@
     "express": "~3.4.8",
     "http-proxy": "~1.0.2",
     "grunt": "~0.4.2",
-    "grunt-bower-task": "~0.3.4"
+    "grunt-bower-task": "~0.3.4",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-express-server": "~0.4.5"
   },
   "devDependencies": {
     "awsbox": "~0.7.0"
