@@ -1,0 +1,17 @@
+{
+  "name": "ebsa.cbd.int",
+  "description": "Ecologically or Biologically Significant Marine Areas (EBSAs)",
+  "dependencies": {
+    "express": "~3.4.8",
+    "http-proxy": "~1.0.2",
+    "grunt": "~0.4.2",
+    "grunt-bower-task": "~0.3.4"
+  },
+  "devDependencies": {
+    "awsbox": "~0.7.0"
+  },
+  "engine": "node >= 0.10.18",
+  "scripts": {
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt bower"
+  }
+}

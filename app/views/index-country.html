@@ -1,0 +1,15 @@
+<div ng-controller="HomeIndexController">
+      
+      ng-view Sample :
+
+      <table class="table table-striped">
+          <tr>
+              <th>Code</th>
+              <th>Name</th>
+          </tr>
+          <tr ng-repeat="country in countries">
+              <td>{{country.code}}</td>
+              <td>{{country.name.en}}</td>
+          </tr>
+      </table>
+</div>
