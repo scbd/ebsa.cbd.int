@@ -24,15 +24,14 @@
 
 <body ng-controller="MasterTemplateController">
 
-    <div>Template top</div>
-    
-    <div>
+    <div class="container">
+        <div ng-include="'app/views/header/header.html'"></div>
         <ng-view></ng-view>
+        <div>© CBD Secretariat</div>
     </div>
 
-    <div>© CBD Secretariat</div>
 
-    <!-- Bootstrap core JavaScript 
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/app/libs/requirejs/require.js" data-main="/app/js/boot.js"></script>

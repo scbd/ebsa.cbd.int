@@ -1,0 +1,14 @@
+<!-- <div class="navbar navbar-default" ng-controller="NavbarCtrl"> -->
+
+  <!-- <div class="container-fluid"> -->
+    <!-- <div class="navbar-header">
+      <a href="#" class="navbar-brand">Brand</a>
+    </div> -->
+
+    <ul class="nav nav-justified nav-bg" ng-controller="NavbarCtrl">
+      <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+        <a ng-href="{{item.link}}" class="nav-link">{{item.title}}</a>
+      </li>
+    </ul>
+  <!-- </div> -->
+<!-- </div> -->

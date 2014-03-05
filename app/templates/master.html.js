@@ -1,8 +1,11 @@
 'use strict';
-define(['app'], function (app) {
-    app.controller('MasterTemplateController', ['$scope', function ($scope) {
+define(['app'], function(app) {
 
-        $scope.controller = 'MasterTemplateController';
+  app.controller('MasterTemplateController', ['$scope',
+    function($scope, breadcrumbs) {
 
-    }]);
+      $scope.controller = 'MasterTemplateController';
+    }
+  ]);
+
 });

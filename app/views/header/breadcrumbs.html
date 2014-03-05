@@ -1,0 +1,12 @@
+<div class="row" ng-hide="!hasCrumbs" ng-controller="BreadcrumbsCtrl">
+    <div class="col-lg-12">
+    <ol class="breadcrumb">
+        <li ng-repeat="breadcrumb in breadcrumbs.getAll()">
+          <a ng-href="{{breadcrumb.path}}" ng-hide="$last">
+            {{breadcrumb.label}}
+          </a>
+          <span ng-show="$last">{{breadcrumb.label}}</span>
+        </li>
+      </ol>
+    </div>
+  </div>

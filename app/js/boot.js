@@ -7,6 +7,7 @@ require.config({
     paths: {
         'angular'         : '../libs/angular/angular',
         'angular-route'   : '../libs/angular-route/angular-route',
+        'ng-breadcrumbs'   : '../libs/ng-breadcrumbs/dist/js/ng-breadcrumbs',
         'async'           : '../libs/requirejs-plugins/src/async',
         'domReady'        : '../libs/requirejs-domready/domReady',
         'jquery'          : '../libs/jquery/jquery',
@@ -25,7 +26,7 @@ require(['angular', 'angular-route', 'bootstrap', 'domReady'], function (ng) {
 
     // NOTE: place operations that need to initialize prior to app start here using the `run` function on the top-level module
 
-    require(['domReady!', 'main'], function (document) {
+    require(['domReady!', 'main', '../views/header/header'], function (document) {
         ng.bootstrap(document, ['app']);
         ng.resumeBootstrap();
     });
