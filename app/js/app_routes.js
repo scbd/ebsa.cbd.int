@@ -36,13 +36,13 @@ define(['app'], function(app) {
         },
         label: 'Country-Index'
       }).
-      when('/help/404', {
-        templateUrl: '/app/views/help/404.html',
+      when('/404', {
+        templateUrl: '/app/views/404.html',
         resolve: {},
         label: 'NOT FOUND'
       }).
       otherwise({
-        redirectTo: '/help/404'
+        redirectTo: '/404'
       });
 
 

@@ -18,7 +18,7 @@ app.configure(function() {
 
     app.use(require('connect-livereload')());
     app.use('/app', express.static(__dirname + '/app'));
-    app.use('/favicon.png', express.static(__dirname + '/app/favicon.png', { maxAge: oneDay }));
+    app.use('/favicon.png', express.static(__dirname + '/app/templates/favicon.png', { maxAge: oneDay }));
 });
 
 // Configure routes
