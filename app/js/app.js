@@ -1,6 +1,6 @@
 'use strict';
 
-define([ /*'angular', 'angular-route', */ 'ng-breadcrumbs'], function() {
+define([ /*'angular', 'angular-route', */], function() {
 
 	var app = require('angular').module('app', ['ngRoute', 'ng-breadcrumbs']);
 

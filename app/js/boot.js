@@ -18,15 +18,16 @@ require.config({
         'angular'        : { 'deps': ['jquery'], 'exports': 'angular' },
         'angular-route'  : { 'deps': ['angular'] },
         'bootstrap'      : { 'deps': ['jquery'] },
-        'underscore'     : { 'exports': '_' }
+        'underscore'     : { 'exports': '_' },
+        'ng-breadcrumbs' : { 'deps': ['angular'] }
     }
 });
 
-require(['angular', 'angular-route', 'bootstrap', 'domReady'], function (ng) {
+require(['angular', 'angular-route', 'bootstrap', 'ng-breadcrumbs', 'domReady'], function (ng) {
 
     // NOTE: place operations that need to initialize prior to app start here using the `run` function on the top-level module
 
-    require(['domReady!', 'main', '../views/header/header'], function (document) {
+    require(['domReady!', 'main'], function (document) {
         ng.bootstrap(document, ['app']);
         ng.resumeBootstrap();
     });

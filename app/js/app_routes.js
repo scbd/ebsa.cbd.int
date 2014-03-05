@@ -42,7 +42,7 @@ define(['app'], function(app) {
         resolve: {
           dependencies: resolveJS()
         },
-        label: 'About'
+        label: 'EBSAs'
 
       }).
       when('/resources', {
@@ -50,7 +50,7 @@ define(['app'], function(app) {
         resolve: {
           dependencies: resolveJS()
         },
-        label: 'About'
+        label: 'Resources'
 
       }).
       when('/partners', {
@@ -58,7 +58,7 @@ define(['app'], function(app) {
         resolve: {
           dependencies: resolveJS()
         },
-        label: 'About'
+        label: 'Partners'
 
       }).
       when('/countries/:country', {
