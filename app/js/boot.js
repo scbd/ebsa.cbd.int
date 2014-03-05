@@ -11,7 +11,7 @@ require.config({
         'async'           : '../libs/requirejs-plugins/src/async',
         'domReady'        : '../libs/requirejs-domready/domReady',
         'jquery'          : '../libs/jquery/jquery',
-        'bootstrap'       : '../libs/bootstrap/dist/js/bootstrap',
+        'bootstrap'       : '../libs/bootstrap-sass/dist/js/bootstrap',
         'underscore'      : '../libs/underscore/underscore'
     },
     shim: {

@@ -3,7 +3,6 @@
   "dependencies": {
     "angular": "~1.2.14",
     "angular-route": "~1.2.5",
-    "bootstrap": "~3.0.3",
     "font-awesome": "~4.0.3",
     "requirejs": "latest",
     "requirejs-domready": "latest",
@@ -11,6 +10,7 @@
     "requirejs-plugins": "latest",
     "underscore": "latest",
     "jquery": "~2.0.3",
-    "ng-breadcrumbs": "latest"
+    "ng-breadcrumbs": "latest",
+    "bootstrap-sass": "latest"
   }
 }

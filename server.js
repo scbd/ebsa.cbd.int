@@ -15,6 +15,8 @@ app.configure(function() {
 
     app.use(express.logger('dev'));
     app.use(express.compress());
+
+    app.use(require('connect-livereload')());
     app.use('/app', express.static(__dirname + '/app'));
     app.use('/favicon.png', express.static(__dirname + '/app/favicon.png', { maxAge: oneDay }));
 });

@@ -1,0 +1,118 @@
+$icon-font-path: "/css/fonts/";
+
+@import 'bootstrap-sass/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+// body {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+// }
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+// .header,
+// .marketing,
+// .footer {
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
+
+// /* Custom page header */
+// .header {
+//     border-bottom: 1px solid #e5e5e5;
+// }
+
+/* Make the masthead heading the same height as the navigation */
+.header-row {
+    padding: 20px;
+
+    h2, h3 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.fluid-container {
+    // padding-left: 15px;
+    // padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-bg {
+    background-color: #eee;
+}
+
+.nav-link {
+    // font-weight: bold;
+    font-size: 1.5em;
+    color: $gray-light;
+}
+
+.nav {
+    li.active a.nav-link{
+        color: $gray-dark;
+    }
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+// .container-narrow > hr {
+//     margin: 30px 0;
+// }
+
+// /* Main marketing message and sign up button */
+// .marketing p + h4 {
+//     margin-top: 28px;
+// }
+
+/* Responsive: Portrait tablets and up */
+// @media screen and (min-width: 768px) {
+//     .container {
+//         max-width: 730px;
+//     }
+
+//     /* Remove the padding we set earlier */
+//     .header,
+//     .marketing,
+//     .footer {
+//         padding-left: 0;
+//         padding-right: 0;
+//     }
+//     /* Space out the masthead */
+//     .header {
+//         margin-bottom: 30px;
+//     }
+//     /* Remove the bottom border on the jumbotron for visual effect */
+//     .jumbotron {
+//         border-bottom: 0;
+//     }
+// }
+
+
+.m-t-s {
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.brand-image {
+    width: 64px;
+    height: 64px;
+}
