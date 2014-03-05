@@ -29,6 +29,38 @@ define(['app'], function(app) {
         label: 'About'
 
       }).
+      when('/meetings', {
+        templateUrl: '/app/views/meetings/meetings.html',
+        resolve: {
+          dependencies: resolveJS()
+        },
+        label: 'Meetings'
+
+      }).
+      when('/ebsas', {
+        templateUrl: '/app/views/ebsas/ebsas.html',
+        resolve: {
+          dependencies: resolveJS()
+        },
+        label: 'About'
+
+      }).
+      when('/resources', {
+        templateUrl: '/app/views/resources/resources.html',
+        resolve: {
+          dependencies: resolveJS()
+        },
+        label: 'About'
+
+      }).
+      when('/partners', {
+        templateUrl: '/app/views/partners/partners.html',
+        resolve: {
+          dependencies: resolveJS()
+        },
+        label: 'About'
+
+      }).
       when('/countries/:country', {
         templateUrl: '/app/views/countries/index-country.html',
         resolve: {
@@ -39,7 +71,7 @@ define(['app'], function(app) {
       when('/404', {
         templateUrl: '/app/views/404.html',
         resolve: {},
-        label: 'NOT FOUND'
+        label: '404'
       }).
       otherwise({
         redirectTo: '/404'

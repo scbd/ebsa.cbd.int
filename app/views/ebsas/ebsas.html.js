@@ -2,6 +2,6 @@
 
 define(['app'], function(app) {
 
-  app.controller('AboutCtrl', function() {});
+  app.controller('EbsasCtrl', function() {});
 
 });

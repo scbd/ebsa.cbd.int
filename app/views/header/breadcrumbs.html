@@ -1,12 +1,15 @@
 <div class="row" ng-hide="!hasCrumbs" ng-controller="BreadcrumbsCtrl">
-    <div class="col-lg-12">
+  <div class="col-lg-12">
     <ol class="breadcrumb">
-        <li ng-repeat="breadcrumb in breadcrumbs.getAll()">
-          <a ng-href="{{breadcrumb.path}}" ng-hide="$last">
-            {{breadcrumb.label}}
-          </a>
-          <span ng-show="$last">{{breadcrumb.label}}</span>
-        </li>
-      </ol>
-    </div>
-  </div>
+      <li><img src="app/img/small_globe.png" alt=""></li>
+      <li ng-repeat="breadcrumb in breadcrumbs.getAll()" ng-class="{'no-before': $first}">
+        <ng-switch on="$last">
+          <span ng-switch-when="true">{{breadcrumb.label}}</span>
+          <span ng-switch-default>
+            <a ng-href="{{breadcrumb.path}}">{{breadcrumb.label}}</a>
+          </span>
+        </ng-switch>
+    </li>
+  </ol>
+</div>
+</div>

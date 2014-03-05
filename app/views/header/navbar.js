@@ -16,7 +16,7 @@ define(['app'], function(app) {
         'title': 'Meetings',
         'link': '/meetings'
       }, {
-        'title': 'Resource',
+        'title': 'Resources',
         'link': '/resources'
       }, {
         'title': 'Partners',
