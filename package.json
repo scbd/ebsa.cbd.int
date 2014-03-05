@@ -13,10 +13,11 @@
     "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-watch": "~0.5.2",
     "grunt-newer": "~0.5.4",
-    "connect-livereload": "^0.3.2"
+    "connect-livereload": "^0.3.2",
+    "grunt-cli": "~0.1.13"
   },
   "devDependencies": {
-    "awsbox": "~0.7.0"
+    "awsbox": "*"
   },
   "engine": "node >= 0.10.18",
   "scripts": {
