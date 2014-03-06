@@ -2,6 +2,6 @@
 
 define(['app'], function(app) {
 
-  app.controller('PartnersCtrl', function() {});
+  app.controller('ResourcesCtrl', function() {});
 
 });

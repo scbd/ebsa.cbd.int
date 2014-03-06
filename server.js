@@ -36,7 +36,6 @@ app.delete('/api/*', function(req, res) { proxy.web(req, res, { target: 'https:/
 // Configure index.html
 
 app.get('/*', function(req, res) {
-    console.log('***********************************serving master**************************');
 	fs.readFile(__dirname + '/app/templates/master.html', 'utf8', function (error, text) {
 		res.send(text);
 	});

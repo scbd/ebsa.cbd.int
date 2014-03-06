@@ -105,7 +105,12 @@ $img-path: "/app/img";
 .m-t-s {
     margin-top: 10px;
 }
-
+.m-r {
+    margin-right: 15px;
+}
+.m-r-s {
+    margin-right: 10px;
+}
 @media (max-width: 767px) {
     .row {
         margin-right: 0;
@@ -116,14 +121,17 @@ $img-path: "/app/img";
 .brand-image {
     width: 64px;
     height: 64px;
+    margin-right: 15px;
 }
 
 .breadcrumb {
+    background: none;
+    box-shadow: 0 1px 5px #ccc;
     // &:before {
     //     content: url($img-path + '/small_globe.png');
     //     margin-right: 10px;
     // }
-    & > li {
+    & > li a {
         text-transform: capitalize;
     }
     // & > li a {
@@ -136,7 +144,8 @@ $img-path: "/app/img";
         vertical-align: 15%;
         color: $gray-dark;
     }
-    & > li.no-before:before {
+    & > .no-before:before {
         content: "";
+        display: block;
     }
 }
