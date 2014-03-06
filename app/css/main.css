@@ -9130,7 +9130,7 @@ SIDEBAR */
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003747}}
 .bs-sidebar ul li.active {
-  list-style: none outside url("../images/bullet.png");
+  list-style: none outside url("/app/img/bullet.png");
   display: list-item;
   margin-left: 20px;
 }

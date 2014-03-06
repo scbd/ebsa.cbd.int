@@ -745,7 +745,7 @@ SIDEBAR */
   margin-left: 6px;
 }
 .bs-sidebar ul li.active {
-  list-style: none outside url('../images/bullet.png');
+  list-style: none outside url($img-path + '/bullet.png');
   display: list-item;
   margin-left: 20px;
 }
