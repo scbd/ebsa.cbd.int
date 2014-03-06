@@ -8,8 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="/favicon.png">
 
+     <!--  Download Font from Google  -->
+     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Overlock:700italic' rel='stylesheet' type='text/css'>
+
+
     <!-- Bootstrap core CSS -->
-    <!-- <link href="/app/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="/app/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
     <!-- <link rel="stylesheet" href="/app/libs/font-awesome/css/font-awesome.min.css"> -->
@@ -31,7 +36,7 @@
     <div class="fluid-container">
         <div ng-include="'/app/views/header/header.html'"></div>
         <ng-view></ng-view>
-        <div>© CBD Secretariat</div>
+        <div ng-include="'/app/views/footer/footer.html'"></div>
     </div>
 
 

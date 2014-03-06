@@ -5,6 +5,5 @@ define(['app'], function(app) {
         $scope.countries = $http.get('/api/v2013/countries', { cache : true }).then(function(result){
             return $scope.countries = result.data;
         });
-
     }]);
 });
