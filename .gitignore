@@ -17,3 +17,7 @@ app/libs
 app_build
 
 .sass-cache
+
+.bower-cache
+.bower-registry
+.bower-tmp
