@@ -58,10 +58,10 @@
   </div>
 </div>
 
-
-<div class="push20">&nbsp;</div>
-<div class="container">
-  <ol class="breadcrumb" ng-controller="BreadcrumbsCtrl">
+<div ng-controller="BreadcrumbsCtrl">
+<div class="push20" ng-show="showCrumbs">&nbsp;</div>
+<div class="container" ng-show="showCrumbs">
+  <ol class="breadcrumb">
   <li ng-repeat="breadcrumb in breadcrumbs.getAll()" ng-class="{'no-before': $first}">
         <ng-switch on="$last">
           <span ng-switch-when="true">{{breadcrumb.label}}</span>
@@ -75,7 +75,7 @@
     <li class="active">Considered by COP</li> -->
   </ol>
 </div>
-
+</div>
 
 <!-- <div ng-include="'app/views/header/navbar.html'"></div> -->
 <!-- <div ng-include="'app/views/header/breadcrumbs.html'"></div> -->
