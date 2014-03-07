@@ -6,7 +6,6 @@ define(['app'], function(app) {
 
       function computeCrumbs () {
         $scope.breadcrumbs = breadcrumbs;
-        $scope.hasCrumbs = breadcrumbs.getAll().length;
         $scope.showCrumbs = $location.path() !== '/';
       }
 
