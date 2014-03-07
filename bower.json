@@ -11,6 +11,7 @@
     "underscore": "latest",
     "jquery": "~2.0.3",
     "ng-breadcrumbs": "latest",
-    "bootstrap-sass": "latest"
+    "bootstrap-sass": "latest",
+    "angular-i18n": "~1.2.14"
   }
 }

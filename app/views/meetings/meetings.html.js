@@ -1,14 +1,29 @@
 'use strict';
 
-define(['app'], function(app) {
+define(['app', '../../services/meetingService.js'], function(app, Meetings) {
 
-  app.controller('MeetingsCtrl', ['$http', '$scope', function($http, $scope) {
+  app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'Meetings',
+    function($http, $scope, $locale, Meetings) {
 
-    $http.get('https://api.cbd.int/api/v2013/index?q=schema_s:meeting')
-      .then(function(meetings) {
-        $scope.meetings = meetings;
+      function sortMeetingsByDate(meetings) {
+        return meetings.sort(function(ma, mb) {
+          return ma.startDate.getTime() - mb.startDate.getTime();
+        });
+      }
+
+      Meetings.getUpcoming(function(dataSet) {
+        $scope.meetingSet = {};
+        $scope.meetingSet.meetings = sortMeetingsByDate(dataSet.meetings);
+        $scope.meetingSet.count = dataSet.count;
+        console.log($scope.meetingSet.meetings);
       });
 
-  }]);
+      var date = new Date();
+      $scope.dateInfo = {
+        year: date.getFullYear(),
+        month: $locale.DATETIME_FORMATS.MONTH[date.getMonth()]
+      };
+    }
+  ]);
 
 });

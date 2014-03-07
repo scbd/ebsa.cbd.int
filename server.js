@@ -17,10 +17,10 @@ app.configure(function() {
     app.use(express.compress());
 
     app.configure('development', function() {
-        console.log('use: connect-livereload');    
+        console.log('use: connect-livereload');
         app.use(require('connect-livereload')());
     });
-    
+
     app.use('/app', express.static(__dirname + '/app'));
     app.use('/favicon.png', express.static(__dirname + '/app/templates/favicon.png', { maxAge: oneDay }));
 });
