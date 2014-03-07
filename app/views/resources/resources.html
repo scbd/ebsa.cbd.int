@@ -68,359 +68,245 @@
 
             <div class="clear push20"></div>
 
-            <div class="col-6 col-lg-6">
+            <div class="col-6 col-lg-6" ng-repeat="report in reports">
               <div class="col-4 col-lg-4">
                 <a href="#" alt="Western South Pacific Regional">
-                  <img src="/app/img/reports-westernsouthpacific.jpg" alt="Western South Pacific Regional" />
+                  <img src="{{report.imgUrl}}" alt="Western South Pacific Regional" />
                 </a>
               </div>
               <div class="col-8 col-lg-8 article">
-                <h3>Western South Pacific Regional Workshop to Facilitate the Description of EBSAs</h3>
-                <p class="blue4">(Nadji, Fiji, from 22 to 25 November 2011)</p>
+                <h3>{{report.title}}</h3>
+                <p class="blue4">{{report.dates}}</p>
                 <div class="col-2 col-lg-2 nopadding">
                   <img src="/app/img/download-icon.png" alt="Download icon" />
                 </div>
                 <div class="col-10 col-lg-10">
                   <div class="button">
                     <div class="link">
-                      <a title="Download PDF" href="http://www.cbd.int/doc/meetings/mar/rwebsa-wspac-01/official/rwebsa-wspac-01-sbstta-16-inf-06-en.pdf" target="_blank">Download &#187;</a>
+                      <a title="Download PDF" href="{{report.url}}" target="_blank">Download &#187;</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="clear push15"></div><div class="push15"></div>
+
+          </div>
+
+          <!--  Other meeting reports -->
+          <div id="other-meeting-reports" class="col-9 col-lg-9 tab-pane">
+            <!-- TITLE  -->
+            <div class="col-10 col-lg-9">
+              <h2>Other meeting reports</h2>
+            </div>
+            <div class="clear push20"></div>
+
+            <!-- Download PDF column 1  -->
             <div class="col-6 col-lg-6">
               <div class="col-4 col-lg-4">
-                <a href="#" alt="Wider Caribbean and Western Mid-Atlantic Regional">
-                  <img src="/app/img/reports-widercaribbean.jpg" alt="Wider Caribbean and Western Mid-Atlantic Regional" />                </a>
+                <a href="#" alt="Expert Workshop on Ecological Criteria">
+                  <img src="/app/img/meeting-biological.jpg" alt="Expert Workshop on Ecological Criteria" />                      </a>
                 </div>
                 <div class="col-8 col-lg-8 article">
-                  <h3>Wider Caribbean and Western Mid-Atlantic Regional Workshop to Facilitate the Description of EBSAs</h3>
-                  <p class="blue4">(Recife, Brazil, from 28 February to 2 March 2011)</p>
+                  <h3>Expert Workshop on Ecological Criteria and Biogeographic Classification Systems for Marine Areas in Need of Protection</h3>
+                  <p class="blue4">(Azores, Portugal, from 2 to 4 October 2007)</p>
                   <div class="col-2 col-lg-2 nopadding">
-                    <img src="/app/img/download-icon.png" alt="Downlaod icon" />
+                    <img src="/app/img/download-icon.png" alt="Download icon" />
                   </div>
                   <div class="col-10 col-lg-10">
                     <div class="button">
                       <div class="link">
-                        <a title="Download PDF" target="_blank" href="http://www.cbd.int/doc/meetings/mar/rwebsa-wcar-01/official/rwebsa-wcar-01-sbstta-16-inf-07-en.pdf">Download &#187;</a>
+                        <a title="Download PD" href="http://www.cbd.int/doc/?meeting=EWSEBM-01" target="_blank">Download &#187;</a>
                       </div>
                     </div>
                   </div>
                 </div>
+
               </div>
 
-              <div class="clear push15"></div><div class="push15"></div>
-
+              <!-- Download PDF column 2  -->
               <div class="col-6 col-lg-6">
                 <div class="col-4 col-lg-4">
-                  <a href="#" alt="Eastern Tropical and Temperate Pacific">
-                    <img src="/app/img/reports-easterntropical.jpg" alt="Eastern Tropical and Temperate Pacific" />                      </a>
+                  <a href="#" alt="Expert Workshop on Scientific and Technical Guidance">
+                    <img src="/app/img/meeting-scientific.jpg" alt="Expert Workshop on Scientific and Technical Guidance" />                </a>
                   </div>
                   <div class="col-8 col-lg-8 article">
-                    <h3>Eastern Tropical and Temperate Pacific Regional Workshop to Facilitate the Description of EBSAs</h3>
-                    <p class="blue4">(Galápagos Islands, Ecuador, from 27 to 31 August 2012)</p>
+                    <h3>Expert Workshop on Scientific and Technical Guidance on the use of Biogeographic Classification Systems and Identification of Marine Areas beyond national jurisdiction in need of protection</h3>
+                    <p class="blue4">(Ottawa, Canada, from 29 September to 2 October 2009)</p>
                     <div class="col-2 col-lg-2 nopadding">
                       <img src="/app/img/download-icon.png" alt="Download icon" />
                     </div>
                     <div class="col-10 col-lg-10">
                       <div class="button">
                         <div class="link">
-                          <a title="Downlad PDF" href="http://www.cbd.int/doc/meetings/mar/ebsa-ettp-01/official/ebsa-ettp-01-04-en.pdf" target="_blank">Download &#187;</a>
+                          <a title="Download PDF" href="http://www.cbd.int/doc/?meeting=EWBCSIMA-01" target="_blank">Download &#187;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="clear push20"></div>
+                </div>
+              </div>
+
+              <!--  Brochures -->
+              <div id="brochures" class="col-9 col-lg-9 tab-pane">
+                <!-- TITLE ARTICLE  -->
+                <div class="col-10 col-lg-9">
+                  <h2>Brochures</h2>
+                </div>
+
+                <div class="clear push20"></div>
+
+                <!-- Download PDF column 1  -->
+                <div class="col-6 col-lg-6">
+                  <div class="col-4 col-lg-4">
+                    <a href="#" alt="Brochure for the Ecologically and Biologically Significant Marine Areas">
+                      <img src="/app/img/brochure-ebsas.jpg" alt="Brochure for the Ecologically and Biologically Significant Marine Areas" />
+                    </a>
+                  </div>
+                  <div class="col-8 col-lg-8 article">
+                    <h3>Brochure for the Ecologically and Biologically Significant Marine Areas (EBSAs)</h3>
+                    <div class="col-2 col-lg-2 nopadding">
+                      <div class="push20"></div>
+                      <img src="/app/img/download-icon.png" alt="Download icon" />
+                    </div>
+                    <div class="col-10 col-lg-10">
+                      <div class="push20"></div>
+                      <div class="button">
+                        <div class="link">
+                          <a title="Download PDF" href="http://www.cbd.int/marine/doc/ebsa-brochure-2012-en.pdf" target="_blank">Download &#187;</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- Download PDF column 2  -->
                 <div class="col-6 col-lg-6">
                   <div class="col-4 col-lg-4">
-                    <a href="#" alt="Southern Indian Ocean Regional">
-                      <img src="/app/img/reports-southindian.jpg" alt="Southern Indian Ocean Regional" />                             </a>
+                    <a href="#" alt="Brochure for the Scientific Criteria and Guidance">
+                      <img src="/app/img/brochures-scientific.jpg" alt="Brochure for the Scientific Criteria and Guidance" />                </a>
                     </div>
                     <div class="col-8 col-lg-8 article">
-                      <h3>Southern Indian Ocean Regional Workshop to Facilitate the Description of EBSAs</h3>
-                      <p class="blue4">(Flic en Flac, Mauritius, from 30 July to 3 August 2012)</p>
+                      <h3>Brochure for the Scientific Criteria and Guidance for Identifying EBSAs and Designing Representative Networks of Marine Protected Areas in Open Ocean Waters and Deep Sea Habitats</h3>
+                      <div class="push20"></div>
                       <div class="col-2 col-lg-2 nopadding">
-                        <img src="/app/img/download-icon.png" alt="download icon" />
+                        <img src="/app/img/download-icon.png" alt="Download icon" />
                       </div>
                       <div class="col-10 col-lg-10">
                         <div class="button">
                           <div class="link">
-                            <a title="Download PDF" href="http://www.cbd.int/doc/meetings/mar/ebsa-sio-01/official/ebsa-sio-01-04-en.pdf" target="_blank">Download &#187;</a>
+                            <a title="Download PDF" href="http://www.cbd.int/marine/doc/azores-brochure-en.pdf" target="_blank">Download &#187;</a>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  <div class="clear push15"></div><div class="push15"></div>
-
-                  <div class="col-6 col-lg-6">
-                    <div class="col-4 col-lg-4">
-                      <img src="/app/img/forthcoming.png" alt="North Pacific Regional Workshop to Facilitate the Description of EBSAs" />          </div>
-                      <div class="col-8 col-lg-8 article">
-                        <h3>North Pacific Regional Workshop to Facilitate the Description of EBSAs</h3>
-                        <p class="blue4">(Moscow, Russian Federation, from 25 February to 1 March 2013) (forthcoming)</p>
-                      </div>
-                    </div>
-                    <div class="col-6 col-lg-6">
-                      <div class="col-4 col-lg-4">
-                        <img src="/app/img/forthcoming.png" alt="South-Eastern Atlantic Regional Workshop to Facilitate the Description of EBSAs" />
-                      </div>
-                      <div class="col-8 col-lg-8 article">
-                        <h3>South-Eastern Atlantic Regional Workshop to Facilitate the Description of EBSAs</h3>
-                        <p class="blue4">(Swakopmund, Namibia, from 8 to 12 April 2013) (forthcoming)</p>
-                      </div>
-                    </div>
-
-                    <div class="clear push15"></div><div class="push15"></div>
-
-                    <div class="col-6 col-lg-6">
-                      <div class="col-4 col-lg-4">
-                        <img src="/app/img/forthcoming.png" alt="Mediterranean Regional Workshop to Facilitate the Description of EBSAs" />
-                      </div>
-                      <div class="col-8 col-lg-8 article">
-                        <h3>Mediterranean Regional Workshop to Facilitate the Description of EBSAs</h3>
-                        <p class="blue4">(Málaga, Spain, from 7 to 11 April 2014) (forthcoming)</p>
-                      </div>
-                    </div>
-                    <div class="col-6 col-lg-6">
-                      <div class="col-4 col-lg-4">
-                        <img src="/app/img/forthcoming.png" alt="North-West Atlantic Regional Workshop to Facilitate the Description of EBSAs" />
-                      </div>
-                      <div class="col-8 col-lg-8 article">
-                        <h3>North-West Atlantic Regional Workshop to Facilitate the Description of EBSAs</h3>
-                        <p class="blue4">(Montreal, Canada, from 24 to 28 March 2014) (forthcoming)</p>
-                      </div>
-                    </div>
-
-                    <div class="clear push15"></div><div class="push15"></div>
-
-                    <div class="col-6 col-lg-6">
-                      <div class="col-4 col-lg-4">
-                        <img src="/app/img/forthcoming.png" alt="Arctic Regional Workshop to Facilitate the Description of EBSAs" />
-                      </div>
-                      <div class="col-8 col-lg-8 article">
-                        <h3>Arctic Regional Workshop to Facilitate the Description of EBSAs</h3>
-                        <p class="blue4">(Helsinki, Finland, from 3 to 7 March 2014) (forthcoming)</p>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <!--  Other meeting reports -->
-                  <div id="other-meeting-reports" class="col-9 col-lg-9 tab-pane">
-                    <!-- TITLE  -->
-                    <div class="col-10 col-lg-9">
-                      <h2>Other meeting reports</h2>
                     </div>
                     <div class="clear push20"></div>
+                  </div>
+                </div>
 
-                    <!-- Download PDF column 1  -->
-                    <div class="col-6 col-lg-6">
-                      <div class="col-4 col-lg-4">
-                        <a href="#" alt="Expert Workshop on Ecological Criteria">
-                          <img src="/app/img/meeting-biological.jpg" alt="Expert Workshop on Ecological Criteria" />                      </a>
-                        </div>
-                        <div class="col-8 col-lg-8 article">
-                          <h3>Expert Workshop on Ecological Criteria and Biogeographic Classification Systems for Marine Areas in Need of Protection</h3>
-                          <p class="blue4">(Azores, Portugal, from 2 to 4 October 2007)</p>
-                          <div class="col-2 col-lg-2 nopadding">
-                            <img src="/app/img/download-icon.png" alt="Download icon" />
-                          </div>
-                          <div class="col-10 col-lg-10">
-                            <div class="button">
-                              <div class="link">
-                                <a title="Download PD" href="http://www.cbd.int/doc/?meeting=EWSEBM-01" target="_blank">Download &#187;</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                <!-- Training Materials -->
+                <div id="training-materials" class="col-9 col-lg-9 tab-pane">
+                  <!-- TITLE ARTICLE  -->
+                  <div class="col-4 col-lg-4">
+                    <h2>Training materials</h2>
+                    <img src="/app/img/resources-5.jpg" alt="Training Materials">
+                    <div class="push20"></div>
+                    <p>Hella Neutra dreamcatcher, DIY pour-over irony chia pug. Banh mi laboris beard tempor. Kale chips next level synth, single-origin coffee umami adipisicing ut small batch hashtag aliqua twee craft beer. Raw denim craft beer keytar freegan, American Apparel sapiente consequat pug minim voluptate irure quinoa shabby chic eiusmod.</p>
+                  </div>
 
-                      </div>
+                  <!-- ARTICLE  -->
+                  <div class="col-8 col-lg-8">
+                    <div class="article">
+                      <h4>Lorum ipsum dolor</h4>
 
-                      <!-- Download PDF column 2  -->
-                      <div class="col-6 col-lg-6">
-                        <div class="col-4 col-lg-4">
-                          <a href="#" alt="Expert Workshop on Scientific and Technical Guidance">
-                            <img src="/app/img/meeting-scientific.jpg" alt="Expert Workshop on Scientific and Technical Guidance" />                </a>
-                          </div>
-                          <div class="col-8 col-lg-8 article">
-                            <h3>Expert Workshop on Scientific and Technical Guidance on the use of Biogeographic Classification Systems and Identification of Marine Areas beyond national jurisdiction in need of protection</h3>
-                            <p class="blue4">(Ottawa, Canada, from 29 September to 2 October 2009)</p>
-                            <div class="col-2 col-lg-2 nopadding">
-                              <img src="/app/img/download-icon.png" alt="Download icon" />
-                            </div>
-                            <div class="col-10 col-lg-10">
-                              <div class="button">
-                                <div class="link">
-                                  <a title="Download PDF" href="http://www.cbd.int/doc/?meeting=EWBCSIMA-01" target="_blank">Download &#187;</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                      <p>Cil is cus mos re porum et quo occus, vit invel maximagnimin reius mi, con corrum nesto omnihicid ea conecust, nis ari ut rem quistestiati adi dolupta eperestibus dunt quia consequam, unto vidioss enditat.</p>
 
-                          <div class="clear push20"></div>
+                      <p>Con estibust doluptur simint occaerior magnam as asimi, adis eaquam qui blab ime porro ma sanderis etus acea dolut eosam, quianda porerciliqui adi nem volo eic to corumque nesecus sitate remodio nserument, nonsequis nobis ipsae plitioremqui quiatemque perferi tibus, sit volectatius iumquae. Nempelit quo mos volores tiaectiore et dolorem facestibeati aut od ut licae doleste modissim rae. Ita nusandit volut omniam, ommoditia di qui commoluptat offici consecum del in cuptati nvenda consequis accum erum et que voloreiciis vella aspe volo quatiae andi temporit est alis dolor modisqu iatqui doluptas eossus volorum accum volore venem conseriam ut perions equibus dolorer umquibus dem quundus, sinctur moluptaque venisci doluptur a debis et eaque eum nobitaquosae incil molore, si quia volectasit everro to es sam, ut as eos dolupta delluptae. Nem fugias que corumquid que quiae. Ita dolorum deliquatust, erunt.</p>
+
+                      <p>Voles eos quasped iatur, vendit maio et expliqui isi cor sus nobis quunt enimin ni suntionsent.</p>
+
+                      <h4>Genisintur, ut iunt qui cum, sim verecta tendae doluptur?</h4>
+
+                      <p>Turiasp ereicid ut volor aut que expercitia cus, omnis a si dolessu ntibus ut et ilis dolupti reroIta nusandit volut omniam, ommoditia di qui commoluptat offici consecum del in cuptati nvenda consequis accum erum et que voloreiciis vella aspe volo quatiae andi temporit est alis dolor modisqu iatqui doluptas eossus volorum accum volore venem conseriam ut perions equibus dolorer umquibus dem quundus, sinctur moluptaque venisci doluptur a debis et eaque eum nobitaquosae incil molore, si quia volectasit everro to es sam, ut as eos dolupta delluptae. Nem fugias que</p>
+
+                      <div class="clear push20"></div>
+
+                      <div class="col-lg-4">
+                        <img src="/app/img/trainings-1.jpg" alt="Training number 1" />
+                        <h4>Post-ironic PBR pug kale chips fap</h4>
+                        <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
+                        <div class="push20"></div>
+                        <div class="button">
+                          <div class="link">
+                            <a href="#">Download &#187;</a>
+                          </div>
                         </div>
                       </div>
-
-                      <!--  Brochures -->
-                      <div id="brochures" class="col-9 col-lg-9 tab-pane">
-                        <!-- TITLE ARTICLE  -->
-                        <div class="col-10 col-lg-9">
-                          <h2>Brochures</h2>
-                        </div>
-
-                        <div class="clear push20"></div>
-
-                        <!-- Download PDF column 1  -->
-                        <div class="col-6 col-lg-6">
-                          <div class="col-4 col-lg-4">
-                            <a href="#" alt="Brochure for the Ecologically and Biologically Significant Marine Areas">
-                              <img src="/app/img/brochure-ebsas.jpg" alt="Brochure for the Ecologically and Biologically Significant Marine Areas" />
-                            </a>
-                          </div>
-                          <div class="col-8 col-lg-8 article">
-                            <h3>Brochure for the Ecologically and Biologically Significant Marine Areas (EBSAs)</h3>
-                            <div class="col-2 col-lg-2 nopadding">
-                              <div class="push20"></div>
-                              <img src="/app/img/download-icon.png" alt="Download icon" />
-                            </div>
-                            <div class="col-10 col-lg-10">
-                              <div class="push20"></div>
-                              <div class="button">
-                                <div class="link">
-                                  <a title="Download PDF" href="http://www.cbd.int/marine/doc/ebsa-brochure-2012-en.pdf" target="_blank">Download &#187;</a>
-                                </div>
-                              </div>
-                            </div>
+                      <div class="col-lg-4">
+                        <img src="/app/img/trainings-2.jpg" alt="Training number 2" />
+                        <h4>Post-ironic PBR pug kale chips fap</h4>
+                        <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
+                        <div class="push20"></div>
+                        <div class="button">
+                          <div class="link">
+                            <a href="#">Download &#187;</a>
                           </div>
                         </div>
-                        <!-- Download PDF column 2  -->
-                        <div class="col-6 col-lg-6">
-                          <div class="col-4 col-lg-4">
-                            <a href="#" alt="Brochure for the Scientific Criteria and Guidance">
-                              <img src="/app/img/brochures-scientific.jpg" alt="Brochure for the Scientific Criteria and Guidance" />                </a>
-                            </div>
-                            <div class="col-8 col-lg-8 article">
-                              <h3>Brochure for the Scientific Criteria and Guidance for Identifying EBSAs and Designing Representative Networks of Marine Protected Areas in Open Ocean Waters and Deep Sea Habitats</h3>
-                              <div class="push20"></div>
-                              <div class="col-2 col-lg-2 nopadding">
-                                <img src="/app/img/download-icon.png" alt="Download icon" />
-                              </div>
-                              <div class="col-10 col-lg-10">
-                                <div class="button">
-                                  <div class="link">
-                                    <a title="Download PDF" href="http://www.cbd.int/marine/doc/azores-brochure-en.pdf" target="_blank">Download &#187;</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="clear push20"></div>
-                          </div>
-                        </div>
-
-                        <!-- Training Materials -->
-                        <div id="training-materials" class="col-9 col-lg-9 tab-pane">
-                          <!-- TITLE ARTICLE  -->
-                          <div class="col-4 col-lg-4">
-                            <h2>Training materials</h2>
-                            <img src="/app/img/resources-5.jpg" alt="Training Materials">
-                            <div class="push20"></div>
-                            <p>Hella Neutra dreamcatcher, DIY pour-over irony chia pug. Banh mi laboris beard tempor. Kale chips next level synth, single-origin coffee umami adipisicing ut small batch hashtag aliqua twee craft beer. Raw denim craft beer keytar freegan, American Apparel sapiente consequat pug minim voluptate irure quinoa shabby chic eiusmod.</p>
-                          </div>
-
-                          <!-- ARTICLE  -->
-                          <div class="col-8 col-lg-8">
-                            <div class="article">
-                              <h4>Lorum ipsum dolor</h4>
-
-                              <p>Cil is cus mos re porum et quo occus, vit invel maximagnimin reius mi, con corrum nesto omnihicid ea conecust, nis ari ut rem quistestiati adi dolupta eperestibus dunt quia consequam, unto vidioss enditat.</p>
-
-                              <p>Con estibust doluptur simint occaerior magnam as asimi, adis eaquam qui blab ime porro ma sanderis etus acea dolut eosam, quianda porerciliqui adi nem volo eic to corumque nesecus sitate remodio nserument, nonsequis nobis ipsae plitioremqui quiatemque perferi tibus, sit volectatius iumquae. Nempelit quo mos volores tiaectiore et dolorem facestibeati aut od ut licae doleste modissim rae. Ita nusandit volut omniam, ommoditia di qui commoluptat offici consecum del in cuptati nvenda consequis accum erum et que voloreiciis vella aspe volo quatiae andi temporit est alis dolor modisqu iatqui doluptas eossus volorum accum volore venem conseriam ut perions equibus dolorer umquibus dem quundus, sinctur moluptaque venisci doluptur a debis et eaque eum nobitaquosae incil molore, si quia volectasit everro to es sam, ut as eos dolupta delluptae. Nem fugias que corumquid que quiae. Ita dolorum deliquatust, erunt.</p>
-
-                              <p>Voles eos quasped iatur, vendit maio et expliqui isi cor sus nobis quunt enimin ni suntionsent.</p>
-
-                              <h4>Genisintur, ut iunt qui cum, sim verecta tendae doluptur?</h4>
-
-                              <p>Turiasp ereicid ut volor aut que expercitia cus, omnis a si dolessu ntibus ut et ilis dolupti reroIta nusandit volut omniam, ommoditia di qui commoluptat offici consecum del in cuptati nvenda consequis accum erum et que voloreiciis vella aspe volo quatiae andi temporit est alis dolor modisqu iatqui doluptas eossus volorum accum volore venem conseriam ut perions equibus dolorer umquibus dem quundus, sinctur moluptaque venisci doluptur a debis et eaque eum nobitaquosae incil molore, si quia volectasit everro to es sam, ut as eos dolupta delluptae. Nem fugias que</p>
-
-                              <div class="clear push20"></div>
-
-                              <div class="col-lg-4">
-                                <img src="/app/img/trainings-1.jpg" alt="Training number 1" />
-                                <h4>Post-ironic PBR pug kale chips fap</h4>
-                                <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
-                                <div class="push20"></div>
-                                <div class="button">
-                                  <div class="link">
-                                    <a href="#">Download &#187;</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-4">
-                                <img src="/app/img/trainings-2.jpg" alt="Training number 2" />
-                                <h4>Post-ironic PBR pug kale chips fap</h4>
-                                <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
-                                <div class="push20"></div>
-                                <div class="button">
-                                  <div class="link">
-                                    <a href="#">Download &#187;</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-4">
-                                <img src="/app/img/trainings-3.jpg" alt="Training number 3" />
-                                <h4>Post-ironic PBR pug kale chips fap</h4>
-                                <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
-                                <div class="push20"></div>
-                                <div class="button">
-                                  <div class="link">
-                                    <a href="#">Download &#187;</a>
-                                  </div>
-                                </div>
-                              </div>
-
-
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Relevant Publications -->
-                        <div id="relevant-publications" class="col-9 col-lg-9 tab-pane">
-                          <!-- TITLE ARTICLE  -->
-                          <div class="col-4 col-lg-4">
-                            <h2>Relevant publications</h2>
-                            <img src="/app/img/resources-6.jpg" alt="Relevant Publications">
-                            <div class="push20"></div>
-                            <p>Hella Neutra dreamcatcher, DIY pour-over irony chia pug. Banh mi laboris beard tempor. Kale chips next level synth, single-origin coffee umami adipisicing ut small batch hashtag aliqua twee craft beer. Raw denim craft beer keytar freegan, American Apparel sapiente consequat pug minim voluptate irure quinoa shabby chic eiusmod.</p>
-                          </div>
-
-                          <!-- ARTICLE  -->
-                          <div class="col-8 col-lg-8">
-                            <div class="article">
-                              <h4>Biodiesel commodo gentrify, chillwave</h4>
-
-                              <p> Placeat hella Neutra, et officia assumenda pickled hashtag. Cillum cupidatat odio Intelligentsia. Distillery nihil assumenda readymade, Pinterest incididunt adipisicing cillum kogi roof party tote bag aliqua actually eu cupidatat. Cardigan banjo et, chia enim Williamsburg cupidatat. Esse aliqua non meggings pour-over fanny pack. Chia eu tote bag, Odd Future Pinterest farm-to-table gentrify trust fund minim viral sartorial do jean shorts. Biodiesel commodo gentrify, chillwave viral bespoke anim PBR&B put a bird on it kogi organic meggings vegan dolore irony.</p>
-
-                              <h4>Truffaut nostrud master cleanse flexitarian non placeat</h4>
-
-                              <p>Sint vinyl before they sold out assumenda locavore mixtape, magna veniam ad ugh ullamco. Lomo Brooklyn ethnic salvia, ugh odio cliche Tonx Pinterest seitan Echo Park. Organic Helvetica adipisicing, wolf id paleo try-hard gastropub fugiat. Bitters pork belly commodo, Truffaut esse put a bird on it cred Tonx keffiyeh veniam. Wayfarers do id letterpress, roof party gentrify deserunt you probably haven't heard of them. Selfies flannel stumptown gentrify laboris, cillum ad fingerstache next level typewriter vero tempor kogi. Cardigan next level four loko quis biodiesel kale chips, Carles hashtag consequat ullamco narwhal Godard minim VHS twee.</p>
-
-                              <p>Assumenda ex minim, meggings adipisicing XOXO ea veniam farm-to-table vegan hella try-hard quis gentrify single-origin coffee. Actually deep v anim authentic, trust fund est 3 wolf moon freegan try-hard Thundercats semiotics mumblecore next level Schlitz. Cillum plaid ex, Truffaut nostrud master cleanse flexitarian non placeat authentic consequat butcher deserunt cornhole irony. Tumblr fashion axe Truffaut PBR 8-bit, craft beer qui XOXO disrupt bicycle rights VHS nostrud 90's. Ugh veniam gastropub, DIY voluptate cray PBR&B skateboard church-key bitters shabby chic Vice synth chia. Kogi brunch sint narwhal voluptate magna. Schlitz voluptate tattooed ex Wes Anderson.</p>
-
-                              <h4>Pinterest eiusmod mixtape biodiesel pop-up</h4>
-
-                              <p>TCillum kogi authentic narwhal aliqua. Normcore blog irony readymade, cred adipisicing selfies. Mumblecore Echo Park accusamus tousled, est Vice twee flannel master cleanse retro four loko. Nihil post-ironic laborum you probably haven't heard of them drinking vinegar. Occaecat labore Odd Future McSweeney's, eiusmod ea pop-up single-origin coffee mlkshk in ad beard Tonx ullamco. Gentrify salvia gastropub, ut pickled Odd Future Blue Bottle swag. Banksy excepteur enim meh, cred qui High Life dolor retro cardigan organic.</p>
-
-                              <p>Excepteur magna VHS, whatever consequat wayfarers pariatur twee hoodie Neutra YOLO locavore craft beer keffiyeh. Four loko bicycle rights literally, sartorial VHS post-ironic YOLO forage voluptate est Cosby sweater. Try-hard normcore pork belly consequat freegan laboris, chillwave id dolore Pinterest eiusmod mixtape biodiesel pop-up. Small batch flannel shabby chic pariatur fixie. Next level Williamsburg locavore, raw denim leggings Cosby sweater chambray bitters Portland ut photo booth chia sriracha qui sustainable. Sed polaroid disrupt, Neutra deep v Vice fixie. Food truck Thundercats before they sold out DIY qui quinoa.</p>
-
-                            </div>
-                          </div>
-                        </div>
-
                       </div>
+                      <div class="col-lg-4">
+                        <img src="/app/img/trainings-3.jpg" alt="Training number 3" />
+                        <h4>Post-ironic PBR pug kale chips fap</h4>
+                        <p>Chillwave retro Brooklyn enim Tumblr, voluptate drinking vinegar fanny pack 90's disrupt Schlitz assumenda pour-over sunt hashtag. McSweeney's qui occaecat Odd Future Etsy. Minim dreamcatcher accusa- mus Helvetica, banjo locavore raw denim whatever esse twee readymade.</p>
+                        <div class="push20"></div>
+                        <div class="button">
+                          <div class="link">
+                            <a href="#">Download &#187;</a>
+                          </div>
+                        </div>
+                      </div>
+
+
                     </div>
                   </div>
-                </div><!--/row--></div>
+                </div>
+
+                <!-- Relevant Publications -->
+                <div id="relevant-publications" class="col-9 col-lg-9 tab-pane">
+                  <!-- TITLE ARTICLE  -->
+                  <div class="col-4 col-lg-4">
+                    <h2>Relevant publications</h2>
+                    <img src="/app/img/resources-6.jpg" alt="Relevant Publications">
+                    <div class="push20"></div>
+                    <p>Hella Neutra dreamcatcher, DIY pour-over irony chia pug. Banh mi laboris beard tempor. Kale chips next level synth, single-origin coffee umami adipisicing ut small batch hashtag aliqua twee craft beer. Raw denim craft beer keytar freegan, American Apparel sapiente consequat pug minim voluptate irure quinoa shabby chic eiusmod.</p>
+                  </div>
+
+                  <!-- ARTICLE  -->
+                  <div class="col-8 col-lg-8">
+                    <div class="article">
+                      <h4>Biodiesel commodo gentrify, chillwave</h4>
+
+                      <p> Placeat hella Neutra, et officia assumenda pickled hashtag. Cillum cupidatat odio Intelligentsia. Distillery nihil assumenda readymade, Pinterest incididunt adipisicing cillum kogi roof party tote bag aliqua actually eu cupidatat. Cardigan banjo et, chia enim Williamsburg cupidatat. Esse aliqua non meggings pour-over fanny pack. Chia eu tote bag, Odd Future Pinterest farm-to-table gentrify trust fund minim viral sartorial do jean shorts. Biodiesel commodo gentrify, chillwave viral bespoke anim PBR&B put a bird on it kogi organic meggings vegan dolore irony.</p>
+
+                      <h4>Truffaut nostrud master cleanse flexitarian non placeat</h4>
+
+                      <p>Sint vinyl before they sold out assumenda locavore mixtape, magna veniam ad ugh ullamco. Lomo Brooklyn ethnic salvia, ugh odio cliche Tonx Pinterest seitan Echo Park. Organic Helvetica adipisicing, wolf id paleo try-hard gastropub fugiat. Bitters pork belly commodo, Truffaut esse put a bird on it cred Tonx keffiyeh veniam. Wayfarers do id letterpress, roof party gentrify deserunt you probably haven't heard of them. Selfies flannel stumptown gentrify laboris, cillum ad fingerstache next level typewriter vero tempor kogi. Cardigan next level four loko quis biodiesel kale chips, Carles hashtag consequat ullamco narwhal Godard minim VHS twee.</p>
+
+                      <p>Assumenda ex minim, meggings adipisicing XOXO ea veniam farm-to-table vegan hella try-hard quis gentrify single-origin coffee. Actually deep v anim authentic, trust fund est 3 wolf moon freegan try-hard Thundercats semiotics mumblecore next level Schlitz. Cillum plaid ex, Truffaut nostrud master cleanse flexitarian non placeat authentic consequat butcher deserunt cornhole irony. Tumblr fashion axe Truffaut PBR 8-bit, craft beer qui XOXO disrupt bicycle rights VHS nostrud 90's. Ugh veniam gastropub, DIY voluptate cray PBR&B skateboard church-key bitters shabby chic Vice synth chia. Kogi brunch sint narwhal voluptate magna. Schlitz voluptate tattooed ex Wes Anderson.</p>
+
+                      <h4>Pinterest eiusmod mixtape biodiesel pop-up</h4>
+
+                      <p>TCillum kogi authentic narwhal aliqua. Normcore blog irony readymade, cred adipisicing selfies. Mumblecore Echo Park accusamus tousled, est Vice twee flannel master cleanse retro four loko. Nihil post-ironic laborum you probably haven't heard of them drinking vinegar. Occaecat labore Odd Future McSweeney's, eiusmod ea pop-up single-origin coffee mlkshk in ad beard Tonx ullamco. Gentrify salvia gastropub, ut pickled Odd Future Blue Bottle swag. Banksy excepteur enim meh, cred qui High Life dolor retro cardigan organic.</p>
+
+                      <p>Excepteur magna VHS, whatever consequat wayfarers pariatur twee hoodie Neutra YOLO locavore craft beer keffiyeh. Four loko bicycle rights literally, sartorial VHS post-ironic YOLO forage voluptate est Cosby sweater. Try-hard normcore pork belly consequat freegan laboris, chillwave id dolore Pinterest eiusmod mixtape biodiesel pop-up. Small batch flannel shabby chic pariatur fixie. Next level Williamsburg locavore, raw denim leggings Cosby sweater chambray bitters Portland ut photo booth chia sriracha qui sustainable. Sed polaroid disrupt, Neutra deep v Vice fixie. Food truck Thundercats before they sold out DIY qui quinoa.</p>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div><!--/row--></div>
 

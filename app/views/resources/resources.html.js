@@ -2,6 +2,6 @@
 
 define(['app'], function(app) {
 
-  app.controller('ResourcesCtrl', function() {});
+  app.controller('ResourcesCtrl', ['$http', '$scope', function($http, $scope) {}]);
 
 });
