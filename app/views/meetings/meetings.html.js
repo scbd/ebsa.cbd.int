@@ -27,9 +27,8 @@ define(['app', '../../services/meetingService.js', 'underscore'], function(app, 
       Meetings.getUpcoming(function(dataSet) {
         $scope.meetingSet = {};
         // sorts meetings by date in descending order, localizes the dates, and groups the meeting by month
-        $scope.meetingSet.meetings = _.groupBy(normalizeDates(sortMeetingsByDate(dataSet.meetings).reverse()), 'month');
+        $scope.meetingSet.meetings = _.groupBy(normalizeDates(sortMeetingsByDate(dataSet.meetings)), 'month');
         $scope.meetingSet.count = dataSet.count;
-        console.log($scope.meetingSet.meetings);
       });
 
       var date = new Date();
