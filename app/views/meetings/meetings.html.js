@@ -30,9 +30,13 @@ define(['app', '../../services/meetingService.js', 'underscore'], function(app, 
         $scope.meetingSet = {};
         // sorts meetings by date in descending order, localizes the dates, and groups the meeting by month
         var chronoSorted = sortMeetingsByDate(dataSet.meetings);
-        var grouped = _.groupBy(chronoSorted, 'startMonth');
-        console.log(grouped);
-        $scope.meetingSet.meetings = grouped;//_.groupBy(normalizeDates(chronoSorted), 'year');
+        var groupedByYear = _.groupBy(chronoSorted, 'startYear');
+        console.log(groupedByYear);
+        var groupedByMonthAndYear = {};
+        angular.forEach(groupedByYear, function(meetings, year) {
+          groupedByMonthAndYear[year] = _.groupBy(meetings, 'startMonth');
+        });
+        $scope.meetingSet.meetings = groupedByMonthAndYear;//_.groupBy(normalizeDates(chronoSorted), 'year');
         $scope.meetingSet.count = dataSet.count;
         console.log($scope.meetingSet.meetings);
       });

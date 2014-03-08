@@ -49,7 +49,6 @@ define(['app'], function(app) {
 
         $http.get(baseUrl, { params: {q: query} })
           .then(function(results) {
-            console.log(results.data);
             cb(normalizeMeetings(results.data.response));
           });
       };
