@@ -16,14 +16,16 @@ define(['app'], function(app) {
           var endDate = new Date(meeting.endDate_dt);
 
           var m = {};
-          m.country = meeting.locationCountry_s;
-          m.city = meeting.locationCity_t;
-          m.title = meeting.title_t;
+          m.country = meeting.eventCountry_EN_t;
+          m.city = meeting.eventCity_EN_t;
+          m.title = meeting.title_s;
           m.startDate = startDate;
           m.endDate = endDate;
           m.documentsUrl = meeting.symbol_s;
-          m.startDay = startDate.getDay();
+          m.startDay = startDate.getDate();
+          m.endDay = endDate.getDate();
 
+          console.log(m);
           processed.meetings.push(m);
         });
 

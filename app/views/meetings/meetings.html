@@ -66,20 +66,20 @@
                   <th>Event</th>
                 </tr>
 
-
                 <tr class="year">
                   <td colspan="2"><p class="blue4">{{dateInfo.year}}</p></td>
                 </tr>
-                <tr class="month">
-                  <td colspan="2"><p class="important">{{dateInfo.month}}</p></td>
+
+                <tr class="month" ng-repeat-start="(month, meetings) in meetingSet.meetings">
+                  <td colspan="2"><p class="important">{{month}}</p></td>
                 </tr>
 
-                <tr class="event">
+                <tr class="event" ng-repeat-end>
                   <td colspan="2">
                     <table>
-                      <tr ng-repeat="meeting in meetingSet.meetings">
+                      <tr ng-repeat="meeting in meetings">
                         <td>
-                          <p>{{meeting.startDate}} - {{meeting.endDate}} March 2014<br />{{meeting.city}}, {{meeting.country}}</p>
+                          <p>{{meeting.startDay}} - {{meeting.endDay}} {{meeting.month}} {{meeting.year}}<br />{{meeting.city}}, {{meeting.country}}</p>
                           <td><h4>{{meeting.title}}</h4></td>
                           <td>
                             <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>
@@ -89,6 +89,8 @@
                     </table>
                   </td>
                 </tr>
+
+
               </table>
             </div>
           </div>
