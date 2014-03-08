@@ -11,14 +11,16 @@ define(['app', '../../services/meetingService.js', 'underscore'], function(app, 
         });
       }
 
-      function getLocalizedMonth(index) {
+      $scope.getLocalizedMonth = function getLocalizedMonth(index) {
         return $locale.DATETIME_FORMATS.MONTH[index];
-      }
+      };
 
       function normalizeDates(meetings) {
-        meetings.forEach(function(meeting) {
-          meeting.month = getLocalizedMonth(meeting.startDate.getMonth());
-          meeting.year = meeting.startDate.getFullYear();
+        angular.forEach(meetings, function(month, meetings) {
+          angular.forEach(meetings, function(meeting) {
+            meeting.startMonth = $scope.getLocalizedMonth(meeting.startMonth);
+            meeting.year = meeting.getFullYear();
+          });
         });
 
         return meetings;
@@ -27,8 +29,12 @@ define(['app', '../../services/meetingService.js', 'underscore'], function(app, 
       Meetings.getUpcoming(function(dataSet) {
         $scope.meetingSet = {};
         // sorts meetings by date in descending order, localizes the dates, and groups the meeting by month
-        $scope.meetingSet.meetings = _.groupBy(normalizeDates(sortMeetingsByDate(dataSet.meetings)), 'month');
+        var chronoSorted = sortMeetingsByDate(dataSet.meetings);
+        var grouped = _.groupBy(chronoSorted, 'startMonth');
+        console.log(grouped);
+        $scope.meetingSet.meetings = grouped;//_.groupBy(normalizeDates(chronoSorted), 'year');
         $scope.meetingSet.count = dataSet.count;
+        console.log($scope.meetingSet.meetings);
       });
 
       var date = new Date();

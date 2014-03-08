@@ -71,7 +71,7 @@
                 </tr>
 
                 <tr class="month" ng-repeat-start="(month, meetings) in meetingSet.meetings">
-                  <td colspan="2"><p class="important">{{month}}</p></td>
+                  <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
                 </tr>
 
                 <tr class="event" ng-repeat-end>
@@ -79,7 +79,7 @@
                     <table>
                       <tr ng-repeat="meeting in meetings">
                         <td>
-                          <p>{{meeting.startDay}} - {{meeting.endDay}} {{meeting.month}} {{meeting.year}}<br />{{meeting.city}}, {{meeting.country}}</p>
+                          <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>
                           <td><h4>{{meeting.title}}</h4></td>
                           <td>
                             <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>

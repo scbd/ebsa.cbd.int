@@ -22,11 +22,14 @@ define(['app'], function(app) {
             startDate: startDate,
             endDate: endDate,
             documentsUrl: meeting.symbol_s,
+            startMonth: startDate.getMonth(),
+            endMonth: endDate.getMonth(),
             startDay: startDate.getDate(),
-            endDay: endDate.getDate()
+            endDay: endDate.getDate(),
+            startYear: startDate.getFullYear(),
+            endYear: endDate.getFullYear()
           };
 
-          console.log(m);
           processed.meetings.push(m);
         });
 
