@@ -61,11 +61,16 @@
                   <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
                 </tr>
 
+
                 <tr class="event" ng-repeat-end>
                   <td colspan="2">
+                    <table ng-show="!meetings.length">
+                      <tr>
+                        <td>No meetings...</td>
+                      </tr>
+                    </table>
                     <table>
-                      <tr ng-show="meetings.length">No Meetings...</tr>
-                      <tr ng-repeat="meeting in meetings | MeetingFilter:selectedCountry.countryCode">
+                      <tr ng-repeat="meeting in meetings | meetingFilter:selectedCountry.countryCode">
                         <td>
                           <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>
                           <td><h4>{{meeting.title}}</h4></td>

@@ -1,5 +1,5 @@
 define(['app'], function(app) {
-  return app.filter('MeetingFilter', function() {
+  return app.filter('meetingFilter', function() {
 
     return function(meetings, selector) {
       if (selector === 'All') {

@@ -1,5 +1,5 @@
 define(['app'], function(app) {
-  return app.factory('Meetings', ['$http', '$locale', 'growl', function($http, $locale, growl) {
+  return app.factory('meetings', ['$http', '$locale', 'growl', function($http, $locale, growl) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',

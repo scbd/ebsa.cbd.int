@@ -1,5 +1,5 @@
 define(['app'], function(app) {
-  return app.factory('Lists', ['$http', '$locale',
+  return app.factory('lists', ['$http', '$locale',
     function($http, $locale) {
       var lists = {};
 

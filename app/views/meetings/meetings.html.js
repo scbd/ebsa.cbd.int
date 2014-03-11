@@ -6,9 +6,9 @@ define(['app',
         '../../filters/meetingsFilter.js',
         'underscore'
   ],
-  function(app, Meetings, Lists, CountryFilter, _) {
+  function(app, Meetings, Lists, meetingsFilter, _) {
 
-  app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'Meetings', 'Lists',
+  app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists',
     function($http, $scope, $locale, Meetings, Lists) {
 
       // load country list.
