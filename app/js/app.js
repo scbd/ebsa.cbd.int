@@ -1,8 +1,8 @@
 'use strict';
 
-define([ /*'angular', 'angular-route', */], function() {
+define([], function() {
 
-	var app = require('angular').module('app', ['ngRoute', 'ng-breadcrumbs', 'angular-growl']);
+	var app = require('angular').module('app', ['ngRoute', 'ng-breadcrumbs', 'angular-growl', 'directives']);
 
 	app.config(['$controllerProvider', '$compileProvider', '$provide', '$filterProvider', 'growlProvider',
 		function($controllerProvider, $compileProvider, $provide, $filterProvider, growlProvider) {

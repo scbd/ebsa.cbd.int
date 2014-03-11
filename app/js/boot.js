@@ -14,6 +14,7 @@ require.config({
         'bootstrap'       : '../libs/bootstrap-sass/dist/js/bootstrap',
         'underscore'      : '../libs/underscore/underscore',
         'angular-growl'   : '../libs/angular-growl/build/angular-growl',
+        // 'directives'      : '../directives'
     },
     shim: {
         'angular'        : { 'deps': ['jquery'], 'exports': 'angular' },
@@ -25,7 +26,8 @@ require.config({
     }
 });
 
-require(['angular', 'angular-route', 'bootstrap', 'ng-breadcrumbs', 'domReady', 'angular-growl'], function (ng) {
+require(['angular', 'angular-route', 'bootstrap', 'ng-breadcrumbs', 'domReady', 'angular-growl'],
+ function (ng) {
 
     // NOTE: place operations that need to initialize prior to app start here using the `run` function on the top-level module
 

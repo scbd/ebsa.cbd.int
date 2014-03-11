@@ -47,15 +47,17 @@
             <div class="article">
               <!-- Table -->
 
-              <table class="table meeting-table">
+              <meetingsCalendar format="long" meetings="meetingSet.meetings" selectedCountry="selectedCountry"></meetingsCalendar>
+
+              <!-- <table class="table meeting-table">
                 <tr>
                   <th>Date and Venue</th>
                   <th>Event</th>
                 </tr>
 
-                <!-- <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
+                <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
                   <td colspan="2"><p class="blue4">{{dateInfo.year}}</p></td>
-                </tr> -->
+                </tr>
 
                 <tr class="month" ng-repeat-start="(month, meetings) in meetingSet.meetings">
                   <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
@@ -84,7 +86,7 @@
                 </tr>
 
 
-              </table>
+              </table> -->
             </div>
           </div>
         </div>
