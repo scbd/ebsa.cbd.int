@@ -2,8 +2,8 @@
   "directory": "app/libs",
   "json": "bower.json",
   "storage": {
-    "packages": ".bower-cache",
-    "registry": ".bower-registry"
+    "packages": ".bower-work/cache",
+    "registry": ".bower-work/registry"
   },
-  "tmp": ".bower-tmp"
+  "tmp": ".bower-work/tmp"
 }

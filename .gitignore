@@ -18,6 +18,4 @@ app_build
 
 .sass-cache
 
-.bower-cache
-.bower-registry
-.bower-tmp
+.bower-work
