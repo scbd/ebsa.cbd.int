@@ -45,6 +45,7 @@ define(['app', '../../services/meetingService.js', 'underscore'], function(app, 
       $scope.dateInfo = {
         year: date.getFullYear()
       };
+      console.log($scope.dateInfo);
     }
   ]);
 
