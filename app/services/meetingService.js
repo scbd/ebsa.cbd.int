@@ -27,7 +27,8 @@ define(['app'], function(app) {
             startDay: startDate.getDate(),
             endDay: endDate.getDate(),
             startYear: startDate.getFullYear(),
-            endYear: endDate.getFullYear()
+            endYear: endDate.getFullYear(),
+            countryCode: meeting.eventCountry_s && meeting.eventCountry_s.toUpperCase()
           };
 
           processed.meetings.push(m);

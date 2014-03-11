@@ -29,28 +29,15 @@
             <h4>Country</h4>
             <div class="dropdown">
               <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
-                <p>Any Country</p>
+                <p>{{selectedCountry.name}}</p>
                 <span class="pull-right caret"></span>
               </button>
+
               <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Afghanistan</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-4" href="#">Albania</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-5" href="#">Algeria</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-6" href="#">Andorra</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-7" href="#">Angola</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-8" href="#">Antigua and Barbuda</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-9" href="#">Argentina</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-10" href="#">Armenia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-11" href="#">Australia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-12" href="#">Austria</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-13" href="#">Azerbaijan</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-14" href="#">Bahamas</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-15" href="#">Bahrain</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-16" href="#">Bangladesh</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-17" href="#">Barbados</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-18" href="#">Belarus</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-19" href="#">Belgium</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-20" href="#">Belize</a></li>
+                <li ng-repeat="country in memberCountries" role="presentation">
+                  <a ng-click="setSelectedCountry(country.countryCode)" role="menuitem" tabindex="-{{$index}}" href="#">{{country.name}}</a>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -66,18 +53,18 @@
                   <th>Event</th>
                 </tr>
 
-                <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
+                <!-- <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
                   <td colspan="2"><p class="blue4">{{dateInfo.year}}</p></td>
-                </tr>
+                </tr> -->
 
-                <tr class="month" ng-repeat-start="(month, meetings) in months">
+                <tr class="month" ng-repeat-start="(month, meetings) in meetingSet.meetings">
                   <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
                 </tr>
 
                 <tr class="event" ng-repeat-end>
                   <td colspan="2">
                     <table>
-                      <tr ng-repeat="meeting in meetings">
+                      <tr ng-repeat="meeting in meetings | MeetingFilter:selectedCountry.countryCode">
                         <td>
                           <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>
                           <td><h4>{{meeting.title}}</h4></td>
