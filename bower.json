@@ -13,5 +13,8 @@
     "ng-breadcrumbs": "latest",
     "bootstrap-sass": "latest",
     "angular-i18n": "~1.2.14"
+  },
+  "resolutions": {
+    "angular": "~1.2.14"
   }
 }
