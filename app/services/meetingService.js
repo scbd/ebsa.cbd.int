@@ -1,5 +1,5 @@
 define(['app'], function(app) {
-  return app.factory('Meetings', ['$http', '$locale', function($http, $locale) {
+  return app.factory('Meetings', ['$http', '$locale', 'growl', function($http, $locale, growl) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',
@@ -51,6 +51,11 @@ define(['app'], function(app) {
         $http.get(baseUrl, { params: {q: query} })
           .then(function(results) {
             cb(normalizeMeetings(results.data.response));
+          })
+          .catch(function(results) {
+            if (results.status !== 200) {
+              growl.addErrorMessage('Failed to fetch meetings! Please refresh the page.');
+            }
           });
       };
 

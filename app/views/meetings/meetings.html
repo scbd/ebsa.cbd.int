@@ -64,6 +64,7 @@
                 <tr class="event" ng-repeat-end>
                   <td colspan="2">
                     <table>
+                      <tr ng-show="meetings.length">No Meetings...</tr>
                       <tr ng-repeat="meeting in meetings | MeetingFilter:selectedCountry.countryCode">
                         <td>
                           <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>

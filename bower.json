@@ -12,7 +12,8 @@
     "jquery": "~2.0.3",
     "ng-breadcrumbs": "latest",
     "bootstrap-sass": "latest",
-    "angular-i18n": "~1.2.14"
+    "angular-i18n": "~1.2.14",
+    "angular-growl": "~0.4.0"
   },
   "resolutions": {
     "angular": "~1.2.14"
