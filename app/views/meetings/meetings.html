@@ -47,46 +47,9 @@
             <div class="article">
               <!-- Table -->
 
-              <div meetings-Calendar format="long" meetings="meetingSet.meetings" selectedCountry="selectedCountry"></div>
+              <!-- generate the meetings calendar -->
+              <div meetings-Calendar format="long" country="selectedCountry"></div>
 
-              <!-- <table class="table meeting-table">
-                <tr>
-                  <th>Date and Venue</th>
-                  <th>Event</th>
-                </tr>
-
-                <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
-                  <td colspan="2"><p class="blue4">{{dateInfo.year}}</p></td>
-                </tr>
-
-                <tr class="month" ng-repeat-start="(month, meetings) in meetingSet.meetings">
-                  <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
-                </tr>
-
-
-                <tr class="event" ng-repeat-end>
-                  <td colspan="2">
-                    <table ng-show="!meetings.length">
-                      <tr>
-                        <td>No meetings...</td>
-                      </tr>
-                    </table>
-                    <table>
-                      <tr ng-repeat="meeting in meetings | meetingFilter:selectedCountry.countryCode">
-                        <td>
-                          <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>
-                          <td><h4>{{meeting.title}}</h4></td>
-                          <td>
-                            <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>
-                          </td>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-
-
-              </table> -->
             </div>
           </div>
         </div>
