@@ -13,8 +13,7 @@ require.config({
         'jquery'          : '../libs/jquery/jquery',
         'bootstrap'       : '../libs/bootstrap-sass/dist/js/bootstrap',
         'underscore'      : '../libs/underscore/underscore',
-        'angular-growl'   : '../libs/angular-growl/build/angular-growl',
-        // 'directives'      : '../directives'
+        'angular-growl'   : '../libs/angular-growl/build/angular-growl'
     },
     shim: {
         'angular'        : { 'deps': ['jquery'], 'exports': 'angular' },

@@ -1,9 +1,8 @@
-define(['app'], function(app) {
-  app.module('directives.meetingsCalendar', []);
+define(['angular'], function(ng) {
+  var directives = ng.module('app.directives', []);
 
-  app.directive('meetingsCalendar', ['meetings',
+  return directives.directive('meetingsCalendar', ['meetings',
     function(meetings) {
-      console.log('exec');
 
       return {
         restrict: 'EA',
@@ -16,7 +15,7 @@ define(['app'], function(app) {
           selectedYear: '='
         },
         link: function(scope, element, attrs) {
-          console.log(scope);
+          // meetings.getUpcoming
         }
       };
     }

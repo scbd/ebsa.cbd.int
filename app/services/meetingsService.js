@@ -1,5 +1,6 @@
-define(['app'], function(app) {
-  return app.factory('meetings', ['$http', '$locale', 'growl', function($http, $locale, growl) {
+define(['angular'], function(ng) {
+  var services = ng.module('app.services', []);
+  return services.factory('meetings', ['$http', '$locale', 'growl', function($http, $locale, growl) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',

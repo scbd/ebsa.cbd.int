@@ -1,12 +1,10 @@
 'use strict';
 
 define(['app',
-        '../../services/meetingService.js',
         '../../services/listService.js',
-        '../../filters/meetingsFilter.js',
         'underscore'
   ],
-  function(app, Meetings, Lists, meetingsFilter, _) {
+  function(app, Lists, _) {
 
   app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists',
     function($http, $scope, $locale, Meetings, Lists) {

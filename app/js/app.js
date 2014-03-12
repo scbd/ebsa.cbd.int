@@ -1,8 +1,14 @@
 'use strict';
 
-define([], function() {
+define(['/app/directives/meetingsCalendar.js',
+				'/app/services/meetingsService.js',
+				'/app/filters/meetingsFilter.js',
+				'/app/services/listService.js'
+			 ],
+	function() {
 
-	var app = require('angular').module('app', ['ngRoute', 'ng-breadcrumbs', 'angular-growl', 'directives']);
+	var app = require('angular').module('app',
+		['ngRoute', 'ng-breadcrumbs', 'angular-growl', 'app.directives', 'app.services', 'app.filters']);
 
 	app.config(['$controllerProvider', '$compileProvider', '$provide', '$filterProvider', 'growlProvider',
 		function($controllerProvider, $compileProvider, $provide, $filterProvider, growlProvider) {
