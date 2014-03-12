@@ -1,8 +1,7 @@
 define([
-    '/app/directives/meetingsCalendar.js',
-    '/app/services/meetingsService.js',
-    '/app/services/listService.js',
-    '/app/filters/meetingsFilter.js'
+    '/app/directives/index.js',
+    '/app/services/index.js',
+    '/app/filters/index.js'
   ],
   function() {
     'use strict';

@@ -1,6 +1,5 @@
-define(['angular'], function(ng) {
-  var services = ng.module('app.services', []);
-  return services.factory('lists', ['$http', '$locale',
+define(['./module.js'], function(module) {
+  return module.factory('lists', ['$http', '$locale',
     function($http, $locale) {
       var lists = {};
 

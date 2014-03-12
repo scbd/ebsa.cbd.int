@@ -1,7 +1,5 @@
-define(['angular'], function(ng) {
-  var filters = ng.module('app.filters', []);
-
-  return filters.filter('meetingFilter', function() {
+define(['./module.js'], function(module) {
+  return module.filter('meetingFilter', function() {
 
     return function(meetings, selector) {
       if (selector === 'All') {

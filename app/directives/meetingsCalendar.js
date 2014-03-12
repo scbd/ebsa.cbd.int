@@ -1,7 +1,5 @@
-define(['angular'], function(ng) {
-  var directives = ng.module('app.directives', []);
-
-  return directives.directive('meetingsCalendar', ['meetings',
+define(['./module.js'], function(module) {
+  return module.directive('meetingsCalendar', ['meetings',
     function(meetings) {
 
       return {
