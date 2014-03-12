@@ -1,5 +1,6 @@
-'use strict';
+/*jshint node:true*/
 
+'use strict';
 window.name = 'NG_DEFER_BOOTSTRAP!';
 
 require.config({

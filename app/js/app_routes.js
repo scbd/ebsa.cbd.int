@@ -1,6 +1,5 @@
-'use strict';
-
 define(['app'], function(app) {
+  'use strict';
 
   app.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {

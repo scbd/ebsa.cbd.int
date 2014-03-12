@@ -1,6 +1,5 @@
-'use strict';
-
 define(['app', './navbar', './breadcrumbs'], function(app) {
+  'use strict';
 
   app.controller('HeaderCtrl', ['$rootScope', '$location', '$scope', function($rootScope, $location, $scope) {
     function computeHeader() {
