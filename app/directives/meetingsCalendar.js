@@ -15,7 +15,6 @@ define(['angular'], function(ng) {
           selectedYear: '='
         },
         link: function(scope, element, attrs) {
-          // meetings.getUpcoming
         }
       };
     }
