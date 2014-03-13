@@ -9310,3 +9310,11 @@ footer .sitemap-ul li:first-child {
 .no-margin {
   margin: 0;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003889}}
+.pagination-totals {
+  margin-left: 5px;
+  margin-bottom: 0;
+  font-weight: bold;
+  padding: 5.5px;
+}

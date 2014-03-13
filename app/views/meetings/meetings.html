@@ -10,8 +10,12 @@
           <h4>Meetings</h4>
 
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#upcoming" data-toggle="tab">Upcoming meetings</a></li>
-            <li><a href="#previous" data-toggle="tab">Previous meetings</a></li>
+            <li class="active">
+              <a href="#upcoming" data-toggle="tab" ng-click="setTimeframe('upcoming')">Upcoming meetings</a>
+            </li>
+            <li>
+              <a href="#previous" data-toggle="tab" ng-click="setTimeframe('previous')">Previous meetings</a>
+            </li>
           </ul>
 
         </div>
@@ -22,9 +26,24 @@
         <div id="upcoming" class="col-9 col-lg-9 tab-pane active">
           <!-- TITLE ARTICLE  -->
           <div class="col-4 col-lg-4 wraptitle">
-            <h2>Upcoming meetings</h2>
+
+            <h2 ng-show="timeframe == 'upcoming'">Upcoming meetings</h2>
+            <h2 ng-show="timeframe == 'previous'">Previous meetings</h2>
+
             <div class="push20"></div>
             <p>Twee fashion axe hoodie, nulla deep v sunt asymmetrical distillery street art dreamcatcher ugh vero sriracha readymade. Gentrify meg- gings aute Williamsburg pariatur. Irure letter- press vero fanny pack quis keytar whatever, biodiesel nesciunt.</p>
+            <h4 ng-show="timeframe === 'previous'">Year</h4>
+            <div class="dropdown" ng-show="timeframe === 'previous'">
+              <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
+                <p>Any Year</p>
+                <span class="pull-right caret"></span>
+              </button>
+              <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
+                <li ng-repeat="year in yearList" role="presentation">
+                  <a role="menuitem" tabindex="-3" href="#">{{year}}</a>
+                </li>
+              </ul>
+            </div>
             <div class="push20"></div>
             <h4>Country</h4>
             <div class="dropdown">
@@ -41,188 +60,35 @@
               </ul>
             </div>
           </div>
+          <div class="push20"></div>
 
           <!-- ARTICLE  -->
           <div class="col-8 col-lg-8 wraparticle">
             <div class="article">
               <!-- Table -->
+              <pre class="pull-right pagination-totals">{{totalPages}} Pages</pre>
               <pagination
-                class="pull-right no-margin"
-                on-select-page="setPage(page)"
-                page="currentPage"
-                total-items="totalMeetings"
-                items-per-page="perPage"
-                boundry-links="true">
-              </pagination>
+              class="pull-right no-margin"
+              on-select-page="setPage(page)"
+              page="currentPage"
+              total-items="totalMeetings"
+              items-per-page="perPage"
+              boundary-links="true"
+              max-size="3"
+              rotate="false"
+              num-pages="totalPages">
+            </pagination>
 
-              <!-- generate the meetings calendar -->
-              <div meetings-Calendar format="long" country="selectedCountry" meeting-data="meetings"></div>
+            <!-- generate the meetings calendar -->
+            <div meetings-calendar format="long" country="selectedCountry" meeting-data="meetings"></div>
 
-            </div>
           </div>
         </div>
+      </div>
 
-        <!--  Previous Meetings -->
-        <div id="previous" class="col-9 col-lg-9 tab-pane">
-          <!-- TITLE ARTICLE  -->
-          <div class="col-4 col-lg-4 wraptitle">
-            <h2>Previous meetings</h2>
-            <div class="push20"></div>
-            <p>Twee fashion axe hoodie, nulla deep v sunt asymmetrical distillery street art dreamcatcher ugh vero sriracha readymade. Gentrify meg- gings aute Williamsburg pariatur. Irure letter- press vero fanny pack quis keytar whatever, biodiesel nesciunt.</p>
-            <div class="push20"></div>
-            <h4>Year</h4>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
-                <p>Any Year</p>
-                <span class="pull-right caret"></span>
-              </button>
-              <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li ng-repeat="year in yearList" role="presentation">
-                  <a role="menuitem" tabindex="-3" href="#">{{year}}</a>
-                </li>
-              </ul>
-            </div>
+      <!--  Previous Meetings -->
+      <!-- <div id="previous" class="col-9 col-lg-9 tab-pane"></div> -->
 
-            <div class="push20"></div>
-
-            <h4>Country</h4>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
-                <p>Any Country</p>
-                <span class="pull-right caret"></span>
-              </button>
-              <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Afghanistan</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-4" href="#">Albania</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-5" href="#">Algeria</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-6" href="#">Andorra</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-7" href="#">Angola</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-8" href="#">Antigua and Barbuda</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-9" href="#">Argentina</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-10" href="#">Armenia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-11" href="#">Australia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-12" href="#">Austria</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-13" href="#">Azerbaijan</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-14" href="#">Bahamas</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-15" href="#">Bahrain</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-16" href="#">Bangladesh</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-17" href="#">Barbados</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-18" href="#">Belarus</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-19" href="#">Belgium</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-20" href="#">Belize</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- ARTICLE  -->
-          <div class="col-8 col-lg-8 wraparticle">
-            <div class="article">
-              <table class="table meeting-table">
-                <tr>
-                  <th>Date and Venue</th>
-                  <th>Event</th>
-                </tr>
-                <tr class="year">
-                  <td colspan="2"><p class="blue4">2013</p></td>
-                </tr>
-                <tr class="first-month">
-                  <td colspan="2"><p class="important">April</p></td>
-                </tr>
-                <tr class="event">
-                  <td colspan="2">
-                    <table>
-                      <tr>
-                        <td><p>8 July - 12 April 2013<br />Swakopmund, Namibia</p></td>
-                        <td><h4>South-Eastern Atlantic Regional Workshop to Facilitate the Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=EBSA-SEA-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="month">
-                  <td colspan="2"><p class="important">March</p></td>
-                </tr>
-                <tr class="event">
-                  <td colspan="2">
-                    <table>
-                      <tr>
-                        <td><p>25 February - 1 March 2013<br />Moscow, Russian Federation</p></td>
-                        <td><h4>North Pacific Regional Workshop to Facilitate the Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=EBSA-NP-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="year">
-                  <td colspan="2"><p class="blue4">2012</p></td>
-                </tr>
-                <tr class="month">
-                  <td colspan="2"><p class="important">August</p></td>
-                </tr>
-                <tr class="event">
-                  <td colspan="2">
-                    <table>
-                      <tr>
-                        <td><p>30 July - 3 August 2012<br />Flic en Flac, Mauritius</p></td>
-                        <td><h4>Southern Indian Ocean Regional<br />Workshop to Facilitate the Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=EBSA-SIO-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><p>27 - 31 August 2012<br />Galapagos Islands, Ecuador</p></td>
-                        <td><h4>Eastern Tropical and Temperate Pacific Regional Workshop to Facilitate the Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=EBSA-ETTP-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="year">
-                  <td colspan="2"><p class="blue4">2011</p></td>
-                </tr>
-                <tr class="month">
-                  <td colspan="2"><p class="important">November</p></td>
-                </tr>
-                <tr class="event">
-                  <td colspan="2">
-                    <table>
-                      <tr>
-                        <td><p>22 - 25 November 2011<br />Nadji, Fiji</p></td>
-                        <td><h4>Western South Pacific Regional Workshop to Facilitate the Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=RWEBSA-WSPAC-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="month">
-                  <td colspan="2"><p class="important">March</p></td>
-                </tr>
-                <tr class="event">
-                  <td colspan="2">
-                    <table>
-                      <tr>
-                        <td><p>28 February - 2 March 2011<br />Recife, Brazil</p></td>
-                        <td><h4>Wider Caribbean and Western Mid-Atlantic Regional Workshop to Facilitate the  Description of EBSAs</h4></td>
-                        <td>
-                          <a href="http://www.cbd.int/doc/?meeting=RWEBSA-WCAR-01" target="_blank" class="pull-right">Documents »</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-      </div><!--/col12-->
-    </div><!--/row-->
-  </div><!--/.container--></div>
+    </div><!--/col12-->
+  </div><!--/row-->
+</div><!--/.container--></div>

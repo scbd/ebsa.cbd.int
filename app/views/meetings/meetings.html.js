@@ -17,32 +17,34 @@ define([
           name: 'All',
           countryCode: 'All'
         });
-        $scope.selectedCountry = $scope.memberCountries[0];
+        $scope.setSelectedCountry('All');
       });
 
       $scope.setSelectedCountry = function setSelectedCountry(countryCode) {
+        // $scope.setPage(1, {country: countryCode}); //proper solution
         var country = _.findWhere($scope.memberCountries, {'countryCode': countryCode});
         $scope.selectedCountry = country;
       };
 
       $scope.yearList = Lists.getYears();
 
-      $scope.setPage = function(page) {
+      $scope.setPage = function(page, query) {
         Meetings.getMeetingsPage(function(meetingSet) {
           $scope.totalMeetings = meetingSet.totalMeetings;
           $scope.currentPage = meetingSet.currentPage;
           $scope.perPage = meetingSet.perPage;
           $scope.meetings = meetingSet.meetings;
-        }, page, 'upcoming');
-
-        $scope.currentPage = page;
+        }, page, $scope.timeframe, query);
       }
 
-      var date = new Date();
-      $scope.dateInfo = {
-        year: date.getFullYear()
-      };
+      $scope.setTimeframe = function(timeframe) {
+        console.log(timeframe);
+        $scope.timeframe = timeframe;
+        $scope.setPage($scope.currentPage, timeframe);
+      }
 
+      // kick off the process
+      $scope.timeframe = 'upcoming';
       $scope.setPage(1);
     }
   ]);

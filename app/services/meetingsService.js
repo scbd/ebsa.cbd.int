@@ -6,8 +6,11 @@ define(['./module.js'], function(module) {
         meetings = {},
         perPage = 10,
         currentPage = 1,
+        sortField = 'startDate_dt',
+        dir = 'asc',
         queryUpcoming = '[NOW TO *]',
         queryPrevious = '[* TO NOW]';
+        querySort = [sortField, dir].join(' ');
 
       function normalizeMeetings(response) {
         var processed = {
@@ -58,7 +61,7 @@ define(['./module.js'], function(module) {
         var query = baseQuery + ' AND startDate_dt:' + timeframe;
         startItem = (pageNum - 1) * perPage;
 
-        $http.get(baseUrl, { params: {q: query, start: startItem } })
+        $http.get(baseUrl, { params: {q: query, start: startItem, sort: querySort } })
           .then(function(results) {
             cb(normalizeMeetings(results.data.response));
           })

@@ -1,37 +1,49 @@
-<table class="table meeting-table">
+<table class="table meeting-table" ng-repeat="(year, months) in meetings">
 
   <tr>
     <th>Date and Venue</th>
     <th>Event</th>
+    <th class="right">{{year}}</th>
   </tr>
 
-<!--   <tr class="year" ng-repeat-start="(year, months) in meetingSet.meetings">
-    <td colspan="2"><p class="blue4">{{dateInfo.year}}</p></td>
+  <!-- <tr class="year">
+    <td colspan="3">
+      <p class="blue4">{{year}}</p>
+    </td>
+  </tr> -->
+
+  <tr class="month" ng-repeat-start="(month, meetings) in months">
+    <td colspan="3">
+      <p class="important">{{getLocalizedMonth(month)}}</p>
+    </td>
   </tr>
--->
-<tr class="month" ng-repeat-start="(month, meetings) in meetings">
-  <td colspan="2"><p class="important">{{getLocalizedMonth(month)}}</p></td>
-</tr>
 
-
-<tr class="event" ng-repeat-end>
-  <td colspan="2">
-    <table ng-show="!meetings.length">
-      <tr>
-        <td>No meetings...</td>
-      </tr>
-    </table>
-    <table>
-      <tr ng-repeat="meeting in meetings | meetingFilter:selectedCountry.countryCode">
-        <td>
-          <p>{{meeting.startDay}} - {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}} {{meeting.startYear}}<br />{{meeting.city}}, {{meeting.country}}</p>
-          <td><h4>{{meeting.title}}</h4></td>
+  <tr class="event" ng-repeat-end>
+    <td colspan="3" ng-repeat-end>
+      <table ng-show="!meetings.length">
+        <tr>
+          <td>No meetings...</td>
+        </tr>
+      </table>
+      <table>
+        <tr ng-repeat="meeting in meetings | meetingFilter:selectedCountry.countryCode">
           <td>
-            <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right doc-url">Documents »</a>
+            <p>
+              {{meeting.startDay}} {{getLocalizedMonth(meeting.startMonth)}} -
+              {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}}<br />
+
+              {{meeting.city}}, {{meeting.country}} <br />
+
+              {{meeting.startYear}}
+            </p>
+            <td><h4>{{meeting.title}}</h4></td>
+            <td>
+              <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right doc-url">Documents »</a>
+            </td>
           </td>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
 </table>

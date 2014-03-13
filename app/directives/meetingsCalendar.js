@@ -34,14 +34,17 @@ define(['./module.js'], function(module) {
         //     5: [{meeting}]
         //   }
         // }
-        var chronoSorted = sortMeetingsByDate(meetings),
-          groupedByYear = _.groupBy(chronoSorted, 'startYear'),
+        // var chronoSorted = sortMeetingsByDate(meetings).reverse(),
+        var groupedByYear = _.groupBy(meetings, 'startYear'),
           groupedByMonthAndYear = {};
 
-        angular.forEach(groupedByYear, function(meetings, year) {});
-        groupedByMonthAndYear = _.groupBy(meetings, 'startMonth');
+        angular.forEach(groupedByYear, function(meetings, year) {
+          groupedByMonthAndYear[year] = _.groupBy(meetings, 'startMonth');
+        });
+        // groupedByMonthAndYear = _.groupBy(meetings, 'startMonth');
         meetings = groupedByMonthAndYear; //_.groupBy(normalizeDates(chronoSorted), 'year');
         // scope.meetingSet.count = count;
+        console.log(meetings);
         return meetings;
       }
 
