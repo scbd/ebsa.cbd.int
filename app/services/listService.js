@@ -1,4 +1,4 @@
-define(['./module.js'], function(module) {
+define(['./module.js', 'underscore'], function(module, _) {
   return module.factory('lists', ['$http', '$locale',
     function($http, $locale) {
       var lists = {};
@@ -9,6 +9,11 @@ define(['./module.js'], function(module) {
             cb(response.data);
           });
       };
+
+      lists.getYears = function() {
+        var end = (new Date).getFullYear() + 1, start = end - 10;
+        return _.range(start, end).reverse();
+      }
 
       return lists;
     }

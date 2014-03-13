@@ -23,43 +23,47 @@ define(['./module.js'], function(module) {
         return meetings;
       }
 
+      function processMeetings(meetings) {
+        if (!meetings) return meetings;
+        console.log('meetings: ', meetings);
+        // sorts meetings by date in descending order, localizes the dates, and groups the meeting by years
+        // and then subgroups by months.
+        // ex: {
+        //   2014: {
+        //     4: [{meeting}], // 4 is the ISO month index
+        //     5: [{meeting}]
+        //   }
+        // }
+        var chronoSorted = sortMeetingsByDate(meetings),
+          groupedByYear = _.groupBy(chronoSorted, 'startYear'),
+          groupedByMonthAndYear = {};
+
+        angular.forEach(groupedByYear, function(meetings, year) {});
+        groupedByMonthAndYear = _.groupBy(meetings, 'startMonth');
+        meetings = groupedByMonthAndYear; //_.groupBy(normalizeDates(chronoSorted), 'year');
+        // scope.meetingSet.count = count;
+        return meetings;
+      }
+
       return {
         restrict: 'EA',
         templateUrl: '/app/views/meetings/meetingsCalendar.html',
         replace: true,
         scope: {
           format: '@',
-          meetings: '=',
+          meetingData: '=',
           country: '=',
           selectedYear: '='
         },
         link: function(scope, element, attrs) {
-          meetings.getUpcoming(function(dataSet) {
-            scope.meetingSet = {};
+          scope.getLocalizedMonth = getLocalizedMonth;
 
-            scope.getLocalizedMonth = getLocalizedMonth;
+          scope.$watch('country', function(selectedCountry) {
+            scope.selectedCountry = selectedCountry;
+          });
 
-            scope.$watch('country', function(selectedCountry) {
-              scope.selectedCountry = selectedCountry;
-            });
-
-            // sorts meetings by date in descending order, localizes the dates, and groups the meeting by years
-            // and then subgroups by months.
-            // ex: {
-            //   2014: {
-            //     4: [{meeting}], // 4 is the ISO month index
-            //     5: [{meeting}]
-            //   }
-            // }
-            var chronoSorted = sortMeetingsByDate(dataSet.meetings),
-              groupedByYear = _.groupBy(chronoSorted, 'startYear'),
-              groupedByMonthAndYear = {};
-
-            angular.forEach(groupedByYear, function(meetings, year) {});
-            groupedByMonthAndYear = _.groupBy(dataSet.meetings, 'startMonth');
-            scope.meetingSet.meetings = groupedByMonthAndYear; //_.groupBy(normalizeDates(chronoSorted), 'year');
-            scope.meetingSet.count = dataSet.count;
-            console.log(scope.meetingSet.meetings);
+          scope.$watch('meetingData', function(meetings) {
+            scope.meetings = processMeetings(meetings);
           });
         }
       };

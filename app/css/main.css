@@ -8631,7 +8631,7 @@ TABLE */
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003421}}
-.table td:last-child a {
+.table td:last-child a.doc-url {
   color: #3C80A6;
 }
 
@@ -9299,4 +9299,14 @@ footer .sitemap-ul li:first-child {
   left: 50%;
   margin: 0 0 0 -25%;
   top: 10%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003883}}
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003885}}
+.no-margin {
+  margin: 0;
 }

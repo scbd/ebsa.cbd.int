@@ -46,9 +46,17 @@
           <div class="col-8 col-lg-8 wraparticle">
             <div class="article">
               <!-- Table -->
+              <pagination
+                class="pull-right no-margin"
+                on-select-page="setPage(page)"
+                page="currentPage"
+                total-items="totalMeetings"
+                items-per-page="perPage"
+                boundry-links="true">
+              </pagination>
 
               <!-- generate the meetings calendar -->
-              <div meetings-Calendar format="long" country="selectedCountry"></div>
+              <div meetings-Calendar format="long" country="selectedCountry" meeting-data="meetings"></div>
 
             </div>
           </div>
@@ -69,24 +77,9 @@
                 <span class="pull-right caret"></span>
               </button>
               <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li role="presentation"><a role="menuitem" tabindex="-3" href="#">2014</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-4" href="#">2013</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-5" href="#">2012</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-6" href="#">2011</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-7" href="#">2010</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-8" href="#">2009</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-9" href="#">2008</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-10" href="#">2007</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-11" href="#">2006</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-12" href="#">2005</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-13" href="#">2004</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-14" href="#">2003</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-15" href="#">2002</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-16" href="#">2001</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-17" href="#">2000</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-18" href="#">1999</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-19" href="#">1998</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-20" href="#">1997</a></li>
+                <li ng-repeat="year in yearList" role="presentation">
+                  <a role="menuitem" tabindex="-3" href="#">{{year}}</a>
+                </li>
               </ul>
             </div>
 

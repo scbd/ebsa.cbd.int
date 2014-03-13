@@ -3,13 +3,22 @@ define(['./module.js'], function(module) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',
-        meetings = {};
+        meetings = {},
+        perPage = 10,
+        currentPage = 1,
+        queryUpcoming = '[NOW TO *]',
+        queryPrevious = '[* TO NOW]';
 
       function normalizeMeetings(response) {
         var processed = {
           meetings: [],
-          count: response.numFound
+          totalMeetings: response.numFound,
+          currentPage: currentPage || 1,
+          totalPages: Math.ceil(response.numFound / perPage),
+          perPage: perPage
         };
+
+        // console.log(processed);
 
         response.docs.forEach(function(meeting) {
           var startDate = new Date(meeting.startDate_dt);
@@ -45,10 +54,11 @@ define(['./module.js'], function(module) {
           });
       };
 
-      meetings.getUpcoming = function(cb) {
-        var query = baseQuery + ' AND startDate_dt:[NOW TO *]';
+      function getMeetingsByTime(cb, timeframe, pageNum) {
+        var query = baseQuery + ' AND startDate_dt:' + timeframe;
+        startItem = (pageNum - 1) * perPage;
 
-        $http.get(baseUrl, { params: {q: query} })
+        $http.get(baseUrl, { params: {q: query, start: startItem } })
           .then(function(results) {
             cb(normalizeMeetings(results.data.response));
           })
@@ -59,8 +69,17 @@ define(['./module.js'], function(module) {
           });
       };
 
-      return meetings;
+      meetings.getMeetingsPage = function(cb, pageNum, timeframe) {
+        switch(timeframe) {
+          case 'upcoming': timeframe = queryUpcoming; break;
+          case 'previous': timeframe = queryPrevious; break;
+          default: timeframe = queryUpcoming;
+        }
+        currentPage = pageNum || 1;
+        getMeetingsByTime(cb, timeframe, currentPage);
+      }
 
+      return meetings;
     }
   ]);
 });

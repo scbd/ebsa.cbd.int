@@ -7,7 +7,7 @@ define([
     'use strict';
 
     var app = require('angular').module('app',
-      ['ngRoute', 'ng-breadcrumbs', 'angular-growl', 'app.directives', 'app.services', 'app.filters']);
+      ['ngRoute', 'ng-breadcrumbs', 'angular-growl', 'app.directives', 'app.services', 'app.filters', 'ui.bootstrap']);
 
     app.config(['$controllerProvider', '$compileProvider', '$provide', '$filterProvider', 'growlProvider',
       function($controllerProvider, $compileProvider, $provide, $filterProvider, growlProvider) {
