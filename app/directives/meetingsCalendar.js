@@ -61,10 +61,6 @@ define(['./module.js'], function(module) {
         link: function(scope, element, attrs) {
           scope.getLocalizedMonth = getLocalizedMonth;
 
-          // scope.$watch('country', function(selectedCountry) {
-          //   scope.selectedCountry = selectedCountry;
-          // });
-
           scope.$watch('meetingData', function(meetings) {
             scope.meetings = processMeetings(meetings);
           });
