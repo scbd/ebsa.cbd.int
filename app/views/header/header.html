@@ -62,7 +62,7 @@
 <div class="push20" ng-show="showCrumbs">&nbsp;</div>
 <div class="container" ng-show="showCrumbs">
   <ol class="breadcrumb">
-  <li ng-repeat="breadcrumb in breadcrumbs.getAll()" ng-class="{'no-before': $first}">
+  <li ng-repeat="breadcrumb in breadcrumbs.get()" ng-class="{'no-before': $first}">
         <ng-switch on="$last">
           <span ng-switch-when="true">{{breadcrumb.label}}</span>
           <span ng-switch-default>
