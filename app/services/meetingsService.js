@@ -35,8 +35,6 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           pagination: computePagination(response.numFound, currentPage, perPage)
         };
 
-        // console.log(processed);
-
         response.docs.forEach(function(meeting) {
           var startDate = new Date(meeting.startDate_dt);
           var endDate = new Date(meeting.endDate_dt);

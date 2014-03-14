@@ -32,13 +32,13 @@ define([
 
       $scope.yearList = Lists.getYears();
 
-      $scope.setPage = function(page, query) {
+      $scope.setPage = function(page, countryCode, year) {
         Meetings.getMeetingsPage(function(meetingSet) {
-          $scope.totalMeetings = meetingSet.totalMeetings;
-          $scope.currentPage = meetingSet.currentPage;
-          $scope.perPage = meetingSet.perPage;
+          $scope.totalMeetings = meetingSet.pagination.totalMeetings;
+          $scope.currentPage = meetingSet.pagination.currentPage;
+          $scope.perPage = meetingSet.pagination.perPage;
           $scope.meetings = meetingSet.meetings;
-        }, page, $scope.timeframe, query);
+        }, page, $scope.timeframe, countryCode, year);
       }
 
       $scope.setTimeframe = function(timeframe) {
