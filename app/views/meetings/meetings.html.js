@@ -7,23 +7,27 @@ define([
 
   app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists',
     function($http, $scope, $locale, Meetings, Lists) {
+      // default timeframe for meetings
+      $scope.timeframe = 'upcoming';
 
       // load country list.
       Lists.getCountries(function(json) {
         $scope.memberCountries = json;
         // set the default option to be all meetings
-        // see meetingsFilter.js for handling of special case.
+        // see below in setSelectedCountry for handling of special case.
         $scope.memberCountries.unshift({
           name: 'All',
           countryCode: 'All'
         });
+        // kick off the process
         $scope.setSelectedCountry('All');
       });
 
       $scope.setSelectedCountry = function setSelectedCountry(countryCode) {
-        // $scope.setPage(1, {country: countryCode}); //proper solution
         var country = _.findWhere($scope.memberCountries, {'countryCode': countryCode});
         $scope.selectedCountry = country;
+        var countryCode = country.countryCode === 'All' ? undefined : countryCode.toLowerCase();
+        $scope.setPage($scope.currentPage, countryCode); //proper solution
       };
 
       $scope.yearList = Lists.getYears();
@@ -38,14 +42,9 @@ define([
       }
 
       $scope.setTimeframe = function(timeframe) {
-        console.log(timeframe);
         $scope.timeframe = timeframe;
         $scope.setPage($scope.currentPage, timeframe);
       }
-
-      // kick off the process
-      $scope.timeframe = 'upcoming';
-      $scope.setPage(1);
     }
   ]);
 
