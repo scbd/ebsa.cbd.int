@@ -43,7 +43,7 @@ define([
 
       $scope.setTimeframe = function(timeframe) {
         $scope.timeframe = timeframe;
-        $scope.setPage($scope.currentPage, timeframe);
+        $scope.setPage($scope.currentPage);
       }
     }
   ]);
