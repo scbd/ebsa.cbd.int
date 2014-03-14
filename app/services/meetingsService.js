@@ -136,7 +136,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
 
         query.q(q);
         if (start) query.start(start);
-        if (sortParams.length) query.sort(sortParams);
+        if (_.keys(sortParams).length) query.sort(sortParams);
 
         return query.build();
       }
