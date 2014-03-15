@@ -10,8 +10,9 @@ define(['./module.js', 'underscore'], function(module, _) {
           });
       };
 
-      lists.getYears = function() {
-        var end = (new Date).getFullYear() + 1, start = end - 15 - 1;
+      lists.getYears = function(rstart, rend) {
+        var end = rend || (new Date).getFullYear() + 1,
+          start = rstart || end - 15 - 1;
         return _.range(start, end).reverse();
       }
 
