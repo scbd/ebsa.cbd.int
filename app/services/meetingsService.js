@@ -75,7 +75,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
 
       function issueRequest(query, cb) {
         // because we build the query by hand using solrQuery, we
-        // dont use the usual params hash the $http.get() accepts.
+        // dont use the usual params hash the $http.get() accepts, otherwise
+        // angular will escape our already escaped characters.
         $http.get([baseUrl, query].join('?'))
           .then(function(results) {
             cb(normalizeMeetings(results.data.response));

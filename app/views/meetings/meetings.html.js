@@ -1,8 +1,9 @@
 define([
     'app',
-    'underscore'
+    'underscore',
+    '../../util/strings.js'
   ],
-  function(app, _) {
+  function(app, _, strings) {
     'use strict';
 
     app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists',
@@ -10,7 +11,6 @@ define([
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
 
-        // load country list.
         Lists.getCountries(function(json) {
           $scope.memberCountries = json;
           // set the default option to be all meetings
@@ -19,33 +19,22 @@ define([
             name: 'All',
             countryCode: 'All'
           });
-          $scope.setFilterParam('country', $scope.memberCountries[0].countryCode);
+          setSelectedTitle('country', $scope.memberCountries[0].countryCode);
         });
 
-        // $scope.setSelectedCountry = function setSelectedCountry(countryCode) {
-        //   var country = _.findWhere($scope.memberCountries, {
-        //     'countryCode': countryCode
-        //   });
-        //   $scope.selectedCountry = country;
-        //   countryCode = country.countryCode === 'All' ? undefined : countryCode.toLowerCase();
-        //   $scope.setPage($scope.currentPage, countryCode); //proper solution
-        // };
-
-        function capitalise(string) {
-          return string.charAt(0).toUpperCase() + string.slice(1);
-        }
         var filters = {
           country: undefined,
           year: undefined
         };
-        function resetFilters () {
+
+        function resetFilters() {
           filters.country = filters.year = undefined;
           $scope.selectedCountry = 'All';
           $scope.selectedYear = 'All';
         }
+
         $scope.setFilterParam = function(paramName, value) {
           var country,
-            selectedParam = 'selected' + capitalise(paramName),
             isCountry = paramName === 'country',
             // normalize
             filterValue = (/[a|A]ll/.test(value)) ? null : value;
@@ -57,7 +46,7 @@ define([
                 countryCode: value
               });
             }
-            $scope[selectedParam] = isCountry ? country.name : value;
+            setSelectedTitle(paramName, isCountry ? country.name : value);
             filterValue = isCountry && filterValue ? value.toLowerCase() : filterValue;
 
             filters[paramName] = filterValue;
@@ -81,18 +70,17 @@ define([
           $scope.setPage($scope.currentPage);
         };
 
+        function setSelectedTitle(paramName, title) {
+          $scope['selected' + strings.capitalise(paramName)] = title;
+        }
+
         Lists.getYears(function(years) {
           $scope.yearList = years;
           $scope.yearList.unshift('All');
-          $scope.setFilterParam('year', $scope.yearList[0]);
+          setSelectedTitle('year', $scope.yearList[0]);
         });
 
         $scope.setPage($scope.currentPage, null, null);
-
-        // $scope.setYear = function(year) {
-        //   $scope.selectedYear = year;
-        //   $scope.setPage($scope.currentPage, $scope.selectedCountry.countryCode, $scope.selectedYear);
-        // };
       }
     ]);
 

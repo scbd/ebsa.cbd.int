@@ -1,5 +1,4 @@
 <table class="table meeting-table" ng-repeat="(year, months) in meetings">
-
   <tr>
     <th ng-show="$first">Date and Venue</th>
     <th ng-show="$first">Event</th>
@@ -20,11 +19,6 @@
 
   <tr class="event" ng-repeat-end>
     <td colspan="3" ng-repeat-end>
-      <table ng-show="!meetings.length">
-        <tr>
-          <td>No meetings...</td>
-        </tr>
-      </table>
       <table>
         <tr ng-repeat="meeting in meetings">
           <td>

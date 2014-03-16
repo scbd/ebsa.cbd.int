@@ -16,7 +16,7 @@ define(['./module.js', 'underscore'], function(module, _) {
           rstart = null;
         }
         var end = rend || (new Date()).getFullYear() + 1,
-          start = rstart || end - 15 - 1;
+          start = rstart || end - 25 - 1;
         return callback(_.range(start, end).reverse());
       };
 

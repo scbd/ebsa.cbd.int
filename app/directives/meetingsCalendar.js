@@ -2,26 +2,20 @@ define(['./module.js'], function(module) {
   return module.directive('meetingsCalendar', ['meetings', '$locale',
     function(meetings, $locale) {
 
-      function sortMeetingsByDate(meetings) {
-        return meetings.sort(function(ma, mb) {
-          return ma.startDate.getTime() - mb.startDate.getTime();
-        });
-      }
-
       function getLocalizedMonth(index) {
         return $locale.DATETIME_FORMATS.MONTH[index];
-      };
-
-      function normalizeDates(meetings) {
-        angular.forEach(meetings, function(month, meetings) {
-          angular.forEach(meetings, function(meeting) {
-            meeting.startMonth = scope.getLocalizedMonth(meeting.startMonth);
-            meeting.year = meeting.getFullYear();
-          });
-        });
-
-        return meetings;
       }
+
+      // function normalizeDates(meetings) {
+      //   angular.forEach(meetings, function(month, meetings) {
+      //     angular.forEach(meetings, function(meeting) {
+      //       meeting.startMonth = scope.getLocalizedMonth(meeting.startMonth);
+      //       meeting.year = meeting.getFullYear();
+      //     });
+      //   });
+
+      //   return meetings;
+      // }
 
       function processMeetings(meetings) {
         if (!meetings) return meetings;
@@ -34,16 +28,13 @@ define(['./module.js'], function(module) {
         //     5: [{meeting}]
         //   }
         // }
-        // var chronoSorted = sortMeetingsByDate(meetings).reverse(),
         var groupedByYear = _.groupBy(meetings, 'startYear'),
           groupedByMonthAndYear = {};
 
         angular.forEach(groupedByYear, function(meetings, year) {
           groupedByMonthAndYear[year] = _.groupBy(meetings, 'startMonth');
         });
-        // groupedByMonthAndYear = _.groupBy(meetings, 'startMonth');
-        meetings = groupedByMonthAndYear; //_.groupBy(normalizeDates(chronoSorted), 'year');
-        // scope.meetingSet.count = count;
+        meetings = groupedByMonthAndYear;
         return meetings;
       }
 
