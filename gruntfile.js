@@ -25,14 +25,14 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        browsers: ['last 10 version', 'ie 7', 'ie 8', 'ie 9']
       },
       dist: {
         files: [{
           expand: true,
-          cwd: 'css/',
-          src: '{,*/}*.css',
-          dest: 'css/'
+          // cwd: '<%= app %>/css/',
+          src: '{,*/}*.css'
+          // dest: '/css/'
         }]
       }
     },
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
       },
       compass: {
         files: ['<%= app %>/css/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['compass:server']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', function(target) {
     grunt.task.run([
       'concurrent:server',
-      'autoprefixer',
+      // 'autoprefixer',
       'express:dev',
       'watch'
     ]);
