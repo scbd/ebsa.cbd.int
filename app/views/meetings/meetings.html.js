@@ -29,8 +29,8 @@ define([
 
         function resetFilters() {
           filters.country = filters.year = undefined;
-          $scope.selectedCountry = 'All';
-          $scope.selectedYear = 'All';
+          setSelectedTitle('country', 'All');
+          setSelectedTitle('year', 'All');
         }
 
         $scope.setFilterParam = function(paramName, value) {
