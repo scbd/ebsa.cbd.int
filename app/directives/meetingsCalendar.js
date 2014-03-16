@@ -44,7 +44,6 @@ define(['./module.js'], function(module) {
         // groupedByMonthAndYear = _.groupBy(meetings, 'startMonth');
         meetings = groupedByMonthAndYear; //_.groupBy(normalizeDates(chronoSorted), 'year');
         // scope.meetingSet.count = count;
-        console.log(meetings);
         return meetings;
       }
 

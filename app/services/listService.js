@@ -10,11 +10,15 @@ define(['./module.js', 'underscore'], function(module, _) {
           });
       };
 
-      lists.getYears = function(rstart, rend) {
-        var end = rend || (new Date).getFullYear() + 1,
+      lists.getYears = function(rstart, rend, callback) {
+        if (angular.isFunction(rstart)) {
+          callback = rstart;
+          rstart = null;
+        }
+        var end = rend || (new Date()).getFullYear() + 1,
           start = rstart || end - 15 - 1;
-        return _.range(start, end).reverse();
-      }
+        return callback(_.range(start, end).reverse());
+      };
 
       return lists;
     }

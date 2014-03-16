@@ -26,7 +26,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           currentPage: curPage || 1,
           totalPages: Math.ceil(total / perPage),
           perPage: perPage
-        }
+        };
       }
 
       function normalizeMeetings(response) {
@@ -73,7 +73,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           });
       };
 
-      function getMeetingsByTime(cb, timeframe, query) {
+      function issueRequest(query, cb) {
         // because we build the query by hand using solrQuery, we
         // dont use the usual params hash the $http.get() accepts.
         $http.get([baseUrl, query].join('?'))
@@ -85,7 +85,11 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
             growl.addErrorMessage('Failed to fetch meetings! Please refresh the page.');
           }
         });
-      };
+      }
+
+      function createDateRange (start, end) {
+        return '[' + start.toISOString() + ' TO ' + end.toISOString() + ']';
+      }
 
       function buildSolrQuery(paramMap) {
         // clean out any keys that have falsy values so that we don't
@@ -112,12 +116,17 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               break;
 
             case 'startDate':
+              // the year param is more specific than startDate and we favour
+              // it over startDate's wider range.
+              if (cleanMap.year) break;
               var startRange = val === 'upcoming' ? queryUpcoming : queryPrevious;
               q[translateFieldName(fname)] = startRange;
               break;
 
             case 'year': //TODO: handling for year
-              q['startDate_dt'];
+              //create a range from [Jan 1st, yearGiven TO Dec 31st, yearGiven]
+              var range = createDateRange(new Date(val, 0), new Date(val, 11, 31));
+              q[translateFieldName(fname)] = range;
               break;
 
             case 'sort':
@@ -142,8 +151,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
       }
 
       function translateFieldName(fieldName) {
-        var field = fieldMap[fieldName];
-        return field ? field : fieldName;
+        return fieldMap[fieldName] || fieldName;
       }
 
       meetings.getMeetingsPage = function(cb, pageNum, timeframe, countryCode, year) {
@@ -156,8 +164,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           sort: [sortField, dir],
           start: (currentPage - 1) * perPage
         });
-        getMeetingsByTime(cb, timeframe, solrQuery);
-      }
+        issueRequest(solrQuery, cb);
+      };
 
       return meetings;
     }
