@@ -1,1 +1,1 @@
-define(['./meetingsService.js', './listService.js'], function() {});
+define(['./meetingsService.js', './listService.js', './regionsGeojson.js'], function() {});

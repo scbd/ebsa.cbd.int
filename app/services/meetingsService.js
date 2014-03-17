@@ -163,7 +163,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           country: countryCode,
           year: year,
           sort: [sortField, dir],
-          start: (currentPage - 1) * perPage
+          start: (currentPage - 1) * perPage,
+          title_t: '*EBSA*'
         });
         issueRequest(solrQuery, cb);
       };

@@ -8,16 +8,11 @@ define(['app'], function(app) {
 
       $routeProvider.
       when('/', {
-        templateUrl: '/app/views/index.html',
-        resolve: {},
-        label: 'Home'
-      }).
-      when('/countries', {
-        templateUrl: '/app/views/countries/index.html',
+        templateUrl: '/app/views/index/index.html',
         resolve: {
           dependencies: resolveJS()
         },
-        label: 'Countries'
+        label: 'Home'
 
       }).
       when('/about', {
