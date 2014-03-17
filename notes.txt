@@ -1,0 +1,10 @@
+1. Meetings page, only display EBSA meetings.
+Workshop to Facilitate the Description of Ecologically or Biologically Significant Marine Areas (EBSAs)
+
+2. Reports are avaialbe only after meetings, sometimes takes after while.
+3. Other workshops - those are static for the moment.
+4. Brochures - static as well.
+5. Training materials - static
+6. Publications - Static.
+
+/region-details/phonenix-islands
