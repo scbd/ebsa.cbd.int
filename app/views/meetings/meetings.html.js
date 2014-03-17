@@ -19,7 +19,7 @@ define([
             name: 'All',
             countryCode: 'All'
           });
-          setSelectedTitle('country', $scope.memberCountries[0].countryCode);
+          setSelectedTitle('country', $scope.memberCountries[0].name);
         });
 
         var filters = {
