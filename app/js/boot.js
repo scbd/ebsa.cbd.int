@@ -16,7 +16,7 @@ require.config({
         'underscore'      : '../libs/underscore/underscore',
         'angular-growl'   : '../libs/angular-growl/build/angular-growl',
         'geojson'         : '../libs/geojson-google-maps/GeoJSON',
-        'mapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
+        'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
     },
     shim: {
         'angular'        : { 'deps': ['jquery'], 'exports': 'angular' },
