@@ -104,7 +104,6 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
 
         return {
           restrict: 'EA',
-          // templateUrl: '/app/views/gmap/gmap.html',
           template: '<div id="map"></div>',
           replace: true,
           scope: {
