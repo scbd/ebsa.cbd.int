@@ -21,7 +21,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           // straight black on the map.
           style.strokeColor = colors.changeLuminance(colors.randomHexColor(50), 1);
           // Make the fill color be 20% brighter than the stroke color.
-          style.fillColor = colors.changeLuminance(style.strokeColor, -0.2);
+          style.fillColor = colors.changeLuminance(style.strokeColor, -0.1);
           return style;
         }
 
