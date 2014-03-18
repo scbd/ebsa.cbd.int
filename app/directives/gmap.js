@@ -1,7 +1,7 @@
-define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false'],
+define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', 'geojson'],
   function(module, google) {
     return module.directive('gmap', ['$window', 'regionsGeojson',
-      function($window, regions) {
+      function($window, regions, geojson) {
 
         var map;
         var currentFeatures = null;
@@ -24,10 +24,11 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
 
         var infowindow;
 
-        function init() {
+        function init(rootEl) {
           infowindow = new $window.google.maps.InfoWindow();
 
-          map = new $window.google.maps.Map(document.getElementById('map'), {
+          // map = new $window.google.maps.Map(document.getElementById('map'), {
+          map = new $window.google.maps.Map(rootEl, {
             zoom: 2,
             center: new $window.google.maps.LatLng(13.6036603, -101.313101),
             mapTypeId: $window.google.maps.MapTypeId.SATELLITE
@@ -103,11 +104,13 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
 
         return {
           restrict: 'EA',
-          templateUrl: '/app/views/gmap/gmap.html',
+          // templateUrl: '/app/views/gmap/gmap.html',
+          template: '<div id="map"></div>',
           replace: true,
           scope: {},
           link: function(scope, element, attrs) {
-            init();
+            init(element.get(0));
+            scope.showFeature = showFeature;
           }
         };
 
