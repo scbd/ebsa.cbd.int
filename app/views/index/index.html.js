@@ -1,24 +1,24 @@
 define(['app'], function(app) {
   'use strict';
 
-  return app.controller('IndexCtrl', ['$scope', 'regionsGeojson',
+  return app.controller('IndexCtrl', ['$scope', 'geojson',
     function($scope, regions) {
-      var regionData;
-      regions.getRegionByName('caribbean', function(caribbean) {
-        regions.getRegionByName('southPacific', function(southPacific) {
-          regionData = {
-            caribbean: caribbean,
-            southPacific: southPacific
-          };
-        });
+      var regionData = {},
+        regionList = ['caribbean', 'southPacific'];
 
-        $scope.showFeature = function(regionName, styleName) {
-          $scope.selectedRegion = {
-            geojson: regionData[regionName],
-            styleName: regionName
-          };
-        };
+      regionList.forEach(function(regionName) {
+        regions.getRegionByName(regionName, function(regionGeojson) {
+          regionData[regionName] = regionGeojson;
+        });
       });
+
+      $scope.showFeature = function(regionName, styleName) {
+        $scope.selectedRegion = {
+          geojson: regionData[regionName],
+          styleName: regionName
+        };
+      };
+
     }
   ]);
 });

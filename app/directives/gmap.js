@@ -1,28 +1,28 @@
-define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', 'geojson'],
-  function(module, google) {
-    return module.directive('gmap', ['$window', 'regionsGeojson',
-      function($window, regions, geojson) {
+define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', 'geojson', '../util/colors.js'],
+  function(module, google, geojson, colors) {
+    return module.directive('gmap', ['$window',
+      function($window, regions) {
 
-        var map;
-        var currentFeatures = null;
+        var map,
+          currentFeatures = null,
+          infowindow,
+          defaultStyle = {
+            strokeColor: '',
+            strokeOpacity: 0.75,
+            strokeWeight: 2,
+            fillColor: '',
+            fillOpacity: 0.25
+          };
 
-        var caribbeanStyle = {
-          strokeColor: '#A9DDA6',
-          strokeOpacity: 0.75,
-          strokeWeight: 2,
-          fillColor: '#96DD92',
-          fillOpacity: 0.25
-        };
-
-        var pacificStyle = {
-          strokeColor: '#F1EFE0',
-          strokeOpacity: 0.75,
-          strokeWeight: 2,
-          fillColor: '#EFE8BB',
-          fillOpacity: 0.25
-        };
-
-        var infowindow;
+        function randomStyle() {
+          var style = angular.copy(defaultStyle);
+          // we set random color to start at 50 so we don't get
+          // straight black on the map.
+          style.strokeColor = colors.changeLuminance(colors.randomHexColor(50), 1);
+          // Make the fill color be 20% brighter than the stroke color.
+          style.fillColor = colors.changeLuminance(style.strokeColor, -0.2);
+          return style;
+        }
 
         function init(rootEl) {
           infowindow = new $window.google.maps.InfoWindow();
@@ -114,7 +114,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
             init(element.get(0));
             scope.$watch('region', function(region) {
               if (region && region.geojson)
-                showFeature(region.geojson, region.styleName === 'southPacific' ? pacificStyle : caribbeanStyle);
+                showFeature(region.geojson, randomStyle());
             });
           }
         };

@@ -1,16 +1,16 @@
 define(['./module.js', 'underscore'], function(module, _) {
-  return module.factory('regionsGeojson', ['$http', '$locale',
+  return module.factory('geojson', ['$http', '$locale',
     function($http, $locale) {
-      var regionsGeojson = {};
+      var geojson = {};
 
-      regionsGeojson.getRegionByName = function(regionName, cb) {
+      geojson.getRegionByName = function(regionName, cb) {
         return $http.get('/app/regions/' + regionName + '.geojson')
           .then(function(response) {
             cb(response.data);
           });
       };
 
-      return regionsGeojson;
+      return geojson;
     }
   ]);
 });
