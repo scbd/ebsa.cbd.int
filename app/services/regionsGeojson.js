@@ -4,7 +4,7 @@ define(['./module.js', 'underscore'], function(module, _) {
       var regionsGeojson = {};
 
       regionsGeojson.getRegionByName = function(regionName, cb) {
-        $http.get('/app/regions/' + regionName + '.geojson')
+        return $http.get('/app/regions/' + regionName + '.geojson')
           .then(function(response) {
             cb(response.data);
           });

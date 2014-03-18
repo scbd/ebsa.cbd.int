@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="IndexCtrl">
   <div class="google-map">
     <div class="col-lg-2">
       <div class="push20"></div>
@@ -9,7 +9,7 @@
         class="pacific"
         type="button"
         value="South Pacific Region »"
-        ng-click="showFeature('southpacific', pacificStyle)" />
+        ng-click="showFeature('southPacific')" />
       </div>
 
       <div>
@@ -17,13 +17,13 @@
         class="caribbean"
         type="button"
         value="Wider Caribbean Region »"
-        ng-click="showFeature('widercaribbean', caribbeanStyle)"/>
+        ng-click="showFeature('caribbean')"/>
       </div>
       <div class="push20"></div><div class="push15"></div>
       <p>Butcher cillum Vice, readymade odio Tumblr narwhal master cleanse. Shabby chic irure brunch, ethical seitan nulla excepteur. YOLO brunch Etsy scenester craft beer single-origin coffee cillum irony, mustache laboris lomo ea reprehenderit semiotics. Hashtag locavore try-hard whatever, PBR&B pop-up anim Marfa Pitchfork in twee four loko ennui vinyl consectetur. Duis delectus est chia narwhal laborum fap trust fund, selfies Bushwick farm-to-table Godard. Artisan church-key XOXO, normcore sustainable ea ut cardigan.</p>
     </div>
     <div class="col-lg-10">
-      <gmap></gmap>
+      <gmap region="selectedRegion"></gmap>
     </div>
   </div>
 </div>

@@ -107,10 +107,15 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           // templateUrl: '/app/views/gmap/gmap.html',
           template: '<div id="map"></div>',
           replace: true,
-          scope: {},
+          scope: {
+            region: '='
+          },
           link: function(scope, element, attrs) {
             init(element.get(0));
-            scope.showFeature = showFeature;
+            scope.$watch('region', function(region) {
+              if (region && region.geojson)
+                showFeature(region.geojson, region.styleName === 'southPacific' ? pacificStyle : caribbeanStyle);
+            });
           }
         };
 
