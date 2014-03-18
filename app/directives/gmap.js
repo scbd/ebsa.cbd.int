@@ -6,6 +6,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         var map,
           currentFeatures = null,
           infowindow,
+          gmapsListeners = [],
           defaultStyle = {
             strokeColor: '',
             strokeOpacity: 0.75,
@@ -88,7 +89,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         }
 
         function setInfoWindow(feature) {
-          $window.google.maps.event.addListener(feature, 'click', function(event) {
+          gmapsListeners.push($window.google.maps.event.addListener(feature, 'click', function(event) {
             var content = '<div id=\'infoBox\'>';
             for (var j in this.geojsonProperties) {
               content += j + ': ' + this.geojsonProperties[j] + '<br />';
@@ -97,6 +98,12 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
             infowindow.setContent(content);
             infowindow.setPosition(event.latLng);
             infowindow.open(map);
+          }));
+        }
+
+        function cleanupListeners(e) {
+          gmapsListeners.forEach(function(listener) {
+            $window.google.maps.event.removeListener(listener);
           });
         }
 
@@ -115,6 +122,9 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
               if (region && region.geojson)
                 showFeature(region.geojson, randomStyle());
             });
+
+            scope.$on('$destroy', cleanupListeners);
+
           }
         };
 
