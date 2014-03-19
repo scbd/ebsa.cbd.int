@@ -91,14 +91,10 @@ define(['./module.js'], function(module) {
           });
 
           // load the appropriate template dynamically.
-          loader
-            .success(function(html) {
-              element.replaceWith($compile(html)(scope));
-            })
-            .then(function(response) {
-            }).finally(function() {
-
+          loader.success(function(html) {
+            element.replaceWith($compile(html)(scope));
           });
+
         }
       };
     }
