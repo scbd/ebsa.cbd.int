@@ -28,8 +28,6 @@ define(['app'], function(app) {
         $scope.meetingsPrevious = meetingSet.meetings;
         console.log($scope.meetingsPrevious);
       });
-
-      $scope.meetings = [1,2,3,4,5,6];
     }
   ]);
 });
