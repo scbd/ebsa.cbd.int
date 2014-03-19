@@ -63,12 +63,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
       }
 
       meetings.getAll = function(cb) {
-
-        $http.get(baseUrl, {
-          params: {
-            q: baseQuery
-          }
-        })
+        $http.get(baseUrl, { params: {q: baseQuery } })
           .then(function(results) {
             cb(results.data);
           });

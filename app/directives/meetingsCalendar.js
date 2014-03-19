@@ -44,10 +44,6 @@ define(['./module.js'], function(module) {
         return meetings;
       }
 
-      function setupWatches(scope, element, isShort) {
-
-      }
-
       var getTemplate = function(format) {
         var templateLoader,
           baseUrl = '/app/views/meetings/',
