@@ -1,0 +1,13 @@
+<table class="ebsa-table table">
+  <tr>
+    <th colspan="2"><img src="/app/img/icon-home.png" alt="meeting icon" /> {{tableTitle}}</th>
+  </tr>
+
+  <tr ng-repeat="meeting in meetings">
+    <td><h4>{{meeting.title}}</h4></td>
+    <td>
+    <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>
+    </td>
+  </tr>
+
+</table>
