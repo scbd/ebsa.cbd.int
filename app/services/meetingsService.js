@@ -4,6 +4,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',
+        documentsBaseUrl = 'http://www.cbd.int/doc/?meeting=',
         meetings = {},
         perPage = 10,
         currentPage = 1,
@@ -45,7 +46,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
             title: meeting.title_s,
             startDate: startDate,
             endDate: endDate,
-            documentsUrl: meeting.symbol_s,
+            documentsUrl: documentsBaseUrl + meeting.symbol_s,
             startMonth: startDate.getMonth(),
             endMonth: endDate.getMonth(),
             startDay: startDate.getDate(),
