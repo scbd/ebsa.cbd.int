@@ -155,7 +155,9 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(cb, pageNum, timeframe, countryCode, year) {
+      meetings.getMeetingsPage = function(timeframe, pageNum, countryCode, year, cb) {
+        var args = Array.prototype.slice.call(arguments, 0);
+        cb = args.filter(function(arg) { return angular.isFunction(arg); })[0];
         currentPage = pageNum || 1;
         var solrQuery = buildSolrQuery({
           schema: 'meeting',

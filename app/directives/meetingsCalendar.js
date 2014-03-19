@@ -1,9 +1,15 @@
 define(['./module.js'], function(module) {
-  return module.directive('meetingsCalendar', ['meetings', '$locale',
-    function(meetings, $locale) {
+  return module.directive('meetingsCalendar', ['meetings', '$locale', '$http', '$compile', '$templateCache',
+    function(meetings, $locale, $http, $compile, $templateCache) {
 
       function getLocalizedMonth(index) {
         return $locale.DATETIME_FORMATS.MONTH[index];
+      }
+
+      function sortByYear(meetings) {
+        return meetings.sort(function(a, b) {
+          return a.startYear < b.startYear;
+        });
       }
 
       // function normalizeDates(meetings) {
@@ -38,21 +44,64 @@ define(['./module.js'], function(module) {
         return meetings;
       }
 
+      function setupWatches(scope, element, isShort) {
+
+      }
+
+      var getTemplate = function(format) {
+        var templateLoader,
+          baseUrl = '/app/views/meetings/',
+          templateMap = {
+            'short': 'meetingsCalendar.short.html',
+            'long': 'meetingsCalendar.html',
+          };
+
+        var templateUrl = baseUrl + templateMap[format];
+        templateLoader = $http.get(templateUrl, {
+          cache: $templateCache
+        });
+
+        return templateLoader;
+      };
+
       return {
         restrict: 'EA',
-        templateUrl: '/app/views/meetings/meetingsCalendar.html',
+        // templateUrl: '/app/views/meetings/meetingsCalendar.html',
         replace: true,
         scope: {
           format: '@',
           meetingData: '=',
-          country: '=',
-          selectedYear: '='
+          itemsPerTimeframe: '@',
+          tableTitle: '@'
         },
         link: function(scope, element, attrs) {
+          var isShort = scope.format === 'short';
           scope.getLocalizedMonth = getLocalizedMonth;
+          scope.itemsPerTimeframe = scope.itemsPerTimeframe || 0;
+
+          var loader = getTemplate(scope.format);
 
           scope.$watch('meetingData', function(meetings) {
+            console.log(meetings);
+            if (!meetings) return;
+
+            meetings = sortByYear(meetings).slice(0, scope.itemsPerTimeframe || meetings.length);
+            if (isShort) {
+              scope.meetings = meetings;
+              return;
+            }
+
             scope.meetings = processMeetings(meetings);
+          });
+
+          // load the appropriate template dynamically.
+          loader
+            .success(function(html) {
+              element.replaceWith($compile(html)(scope));
+            })
+            .then(function(response) {
+            }).finally(function() {
+
           });
         }
       };

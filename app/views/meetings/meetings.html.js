@@ -56,12 +56,12 @@ define([
         };
 
         $scope.setPage = function(page, countryCode, year) {
-          Meetings.getMeetingsPage(function(meetingSet) {
+          Meetings.getMeetingsPage($scope.timeframe, page, filters.country, filters.year, function(meetingSet) {
             $scope.totalMeetings = meetingSet.pagination.totalMeetings;
             $scope.currentPage = meetingSet.pagination.currentPage;
             $scope.perPage = meetingSet.pagination.perPage;
             $scope.meetings = meetingSet.meetings;
-          }, page, $scope.timeframe, filters.country, filters.year);
+          });
         };
 
         $scope.setTimeframe = function(timeframe) {

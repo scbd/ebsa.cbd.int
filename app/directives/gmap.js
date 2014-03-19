@@ -28,13 +28,11 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         function init(rootEl) {
           infowindow = new $window.google.maps.InfoWindow();
 
-          // map = new $window.google.maps.Map(document.getElementById('map'), {
           map = new $window.google.maps.Map(rootEl, {
             zoom: 2,
             center: new $window.google.maps.LatLng(13.6036603, -101.313101),
             mapTypeId: $window.google.maps.MapTypeId.SATELLITE
           });
-          //showFeature(geojson_southpacific, pacificStyle);
         }
 
         function clearMap() {
@@ -106,7 +104,6 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
             $window.google.maps.event.removeListener(listener);
           });
         }
-
 
 
         return {

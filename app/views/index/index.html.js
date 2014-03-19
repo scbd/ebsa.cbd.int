@@ -1,8 +1,8 @@
 define(['app'], function(app) {
   'use strict';
 
-  return app.controller('IndexCtrl', ['$scope', 'geojson',
-    function($scope, regions) {
+  return app.controller('IndexCtrl', ['$scope', 'geojson', 'meetings',
+    function($scope, regions, Meetings) {
       var regionData = {},
         regionList = ['caribbean', 'southPacific'];
 
@@ -19,6 +19,17 @@ define(['app'], function(app) {
         };
       };
 
+      Meetings.getMeetingsPage('upcoming', function(meetingSet) {
+        $scope.meetingsUpcoming = meetingSet.meetings;
+        console.log($scope.meetingsUpcoming);
+      });
+
+      Meetings.getMeetingsPage('previous', function(meetingSet) {
+        $scope.meetingsPrevious = meetingSet.meetings;
+        console.log($scope.meetingsPrevious);
+      });
+
+      $scope.meetings = [1,2,3,4,5,6];
     }
   ]);
 });
