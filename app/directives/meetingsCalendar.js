@@ -90,15 +90,11 @@ define(['./module.js'], function(module) {
             scope.meetings = processMeetings(meetings);
           });
 
-          // load the appropriate template dynamically.
           loader.success(function(html) {
             element.replaceWith($compile(html)(scope));
           });
-
         }
       };
     }
-
-
   ]);
 });
