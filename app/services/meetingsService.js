@@ -9,10 +9,11 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         perPage = 10,
         currentPage = 1,
         sortField = 'startDate_dt',
-        dir = 'asc',
+        dirUp = 'asc',
+        dirDown = 'desc',
         queryUpcoming = '[NOW TO *]',
         queryPrevious = '[* TO NOW]',
-        querySort = [sortField, dir].join(' '),
+        // querySort = [sortField, dir].join(' '),
         fieldMap = {
           schema: 'schema_s',
           country: 'eventCountry_s',
@@ -151,10 +152,12 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(timeframe, pageNum, countryCode, year, title, cb) {
+      meetings.getMeetingsPage = function(timeframe, title, pageNum, countryCode, year, cb) {
         var args = Array.prototype.slice.call(arguments, 0);
         cb = args.filter(function(arg) { return angular.isFunction(arg); })[0];
+
         currentPage = pageNum || 1;
+        var dir = timeframe === 'upcoming' ? dirUp : dirDown;
         var solrQuery = buildSolrQuery({
           schema: 'meeting',
           startDate: timeframe,
@@ -164,6 +167,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           start: (currentPage - 1) * perPage,
           title_t: title
         });
+
         issueRequest(solrQuery, cb);
       };
 
