@@ -21,7 +21,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           // straight black on the map.
           style.strokeColor = colors.changeLuminance(colors.randomHexColor(50), 1);
           // Make the fill color be 20% brighter than the stroke color.
-          style.fillColor = colors.changeLuminance(style.strokeColor, -0.1);
+          style.fillColor = colors.changeLuminance(style.strokeColor, -0.3);
           return style;
         }
 
@@ -35,77 +35,30 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           });
         }
 
-        function clearMap() {
-          if (!currentFeatures)
-            return;
-          if (currentFeatures.length) {
-            for (var i = 0; i < currentFeatures.length; i++) {
-              if (currentFeatures[i].length) {
-                for (var j = 0; j < currentFeatures[i].length; j++) {
-                  currentFeatures[i][j].setMap(null);
-                }
-              } else {
-                currentFeatures[i].setMap(null);
-              }
-            }
-          } else {
-            currentFeatures.setMap(null);
-          }
-          if (infowindow.getMap()) {
-            infowindow.close();
-          }
-        }
-
-        function showFeature(geojson, style) {
-          clearMap();
-          currentFeatures = new GeoJSON(geojson, style || null);
-          if (currentFeatures.type && currentFeatures.type == 'Error') {
-            return;
-          }
-          if (currentFeatures.length) {
-            for (var i = 0; i < currentFeatures.length; i++) {
-              if (currentFeatures[i].length) {
-                for (var j = 0; j < currentFeatures[i].length; j++) {
-                  currentFeatures[i][j].setMap(map);
-                  if (currentFeatures[i][j].geojsonProperties) {
-                    setInfoWindow(currentFeatures[i][j]);
-                  }
-                }
-              } else {
-                currentFeatures[i].setMap(map);
-              }
-              if (currentFeatures[i].geojsonProperties) {
-                setInfoWindow(currentFeatures[i]);
-              }
-            }
-          } else {
-            currentFeatures.setMap(map);
-            if (currentFeatures.geojsonProperties) {
-              setInfoWindow(currentFeatures);
-            }
-          }
-        }
-
-        function setInfoWindow(feature) {
-          gmapsListeners.push($window.google.maps.event.addListener(feature, 'click', function(event) {
+        function setInfoWindow(event) {
             var content = '<div id=\'infoBox\'>';
-            for (var j in this.geojsonProperties) {
-              content += j + ': ' + this.geojsonProperties[j] + '<br />';
-            }
+            event.feature.forEachProperty(function(propVal, propName) {
+              content += propName + ': ' + propVal + '<br />';
+            });
+
             content += '</div>';
             infowindow.setContent(content);
             infowindow.setPosition(event.latLng);
             infowindow.open(map);
-          }));
         }
 
         function cleanupListeners(e) {
-          gmapsListeners.forEach(function(listener) {
-            $window.google.maps.event.removeListener(listener);
+          $window.google.maps.event.removeListener(listener);
+        }
+
+        function cleamMap(map) {
+          if (infowindow.getMap()) infowindow.close();
+          map.data.forEach(function(feature) {
+            map.data.remove(feature);
           });
         }
 
-
+        var listener;
         return {
           restrict: 'EA',
           template: '<div id="map"></div>',
@@ -116,12 +69,17 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           link: function(scope, element, attrs) {
             init(element.get(0));
             scope.$watch('region', function(region) {
-              if (region && region.geojson)
-                showFeature(region.geojson, randomStyle());
+              if (region && region.geojson) {
+                cleamMap(map);
+                map.data.addGeoJson(region.geojson);
+                map.data.setStyle(randomStyle());
+                // addListener in fact interates over all the features
+                // and assigns a callback to the click event.
+                listener = map.data.addListener('click', setInfoWindow);
+              }
             });
 
             scope.$on('$destroy', cleanupListeners);
-
           }
         };
 

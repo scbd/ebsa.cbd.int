@@ -21,12 +21,10 @@ define(['app'], function(app) {
 
       Meetings.getMeetingsPage('upcoming', function(meetingSet) {
         $scope.meetingsUpcoming = meetingSet.meetings;
-        console.log($scope.meetingsUpcoming);
       });
 
       Meetings.getMeetingsPage('previous', function(meetingSet) {
         $scope.meetingsPrevious = meetingSet.meetings;
-        console.log($scope.meetingsPrevious);
       });
     }
   ]);

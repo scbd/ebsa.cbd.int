@@ -8,3 +8,10 @@ Workshop to Facilitate the Description of Ecologically or Biologically Significa
 6. Publications - Static.
 
 /region-details/phonenix-islands
+
+1. Home Page - Show all regions by default
+2. Home page, add link that leads to meetings page.
+2a. Remove random colors and add back the consistent styles.
+3. Country list should only show the countries that had meetings available in them.
+4. Year list generated from first year of meetings going forward.
+5. Footer links don't work.

@@ -78,7 +78,6 @@ define(['./module.js'], function(module) {
           var loader = getTemplate(scope.format);
 
           scope.$watch('meetingData', function(meetings) {
-            console.log(meetings);
             if (!meetings) return;
 
             meetings = sortByYear(meetings).slice(0, scope.itemsPerTimeframe || meetings.length);
