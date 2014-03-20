@@ -10,10 +10,9 @@
   "features": [{
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No.16: Equatorial High-Productivity Zone",
+      "NAME": "Equatorial High-Productivity Zone",
       "Workshop": "South Pacific",
-      "EBSA_ID": 16,
-      "AREA_MW_KM": 7084230.0
+      "KEY": 200049
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -60,10 +59,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 15: South Tasman Sea",
+      "NAME": "South Tasman Sea",
       "Workshop": "South Pacific",
-      "EBSA_ID": 15,
-      "AREA_MW_KM": 939692.0
+      "KEY": 200048
     },
     "geometry": {
       "type": "Polygon",
@@ -881,10 +879,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 18: Western South Pacific High Aragonite Saturation State Zone",
+      "NAME": "Western South Pacific High Aragonite Saturation State Zone",
       "Workshop": "South Pacific",
-      "EBSA_ID": 18,
-      "AREA_MW_KM": 900248.0
+      "KEY": 200051
     },
     "geometry": {
       "type": "Polygon",
@@ -917,10 +914,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 4:  Remetau group: SW Caroline Islands and northern New Guinea EBSA",
+      "NAME": "Remetau group: SW Caroline Islands and northern New Guinea EBSA",
       "Workshop": "South Pacific",
-      "EBSA_ID": 4,
-      "AREA_MW_KM": 765402.0
+      "KEY": 200037
     },
     "geometry": {
       "type": "Polygon",
@@ -1070,10 +1066,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 19: Clipperton Fracture Zone petrel foraging area",
+      "NAME": "Clipperton Fracture Zone petrel foraging area",
       "Workshop": "South Pacific",
-      "EBSA_ID": 19,
-      "AREA_MW_KM": 713607.0
+      "KEY": 200052
     },
     "geometry": {
       "type": "Polygon",
@@ -1099,10 +1094,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 8: New Britain Trench Region",
+      "NAME": "New Britain Trench Region",
       "Workshop": "South Pacific",
-      "EBSA_ID": 8,
-      "AREA_MW_KM": 419975.0
+      "KEY": 200041
     },
     "geometry": {
       "type": "Polygon",
@@ -1143,10 +1137,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 1.:   Phoenix Islands",
+      "NAME": "Phoenix Islands",
       "Workshop": "South Pacific",
-      "EBSA_ID": 1,
-      "AREA_MW_KM": 375819.0
+      "KEY": 200034
     },
     "geometry": {
       "type": "Polygon",
@@ -1173,10 +1166,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 13: South of Tuvalu\/Wallis & Fortuna\/North of Fiji Plateau",
+      "NAME": "South of Tuvalu\/Wallis & Fortuna\/North of Fiji Plateau",
       "Workshop": "South Pacific",
-      "EBSA_ID": 13,
-      "AREA_MW_KM": 309572.0
+      "KEY": 200046
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1228,10 +1220,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No 23: Manihiki Plateau",
+      "NAME": "Manihiki Plateau",
       "Workshop": "South Pacific",
-      "EBSA_ID": 23,
-      "AREA_MW_KM": 282266.0
+      "KEY": 200056
     },
     "geometry": {
       "type": "Polygon",
@@ -1252,10 +1243,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No 11:  Samoan Archipelago",
+      "NAME": "Samoan Archipelago",
       "Workshop": "South Pacific",
-      "EBSA_ID": 11,
-      "AREA_MW_KM": 224948.0
+      "KEY": 200044
     },
     "geometry": {
       "type": "Polygon",
@@ -1283,10 +1273,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No 17: Central Louisville Seamount Chain",
+      "NAME": "Central Louisville Seamount Chain",
       "Workshop": "South Pacific",
-      "EBSA_ID": 17,
-      "AREA_MW_KM": 216353.0
+      "KEY": 200050
     },
     "geometry": {
       "type": "Polygon",
@@ -1304,10 +1293,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 5:  Kadavu and the Southern Lau Region",
+      "NAME": "Kadavu and the Southern Lau Region",
       "Workshop": "South Pacific",
-      "EBSA_ID": 5,
-      "AREA_MW_KM": 196886.0
+      "KEY": 200038
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1354,10 +1342,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 20: Northern Lord Howe Ridge petrel foraging area",
+      "NAME": "Northern Lord Howe Ridge petrel foraging area",
       "Workshop": "South Pacific",
-      "EBSA_ID": 20,
-      "AREA_MW_KM": 167307.0
+      "KEY": 200053
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1631,10 +1618,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 26: Tongan Archipelago",
+      "NAME": "Tongan Archipelago",
       "Workshop": "South Pacific",
-      "EBSA_ID": 26,
-      "AREA_MW_KM": 151301.0
+      "KEY": 200059
     },
     "geometry": {
       "type": "Polygon",
@@ -1651,10 +1637,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 9: New Hebrides Trench Region",
+      "NAME": "New Hebrides Trench Region",
       "Workshop": "South Pacific",
-      "EBSA_ID": 9,
-      "AREA_MW_KM": 100649.0
+      "KEY": 200042
     },
     "geometry": {
       "type": "Polygon",
@@ -1680,10 +1665,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No 3: Seamounts of West Norfolk ridge",
+      "NAME": "Seamounts of West Norfolk ridge",
       "Workshop": "South Pacific",
-      "EBSA_ID": 3,
-      "AREA_MW_KM": 72474.3
+      "KEY": 200036
     },
     "geometry": {
       "type": "Polygon",
@@ -1713,10 +1697,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 6: Kermadec-Tonga-Louisville Junction",
+      "NAME": "Kermadec-Tonga-Louisville Junction",
       "Workshop": "South Pacific",
-      "EBSA_ID": 6,
-      "AREA_MW_KM": 65270.3
+      "KEY": 200039
     },
     "geometry": {
       "type": "Polygon",
@@ -1836,10 +1819,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 25:  Palau Southwest EBSA (Dims)",
+      "NAME": "Palau Southwest EBSA (Dims)",
       "Workshop": "South Pacific",
-      "EBSA_ID": 25,
-      "AREA_MW_KM": 43035.1
+      "KEY": 200058
     },
     "geometry": {
       "type": "Polygon",
@@ -1864,10 +1846,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 21: Northern New Zealand\/South Fiji Basin",
+      "NAME": "Northern New Zealand\/South Fiji Basin",
       "Workshop": "South Pacific",
-      "EBSA_ID": 21,
-      "AREA_MW_KM": 36228.8
+      "KEY": 200054
     },
     "geometry": {
       "type": "Polygon",
@@ -2064,10 +2045,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 14: Vatu-i-Ra\/Lomaiviti, Fiji",
+      "NAME": "Vatu-i-Ra\/Lomaiviti, Fiji",
       "Workshop": "South Pacific",
-      "EBSA_ID": 14,
-      "AREA_MW_KM": 23582.8
+      "KEY": 200047
     },
     "geometry": {
       "type": "Polygon",
@@ -2094,10 +2074,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No: 22: Taveuni and Ringgold Islands",
+      "NAME": "Taveuni and Ringgold Islands",
       "Workshop": "South Pacific",
-      "EBSA_ID": 22,
-      "AREA_MW_KM": 17572.7
+      "KEY": 200055
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -2133,10 +2112,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 24: Niue Island and Beveridge reef",
+      "NAME": "Niue Island and Beveridge reef",
       "Workshop": "South Pacific",
-      "EBSA_ID": 24,
-      "AREA_MW_KM": 11219.1
+      "KEY": 200057
     },
     "geometry": {
       "type": "Polygon",
@@ -2153,10 +2131,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 7:  Monowai Seamount",
+      "NAME": "Monowai Seamount",
       "Workshop": "South Pacific",
-      "EBSA_ID": 7,
-      "AREA_MW_KM": 9917.35
+      "KEY": 200040
     },
     "geometry": {
       "type": "Polygon",
@@ -2269,10 +2246,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No 2:  Ua puakaoa seamounts",
+      "NAME": "Ua puakaoa seamounts",
       "Workshop": "South Pacific",
-      "EBSA_ID": 2,
-      "AREA_MW_KM": 9362.46
+      "KEY": 200035
     },
     "geometry": {
       "type": "Polygon",
@@ -2293,10 +2269,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 10:  Rarotonga Outer Reef Slopes (80-300m depth)",
+      "NAME": "Rarotonga Outer Reef Slopes (80-300m depth)",
       "Workshop": "South Pacific",
-      "EBSA_ID": 10,
-      "AREA_MW_KM": 6386.42
+      "KEY": 200043
     },
     "geometry": {
       "type": "Polygon",
@@ -2318,10 +2293,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "NAME": "EBSA No. 12: Suwarrow National Park",
+      "NAME": "Suwarrow National Park",
       "Workshop": "South Pacific",
-      "EBSA_ID": 12,
-      "AREA_MW_KM": 5268.15
+      "KEY": 200045
     },
     "geometry": {
       "type": "Polygon",

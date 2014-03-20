@@ -1,5 +1,5 @@
-define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', 'geojson', '../util/colors.js'],
-  function(module, google, geojson, colors) {
+define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', '../util/colors.js'],
+  function(module, google, colors) {
     return module.directive('gmap', ['$window',
       function($window, regions) {
 
@@ -7,6 +7,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           currentFeatures = null,
           infowindow,
           gmapsListeners = [],
+          geojsonCache = {},
           defaultStyle = {
             strokeColor: '',
             strokeOpacity: 0.75,
@@ -36,15 +37,25 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         }
 
         function setInfoWindow(event) {
-            var content = '<div id=\'infoBox\'>';
-            event.feature.forEachProperty(function(propVal, propName) {
-              content += propName + ': ' + propVal + '<br />';
-            });
+          var content = '<div id="infoBox">',
+            key,
+            CBDbaseUrl = 'https://chm.cbd.int/database/record?documentID=';
 
-            content += '</div>';
-            infowindow.setContent(content);
-            infowindow.setPosition(event.latLng);
-            infowindow.open(map);
+          event.feature.forEachProperty(function(propVal, propName) {
+            if (propName == 'NAME') {
+              content += propName + ': ' + '<strong>' + propVal + '</strong><br />';
+            } else if (propName == 'KEY') {
+              key = propVal;
+            } else {
+              content += propName + ': ' + propVal + '<br /><br />';
+            }
+          });
+
+          content += '<a class="pull-right" target="_blank" href="' + CBDbaseUrl + key + '">Details »</a>';
+          content += '</div>';
+          infowindow.setContent(content);
+          infowindow.setPosition(event.latLng);
+          infowindow.open(map);
         }
 
         function cleanupListeners(e) {

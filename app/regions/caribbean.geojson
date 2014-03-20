@@ -12,8 +12,7 @@
     "properties": {
       "NAME": "Sargasso Sea",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 13,
-      "AREA_MW_KM": 4163460.0
+      "KEY": 200098
     },
     "geometry": {
       "type": "Polygon",
@@ -14953,8 +14952,7 @@
     "properties": {
       "NAME": "Atlantic Equatorial Fracture Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 20,
-      "AREA_MW_KM": 1928980.0
+      "KEY": 200105
     },
     "geometry": {
       "type": "Polygon",
@@ -14973,8 +14971,7 @@
     "properties": {
       "NAME": "Amazonina-Orinoco Influenced Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 16,
-      "AREA_MW_KM": 1156170.0
+      "KEY": 200101
     },
     "geometry": {
       "type": "Polygon",
@@ -15054,8 +15051,7 @@
     "properties": {
       "NAME": "Southern Brazilian Sea",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 22,
-      "AREA_MW_KM": 595274.0
+      "KEY": 200107
     },
     "geometry": {
       "type": "Polygon",
@@ -15119,8 +15115,7 @@
     "properties": {
       "NAME": "Abrolhos bank and Vitria-Trindade Chain",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 21,
-      "AREA_MW_KM": 365116.0
+      "KEY": 200106
     },
     "geometry": {
       "type": "Polygon",
@@ -15170,8 +15165,7 @@
     "properties": {
       "NAME": "Mesoamerian Reef",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 1,
-      "AREA_MW_KM": 258721.0
+      "KEY": 200060
     },
     "geometry": {
       "type": "Polygon",
@@ -15585,8 +15579,7 @@
     "properties": {
       "NAME": "Eastern Caribbean",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 12,
-      "AREA_MW_KM": 254574.0
+      "KEY": 200097
     },
     "geometry": {
       "type": "Polygon",
@@ -15906,8 +15899,7 @@
     "properties": {
       "NAME": "Banks of Northern Brazil and Fernando de Noronha",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 19,
-      "AREA_MW_KM": 142505.0
+      "KEY": 200103
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -16108,8 +16100,7 @@
     "properties": {
       "NAME": "Pedro Bank, Southern Channel, and Morant",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 6,
-      "AREA_MW_KM": 75437.6
+      "KEY": 200065
     },
     "geometry": {
       "type": "Polygon",
@@ -16423,8 +16414,7 @@
     "properties": {
       "NAME": "Northeastern Brazilian Shelf-Edge Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 19,
-      "AREA_MW_KM": 71980.2
+      "KEY": 200104
     },
     "geometry": {
       "type": "Polygon",
@@ -19035,8 +19025,7 @@
     "properties": {
       "NAME": "Banco de la Plata y Banco de la Navidad",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 9,
-      "AREA_MW_KM": 23853.6
+      "KEY": 200068
     },
     "geometry": {
       "type": "Polygon",
@@ -19816,8 +19805,7 @@
     "properties": {
       "NAME": "Corn Island",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 3,
-      "AREA_MW_KM": 16035.0
+      "KEY": 200062
     },
     "geometry": {
       "type": "Polygon",
@@ -19937,8 +19925,7 @@
     "properties": {
       "NAME": "Cayos Miskitos",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 2,
-      "AREA_MW_KM": 14547.6
+      "KEY": 200061
     },
     "geometry": {
       "type": "Polygon",
@@ -19984,8 +19971,7 @@
     "properties": {
       "NAME": "Talud Continental Superior del Magdalena",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 15,
-      "AREA_MW_KM": 8923.46
+      "KEY": 200100
     },
     "geometry": {
       "type": "Polygon",
@@ -20372,8 +20358,7 @@
     "properties": {
       "NAME": "Saba Bank",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 11,
-      "AREA_MW_KM": 4053.94
+      "KEY": 200096
     },
     "geometry": {
       "type": "Polygon",
@@ -20398,8 +20383,7 @@
     "properties": {
       "NAME": "Caracol\/Ft. Libert\/Monte Cristi",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 8,
-      "AREA_MW_KM": 3129.37
+      "KEY": 200067
     },
     "geometry": {
       "type": "Polygon",
@@ -20598,8 +20582,7 @@
     "properties": {
       "NAME": "Parcel do Manuel Luiz e Banco do lvaro",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 17,
-      "AREA_MW_KM": 1939.78
+      "KEY": 200102
     },
     "geometry": {
       "type": "Polygon",
@@ -20621,8 +20604,7 @@
     "properties": {
       "NAME": "Navassa Island",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 7,
-      "AREA_MW_KM": 1653.57
+      "KEY": 200066
     },
     "geometry": {
       "type": "Polygon",
@@ -20669,8 +20651,7 @@
     "properties": {
       "NAME": "Talud Continental Superior del Sin",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 14,
-      "AREA_MW_KM": 1347.61
+      "KEY": 200099
     },
     "geometry": {
       "type": "Polygon",
@@ -20957,8 +20938,7 @@
     "properties": {
       "NAME": "Cahuita  Gandoca",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 5,
-      "AREA_MW_KM": 1004.02
+      "KEY": 200064
     },
     "geometry": {
       "type": "Polygon",
@@ -21014,8 +20994,7 @@
     "properties": {
       "NAME": "Tortuguero  Barra del Colorado",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
-      "EBSA_ID": 4,
-      "AREA_MW_KM": 967.28
+      "KEY": 200063
     },
     "geometry": {
       "type": "Polygon",
