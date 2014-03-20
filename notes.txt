@@ -15,3 +15,4 @@ Workshop to Facilitate the Description of Ecologically or Biologically Significa
 3. Country list should only show the countries that had meetings available in them.
 4. Year list generated from first year of meetings going forward.
 5. Footer links don't work.
+6. Update breadcrumbs dynamically with current crumb.
