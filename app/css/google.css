@@ -41,17 +41,22 @@
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000333}}
-.col-lg-2 input.pacific {
+.col-lg-2 input.all-regions {
   border-top: 2px solid #247080;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000336}}
+.col-lg-2 input.pacific {
+  border-top: 1px solid #247080;
   border-bottom: 1px solid #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000340}}
 .col-lg-2 input.caribbean {
   border-bottom: 2px solid #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000343}}
 .col-lg-2 p {
   color: #000;
 }
