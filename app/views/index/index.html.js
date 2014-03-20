@@ -6,18 +6,19 @@ define(['app'], function(app) {
       var regionData = {},
         regionList = ['caribbean', 'southPacific'];
 
-      regionList.forEach(function(regionName) {
+      $scope.showFeature = function(regionName) {
+        $scope.selectedRegion = regionName;
+      };
+
+      regionList.forEach(function(regionName, index) {
         regions.getRegionByName(regionName, function(regionGeojson) {
           regionData[regionName] = regionGeojson;
+          // check to see if we loaded everything and update the $scope.
+          if (Object.keys(regionData).length === regionList.length) {
+            $scope.regionData = regionData;
+          }
         });
       });
-
-      $scope.showFeature = function(regionName, styleName) {
-        $scope.selectedRegion = {
-          geojson: regionData[regionName],
-          styleName: regionName
-        };
-      };
 
       Meetings.getMeetingsPage('upcoming', function(meetingSet) {
         $scope.meetingsUpcoming = meetingSet.meetings;

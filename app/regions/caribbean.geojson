@@ -10,6 +10,10 @@
   "features": [{
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Sargasso Sea",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200098
@@ -14950,6 +14954,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Atlantic Equatorial Fracture Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200105
@@ -14969,6 +14977,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Amazonina-Orinoco Influenced Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200101
@@ -15049,6 +15061,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Southern Brazilian Sea",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200107
@@ -15113,6 +15129,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Abrolhos bank and Vitria-Trindade Chain",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200106
@@ -15163,6 +15183,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Mesoamerian Reef",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200060
@@ -15577,6 +15601,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Eastern Caribbean",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200097
@@ -15897,6 +15925,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Banks of Northern Brazil and Fernando de Noronha",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200103
@@ -16098,6 +16130,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Pedro Bank, Southern Channel, and Morant",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200065
@@ -16412,6 +16448,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Northeastern Brazilian Shelf-Edge Zone",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200104
@@ -19023,6 +19063,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Banco de la Plata y Banco de la Navidad",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200068
@@ -19803,6 +19847,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Corn Island",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200062
@@ -19923,6 +19971,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Cayos Miskitos",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200061
@@ -19969,6 +20021,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Talud Continental Superior del Magdalena",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200100
@@ -20356,6 +20412,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Saba Bank",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200096
@@ -20381,6 +20441,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Caracol\/Ft. Libert\/Monte Cristi",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200067
@@ -20580,6 +20644,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Parcel do Manuel Luiz e Banco do lvaro",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200102
@@ -20602,6 +20670,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Navassa Island",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200066
@@ -20649,6 +20721,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Talud Continental Superior del Sin",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200099
@@ -20936,6 +21012,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Cahuita  Gandoca",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200064
@@ -20992,6 +21072,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#A9DDA6",
+        "fillColor": "#96DD92"
+      },
       "NAME": "Tortuguero  Barra del Colorado",
       "Workshop": "Wider Caribbean and Western Mid-Atlantic",
       "KEY": 200063

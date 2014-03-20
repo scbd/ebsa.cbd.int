@@ -10,6 +10,10 @@
   "features": [{
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Equatorial High-Productivity Zone",
       "Workshop": "South Pacific",
       "KEY": 200049
@@ -59,6 +63,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "South Tasman Sea",
       "Workshop": "South Pacific",
       "KEY": 200048
@@ -879,6 +887,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Western South Pacific High Aragonite Saturation State Zone",
       "Workshop": "South Pacific",
       "KEY": 200051
@@ -914,6 +926,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Remetau group: SW Caroline Islands and northern New Guinea EBSA",
       "Workshop": "South Pacific",
       "KEY": 200037
@@ -1066,6 +1082,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Clipperton Fracture Zone petrel foraging area",
       "Workshop": "South Pacific",
       "KEY": 200052
@@ -1094,6 +1114,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "New Britain Trench Region",
       "Workshop": "South Pacific",
       "KEY": 200041
@@ -1137,6 +1161,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Phoenix Islands",
       "Workshop": "South Pacific",
       "KEY": 200034
@@ -1166,6 +1194,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "South of Tuvalu\/Wallis & Fortuna\/North of Fiji Plateau",
       "Workshop": "South Pacific",
       "KEY": 200046
@@ -1220,6 +1252,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Manihiki Plateau",
       "Workshop": "South Pacific",
       "KEY": 200056
@@ -1243,6 +1279,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Samoan Archipelago",
       "Workshop": "South Pacific",
       "KEY": 200044
@@ -1273,6 +1313,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Central Louisville Seamount Chain",
       "Workshop": "South Pacific",
       "KEY": 200050
@@ -1293,6 +1337,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Kadavu and the Southern Lau Region",
       "Workshop": "South Pacific",
       "KEY": 200038
@@ -1342,6 +1390,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Northern Lord Howe Ridge petrel foraging area",
       "Workshop": "South Pacific",
       "KEY": 200053
@@ -1618,6 +1670,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Tongan Archipelago",
       "Workshop": "South Pacific",
       "KEY": 200059
@@ -1637,6 +1693,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "New Hebrides Trench Region",
       "Workshop": "South Pacific",
       "KEY": 200042
@@ -1665,6 +1725,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Seamounts of West Norfolk ridge",
       "Workshop": "South Pacific",
       "KEY": 200036
@@ -1697,6 +1761,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Kermadec-Tonga-Louisville Junction",
       "Workshop": "South Pacific",
       "KEY": 200039
@@ -1819,6 +1887,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Palau Southwest EBSA (Dims)",
       "Workshop": "South Pacific",
       "KEY": 200058
@@ -1846,6 +1918,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Northern New Zealand\/South Fiji Basin",
       "Workshop": "South Pacific",
       "KEY": 200054
@@ -2045,6 +2121,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Vatu-i-Ra\/Lomaiviti, Fiji",
       "Workshop": "South Pacific",
       "KEY": 200047
@@ -2074,6 +2154,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Taveuni and Ringgold Islands",
       "Workshop": "South Pacific",
       "KEY": 200055
@@ -2112,6 +2196,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Niue Island and Beveridge reef",
       "Workshop": "South Pacific",
       "KEY": 200057
@@ -2131,6 +2219,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Monowai Seamount",
       "Workshop": "South Pacific",
       "KEY": 200040
@@ -2246,6 +2338,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Ua puakaoa seamounts",
       "Workshop": "South Pacific",
       "KEY": 200035
@@ -2269,6 +2365,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Rarotonga Outer Reef Slopes (80-300m depth)",
       "Workshop": "South Pacific",
       "KEY": 200043
@@ -2293,6 +2393,10 @@
   }, {
     "type": "Feature",
     "properties": {
+      "style": {
+        "strokeColor": "#F1EFE0",
+        "fillColor": "#EFE8BB"
+      },
       "NAME": "Suwarrow National Park",
       "Workshop": "South Pacific",
       "KEY": 200045

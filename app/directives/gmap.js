@@ -7,24 +7,15 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           currentFeatures = null,
           infowindow,
           gmapsListeners = [],
-          geojsonCache = {},
+          geojsonCache,
           defaultStyle = {
-            strokeColor: '',
+            strokeColor: null,
             strokeOpacity: 0.75,
             strokeWeight: 2,
-            fillColor: '',
+            fillColor: null,
             fillOpacity: 0.25
           };
 
-        function randomStyle() {
-          var style = angular.copy(defaultStyle);
-          // we set random color to start at 50 so we don't get
-          // straight black on the map.
-          style.strokeColor = colors.changeLuminance(colors.randomHexColor(50), 1);
-          // Make the fill color be 20% brighter than the stroke color.
-          style.fillColor = colors.changeLuminance(style.strokeColor, -0.3);
-          return style;
-        }
 
         function init(rootEl) {
           infowindow = new $window.google.maps.InfoWindow();
@@ -62,7 +53,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           $window.google.maps.event.removeListener(listener);
         }
 
-        function cleamMap(map) {
+        function clearMap(map) {
           if (infowindow.getMap()) infowindow.close();
           map.data.forEach(function(feature) {
             map.data.remove(feature);
@@ -70,24 +61,51 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         }
 
         var listener;
+
+        function displayRegion(regionData, regionName) {
+          map.data.addGeoJson(regionData);
+          listener = map.data.addListener('click', setInfoWindow);
+        }
+
+        function applyStyles() {
+          map.data.setStyle(function(feature) {
+            return angular.extend({}, defaultStyle, feature.getProperty('style'));
+          });
+        }
+
+        function updateSelectedRegion(regionName) {
+          if (!geojsonCache) return;
+          clearMap(map);
+          console.log(regionName);
+          if (!regionName) {
+            angular.forEach(geojsonCache, function(regionData, regionName) {
+              displayRegion(regionData, regionName);
+            });
+            applyStyles();
+            return;
+          }
+          displayRegion(geojsonCache[regionName], regionName);
+          applyStyles();
+        }
+
         return {
           restrict: 'EA',
           template: '<div id="map"></div>',
           replace: true,
           scope: {
-            region: '='
+            regions: '=',
+            selectedRegion: '='
           },
           link: function(scope, element, attrs) {
             init(element.get(0));
-            scope.$watch('region', function(region) {
-              if (region && region.geojson) {
-                cleamMap(map);
-                map.data.addGeoJson(region.geojson);
-                map.data.setStyle(randomStyle());
-                // addListener in fact interates over all the features
-                // and assigns a callback to the click event.
-                listener = map.data.addListener('click', setInfoWindow);
-              }
+
+
+            scope.$watch('selectedRegion', updateSelectedRegion);
+
+            scope.$watch('regions', function(regions) {
+              if (!regions) return;
+              geojsonCache = regions;
+              updateSelectedRegion(null);
             });
 
             scope.$on('$destroy', cleanupListeners);
