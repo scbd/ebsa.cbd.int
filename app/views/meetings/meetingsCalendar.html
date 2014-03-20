@@ -1,8 +1,8 @@
-<table class="table meeting-table" ng-repeat="(year, months) in meetings">
+<table class="table meeting-table" ng-repeat="year in meetings">
   <tr>
     <th ng-show="$first">Date and Venue</th>
     <th ng-show="$first">Event</th>
-    <th class="right">{{year}}</th>
+    <th class="right">{{year.numeric}}</th>
   </tr>
 
   <!-- <tr class="year">
@@ -11,7 +11,7 @@
     </td>
   </tr> -->
 
-  <tr class="month" ng-repeat-start="(month, meetings) in months">
+  <tr class="month" ng-repeat-start="(month, meetings) in year.months">
     <td colspan="3">
       <p class="important">{{getLocalizedMonth(month)}}</p>
     </td>
@@ -24,7 +24,7 @@
           <td>
             <p>
               {{meeting.startDay}} {{getLocalizedMonth(meeting.startMonth)}} -
-              {{meeting.endDay}} {{getLocalizedMonth(meeting.startMonth)}}<br />
+              {{meeting.endDay}} {{getLocalizedMonth(meeting.endMonth)}}<br />
 
               {{meeting.city}}, {{meeting.country}} <br />
 

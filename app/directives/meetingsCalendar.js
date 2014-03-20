@@ -25,7 +25,6 @@ define(['./module.js'], function(module) {
 
       function processMeetings(meetings) {
         if (!meetings) return meetings;
-        console.log('meetings: ', meetings);
         // sorts meetings by date in descending order, localizes the dates, and groups the meeting by years
         // and then subgroups by months.
         // ex: {
@@ -35,12 +34,17 @@ define(['./module.js'], function(module) {
         //   }
         // }
         var groupedByYear = _.groupBy(meetings, 'startYear'),
-          groupedByMonthAndYear = {};
+          sortedByMonthAndYear = [];
 
         angular.forEach(groupedByYear, function(meetings, year) {
-          groupedByMonthAndYear[year] = _.groupBy(meetings, 'startMonth');
+          sortedByMonthAndYear.push({
+            numeric: year,
+            months: _.groupBy(meetings, 'startMonth')
+          });
         });
-        meetings = groupedByMonthAndYear;
+        meetings = _.sortBy(sortedByMonthAndYear, function(year) {
+          return year.numeric;
+        }).reverse();
         return meetings;
       }
 

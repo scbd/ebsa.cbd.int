@@ -151,7 +151,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(timeframe, pageNum, countryCode, year, cb) {
+      meetings.getMeetingsPage = function(timeframe, pageNum, countryCode, year, title, cb) {
         var args = Array.prototype.slice.call(arguments, 0);
         cb = args.filter(function(arg) { return angular.isFunction(arg); })[0];
         currentPage = pageNum || 1;
@@ -162,7 +162,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           year: year,
           sort: [sortField, dir],
           start: (currentPage - 1) * perPage,
-          title_t: '*EBSA*'
+          title_t: title
         });
         issueRequest(solrQuery, cb);
       };

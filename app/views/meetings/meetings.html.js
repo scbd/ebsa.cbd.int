@@ -56,7 +56,9 @@ define([
         };
 
         $scope.setPage = function(page, countryCode, year) {
-          Meetings.getMeetingsPage($scope.timeframe, page, filters.country, filters.year, function(meetingSet) {
+          // we're looking only for EBSA meetings
+          var titleFilter = '*EBSA*';
+          Meetings.getMeetingsPage($scope.timeframe, page, filters.country, filters.year, titleFilter, function(meetingSet) {
             $scope.totalMeetings = meetingSet.pagination.totalMeetings;
             $scope.currentPage = meetingSet.pagination.currentPage;
             $scope.perPage = meetingSet.pagination.perPage;
