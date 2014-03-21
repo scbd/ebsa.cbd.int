@@ -6,27 +6,15 @@ define([
   function(app, _, strings) {
     'use strict';
 
-    app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists',
-      function($http, $scope, $locale, Meetings, Lists) {
+    app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists', 'paginator',
+      function($http, $scope, $locale, Meetings, Lists, paginator) {
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
-
-        Lists.getCountries(function(json) {
-          $scope.memberCountries = json;
-          // set the default option to be all meetings
-          // see below in setSelectedCountry for handling of special case.
-          $scope.memberCountries.unshift({
-            name: 'All',
-            countryCode: 'All'
-          });
-          setSelectedTitle('country', $scope.memberCountries[0].name);
-        });
 
         var filters = {
           country: undefined,
           year: undefined
         };
-
         function resetFilters() {
           filters.country = filters.year = undefined;
           setSelectedTitle('country', 'All');
@@ -47,43 +35,104 @@ define([
               });
             }
             setSelectedTitle(paramName, isCountry ? country.name : value);
-            filterValue = isCountry && filterValue ? value.toLowerCase() : filterValue;
+            filterValue = isCountry && filterValue ? value : filterValue;
 
             filters[paramName] = filterValue;
-            // kick off the filtering
-            $scope.setPage($scope.currentPage, filters.country, filters.year);
+
+            updateMeetingData(filterMeetings(filters));
           }
         };
 
+        function filterMeetings(filters) {
+          var filtered,
+            meetings = meetingsCache[$scope.timeframe];
+
+          if (!filters.country && !filters.year) return meetings;
+
+          if (filters.country) {
+            filtered = meetings.filter(function(meeting) {
+              return meeting.countryCode === filters.country;
+            });
+          }
+          if (filters.year) {
+            if (!filtered) filtered = meetings;
+            filtered = filtered.filter(function(meeting) {
+              return meeting.startYear === filters.year;
+            });
+          }
+          return filtered;
+        }
+
         $scope.setPage = function(page, countryCode, year) {
-          // we're looking only for EBSA meetings
-          var title = '*EBSA*';
-          // var title = null;
-          Meetings.getMeetingsPage($scope.timeframe, title, page, filters.country, filters.year, function(meetingSet) {
-            $scope.totalMeetings = meetingSet.pagination.totalMeetings;
-            $scope.currentPage = meetingSet.pagination.currentPage;
-            $scope.perPage = meetingSet.pagination.perPage;
-            $scope.meetings = meetingSet.meetings;
-          });
+          paginator.setPage(page);
+          updateMeetingData();
         };
 
         $scope.setTimeframe = function(timeframe) {
           resetFilters();
           $scope.timeframe = timeframe;
-          $scope.setPage($scope.currentPage);
+          fetchMeetings(timeframe);
         };
 
         function setSelectedTitle(paramName, title) {
           $scope['selected' + strings.capitalise(paramName)] = title;
         }
 
-        Lists.getYears(function(years) {
-          $scope.yearList = years;
-          $scope.yearList.unshift('All');
-          setSelectedTitle('year', $scope.yearList[0]);
-        });
+        function generateCountryList(meetings) {
+          Lists.getCountries(function(json) {
+            var countryNames = [];
+            meetings.forEach(function(meeting) {
+              countryNames.push(_.findWhere(json, {
+                countryCode: meeting.countryCode
+              }));
+            });
+            $scope.memberCountries = _.sortBy(_.uniq(countryNames), function(country) {
+              return country && country.name;
+            });
+            // set the default option to be all meetings
+            // see below in setSelectedCountry for handling of special case.
+            $scope.memberCountries.unshift({
+              name: 'All',
+              countryCode: 'All'
+            });
+            setSelectedTitle('country', $scope.memberCountries[0].name);
+          });
+        }
 
-        $scope.setPage($scope.currentPage, null, null);
+        function generateYearList(meetings) {
+          var yearList = meetings.map(function(meeting) {
+            return meeting.startYear;
+          });
+          yearList.unshift('All');
+          $scope.yearList = _.uniq(yearList);
+        }
+
+
+        function updateMeetingData(meetings) {
+          if (meetings) paginator.resetCollection(meetings);
+          var page = paginator.getCurrentPage();
+          $scope.meetings = page.data;
+          $scope.pagination = page.pagination;
+        }
+
+        var meetingsCache = {};
+        function fetchMeetings(timeframe, country, year) {
+          // we're looking only for EBSA meetings
+          var title = '*EBSA*';
+
+          if (timeframe && meetingsCache[timeframe])
+            return updateMeetingData(meetingsCache[timeframe]);
+
+          Meetings.getMeetingsPage(timeframe, title, country, year, function(meetingSet) {
+            // cache the results since we ask the backend for all rows.
+            meetingsCache[timeframe] = meetingSet;
+            updateMeetingData(meetingSet);
+            generateCountryList(meetingSet);
+            generateYearList(meetingSet);
+          });
+        }
+
+        fetchMeetings('upcoming', filters.country, filters.year);
       }
     ]);
 

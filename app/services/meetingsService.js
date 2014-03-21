@@ -6,9 +6,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         baseQuery = 'schema_s:meeting',
         documentsBaseUrl = 'http://www.cbd.int/doc/?meeting=',
         meetings = {},
-        perPage = 10,
-        currentPage = 1,
         sortField = 'startDate_dt',
+        perPage = 10,
         dirUp = 'asc',
         dirDown = 'desc',
         queryUpcoming = '[NOW TO *]',
@@ -22,20 +21,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           sort: 'sort'
         };
 
-      function computePagination(total, curPage, perPage) {
-        return {
-          totalMeetings: total,
-          currentPage: curPage || 1,
-          totalPages: Math.ceil(total / perPage),
-          perPage: perPage
-        };
-      }
-
       function normalizeMeetings(response) {
-        var processed = {
-          meetings: [],
-          pagination: computePagination(response.numFound, currentPage, perPage)
-        };
+        processed = [];
 
         response.docs.forEach(function(meeting) {
           var startDate = new Date(meeting.startDate_dt);
@@ -57,7 +44,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
             countryCode: meeting.eventCountry_s && meeting.eventCountry_s.toUpperCase()
           };
 
-          processed.meetings.push(m);
+          processed.push(m);
         });
 
         return processed;
@@ -135,6 +122,10 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               start = val;
               break;
 
+            case 'rows':
+              query.rows(val);
+              break;
+
             default:
               q[translateFieldName(fname)] = val;
               break;
@@ -152,7 +143,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(timeframe, title, pageNum, countryCode, year, cb) {
+      meetings.getMeetingsPage = function(timeframe, title, countryCode, year, pageNum, cb) {
         var args = Array.prototype.slice.call(arguments, 0);
         cb = args.filter(function(arg) { return angular.isFunction(arg); })[0];
 
@@ -164,8 +155,8 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           country: countryCode,
           year: year,
           sort: [sortField, dir],
-          start: (currentPage - 1) * perPage,
-          title_t: title
+          title_t: title,
+          rows: (currentPage - 1) * perPage || 100000
         });
 
         issueRequest(solrQuery, cb);

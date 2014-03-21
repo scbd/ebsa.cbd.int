@@ -65,17 +65,17 @@
           <div class="col-8 col-lg-8 wraparticle">
             <div class="article">
               <!-- Table -->
-              <pre class="pull-right pagination-totals">{{totalPages}} Pages</pre>
+              <pre class="pull-right pagination-totals">{{pagination.totalPages}} Pages</pre>
               <pagination
               class="pull-right no-margin"
               on-select-page="setPage(page)"
-              page="currentPage"
-              total-items="totalMeetings"
-              items-per-page="perPage"
+              page="pagination.currentPage"
+              total-items="pagination.totalItems"
+              items-per-page="pagination.perPage"
               boundary-links="true"
               max-size="3"
               rotate="false"
-              num-pages="totalPages">
+              num-pages="pagination.totalPages">
             </pagination>
 
             <!-- generate the meetings calendar -->

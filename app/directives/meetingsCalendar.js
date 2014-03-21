@@ -2,8 +2,8 @@ define(['./module.js'], function(module) {
   return module.directive('meetingsCalendar', ['meetings', '$locale', '$http', '$compile', '$templateCache',
     function(meetings, $locale, $http, $compile, $templateCache) {
 
-      function getLocalizedMonth(index) {
-        return $locale.DATETIME_FORMATS.MONTH[index];
+      function getLocalizedMonth(index, format) {
+        return $locale.DATETIME_FORMATS.SHORTMONTH[index];
       }
 
       function sortByYear(meetings) {
