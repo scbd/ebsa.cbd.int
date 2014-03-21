@@ -41,7 +41,7 @@
     <div class="main-navbar" role="navigation">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-          <a ng-href="{{item.link}}" class="nav-link">{{item.title}}</a>
+          <a ng-href="{{item.link}}" class="nav-link" ng-bind-html="item.title"></a>
         </li>
       </ul>
     </div><!-- /.navbar -->

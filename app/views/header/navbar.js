@@ -1,15 +1,15 @@
 define(['app'], function(app) {
   'use strict';
 
-  app.controller('NavbarCtrl', ['$scope', '$location', function($scope, $location) {
-      $scope.menu = [{
+  app.controller('NavbarCtrl', ['$scope', '$location', '$sce', function($scope, $location, $sce) {
+      var menu = [{
         'title': 'Home',
         'link': '/'
       }, {
         'title': 'About',
         'link': '/about'
       }, {
-        'title': 'EBSAs',
+        'title': 'EBSA<span class="lower">s</span>',
         'link': '/ebsas'
       }, {
         'title': 'Meetings',
@@ -21,6 +21,12 @@ define(['app'], function(app) {
         'title': 'Partners',
         'link': '/partners'
       }];
+      // bad hack to accomodate the one item that has HTML in it...
+      angular.forEach(menu, function(menuItem) {
+        menuItem.title = $sce.trustAsHtml(menuItem.title);
+      });
+
+      $scope.menu = menu;
 
       $scope.isActive = function(route) {
         return route === $location.path();
