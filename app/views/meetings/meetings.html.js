@@ -108,7 +108,7 @@ define([
           $scope.yearList = _.uniq(yearList);
         }
 
-        function computeOptionLists (meetingSet) {
+        function computeOptionLists(meetingSet) {
           generateCountryList(meetingSet);
           generateYearList(meetingSet);
         }
