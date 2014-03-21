@@ -1,10 +1,10 @@
 <div class="container" ng-controller="MeetingsCtrl">
   <div class="row row-offcanvas row-offcanvas-right">
 
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-xs-12">
 
       <!-- TABS  -->
-      <div class="col-3 col-lg-3 sidebar">
+      <div class="col-xs-3 col-lg-3 sidebar">
 
         <div class="bs-sidebar hidden-print" role="complementary">
           <h4>Meetings</h4>
@@ -23,9 +23,9 @@
 
       <div class="tab-content">
         <!--  UPCOMING MEETINGS  -->
-        <div id="upcoming" class="col-9 col-lg-9 tab-pane active">
+        <div id="upcoming" class="col-xs-9 col-lg-9 tab-pane active">
           <!-- TITLE ARTICLE  -->
-          <div class="col-4 col-lg-4 wraptitle">
+          <div class="col-xs-4 col-lg-4 wraptitle">
 
             <h2 ng-show="timeframe == 'upcoming'">Upcoming meetings</h2>
             <h2 ng-show="timeframe == 'previous'">Previous meetings</h2>
@@ -62,7 +62,7 @@
           <div class="push20"></div>
 
           <!-- ARTICLE  -->
-          <div class="col-8 col-lg-8 wraparticle">
+          <div class="col-xs-8 col-lg-8 wraparticle">
             <div class="article">
               <!-- Table -->
               <pre class="pull-right pagination-totals">{{pagination.totalPages}} Pages</pre>
@@ -99,7 +99,7 @@
       </div>
 
       <!--  Previous Meetings -->
-      <!-- <div id="previous" class="col-9 col-lg-9 tab-pane"></div> -->
+      <!-- <div id="previous" class="col-xs-9 col-lg-9 tab-pane"></div> -->
 
     </div><!--/col12-->
   </div><!--/row-->

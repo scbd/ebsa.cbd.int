@@ -1,12 +1,12 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\000031}}
-#map {
+html, body, #map {
   height: 100%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\000034}}
 .google-map > .col-lg-10 {
   height: 500px;
-  width: 940px;
+  width: 910px;
   padding-right: 0px;
   background: #e6e6e6;
   border-top: 2px solid #999;

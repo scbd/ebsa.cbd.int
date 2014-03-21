@@ -12,7 +12,37 @@ Workshop to Facilitate the Description of Ecologically or Biologically Significa
 1. Home Page - Show all regions by default - DONE.
 2. Home page, add link that leads to meetings page. - DONE.
 2a. Remove random colors and add back the consistent styles. - DONE.
-3. Country list should only show the countries that had meetings available in them.
-4. Year list generated from first year of meetings going forward.
+3. Country list should only show the countries that had meetings available in them. - DONE
+4. Year list generated from first year of meetings going forward. - DONE
 5. Footer links don't work. - DONE
 6. Update breadcrumbs dynamically with current crumb.
+
+
+
+I have done some major changes in the website, so I will send it to you right away via Dropbox.
+
+The About section is complete with the new text, there's one missing link, I will contact Joseph about it to correct, but the rest is fine. Just when you finished to upload it, could you send it to him so he can review as soon as possible? -- DONE
+
+I did not modify the Partners page, I am waiting for Joseph's new logos and texts. -- Awaiting
+
+There is a minor change in the footer. I added the four links at the bottom, you will see it clearly, it a <p class="copyright"> tag, I have changed to a tag and I added 3 more. -- DONE
+
+I also updated the Guidance in applying criteria, the article part.
+
+I added the "more" link on the home page tables. -- DONE
+
+And finally, (I am terribly sorry for that) I remove all the responsiveness of the website, I had to change all class of the div col-lg-* for col-xs-*. This is very major, I don't know how you want to proceed with that in the website. I send to you right away the entire the website, so you can have a overview, and later I will send you the precise changes I have made, as you asked me yesterday(for the home page, the resources and the footer).
+
+I have to leave now, but you can email me, and I will be able to reply later today.
+
+Thank you,
+
+Merged Pages:
+1. Resources
+2. Footer
+3. About
+4. Index
+5. Parners - untouched
+6. Meetings
+7. Header
+8. EBSAs

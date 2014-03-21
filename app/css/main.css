@@ -8087,27 +8087,29 @@ body {
   color: #000;
   position: relative;
   height: 100%;
-  width: 100%;
+  margin: 0 auto;
+  min-width: 1170px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000317}}
 html {
   position: relative;
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000321}}
 .wrapper {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000324}}
 .container {
   position: relative;
+  width: 1140px !important;
 }
 
 /* * REGULAR TITLES STYLES */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000330}}
 h1 {
   font-size: 32px;
   font-family: 'Source Sans Pro', Georgia;
@@ -8117,18 +8119,18 @@ h1 {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000338}}
 h1:not(.ebsas) {
   padding-top: 30px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000341}}
 h1.ebsas {
   font-size: 27px;
   padding-top: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000345}}
 h2 {
   font-size: 22px;
   font-family: 'Source Sans Pro', Georgia;
@@ -8138,7 +8140,7 @@ h2 {
   margin-top: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000353}}
 h3 {
   font-size: 18px;
   font-family: 'Source Sans Pro', Georgia;
@@ -8148,7 +8150,7 @@ h3 {
   margin: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000361}}
 h4 {
   font-size: 14px;
   font-family: Helvetica, Verdana, sans-serif;
@@ -8157,7 +8159,7 @@ h4 {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000368}}
 p {
   font-size: 12px;
   font-family: Helvetica, Verdana, sans-serif;
@@ -8165,12 +8167,12 @@ p {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000374}}
 .lower {
   text-transform: lowercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000378}}
 a,
 a:hover {
   font-size: 12px;
@@ -8179,18 +8181,18 @@ a:hover {
   color: #154157;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000384}}
 a:hover {
   text-decoration: underline;
 }
 
 /* * Header TITLES STYLES */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000389}}
 .website-title a:hover {
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000392}}
 .website-title h2 {
   font-family: 'Overlock', cursive;
   color: #B2E0ED;
@@ -8198,7 +8200,7 @@ a:hover {
   line-height: 11px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\0000398}}
 .website-title h3 {
   font-family: 'Overlock', cursive;
   color: #f1f1f1;
@@ -8207,7 +8209,7 @@ a:hover {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003105}}
 div.button {
   border: 1px solid #154157;
   border-radius: 3px;
@@ -8219,7 +8221,7 @@ div.button {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003115}}
 div.button div.link {
   border: 2px solid #247080;
   font-family: 'Source Sans Pro', sans-serif;
@@ -8231,13 +8233,13 @@ div.button div.link {
   padding-top: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003125}}
 div.button div.link:hover {
   background: #247080;
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003129}}
 div.button div.link a {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
@@ -8245,7 +8247,7 @@ div.button div.link a {
   color: #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003135}}
 div.button div.link:hover a {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
@@ -8257,13 +8259,13 @@ div.button div.link:hover a {
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003145}}
 ul li {
   list-style-type: none;
 }
 
 /* * HOME TITLES STYLES */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003150}}
 div.title {
   background: #508E8D;
   width: 87px;
@@ -8272,98 +8274,103 @@ div.title {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003157}}
 .clear {
   clear: both;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003161}}
 .push5 {
   height: 5px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003165}}
 .push15 {
   height: 15px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003169}}
 .push20 {
   height: 20px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003173}}
 .push50 {
   height: 50px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003177}}
 .nopadding {
   padding: 0px;
   margin: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003181}}
 .nopaddingleft {
   padding-left: 0px;
   margin-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003185}}
 .blue4 {
   color: #1C5573;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003188}}
 .white {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003191}}
 .black {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003194}}
 .black:hover {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003197}}
 .grey {
   color: #999;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003200}}
 .important {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003203}}
+.emphase {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003206}}
 .right {
   text-align: right;
 }
 
 /* *
 NAVBAR */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003212}}
 form.searchBox {
   z-index: 100;
   margin-top: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003217}}
 .nav > li > a:hover,
 .nav > li > a:focus {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003220}}
 .navbar-nav li a {
   font-size: 16px;
   color: #999;
@@ -8372,24 +8379,24 @@ form.searchBox {
   font-weight: 400;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003227}}
 .navbar-nav li a:hover {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003231}}
 .nav .open > a:hover,
 .home-navbar .nav .open > a:focus {
   background: none;
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003235}}
 .menu-bg {
   background: #E6E6E6;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003238}}
 .main-navbar .navbar-collapse {
   margin-top: 0px;
   padding-left: 0px;
@@ -8397,37 +8404,37 @@ form.searchBox {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003244}}
 .header .navbar-brand {
   padding: 13px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003247}}
 .main-navbar .navbar-nav li {
-  margin: 0px 58px;
+  margin: 0px 57px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   padding: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003254}}
 .main-navbar .navbar-nav li:last-child {
   margin-right: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003257}}
 .main-navbar .navbar-nav li:first-child {
   margin-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003256}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003261}}
 .nav > li > a:hover,
 .nav > li > a:focus {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003265}}
 .main-navbar .navbar-nav li a:hover,
 .main-navbar .navbar-nav li.active a {
   color: #000;
@@ -8436,7 +8443,7 @@ form.searchBox {
 /* *
 HOME PAGE */
 /* HEADER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003272}}
 .header-bg {
   background: url("/app/img/bg-header.jpg") no-repeat center top #999999;
   border-bottom: 3px solid #999;
@@ -8444,24 +8451,24 @@ HOME PAGE */
   background-size: cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003278}}
 img[src*="logo.png"] {
   padding: 5px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003276}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003281}}
 .logo-title {
   height: 70px;
 }
 
 /* SEARCH BOX */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003286}}
 .navbar-form {
   margin-top: 10px;
   left: 80%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003290}}
 .searchBox .form-control {
   height: 25px;
   font-size: 12px;
@@ -8473,7 +8480,7 @@ img[src*="logo.png"] {
   width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003300}}
 .searchBox input.submit {
   background: url("/app/img/search-btn.jpg") no-repeat right top;
   width: 25px;
@@ -8483,13 +8490,13 @@ img[src*="logo.png"] {
 
 /* *
 HEADER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003309}}
 div.header {
   width: 100%;
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003314}}
 div.header:before,
 div.header:after {
   display: table;
@@ -8497,13 +8504,13 @@ div.header:after {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003319}}
 div.header h1 {
   text-align: right;
   margin: 90px 20px 15px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003323}}
 .head-about {
   background: url("/app/img/header-about.jpg") center top no-repeat;
   width: 100%;
@@ -8511,7 +8518,7 @@ div.header h1 {
   background-size: cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003329}}
 .head-ebsas {
   background: url("/app/img/header-ebsas.jpg") center top no-repeat;
   width: 100%;
@@ -8519,7 +8526,7 @@ div.header h1 {
   background-size: cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003335}}
 .head-meetings {
   background: url("/app/img/header-meetings.jpg") center top no-repeat;
   width: 100%;
@@ -8527,7 +8534,7 @@ div.header h1 {
   background-size: cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003341}}
 .head-partners {
   background: url("/app/img/header-partners.jpg") center top no-repeat;
   width: 100%;
@@ -8535,7 +8542,7 @@ div.header h1 {
   background-size: cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003347}}
 .head-resources {
   background: url("/app/img/header-resources.jpg") center top no-repeat;
   width: 100%;
@@ -8545,7 +8552,7 @@ div.header h1 {
 
 /* *
 TABS */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003360}}
 .nav-tabs,
 .nav-tabs > li > a,
 .nav-tabs > li.active,
@@ -8554,12 +8561,12 @@ TABS */
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003363}}
 .nav-tabs > li > a {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003369}}
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus,
 .nav-tabs > li.active > a,
@@ -8569,12 +8576,12 @@ TABS */
 
 /* *
 TABLE */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003375}}
 .table {
   border-bottom: 2px solid #196680;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003378}}
 .table th {
   color: #1C5573;
   font-family: "Source Sans Pro", sans-serif;
@@ -8584,121 +8591,121 @@ TABLE */
   border-top: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003386}}
 .table > tbody > tr > th {
   border-top: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003390}}
 .table > tbody > tr > td,
 .table td {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003393}}
 .table td:first-child {
   width: 510px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003396}}
 .table td:last-child {
   vertical-align: middle;
   width: 100px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003400}}
 .table td:last-child a {
   color: #3C80A6;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003404}}
 .table td a,
 .table td p {
   margin-bottom: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003407}}
 .ebsa-table tr:nth-child(2n) {
   background: #f1f1f1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003405}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003410}}
 .ebsa-table td p {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003408}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003413}}
 .ebsa-table td p small {
   font-weight: normal;
 }
 
 /* *
 Meeting Table */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003414}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003419}}
 .meeting-table th:first-child {
   width: 135px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003424}}
 .meeting-table td:first-child {
   width: 155px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003422}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003427}}
 .meeting-table td:last-child {
   width: 95px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003431}}
 .meeting-table tr.month,
 .meeting-table tr {
   background: white;
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003435}}
 .meeting-table tr.event td {
   padding: 0px;
   margin: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003434}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003439}}
 .meeting-table tr.event td table {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003437}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003442}}
 .meeting-table tr.event td table tr td {
   padding: 5px;
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003441}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003446}}
 .meeting-table tr.event td table tr td h4 {
   margin-top: 5px;
   width: 279px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003450}}
 .meeting-table .event tr:first-child {
   border-top: 1px solid #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003448}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003453}}
 .meeting-table .event tr:last-child {
   border-bottom: 1px solid #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003456}}
 .meeting-table tr.event td table tr:nth-child(2n+1) {
   background: #f1f1f1;
 }
 
 /* *
 Pagination */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003457}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003462}}
 ul.pagination {
   border-bottom: 1px solid #999;
   background: #e6e6e6;
@@ -8706,7 +8713,7 @@ ul.pagination {
   font-family: Helvetica, Verdana, sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003468}}
 ul.pagination li a {
   background: #e6e6e6;
   border-left: 1px solid #d9d9d9;
@@ -8714,13 +8721,13 @@ ul.pagination li a {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003474}}
 ul.pagination li a:hover {
   background: #f1f1f1;
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003473}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003478}}
 .pagination > .active > a {
   background: #247080;
   color: #fff;
@@ -8728,25 +8735,25 @@ ul.pagination li a:hover {
 
 /* *
 Dropdown */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003486}}
 .dropdown-menu > ul > li > a:hover,
 .dropdown-menu > ul > li > a:focus {
   background: none;
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003486}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003491}}
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003489}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003494}}
 .dropdown-menu > li > a {
   white-space: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003497}}
 .menuDates {
   border: none;
   background: #f2f2f2;
@@ -8755,17 +8762,17 @@ Dropdown */
   border-radius: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003499}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003504}}
 .menuDates li a {
   padding: 3px 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003507}}
 .dropdown-menu {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003505}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003510}}
 button#DateOfEvents {
   background: #E6E6E6;
   /* Old browsers */
@@ -8780,18 +8787,18 @@ button#DateOfEvents {
   color: #515151;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003517}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003522}}
 button#DateOfEvents p {
   margin-bottom: 2px;
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003521}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003526}}
 button#DateOfEvents span {
   margin-top: 8px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003525}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003530}}
 .menuDates > li > a:hover,
 .menuDates > li > a:focus {
   color: #7BA7CA;
@@ -8800,54 +8807,54 @@ button#DateOfEvents span {
 
 /* *
 ACCORDION */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003532}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003537}}
 .panel-default > .panel-heading {
   background: #f1f1f1;
   border-radius: 0px;
   border: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003537}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003542}}
 .panel {
   border-radius: 0px;
   border: 1px solid #B2E0ED;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003541}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003546}}
 .panel-group .panel {
   border-radius: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003544}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003549}}
 .panel-group .panel + .panel {
   margin-top: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003547}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003552}}
 .panel-body {
   padding: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003550}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003555}}
 .acc-open {
   width: 20px;
   height: 20px;
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003555}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003560}}
 .acc-open img {
   margin-top: -1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003563}}
 .acc-open img {
   margin-top: -1px;
 }
 
 /* *
 PANEL Head backgrounds */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003564}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003569}}
 .panel-default > .head-1 {
   background: #c9ebeb;
   /* Old browsers */
@@ -8867,7 +8874,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003574}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003579}}
 .panel-default > .head-2 {
   background: #b2e0ed;
   /* Old browsers */
@@ -8887,7 +8894,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003584}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003589}}
 .panel-default > .head-3 {
   background: #55bced;
   /* Old browsers */
@@ -8907,7 +8914,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003594}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003599}}
 .panel-default > .head-4 {
   background: #46b0e3;
   /* Old browsers */
@@ -8927,7 +8934,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003604}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003609}}
 .panel-default > .head-5 {
   background: #47aac3;
   /* Old browsers */
@@ -8947,7 +8954,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003614}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003619}}
 .panel-default > .head-6 {
   background: #4c9baf;
   /* Old browsers */
@@ -8967,7 +8974,7 @@ PANEL Head backgrounds */
   /* IE6-9 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003624}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003629}}
 .panel-default > .head-7 {
   background: #4cb7b7;
   /* Old browsers */
@@ -8989,31 +8996,32 @@ PANEL Head backgrounds */
 
 /* *
 IMAGES STYLES */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003639}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003645}}
 img[src*=report],
 img[src*=meeting],
-img[src*=brochure] {
+img[src*=brochure],
+img[src*=resources] {
   border: 1px solid #999;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003642}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003648}}
 .border-img {
   border: 1px solid #508e8d;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003645}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003651}}
 .no-border {
   border: none;
 }
 
 /* *
 PARTNERS */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003651}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003657}}
 .partners .col-lg-3 {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003654}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003660}}
 .txt-partner {
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
@@ -9028,24 +9036,24 @@ PARTNERS */
 
 /* *
 BREADCRUMB */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003668}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003674}}
 .breadcrumb {
   background: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003671}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003677}}
 .breadcrumb:before {
   content: url("/app/img/globe.png");
   padding-right: 10px;
   padding-top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003676}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003682}}
 .breadcrumb > li + li:before {
   content: url("/app/img/separator.png");
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003679}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003685}}
 .breadcrumb > .active {
   color: #3687C2;
   font-family: 'Source Sans Pro', Verdana, sans-serif;
@@ -9054,7 +9062,7 @@ BREADCRUMB */
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003686}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003692}}
 .breadcrumb > li > a {
   color: #999;
   font-family: 'Source Sans Pro', Verdana, sans-serif;
@@ -9065,32 +9073,38 @@ BREADCRUMB */
 
 /* *
 ARTICLE STYLES */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003696}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003702}}
 .article ul li {
   margin: 10px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003699}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003705}}
+.article ul.nospace li {
+  margin: 0px;
+  list-style-type: disc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003709}}
 .article h4 {
   margin-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003702}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003712}}
 .list-themes {
   padding-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003705}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003715}}
 .disc li {
   list-style-type: disc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003708}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003718}}
 #training-materials > .col-lg-8 .col-lg-4 {
   padding-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003711}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003721}}
 .icon {
   float: left;
   margin: 7px 10px 0px 0px;
@@ -9098,19 +9112,19 @@ ARTICLE STYLES */
 
 /* *
 SIDEBAR */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003719}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003729}}
 .row .col-2,
 .row .col-2 .bs-sidebar {
   height: inherit;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003722}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003732}}
 .bs-sidebar {
   padding-right: 8px;
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003726}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003736}}
 .bs-sidebar h4 {
   background: #D9D9D9;
   color: #000;
@@ -9121,27 +9135,27 @@ SIDEBAR */
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003735}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003745}}
 .bs-sidebar h4:before {
   content: url("/app/img/sub-menu.png");
   padding-right: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003739}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003749}}
 .bs-sidebar ul li {
   list-style-type: none;
   display: list-item;
   margin-left: 6px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003744}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003754}}
 .bs-sidebar ul li.active {
   list-style: none outside url("/app/img/bullet.png");
   display: list-item;
   margin-left: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003749}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003759}}
 .bs-sidebar ul li a {
   color: #999;
   line-height: 15px;
@@ -9149,51 +9163,51 @@ SIDEBAR */
   padding: 7px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003757}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003767}}
 .bs-sidebar ul li.active a,
 .bs-sidebar ul li a:hover,
 .bs-sidebar ul li.active a:hover {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003760}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003770}}
 .bs-sidebar ul li.title {
   padding-top: 20px;
   list-style-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003764}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003774}}
 .nav-tabs > li {
   float: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003767}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003777}}
 ul.other-criteria {
   padding-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003770}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003780}}
 li.sub-tabs {
   padding: 7px 0px;
   color: #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003774}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003784}}
 li.sub-tabs ul {
   padding-left: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003777}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003787}}
 li.sub-tabs > ul li {
   padding: 5px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003780}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003790}}
 li.sub-tabs > ul li a {
   color: #247080;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003783}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003793}}
 li.sub-tabs > ul li a:hover {
   color: #000;
   text-decoration: none;
@@ -9201,7 +9215,7 @@ li.sub-tabs > ul li a:hover {
 
 /* *
 Button styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003790}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003800}}
 .btn-default {
   text-shadow: none;
   background: #508e8d;
@@ -9209,7 +9223,7 @@ Button styles */
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003796}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003806}}
 .btn {
   padding: 3px 6px;
   font-size: 12px;
@@ -9218,7 +9232,7 @@ Button styles */
 
 /* *
 FOOTER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003804}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003814}}
 footer {
   box-sizing: border-box;
   margin-top: 50px;
@@ -9228,7 +9242,7 @@ footer {
   height: 420px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003812}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003822}}
 footer div.row {
   font-size: 12px;
   font-family: Helvetica, Verdana, sans-serif;
@@ -9237,7 +9251,7 @@ footer div.row {
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003819}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003829}}
 footer h2 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
@@ -9246,24 +9260,24 @@ footer h2 {
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003826}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003836}}
 footer img[src*=icon] {
   float: left;
   margin-right: 5px;
   padding-top: 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003831}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003841}}
 footer p {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003834}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003844}}
 footer ul {
   padding-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003849}}
 footer ul li,
 footer ul li a,
 footer ul li a:hover {
@@ -9272,34 +9286,69 @@ footer ul li a:hover {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003844}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003854}}
 footer .sitemap-ul {
   float: left;
   margin: 0px 0px 0px 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003848}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003858}}
 footer .sitemap-ul li:first-child {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003851}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003861}}
 .cbd {
   float: left;
   margin-right: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003855}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003865}}
 .copyright {
   color: #fff;
   text-align: left;
   font-size: 10px;
-  margin: 15px 0px 0px;
+  margin: 15px 30px 0px;
   float: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003872}}
+.copyright:hover {
+  color: #fff;
+  font-size: 10px;
+}
+
+@media (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003877}}
+  .navbar-nav {
+    margin: 0px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003880}}
+  .navbar-nav > li {
+    float: left;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003883}}
+  .navbar-right {
+    float: right;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003886}}
+  .navbar-form {
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003892}}
+  form.searchBox {
+    margin-top: 10px;
+  }
+}
 /* **************** Custom ********************* */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003864}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003898}}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -9307,7 +9356,7 @@ footer .sitemap-ul li:first-child {
   padding: 0.2em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003870}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003904}}
 .growl {
   width: 50%;
   position: fixed;
@@ -9316,7 +9365,7 @@ footer .sitemap-ul li:first-child {
   top: 10%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003880}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003914}}
 .nav,
 .pagination,
 .carousel,
@@ -9324,12 +9373,12 @@ footer .sitemap-ul li:first-child {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003883}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003917}}
 .no-margin {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003886}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003920}}
 .pagination-totals {
   margin-left: 5px;
   margin-bottom: 0;
@@ -9337,13 +9386,13 @@ footer .sitemap-ul li:first-child {
   padding: 5.5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003892}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003926}}
 .dropdown-menu {
   max-height: 305px;
   overflow: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003898}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003932}}
 .caribbean,
 .pacific,
 .all-regions {
@@ -9351,14 +9400,14 @@ footer .sitemap-ul li:first-child {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\000031}}
-#map {
+html, body, #map {
   height: 100%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\000034}}
 .google-map > .col-lg-10 {
   height: 500px;
-  width: 940px;
+  width: 910px;
   padding-right: 0px;
   background: #e6e6e6;
   border-top: 2px solid #999;

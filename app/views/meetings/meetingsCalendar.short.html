@@ -1,12 +1,16 @@
 <table class="ebsa-table table">
   <tr>
-    <th colspan="2"><img src="/app/img/icon-home.png" alt="meeting icon" /> {{tableTitle}}</th>
+    <th><img src="/app/img/icon-home.png" alt="meeting icon" /> {{tableTitle}}</th>
+    <th>
+      <div class="push5"></div><div class="push5"></div>
+      <a class="important blue4 pull-right" href="http://www.cbd.int/meetings/" target="_blank">More »</a>
+    </th>
   </tr>
 
   <tr ng-repeat="meeting in meetings">
     <td><h4>{{meeting.title}}</h4></td>
     <td>
-    <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>
+      <a ng-show="meeting.documentsUrl" href="{{meeting.documentsUrl}}" target="_blank" class="pull-right">Documents »</a>
     </td>
   </tr>
 
