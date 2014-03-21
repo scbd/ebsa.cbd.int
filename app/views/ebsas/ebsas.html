@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="EbsasCtrl">
   <div class="row row-offcanvas row-offcanvas-right">
 
     <div class="col-lg-12 col-xs-12">
@@ -37,8 +37,12 @@
                   <span class="pull-right caret"></span>
                 </button>
                 <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Western South Pacific region</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Wider Caribbean and Western Mid-Atlantic region</a></li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#" ng-click="setActiveRegion('southPacific')">Western South Pacific region</a>
+                  </li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-2" href="#" ng-click="setActiveRegion('caribbean')">Wider Caribbean and Western Mid-Atlantic region</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -47,166 +51,31 @@
             <div class="wraparticle col-lg-8 col-xs-8 past-events">
               <div class="article">
                 <!-- Table -->
-                <table class="ebsa-table table">
+                <table class="ebsa-table table" ng-show="activeRegion === 'southPacific'">
                   <tr>
                     <th colspan="2">Western South Pacific region</th>
                   </tr>
-                  <tr>
-                    <td><p>Phoenix Islands</p></td>
+                  <tr ng-repeat="ebsa in southPacificData">
+                    <td><p>{{ebsa.title}}</p></td>
                     <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200034" class="pull-right">Details »</a>
+                      <a target="_blank" ng-href="{{ebsa.url}}" class="pull-right">Details »</a>
                     </td>
                   </tr>
+                </table>
+
+                <!-- Table -->
+                <table class="ebsa-table table" ng-show="activeRegion === 'caribbean'">
                   <tr>
-                    <td><p>Ua Puakaoa Seamounts</p></td>
+                    <th colspan="2">Wider Caribbean and Western Mid-Atlantic region</th>
+                  </tr>
+
+                  <tr ng-repeat="ebsa in caribbeanData">
+                    <td><p>{{ebsa.title}}</p></td>
                     <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200035" class="pull-right">Details »</a>
+                      <a target="_blank" ng-href="{{ebsa.url}}" class="pull-right">Details »</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td><p>Seamounts of West Norfolk Ridge</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200036" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Remetau group: South-West Caroline Islands and Northern New Guinea</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200037" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Kadavu and the Southern Lau Region</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200038" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Kermadec-Tonga-Louisville Junction</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200039" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Monowai Seamount</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200040" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>New Britain Trench Region</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200041" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>New Hebrides Trench Region</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200042" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Rarotonga Outer Reef Slopes</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200043" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Samoan Archipelago</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200044" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Suwarrow National Park</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200045" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>South of Tuvalu/Wallis and Fortuna/North of Fiji Plateau</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200046" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Vatu-i-Ra/Lomaiviti, Fiji</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200047" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>South Tasman Sea</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200048" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Equatorial High Productivity Zone</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200105" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Central Louisville Seamount Chain</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200050" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Western South Pacific High Aragonite Saturation State Zone</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200051" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Clipperton Fracture Zone Petrel Foraging Area</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200052" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Northern Lord Howe Ridge Petrel Foraging Area</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200053" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Northern New Zealand/South Fiji Basin</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200054" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Taveuni and Ringgold Islands</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200055" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Manihiki Plateau</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200056" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Niue Island and Beveridge Reef</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200057" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Palau Southwest</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200058" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p>Tonga Archipelago</p></td>
-                    <td>
-                    <a target="_blank" href="https://chm.cbd.int/database/record?documentID=200059" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
+
                 </table>
               </div>
             </div>
