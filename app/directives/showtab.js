@@ -27,7 +27,6 @@ define(['./module.js'], function(module) {
           });
 
           $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
-            console.log('locationSuccess');
             var tabHash = '#' + $location.hash();
             if (current.split('#')[0] !== next.split('#')[0]) return;
 
