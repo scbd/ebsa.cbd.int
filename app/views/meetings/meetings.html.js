@@ -108,6 +108,10 @@ define([
           $scope.yearList = _.uniq(yearList);
         }
 
+        function computeOptionLists (meetingSet) {
+          generateCountryList(meetingSet);
+          generateYearList(meetingSet);
+        }
 
         function updateMeetingData(meetings) {
           if (meetings) paginator.resetCollection(meetings);
@@ -122,8 +126,10 @@ define([
           // we're looking only for EBSA meetings
           var title = '*EBSA*';
 
-          if (timeframe && meetingsCache[timeframe])
+          if (timeframe && meetingsCache[timeframe]) {
+            computeOptionLists(meetingsCache[timeframe]);
             return updateMeetingData(meetingsCache[timeframe]);
+          }
 
           Meetings.getMeetingsPage({
             timeframe: timeframe,
@@ -135,8 +141,7 @@ define([
             // cache the results since we ask the backend for all rows.
             meetingsCache[timeframe] = meetingSet;
             updateMeetingData(meetingSet);
-            generateCountryList(meetingSet);
-            generateYearList(meetingSet);
+            computeOptionLists(meetingSet);
           });
         }
 
