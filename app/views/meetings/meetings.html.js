@@ -15,6 +15,7 @@ define([
           country: undefined,
           year: undefined
         };
+
         function resetFilters() {
           filters.country = filters.year = undefined;
           setSelectedTitle('country', 'All');
@@ -116,6 +117,7 @@ define([
         }
 
         var meetingsCache = {};
+
         function fetchMeetings(timeframe, country, year) {
           // we're looking only for EBSA meetings
           var title = '*EBSA*';
@@ -123,7 +125,12 @@ define([
           if (timeframe && meetingsCache[timeframe])
             return updateMeetingData(meetingsCache[timeframe]);
 
-          Meetings.getMeetingsPage(timeframe, title, country, year, function(meetingSet) {
+          Meetings.getMeetingsPage({
+            timeframe: timeframe,
+            title: title,
+            countryCode: country,
+            year: year
+          }, function(meetingSet) {
             // cache the results since we ask the backend for all rows.
             meetingsCache[timeframe] = meetingSet;
             updateMeetingData(meetingSet);

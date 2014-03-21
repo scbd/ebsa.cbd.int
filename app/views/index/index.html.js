@@ -21,12 +21,18 @@ define(['app'], function(app) {
       });
 
       var titleFilter = '*EBSA*';
-      Meetings.getMeetingsPage('upcoming', titleFilter, function(meetingSet) {
-        $scope.meetingsUpcoming = meetingSet.meetings;
+      Meetings.getMeetingsPage({
+        timeframe: 'upcoming',
+        title: titleFilter
+      }, function(meetingSet) {
+        $scope.meetingsUpcoming = meetingSet;
       });
 
-      Meetings.getMeetingsPage('previous', titleFilter, function(meetingSet) {
-        $scope.meetingsPrevious = meetingSet.meetings;
+      Meetings.getMeetingsPage({
+        timeframe: 'previous',
+        title: titleFilter
+      }, function(meetingSet) {
+        $scope.meetingsPrevious = meetingSet;
       });
     }
   ]);

@@ -143,19 +143,18 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(timeframe, title, countryCode, year, pageNum, cb) {
-        var args = Array.prototype.slice.call(arguments, 0);
-        cb = args.filter(function(arg) { return angular.isFunction(arg); })[0];
+      meetings.getMeetingsPage = function(options, cb) {
+        options = options || {};
 
-        currentPage = pageNum || 1;
-        var dir = timeframe === 'upcoming' ? dirUp : dirDown;
+        currentPage = options.pageNum || 1;
+        var dir = options.timeframe === 'upcoming' ? dirUp : dirDown;
         var solrQuery = buildSolrQuery({
           schema: 'meeting',
-          startDate: timeframe,
-          country: countryCode,
-          year: year,
+          startDate: options.timeframe,
+          country: options.countryCode,
+          year: options.year,
           sort: [sortField, dir],
-          title_t: title,
+          title_t: options.title,
           rows: (currentPage - 1) * perPage || 100000
         });
 
