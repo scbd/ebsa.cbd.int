@@ -130,7 +130,8 @@ define([
             title: title,
             countryCode: country,
             year: year
-          }, function(meetingSet) {
+          })
+          .then(function(meetingSet) {
             // cache the results since we ask the backend for all rows.
             meetingsCache[timeframe] = meetingSet;
             updateMeetingData(meetingSet);

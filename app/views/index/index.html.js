@@ -21,19 +21,15 @@ define(['app'], function(app) {
       });
 
       var titleFilter = '*EBSA*';
-      Meetings.getMeetingsPage({
-        timeframe: 'upcoming',
-        title: titleFilter
-      }, function(meetingSet) {
-        $scope.meetingsUpcoming = meetingSet;
-      });
+      Meetings.getMeetingsPage({timeframe: 'upcoming', title: titleFilter})
+        .then(function(meetingSet) {
+          $scope.meetingsUpcoming = meetingSet;
+        });
 
-      Meetings.getMeetingsPage({
-        timeframe: 'previous',
-        title: titleFilter
-      }, function(meetingSet) {
-        $scope.meetingsPrevious = meetingSet;
-      });
+      Meetings.getMeetingsPage({timeframe: 'previous', title: titleFilter})
+        .then(function(meetingSet) {
+          $scope.meetingsPrevious = meetingSet;
+        });
     }
   ]);
 });

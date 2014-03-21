@@ -1,6 +1,6 @@
 define(['./module.js', './solrQuery.js'], function(module, Query) {
-  return module.factory('meetings', ['$http', '$locale', 'growl',
-    function($http, $locale, growl) {
+  return module.factory('meetings', ['$http', '$locale', 'growl', '$q',
+    function($http, $locale, growl, $q) {
 
       var baseUrl = '/api/v2013/index',
         baseQuery = 'schema_s:meeting',
@@ -61,15 +61,19 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         // because we build the query by hand using solrQuery, we
         // dont use the usual params hash the $http.get() accepts, otherwise
         // angular will escape our already escaped characters.
+        var deferred = $q.defer();
         $http.get([baseUrl, query].join('?'))
           .then(function(results) {
-            cb(normalizeMeetings(results.data.response));
+            deferred.resolve(normalizeMeetings(results.data.response));
           })
           .catch(function(results) {
-          if (results.status !== 200) {
-            growl.addErrorMessage('Failed to fetch meetings! Please refresh the page.');
-          }
-        });
+            if (results.status !== 200) {
+              deferred.reject();
+              growl.addErrorMessage('Failed to fetch meetings! Please refresh the page.');
+            }
+          });
+
+        return deferred.promise;
       }
 
       function createDateRange (start, end) {
@@ -143,7 +147,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return fieldMap[fieldName] || fieldName;
       }
 
-      meetings.getMeetingsPage = function(options, cb) {
+      meetings.getMeetingsPage = function(options) {
         options = options || {};
 
         currentPage = options.pageNum || 1;
@@ -158,7 +162,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           rows: (currentPage - 1) * perPage || 100000
         });
 
-        issueRequest(solrQuery, cb);
+        return issueRequest(solrQuery);
       };
 
       return meetings;
