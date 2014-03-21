@@ -41,15 +41,25 @@ define(['./module.js', 'underscore'], function(module, _) {
 
     paginator.setPage = function(page) {
       this.state.currentPage = page;
-      return this.state;
+      return this;
     };
 
-    paginator.nextPage = function() {};
+    paginator.nextPage = function() {
+      var maybeNextPage = this.state.currentPage + 1,
+        nextPage = maybeNextPage > this.state.totalPage ? 1 : maybeNextPage;
 
-    paginator.prevPage = function() {};
+      return this.setPage(nextPage).getCurrentPage();
+    };
+
+    paginator.prevPage = function() {
+      var maybePrevPage = this.state.currentPage - 1,
+        prevPage = !maybePrevPage ? this.state.totalPages : maybePrevPage;
+
+      return this.setPage(prevPage).getCurrentPage();
+    };
 
     paginator.getCurrentPage = function() {
-      return paginator.getPage(this.state.currentPage);
+      return this.getPage(this.state.currentPage);
     };
 
     paginator.getPage = function(page) {
@@ -66,12 +76,12 @@ define(['./module.js', 'underscore'], function(module, _) {
     };
 
     paginator.resetCollection = function(collection) {
-      paginator.init(collection);
+      this.init(collection);
       return this;
     };
 
     paginator.destroy = function() {
-      paginator.reset();
+      this.reset();
       return this;
     };
 
