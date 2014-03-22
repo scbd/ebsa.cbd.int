@@ -13,6 +13,9 @@ define(['./module.js'], function(module) {
 
       function getSelectedTab() {
         var searchParams = $location.search();
+        // we check for isString because if the someone input blah?tab= and no value
+        // $location.search will return {tab: true}, so instead we force a null
+        // to show there's no tab selected.
         return angular.isString(searchParams.tab) && searchParams.tab || null;
       }
 
