@@ -1,15 +1,25 @@
 define(['./module.js'], function(module) {
-  return module.directive('showtab', ['$location', '$route',
-    function($location, $route) {
+  return module.directive('showtab', ['$location', '$route', '$rootScope',
+    function($location, $route, $rootScope) {
       var linkSelector = 'a',
         firstLink = 'li:first a',
-        lastRoute = $location.path();
+        lastRoute = $location.path(),
+        currentCrumb;
 
       function highlightCurrentTab(el, selectedTab, scope) {
-        if (!selectedTab) el.find(firstLink).tab('show');
-        else el.find(linkSelector + '[href="#' + selectedTab + '"]').tab('show');
+        var $el = el.find(!selectedTab ? firstLink : linkSelector + '[href="#' + selectedTab + '"]');
+        $el.tab('show');
+        updateCurrentCrumb($el.text(), $el.attr('href'));
         var clickCallback = scope.onClick();
+        $rootScope.$broadcast('breadcrumbs:add', currentCrumb.title, currentCrumb.url);
         return clickCallback && clickCallback(selectedTab);
+      }
+
+      function updateCurrentCrumb(title, url) {
+        currentCrumb = {
+          title: title,
+          url: url
+        };
       }
 
       function getSelectedTab() {
