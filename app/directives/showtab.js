@@ -8,7 +8,8 @@ define(['./module.js'], function(module) {
       function highlightCurrentTab(el, selectedTab, scope) {
         if (!selectedTab) el.find(firstLink).tab('show');
         else el.find(linkSelector + '[href="#' + selectedTab + '"]').tab('show');
-        scope.onClick()(selectedTab);
+        var clickCallback = scope.onClick();
+        return clickCallback && clickCallback(selectedTab);
       }
 
       function getSelectedTab() {
@@ -44,11 +45,14 @@ define(['./module.js'], function(module) {
 
           scope.$on('$locationChangeSuccess', function(event, current, next) {
             var selectedTab = getSelectedTab();
-            if ($location.path() !== lastRoute) return;
+            if ($location.path() !== lastRoute) {
+              lastRoute = $location.path();
+              return;
+            }
             highlightCurrentTab(element, selectedTab, scope);
           });
 
-          scope.$on('destroy', function() {
+          scope.$on('$destroy', function() {
             element.find(linkSelector).off();
           });
 

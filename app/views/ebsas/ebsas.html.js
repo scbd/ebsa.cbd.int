@@ -3,7 +3,6 @@ define(['app'], function(app) {
 
   app.controller('EbsasCtrl', ['$scope', 'lists',
     function($scope, Lists) {
-      console.log('exec');
       $scope.caribbeanData = Lists.getEbsas('caribbean')
         .then(function(ebsas) {
           $scope.caribbeanData = ebsas;

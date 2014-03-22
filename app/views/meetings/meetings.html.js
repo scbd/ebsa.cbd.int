@@ -70,7 +70,7 @@ define([
         };
 
         $scope.setTimeframe = function(timeframe) {
-          timeframe = timeframe || $scope.timeframe;
+          timeframe = timeframe || 'upcoming';
           resetFilters();
           $scope.timeframe = timeframe;
           fetchMeetings(timeframe);
