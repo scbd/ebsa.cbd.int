@@ -6,8 +6,8 @@ define([
   function(app, _, strings) {
     'use strict';
 
-    app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists', 'paginator',
-      function($http, $scope, $locale, Meetings, Lists, paginator) {
+    app.controller('MeetingsCtrl', ['$http', '$scope', '$locale', 'meetings', 'lists', 'paginator', '$location',
+      function($http, $scope, $locale, Meetings, Lists, paginator, $location) {
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
 
@@ -70,6 +70,7 @@ define([
         };
 
         $scope.setTimeframe = function(timeframe) {
+          timeframe = timeframe || $scope.timeframe;
           resetFilters();
           $scope.timeframe = timeframe;
           fetchMeetings(timeframe);
@@ -145,7 +146,7 @@ define([
           });
         }
 
-        fetchMeetings('upcoming', filters.country, filters.year);
+        // fetchMeetings('upcoming', filters.country, filters.year);
       }
     ]);
 

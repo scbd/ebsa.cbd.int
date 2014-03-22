@@ -1,16 +1,24 @@
 define(['./module.js'], function(module) {
-  return module.directive('showtab', ['$location', '$route', '$window', '$rootScope',
-    function($location, $route, $window, $rootScope) {
+  return module.directive('showtab', ['$location', '$route',
+    function($location, $route) {
       var linkSelector = 'a',
-        firstLink = 'li:first';
+        firstLink = 'li:first a',
+        lastRoute = $location.path();
 
-      function highlightCurrentTab(el, hash) {
-        el.find(linkSelector + '[href="' + hash + '"]').tab('show');
+      function highlightCurrentTab(el, selectedTab, scope) {
+        if (!selectedTab) el.find(firstLink).tab('show');
+        else el.find(linkSelector + '[href="#' + selectedTab + '"]').tab('show');
+        scope.onClick()(selectedTab);
+      }
+
+      function getSelectedTab() {
+        var searchParams = $location.search();
+        return angular.isString(searchParams.tab) && searchParams.tab || null;
       }
 
       return {
         scope: {
-          activeTab: '='
+          onClick: '&'
         },
         restrict: 'A',
         link: function(scope, element, attrs) {
@@ -19,23 +27,31 @@ define(['./module.js'], function(module) {
             event.preventDefault();
             var $a = angular.element(event.target);
 
-            // show the tab
-            $a.tab('show');
-            // push the new route onto history but don't reload.
-            if ($window.history.pushState) $window.history.pushState(null, null, $a.attr('href'));
-            else $location.hash = $a.attr('href');
+            // push the new route onto history but don't reload. the locationChangeSuccess
+            // event will handle the rest. This covers both cases where we load fresh
+            // or a change is triggered by user click.
+            // PLEASE DON'T BE CLEVER AND SWITCH THIS TO USING HASHES. THIS WILL FAIL BECAUSE
+            // OF Html5Mode(true) IN app_routes.js.
+            scope.$apply(function() {
+              $location.search({
+                'tab': $a.attr('href').slice(1)
+              });
+            });
           });
 
-          $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
-            var tabHash = '#' + $location.hash();
-            if (current.split('#')[0] !== next.split('#')[0]) return;
-
-            if (tabHash === '#') element.find(firstLink).tab('show');
-            else highlightCurrentTab(element, tabHash);
+          scope.$on('$locationChangeSuccess', function(event, current, next) {
+            var selectedTab = getSelectedTab();
+            if ($location.path() !== lastRoute) return;
+            highlightCurrentTab(element, selectedTab, scope);
           });
 
-          var tabHash = '#' + $location.hash();
-          highlightCurrentTab(element, tabHash);
+          scope.$on('destroy', function() {
+            element.find(linkSelector).off();
+          });
+
+          // Kick off the process on page load because locationChange doesn't
+          // fire on first load.
+          highlightCurrentTab(element, getSelectedTab(), scope);
         }
       };
     }
