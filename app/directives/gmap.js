@@ -76,7 +76,6 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         function updateSelectedRegion(regionName) {
           if (!geojsonCache) return;
           clearMap(map);
-          console.log(regionName);
           if (!regionName) {
             angular.forEach(geojsonCache, function(regionData, regionName) {
               displayRegion(regionData, regionName);
