@@ -3,6 +3,7 @@ var fs = require('fs');
 var http = require('http');
 var express = require('express');
 var httpProxy = require('http-proxy');
+var siteSearch = require('./siteSearch');
 
 // Create server
 
@@ -29,6 +30,7 @@ app.configure(function() {
 
 var proxy = httpProxy.createProxyServer({});
 
+app.get   ('/api/search', siteSearch.route);
 app.get   ('/app/*'   , function(req, res) { res.send('404', 404); } );
 app.get   ('/public/*', function(req, res) { res.send('404', 404); } );
 

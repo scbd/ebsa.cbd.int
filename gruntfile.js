@@ -71,6 +71,7 @@ module.exports = function(grunt) {
       express: {
         files: [
           'server.js',
+          'siteSearch.js',
           'lib/**/*.{js,json}'
         ],
         tasks: ['express:dev', 'wait'],
