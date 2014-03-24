@@ -1,5 +1,5 @@
-define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', '../util/colors.js'],
-  function(module, google, colors) {
+define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', '../util/colors.js', 'underscore'],
+  function(module, google, colors, _) {
     return module.directive('gmap', ['$window',
       function($window, regions) {
 
@@ -34,9 +34,9 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
 
           event.feature.forEachProperty(function(propVal, propName) {
             if (propName == 'NAME') {
-              content += propName + ': ' + '<strong>' + propVal + '</strong><br />';
-            } else if (propName == 'KEY') {
-              key = propVal;
+              content += '<strong>' + propVal + '</strong><br /><br />';
+            } else if (_.indexOf(['KEY', 'style', 'WORKSHOP'] !== -1)) {
+              return;
             } else {
               content += propName + ': ' + propVal + '<br /><br />';
             }

@@ -96,6 +96,9 @@ define(['./module.js'], function(module) {
           loader.success(function(html) {
             element.replaceWith($compile(html)(scope));
           });
+
+          // Provide a proper hashTag link to the right tab on the meetings page
+          scope.hashTag = scope.tableTitle && scope.tableTitle === 'Upcoming Meetings' ? 'upcoming' : 'previous';
         }
       };
     }
