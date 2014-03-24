@@ -46,3 +46,28 @@ Merged Pages:
 6. Meetings
 7. Header
 8. EBSAs
+
+
+A few quick comments, that hopefully shouldn't take too long to address:
+--Also, on this page, please make a downloadable screenshot of the report referred to in the last line of the page -- SATYA
+
+
+--For a few of the pages, namely "Background on EBSA process", "Relevant Decisions of the Conference of the Parties to the CBD", and Strategic Plan for Biodiversity 2011-2020 and Aichi Biodiversity Targets," there is lots of unused space because the text is relegated to the right.  It would be good to spread this text out and use this blank space under the photos. -- SATYA
+
+--Under "Workshop Report", we have the report of the North Pacific Regional EBSA workshop available.  It's located at http://www.cbd.int/doc/meetings/mar/ebsa-np-01/official/ebsa-np-01-04-en.pdf.  Please put this screenshot and link on the page -- SATYA
+
+--Also the search function doesn't work--Will this come later? -- STEVE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
