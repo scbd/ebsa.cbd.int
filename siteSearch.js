@@ -1,5 +1,4 @@
-var jquery = require('jquery'),
-  fs = require('fs'),
+var fs = require('fs'),
   path = require('path'),
   async = require('async');
 
@@ -26,19 +25,32 @@ var nonSearchable = [
 var viewToPathMap = {
   'about': '/about',
   'ebsas': '/ebsas',
-  'index': '/',
   'partners': '/resources'
 };
 
 function siteSearch(query, callback) {
+  var results = [];
   loadAllViews(function(fileContentMap) {
-    callback(fileContentMap);
+
+    Object.keys(fileContentMap).forEach(function(pageName) {
+      var html = fileContentMap[pageName],
+        matches = searchTextNodes(query, html);
+
+      if (matches.length) results.push({
+        page: pageName,
+        url: viewToPathMap[pageName],
+        matches: matches
+      });
+    });
+
+    callback(results);
   });
 }
 
-function searchTextNodes(content, callback) {
+function searchTextNodes(content) {
   var matches = [];
-  return callback(matches);
+  return content;
+  // return callback(matches);
 }
 
 function loadAllViews(callback) {
