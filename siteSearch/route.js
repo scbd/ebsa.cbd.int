@@ -1,4 +1,4 @@
-var siteSearch = require('./interface');
+var siteSearch = require('./siteSearch');
 
 module.exports = function(req, res) {
   var query = req.query.q;

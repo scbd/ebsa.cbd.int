@@ -4,7 +4,7 @@ var fs = require('fs'),
   jsdom = require('jsdom'),
   jquery = require('jquery'),
   utils = require('./dirUtils'),
-  config = require('./config');
+  config = require('../config');
 
 
 var viewFileExtension = '.html',

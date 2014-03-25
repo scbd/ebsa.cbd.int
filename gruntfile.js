@@ -138,8 +138,8 @@ module.exports = function(grunt) {
     this.async();
   });
 
-  grunt.registerTask('createIndex', function() {
-    var index = require('./siteSearch/createLunrSearchIndex');
+  grunt.registerTask('index', function() {
+    var index = require('./siteSearch/indexer');
     index.create(function(response) {
       grunt.log.ok(response);
     });

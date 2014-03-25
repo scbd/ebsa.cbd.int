@@ -1,9 +1,16 @@
+/*jshint quotmark:false*/
 var lunr = require('lunr'),
   fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  config = require('./config');
 
-var documents = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/lunr-docs.json')));
-var serIndex = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/lunr-index.json')));
+try {
+  var documents = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-docs.json')));
+  var serIndex = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-index.json')));
+}
+catch (e) {
+  throw new Error("Failed to pass document or index json\n", e);
+}
 
 var index = lunr.Index.load(serIndex);
 
