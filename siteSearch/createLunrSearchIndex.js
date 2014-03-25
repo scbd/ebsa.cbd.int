@@ -1,6 +1,7 @@
 var lunr = require('lunr'),
   fs = require('fs'),
-  textNodes = require('./textNodeProcessor');
+  textNodes = require('./textNodeProcessor'),
+  config = require('./config');
 
 
 module.exports.create = function(done) {
@@ -32,8 +33,8 @@ module.exports.create = function(done) {
       index.add(doc);
     });
 
-    fs.writeFileSync('data/lunr-docs.json', JSON.stringify(indexedDocs));
-    fs.writeFileSync('data/lunr-index.json', JSON.stringify(index.toJSON()));
+    fs.writeFileSync(path.join(config.dataDir, 'lunr-docs.json'), JSON.stringify(indexedDocs));
+    fs.writeFileSync(path.join(config.dataDir, 'lunr-index.json'), JSON.stringify(index.toJSON()));
   });
   done('Index successfully generated!');
-}
+};

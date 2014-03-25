@@ -3,11 +3,12 @@ var fs = require('fs'),
   async = require('async'),
   jsdom = require('jsdom'),
   jquery = require('jquery'),
-  utils = require('./dirUtils');
+  utils = require('./dirUtils'),
+  config = require('./config');
 
 
 var viewFileExtension = '.html',
-  relativePathToViews = '../app/views';
+  viewsPath = config.viewDir;
 
 // Views that should not be searched for text.
 var searchablePages = ['resources', 'about'];
@@ -63,10 +64,8 @@ function extractTextNodes(html, callback) {
 }
 
 function loadAllViews(callback) {
-  var viewPath = path.join(__dirname, relativePathToViews);
-
   async.waterfall([
-    utils.walkDir.bind(null, viewPath),
+    utils.walkDir.bind(null, viewsPath),
     filterNonSearchable,
     getFileContentMap
   ], function(error, fileContentMap) {
