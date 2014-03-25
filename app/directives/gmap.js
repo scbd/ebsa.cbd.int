@@ -30,7 +30,8 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         function setInfoWindow(event) {
           var content = '<div id="infoBox">',
             key,
-            CBDbaseUrl = 'https://chm.cbd.int/database/record?documentID=';
+            CBDbaseUrl = 'https://chm.cbd.int/database/record?documentID=',
+            ebsaID = event.feature.getProperty('KEY');
 
           event.feature.forEachProperty(function(propVal, propName) {
             if (propName == 'NAME') {
@@ -42,7 +43,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
             }
           });
 
-          content += '<a class="pull-right" target="_blank" href="' + CBDbaseUrl + key + '">Details »</a>';
+          content += '<a class="pull-right" target="_blank" href="' + CBDbaseUrl + ebsaID + '">Details »</a>';
           content += '</div>';
           infowindow.setContent(content);
           infowindow.setPosition(event.latLng);
