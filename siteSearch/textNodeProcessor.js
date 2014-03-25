@@ -6,17 +6,10 @@ var fs = require('fs'),
 
 
 var viewFileExtension = '.html',
-  relativePathToViews = 'app/views';
+  relativePathToViews = '../app/views';
 
 // Views that should not be searched for text.
 var searchablePages = ['resources', 'about'];
-
-// var lunrIndex = lunr(function() {
-//   this.field('nodeText');
-//   this.field('location');
-//   this.field('parentElement');
-//   this.field('tabName');
-// });
 
 // Hash used to map filenames from disk to actual urls on the site.
 var viewToPathMap = {
@@ -24,7 +17,7 @@ var viewToPathMap = {
   'resources': '/resources'
 };
 
-function siteSearch(query, callback) {
+module.exports.process = function process(callback) {
   var results = [];
   loadAllViews(function(fileContentMap) {
     var textNodeMap = {};
@@ -37,8 +30,7 @@ function siteSearch(query, callback) {
       indexNodes(textNodeMap, callback);
     });
   });
-}
-module.exports.siteSearch = siteSearch;
+};
 
 function indexNodes(nodeMap, callback) {
   callback(nodeMap);
@@ -127,11 +119,3 @@ function walkDir(dir, done) {
     });
   });
 }
-
-module.exports.route = function(req, res) {
-  var query = req.query.q;
-  siteSearch(query, function(json) {
-    res.json(json);
-    res.end();
-  });
-};
