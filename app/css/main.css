@@ -8491,7 +8491,7 @@ img[src*="logo.png"] {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003306}}
-.searchBox input.submit {
+.searchBox button.submit {
   background: url("/app/img/search-btn.jpg") no-repeat right top;
   width: 25px;
   height: 25px;

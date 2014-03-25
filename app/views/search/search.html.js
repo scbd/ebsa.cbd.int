@@ -1,5 +1,7 @@
 define(['app'], function(app) {
-  app.controller('SearchCtrl', ['$http', function($http) {
-
-  }]);
-})
+  app.controller('SearchCtrl', ['$http',
+    function($http) {
+      console.log('exec');
+    }
+  ]);
+});

@@ -17,8 +17,8 @@
         <div class="col-lg-5 col-xs-5">
           <form class="navbar-form navbar-right searchBox" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-              <input type="submit" class="submit" value="">
+              <input type="text" class="form-control" placeholder="Search" ng-model="searchQuery">
+              <button type="button" class="submit" ng-click="searchSite()">
             </div>
           </form>
         </div>

@@ -303,7 +303,7 @@ img[src*="logo.png"] {
   float: left;
   width: auto;
 }
-.searchBox input.submit {
+.searchBox button.submit {
   background: url($img-path + "/search-btn.jpg") no-repeat right top;
   width: 25px;
   height: 25px;
