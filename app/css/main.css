@@ -9036,7 +9036,7 @@ PARTNERS */
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
   background: url("/app/img/partners-bg.jpg") no-repeat center top #f1f1f1;
-  height: 180px;
+  height: 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 20px;
@@ -9500,4 +9500,10 @@ html, body, #map {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003964}}
 .marginleft {
   margin-left: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003967}}
+.partner-logo {
+  width: 150px;
+  height: 117px;
 }

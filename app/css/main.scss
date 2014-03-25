@@ -667,7 +667,7 @@ PARTNERS */
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
   background: url($img-path + "/partners-bg.jpg") no-repeat center top #F1F1F1;
-  height: 180px;
+  height: 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 20px;
@@ -963,4 +963,8 @@ footer .sitemap-ul li:first-child {
 }
 .marginleft {
   margin-left: 15px;
+}
+.partner-logo {
+  width: 150px;
+  height: 117px;
 }
