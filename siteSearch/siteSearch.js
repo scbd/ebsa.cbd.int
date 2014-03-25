@@ -9,7 +9,7 @@ try {
   var serIndex = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-index.json')));
 }
 catch (e) {
-  throw new Error("Failed to pass document or index json\n", e);
+  throw new Error("Failed to parse document or index json\n", e);
 }
 
 var index = lunr.Index.load(serIndex);

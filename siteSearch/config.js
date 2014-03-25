@@ -1,6 +1,6 @@
 var path = require('path');
 
-module.exports.config = {
+module.exports = {
   dataDir: path.join(__dirname, '/data'),
   viewDir: path.join(__dirname, '../app/views')
 };
