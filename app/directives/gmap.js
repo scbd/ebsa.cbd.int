@@ -23,7 +23,10 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
           map = new $window.google.maps.Map(rootEl, {
             zoom: 2,
             center: new $window.google.maps.LatLng(13.6036603, -101.313101),
-            mapTypeId: $window.google.maps.MapTypeId.SATELLITE
+            mapTypeId: $window.google.maps.MapTypeId.SATELLITE,
+            mapTypeControlOptions: {
+              mapTypeIds: [$window.google.maps.MapTypeId.SATELLITE]
+            }
           });
         }
 
