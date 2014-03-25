@@ -139,4 +139,10 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['bower']);
+  grunt.registerTask('createIndex', function() {
+    var index = require('./siteSearch/createLunrSearchIndex');
+    index.create(function(response) {
+      grunt.log.ok(response);
+    });
+  });
 };

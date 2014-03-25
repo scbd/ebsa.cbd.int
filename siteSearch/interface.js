@@ -1,8 +1,9 @@
 var lunr = require('lunr'),
-  fs = require('fs');
+  fs = require('fs'),
+  path = require('path');
 
-var documents = JSON.parse(fs.readFileSync(__dirname + '/data/lunr-docs.json'));
-var serIndex = JSON.parse(fs.readFileSync(__dirname + '/data/lunr-index.json'));
+var documents = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/lunr-docs.json')));
+var serIndex = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/lunr-index.json')));
 
 var index = lunr.Index.load(serIndex);
 
