@@ -138,11 +138,12 @@ module.exports = function(grunt) {
     this.async();
   });
 
-  grunt.registerTask('default', ['bower']);
   grunt.registerTask('createIndex', function() {
     var index = require('./siteSearch/createLunrSearchIndex');
     index.create(function(response) {
       grunt.log.ok(response);
     });
   });
+
+  grunt.registerTask('default', ['bower']);
 };

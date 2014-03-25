@@ -11,7 +11,7 @@ define(['./module.js'], function(module) {
         $el.tab('show');
         updateCurrentCrumb($el.text(), $el.attr('href'));
         var clickCallback = scope.onClick();
-        $rootScope.$broadcast('breadcrumbs:add', currentCrumb.title, currentCrumb.url);
+        $rootScope.$emit('breadcrumbs:add', currentCrumb.title, currentCrumb.url);
         return clickCallback && clickCallback(selectedTab);
       }
 
