@@ -12,18 +12,18 @@ var server = http.createServer(app);
 var oneDay = 24*60*60*1000;
 
 app.configure(function() {
-    app.set('port', process.env.PORT || 2010, '127.0.0.1');
+  app.set('port', process.env.PORT || 2010, '127.0.0.1');
 
-    app.use(express.logger('dev'));
-    app.use(express.compress());
+  app.use(express.logger('dev'));
+  app.use(express.compress());
 
-    app.configure('development', function() {
-        console.log('use: connect-livereload');
-        app.use(require('connect-livereload')());
-    });
+  app.configure('development', function() {
+    console.log('use: connect-livereload');
+    app.use(require('connect-livereload')());
+  });
 
-    app.use('/app', express.static(__dirname + '/app'));
-    app.use('/favicon.png', express.static(__dirname + '/app/templates/favicon.png', { maxAge: oneDay }));
+  app.use('/app', express.static(__dirname + '/app'));
+  app.use('/favicon.png', express.static(__dirname + '/app/templates/favicon.png', { maxAge: oneDay }));
 });
 
 // Configure routes
@@ -34,18 +34,24 @@ app.get   ('/api/search', siteSearch.route);
 app.get   ('/app/*'   , function(req, res) { res.send('404', 404); } );
 app.get   ('/public/*', function(req, res) { res.send('404', 404); } );
 
-app.get   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+var proxyFn = function(req, res) {
+  proxy.web(req, res, {
+    target: 'https://api.cbd.int',
+    secure: false
+  });
+};
 // app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
-app.put   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
-app.post  ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
-app.delete('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+app.get   ('/api/*', proxyFn);
+app.put   ('/api/*', proxyFn);
+app.post  ('/api/*', proxyFn);
+app.delete('/api/*', proxyFn);
 
 // Configure index.html
 
 app.get('/*', function(req, res) {
-	fs.readFile(__dirname + '/app/templates/master.html', 'utf8', function (error, text) {
-		res.send(text);
-	});
+  fs.readFile(__dirname + '/app/templates/master.html', 'utf8', function (error, text) {
+    res.send(text);
+  });
 });
 
 // Start server

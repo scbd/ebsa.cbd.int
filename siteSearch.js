@@ -1,56 +1,72 @@
 var fs = require('fs'),
   path = require('path'),
-  async = require('async');
+  async = require('async'),
+  jsdom = require('jsdom'),
+  jquery = require('jquery');
 
 
 var viewFileExtension = '.html',
   relativePathToViews = 'app/views';
 
 // Views that should not be searched for text.
-var nonSearchable = [
-  '404',
-  'gmap',
-  'meetings',
-  'meetingsCalendar',
-  'meetingsCalendar.short',
-  'header',
-  'navbar',
-  'breadcrumbs',
-  'footer',
-  'index',
-  'partners'
-];
+var searchablePages = ['resources', 'about'];
 
-// Map used to map filenames from disk to actual urls on the site.
+// var lunrIndex = lunr(function() {
+//   this.field('nodeText');
+//   this.field('location');
+//   this.field('parentElement');
+//   this.field('tabName');
+// });
+
+// Hash used to map filenames from disk to actual urls on the site.
 var viewToPathMap = {
   'about': '/about',
-  'ebsas': '/ebsas',
-  'partners': '/resources'
+  'resources': '/resources'
 };
 
 function siteSearch(query, callback) {
   var results = [];
   loadAllViews(function(fileContentMap) {
-
-    Object.keys(fileContentMap).forEach(function(pageName) {
-      var html = fileContentMap[pageName],
-        matches = searchTextNodes(query, html);
-
-      if (matches.length) results.push({
-        page: pageName,
-        url: viewToPathMap[pageName],
-        matches: matches
+    var textNodeMap = {};
+    async.each(Object.keys(fileContentMap), function(pageName, done) {
+      extractTextNodes(fileContentMap[pageName], function(error, nodes) {
+        textNodeMap[pageName] = nodes;
+        done();
       });
+    }, function() {
+      indexNodes(textNodeMap, callback);
     });
-
-    callback(results);
   });
 }
+module.exports.siteSearch = siteSearch;
 
-function searchTextNodes(content) {
-  var matches = [];
-  return content;
-  // return callback(matches);
+function indexNodes(nodeMap, callback) {
+  callback(nodeMap);
+}
+
+function getTextNodes(node) {
+  var all = [];
+  for (node = node.firstChild; node; node = node.nextSibling) {
+    if (node.nodeType == 3) all.push(node);
+    else all = all.concat(getTextNodes(node));
+  }
+  return all;
+}
+
+function extractTextNodes(html, callback) {
+  jsdom.env(html, function(errors, window) {
+    var nodes,
+      textOnlyNodes,
+      body = window.document.getElementsByTagName('body')[0];
+
+    // remove whitespace only nodes.
+    textOnlyNodes = getTextNodes(body)
+      .filter(function(node) {
+        return !/^\s*$/.test(node.data);
+      });
+    var noWhitespaceNodes = textOnlyNodes.map(function(node) { return node.data.trim(); });
+    callback(null, noWhitespaceNodes);
+  });
 }
 
 function loadAllViews(callback) {
@@ -82,7 +98,7 @@ function filterNonSearchable(files, done) {
   // grab only the html files from the views dir.
   var filtered = files.filter(function(file) {
     return path.extname(file) === viewFileExtension &&
-      (nonSearchable.indexOf(path.basename(file, viewFileExtension)) === -1);
+      (searchablePages.indexOf(path.basename(file, viewFileExtension)) !== -1);
   });
 
   done(null, filtered);
@@ -114,8 +130,8 @@ function walkDir(dir, done) {
 
 module.exports.route = function(req, res) {
   var query = req.query.q;
-  siteSearch(query, function(results) {
-    res.json(results);
+  siteSearch(query, function(json) {
+    res.json(json);
     res.end();
   });
 };
