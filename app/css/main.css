@@ -9036,7 +9036,7 @@ PARTNERS */
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
   background: url("/app/img/partners-bg.jpg") no-repeat center top #f1f1f1;
-  height: 10px;
+  height: 180px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 20px;
@@ -9429,6 +9429,50 @@ footer .sitemap-ul li:first-child {
   outline: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003959}}
+.marginright {
+  margin-right: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003962}}
+.marginleft {
+  margin-left: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003965}}
+.partner-img-container {
+  height: 117px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003969}}
+.partner-logo-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003978}}
+.partner-container {
+  min-height: 160px;
+  min-width: 170px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003982}}
+.txt-partner {
+  height: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003985}}
+.placeholder-partner {
+  height: auto;
+  padding: 5px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003989}}
+.placeholder-partner h5 {
+  margin: 0;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\000031}}
 html, body, #map {
   height: 100%;
@@ -9490,20 +9534,4 @@ html, body, #map {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/google\.scss}line{font-family:\0000343}}
 .col-lg-2 p {
   color: #000;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003961}}
-.marginright {
-  margin-right: 15px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003964}}
-.marginleft {
-  margin-left: 15px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ckm2k1\/work\/ebsa\.cbd\.int\/app\/css\/main\.scss}line{font-family:\00003967}}
-.partner-logo {
-  width: 150px;
-  height: 117px;
 }

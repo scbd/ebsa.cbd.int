@@ -667,7 +667,7 @@ PARTNERS */
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
   background: url($img-path + "/partners-bg.jpg") no-repeat center top #F1F1F1;
-  height: 10px;
+  height: 180px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 20px;
@@ -956,15 +956,38 @@ footer .sitemap-ul li:first-child {
 .all-regions {
   outline: none;
 }
-@import 'google';
-
 .marginright {
   margin-right: 15px;
 }
 .marginleft {
   margin-left: 15px;
 }
-.partner-logo {
-  width: 150px;
+.partner-img-container {
   height: 117px;
+  text-align: center;
 }
+.partner-logo-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.partner-logo {
+  // margin: 0 auto;
+  // display: block;
+}
+.partner-container {
+  min-height: 160px;
+  min-width: 170px;
+}
+.txt-partner {
+  height: 10px;
+}
+.placeholder-partner {
+  height: auto;
+  padding: 5px 10px;
+
+  h5 {
+    margin: 0;
+  }
+}
+@import 'google';
