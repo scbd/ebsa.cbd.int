@@ -21,12 +21,17 @@ define(['app'], function(app) {
         });
       }
 
-      $scope.$on('breadcrumbs:add', function(event, title, url) {
+      var crumblistener = $rootScope.$on('breadcrumbs:add', function(event, title, url) {
         addCrumb(title, url);
       });
 
-      $rootScope.$on('$routeChangeSuccess', function(e, route) {
+      var routeChangeListener = $rootScope.$on('$routeChangeSuccess', function(e, route) {
         computeCrumbs();
+      });
+
+      $scope.$on('$destroy', function() {
+        crumblistener();
+        routeChangeListener();
       });
     }
   ]);
