@@ -7,6 +7,10 @@
     </th>
   </tr>
 
+  <tr ng-show="!meetings.length">
+    <td colspan="2">No meetings...</td>
+  </tr>
+
   <tr ng-repeat="meeting in meetings">
     <td><h4>{{meeting.title}}</h4></td>
     <td>
