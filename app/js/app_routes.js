@@ -61,6 +61,15 @@ define(['app'], function(app) {
         label: 'Partners'
 
       }).
+      when('/search', {
+        templateUrl: '/app/views/search/search.html',
+        // reloadOnSearch: false,
+        resolve: {
+          dependencies: resolveJS()
+        },
+        label: 'Search Results'
+
+      }).
       when('/404', {
         templateUrl: '/app/views/404.html',
         resolve: {},
