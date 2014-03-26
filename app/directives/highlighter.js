@@ -3,10 +3,22 @@ define(['./module.js', 'jquery'], function(module, $) {
     function($location, $route, $rootScope) {
 
       function searchAndHighlight(searchTerm, selector, highlightClass, removePreviousHighlights) {
-        var $el = angular.element(selector);
+        var $el = angular.element(selector),
+          searchTermRegEx = new RegExp('(' + searchTerm + ')', 'gi');
+
         if ($el.length) {
-          $el.addClass(highlightClass);
-          scrollToElement($el);
+          console.log($el.length);
+          console.log(searchTerm);
+          // if ($el.text().match(searchTermRegEx)) {
+            // var $temp = $('<span></span>');
+            // $temp.addClass('highlight');
+            // $temp.html($el.text().replace(searchTermRegEx, '$1'));
+            // debugger;
+            // $el.parent().insertBefore($temp, $el);
+            // $el.parent().remove($el);
+            $el.addClass(highlightClass);
+            scrollToElement($el);
+          // }
         }
       }
 
@@ -35,7 +47,6 @@ define(['./module.js', 'jquery'], function(module, $) {
 
       function highlight() {
         var params = extractUrlParams();
-        console.log(params);
 
         if (params.highlight) {
           searchAndHighlight(params.term, params.highlight, 'highlight', true);

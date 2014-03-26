@@ -33,7 +33,6 @@ function createPathCalculatorPlugin(jQuery) {
     findTab: function() {
       var $tab = this.parents('[id]');
       var tabName = jQuery('ul.nav li a[href=#' + $tab.attr('id') + ']').text();
-      console.log(tabName);
 
       return {
         hash: $tab.attr('id'),
@@ -49,8 +48,10 @@ function createPathCalculatorPlugin(jQuery) {
         name = name.toLowerCase();
 
         var parent = node.parent();
+        if (parent.prop('nodeName') === 'LI') parent = parent.parent();
 
         var sameTagSiblings = parent.children(name);
+
         if (sameTagSiblings.length > 1) {
           allSiblings = parent.children();
           var index = allSiblings.index(realNode) + 1;
@@ -83,11 +84,14 @@ function extractTextNodes(html, pageName, callback) {
         return !/^[\s\n\r]*$/.test(node.data);
       })
       .forEach(function(node) {
-        var $node = $(node);
-        var tabData = $(node).findTab();
+        var $node = $(node),
+          tabData = $node.findTab(),
+          xpath = $node.getPath().replace('#document>html>body>', '').replace('>#text', '');
+
+        console.log(xpath);
         nodesWithMetaData.push({
           body: node.data.trim(),
-          xpath: $node.getPath().replace('#document>html>body>', '').replace('>#text', ''),
+          xpath: encodeURIComponent(xpath),
           tabName: tabData.name,
           tabHash: tabData.hash,
           pageName: pageName

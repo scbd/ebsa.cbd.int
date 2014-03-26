@@ -6,7 +6,6 @@ define(['app', 'underscore', '../../util/strings.js'], function(app, _, strings)
           .then(function(response) {
             $scope.matchCount = response.data.length;
             $scope.searchResults = _.groupBy(response.data, 'pageName');
-            console.log($scope.searchResults);
           });
       }
 
