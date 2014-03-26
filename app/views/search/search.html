@@ -29,7 +29,7 @@
                 <!-- Table -->
                 <table class="table meeting-table">
                   <tr class="month" ng-repeat-start="(pageName, matches) in searchResults">
-                    <td colspan="2"><p class="important">{{pageName}}</p></td>
+                    <td colspan="2"><p class="important">{{capitalise(pageName)}} Page</p></td>
                   </tr>
                   <tr class="event" ng-repeat-end>
                     <td colspan="2">

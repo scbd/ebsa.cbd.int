@@ -1,4 +1,4 @@
-define(['app', 'underscore'], function(app, _) {
+define(['app', 'underscore', '../../util/strings.js'], function(app, _, strings) {
   app.controller('SearchCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
       function search(query) {
@@ -15,6 +15,8 @@ define(['app', 'underscore'], function(app, _) {
         $scope.query = queryParams.q;
         search(queryParams.q);
       }
+
+      $scope.capitalise = strings.capitalise;
     }
   ]);
 });
