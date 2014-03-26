@@ -66,6 +66,8 @@ define(['./module.js'], function(module) {
             element.find(linkSelector).off();
           });
 
+          // update lastRoute
+          lastRoute = $location.path();
           // Kick off the process on page load because locationChange doesn't
           // fire on first load.
           highlightCurrentTab(element, getSelectedTab(), scope);
