@@ -31,7 +31,14 @@ function getTextNodes(node) {
 function createPathCalculatorPlugin(jQuery) {
   jQuery.fn.extend({
     findTab: function() {
-      return this.parents('[id]').attr('id');
+      var $tab = this.parents('[id]');
+      var tabName = jQuery('ul.nav li a[href=#' + $tab.attr('id') + ']').text();
+      console.log(tabName);
+
+      return {
+        hash: '#' + $tab.attr('id'),
+        name: tabName
+      };
     },
     getPath: function() {
       var path, node = this;
@@ -77,10 +84,12 @@ function extractTextNodes(html, pageName, callback) {
       })
       .forEach(function(node) {
         var $node = $(node);
+        var tabData = $(node).findTab();
         nodesWithMetaData.push({
           body: node.data.trim(),
           xpath: $node.getPath().replace('#document>html>body>', '').replace('>#text', ''),
-          tab: $node.findTab(),
+          tabName: tabData.name,
+          tabHash: tabData.hash,
           pageName: pageName
         });
       });
