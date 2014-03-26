@@ -2,21 +2,21 @@ define(['./module.js', 'jquery'], function(module, $) {
   return module.directive('highlighter', ['$location', '$route', '$rootScope',
     function($location, $route, $rootScope) {
 
+      function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      }
+
       function searchAndHighlight(searchTerm, selector, highlightClass, removePreviousHighlights) {
         var $el = angular.element(selector),
-          searchTermRegEx = new RegExp('(' + searchTerm + ')', 'gi');
+          searchTermRegEx = new RegExp('(' + escapeRegExp(searchTerm) + ')', 'gi');
 
         if ($el.length) {
-          // if ($el.text().match(searchTermRegEx)) {
-            // var $temp = $('<span></span>');
-            // $temp.addClass('highlight');
-            // $temp.html($el.text().replace(searchTermRegEx, '$1'));
-            // debugger;
-            // $el.parent().insertBefore($temp, $el);
-            // $el.parent().remove($el);
-            $el.addClass(highlightClass);
+          var matches = $el.text().match(searchTermRegEx);
+          if (matches.length) {
+            var highlightedEl = ['<span class=', highlightClass, '>', matches[0], '</span>'].join('');
+            $el.html($el.html().replace(searchTermRegEx, highlightedEl));
             scrollToElement($el);
-          // }
+          }
         }
       }
 

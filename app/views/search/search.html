@@ -28,6 +28,11 @@
 
                 <!-- Table -->
                 <table class="table meeting-table">
+
+                  <tr class="month" ng-hide="!searchResults.length">
+                    <td colspan="2"><p class="important">No matches found...</p></td>
+                  </tr>
+
                   <tr class="month" ng-repeat-start="(pageName, matches) in searchResults">
                     <td colspan="2"><p class="important">{{capitalise(pageName)}} Page</p></td>
                   </tr>
@@ -40,7 +45,7 @@
                             <p>{{match.body}}</p>
                           </td>
                           <td>
-                            <a ng-href="/{{pageName}}?tab={{match.tabHash}}&amp;highlight={{match.xpath}}&amp;term={{match.body}}" class="pull-right">Link »</a>
+                            <a ng-href="/{{pageName}}?tab={{match.tabHash}}&amp;highlight={{match.xpath}}&amp;term={{query}}" class="pull-right">Link »</a>
                           </td>
                         </tr>
                       </table>
