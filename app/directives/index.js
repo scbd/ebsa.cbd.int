@@ -1,1 +1,1 @@
-define(['./meetingsCalendar.js', './pagination.js', './gmap.js', './showtab.js'], function() {});
+define(['./meetingsCalendar.js', './pagination.js', './gmap.js', './showtab.js', './highlighter.js'], function() {});

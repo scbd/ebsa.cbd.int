@@ -9473,6 +9473,11 @@ footer .sitemap-ul li:first-child {
   margin: 0;
 }
 
+/* line 993, main.scss */
+.highlight {
+  background-color: yellow;
+}
+
 /* line 1, google.scss */
 html, body, #map {
   height: 100%;
