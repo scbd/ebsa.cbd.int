@@ -34,13 +34,13 @@
                   <tr class="event" ng-repeat-end>
                     <td colspan="2">
                       <table>
-                        <tr ng-repeat="match in matches">
+                        <tr ng-repeat="match in matches | orderBy:score">
                           <td>
                             <h4>{{match.tabName}}</h4>
                             <p>{{match.body}}</p>
                           </td>
                           <td>
-                            <a ng-href="/{{pageName}}?tab={{match.tabHash}}&highlight={{match.xpath}}" class="pull-right">Link »</a>
+                            <a ng-href="/{{pageName}}?tab={{match.tabHash}}&amp;highlight={{match.xpath}}" class="pull-right">Link »</a>
                           </td>
                         </tr>
                       </table>

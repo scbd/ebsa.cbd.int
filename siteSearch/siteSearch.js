@@ -8,8 +8,7 @@ var noSearch = false;
 try {
   var documents = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-docs.json')));
   var serIndex = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-index.json')));
-}
-catch (e) {
+} catch (e) {
   console.error("Failed to parse document or index json\n", e);
   noSearch = true;
 }
@@ -22,9 +21,12 @@ module.exports.search = function(query, callback) {
   var matches = index.search(query),
     results = [];
   matches.forEach(function(match) {
-    results.push(documents.filter(function(doc) {
+    var doc = documents.filter(function(doc) {
       return doc.id.toString() === match.ref;
-    })[0]);
+    })[0];
+
+    if (doc) doc.score = match.score;
+    results.push(doc);
   });
   return callback(results);
 };
