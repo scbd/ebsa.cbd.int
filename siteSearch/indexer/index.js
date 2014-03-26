@@ -23,11 +23,8 @@ module.exports.create = function(callback) {
         var textNodes = documents[pageName];
 
         textNodes.forEach(function(node) {
-          indexedDocs.push({
-            body: node,
-            pageName: pageName,
-            id: id
-          });
+          node.id = id;
+          indexedDocs.push(node);
           ++id;
         });
       });
