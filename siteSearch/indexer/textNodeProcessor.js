@@ -36,7 +36,7 @@ function createPathCalculatorPlugin(jQuery) {
       console.log(tabName);
 
       return {
-        hash: '#' + $tab.attr('id'),
+        hash: $tab.attr('id'),
         name: tabName
       };
     },
