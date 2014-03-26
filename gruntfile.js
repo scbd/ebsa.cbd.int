@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
       }
     },
-      // configurable paths
+    // configurable paths
     app: require('./bower.json').appPath || 'app',
     express: {
       options: {
@@ -113,12 +113,12 @@ module.exports = function(grunt) {
   });
 
   // Used for delaying livereload until after server has restarted
-  grunt.registerTask('wait', function () {
+  grunt.registerTask('wait', function() {
     grunt.log.ok('Waiting for server reload...');
 
     var done = this.async();
 
-    setTimeout(function () {
+    setTimeout(function() {
       grunt.log.writeln('Done waiting!');
       done();
     }, 500);
@@ -139,9 +139,12 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('index', function() {
-    var index = require('./siteSearch/indexer');
-    index.create(function(response) {
+    var indexer = require('./siteSearch/indexer/');
+    var done = this.async();
+
+    indexer.create(function(response) {
       grunt.log.ok(response);
+      done();
     });
   });
 

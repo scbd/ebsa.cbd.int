@@ -1,4 +1,6 @@
-module.exports.walkDir = function walkDir(dir, done) {
+var fs = require('fs');
+
+function walkDir(dir, done) {
   var results = [];
   fs.readdir(dir, function(err, list) {
     if (err) return done(err);
@@ -19,4 +21,6 @@ module.exports.walkDir = function walkDir(dir, done) {
       });
     });
   });
-};
+}
+
+module.exports.walkDir = walkDir;

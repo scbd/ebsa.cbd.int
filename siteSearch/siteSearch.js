@@ -4,15 +4,19 @@ var lunr = require('lunr'),
   path = require('path'),
   config = require('./config');
 
+var noSearch = false;
 try {
   var documents = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-docs.json')));
   var serIndex = JSON.parse(fs.readFileSync(path.join(config.dataDir, 'lunr-index.json')));
 }
 catch (e) {
-  throw new Error("Failed to parse document or index json\n", e);
+  console.error("Failed to parse document or index json\n", e);
+  noSearch = true;
 }
 
-var index = lunr.Index.load(serIndex);
+if (!noSearch) {
+  var index = lunr.Index.load(serIndex);
+}
 
 module.exports.search = function(query, callback) {
   var matches = index.search(query),
