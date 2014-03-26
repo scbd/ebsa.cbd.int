@@ -7,8 +7,6 @@ define(['./module.js', 'jquery'], function(module, $) {
           searchTermRegEx = new RegExp('(' + searchTerm + ')', 'gi');
 
         if ($el.length) {
-          console.log($el.length);
-          console.log(searchTerm);
           // if ($el.text().match(searchTermRegEx)) {
             // var $temp = $('<span></span>');
             // $temp.addClass('highlight');
