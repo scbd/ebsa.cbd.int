@@ -9476,6 +9476,10 @@ footer .sitemap-ul li:first-child {
 /* line 993, main.scss */
 .highlight {
   background-color: yellow;
+  box-shadow: 1px 1px 5px #e8e800;
+  border: 1px solid #f1f100;
+  border-radius: 5px;
+  padding: 3px;
 }
 
 /* line 1, google.scss */

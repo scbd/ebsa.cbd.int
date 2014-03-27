@@ -992,5 +992,9 @@ footer .sitemap-ul li:first-child {
 }
 .highlight {
   background-color: yellow;
+  box-shadow: 1px 1px 5px rgb(232, 232, 0);
+  border: 1px solid rgb(241, 241, 0);
+  border-radius: 5px;
+  padding: 3px;
 }
 @import 'google';

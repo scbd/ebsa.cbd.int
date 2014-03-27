@@ -21,7 +21,7 @@ define(['./module.js', 'jquery'], function(module, $) {
       }
 
       function scrollToElement(element, time, verticalOffset) {
-        time = typeof(time) != 'undefined' ? time : 1000;
+        time = typeof(time) != 'undefined' ? time : 500;
         verticalOffset = typeof(verticalOffset) !== 'undefined' ? verticalOffset : 0;
         offset = element.offset();
         offsetTop = offset.top + verticalOffset;
