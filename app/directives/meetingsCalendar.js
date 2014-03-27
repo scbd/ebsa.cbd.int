@@ -7,7 +7,9 @@ define(['./module.js'], function(module) {
         return $locale.DATETIME_FORMATS[format][index];
       }
 
-      function processMeetings(meetings, timeframe) {
+      function processMeetings(meetings, dir) {
+        console.log(dir);
+        // dir == true is ASC and false is DESC
         if (!meetings) return meetings;
 
         // Sorts the meetings array into grouped objects, ex:
@@ -28,7 +30,6 @@ define(['./module.js'], function(module) {
         //      }]
         //    }]
         //  }
-        var isUpcoming = timeframe === 'upcoming';
         var sorted = _.chain(meetings)
           .groupBy('startYear')
           .pairs()
@@ -42,14 +43,14 @@ define(['./module.js'], function(module) {
               .sortBy('index')
               .each(function(month, index, list) {
                 var sortedDays = _.sortBy(month.meetings, 'startDay');
-                month.meetings = isUpcoming ? sortedDays : sortedDays.reverse();
+                month.meetings = dir ? sortedDays : sortedDays.reverse();
               })
               .value();
-            year.months = isUpcoming ? sortedMonths : sortedMonths.reverse();
+            year.months = dir ? sortedMonths : sortedMonths.reverse();
           })
           .value();
 
-        return isUpcoming ? sorted : sorted.reverse();
+        return dir ? sorted : sorted.reverse();
       }
 
       var getTemplate = function(format) {
@@ -76,7 +77,7 @@ define(['./module.js'], function(module) {
           meetingData: '=',
           itemsPerTimeframe: '@',
           tableTitle: '@',
-          timeframe: '=',
+          dir: '=',
           hashTag: '@'
         },
         link: function(scope, element, attrs) {
@@ -89,7 +90,7 @@ define(['./module.js'], function(module) {
           scope.$watch('meetingData', function(meetings) {
             if (!meetings) return;
 
-            meetings = processMeetings(meetings, scope.timeframe);
+            meetings = processMeetings(meetings, scope.dir);
             meetings = isShortFormat ?
               meetings.shift().months.shift().meetings.slice(0, scope.itemsPerTimeframe) :
               meetings;
