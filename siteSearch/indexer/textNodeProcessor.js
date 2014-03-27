@@ -40,6 +40,7 @@ function createPathCalculatorPlugin(jQuery) {
       };
     },
     getPath: function() {
+      debugger;
       var path, node = this;
       while (node.length) {
         var realNode = node[0],
@@ -48,14 +49,12 @@ function createPathCalculatorPlugin(jQuery) {
         name = name.toLowerCase();
 
         var parent = node.parent();
-        if (parent.prop('nodeName') === 'LI') parent = parent.parent();
 
         var sameTagSiblings = parent.children(name);
-
         if (sameTagSiblings.length > 1) {
           allSiblings = parent.children();
           var index = allSiblings.index(realNode) + 1;
-          if (index > 1) {
+          if (index >= 1) {
             name += ':nth-child(' + index + ')';
           }
         }
@@ -86,9 +85,8 @@ function extractTextNodes(html, pageName, callback) {
       .forEach(function(node) {
         var $node = $(node),
           tabData = $node.findTab(),
-          xpath = $node.getPath().replace('#document>html>body>', '').replace('>#text', '');
+          xpath = $node.parent().getPath().replace('#document>html>body>', '').replace('>#text', '');
 
-        console.log(xpath);
         nodesWithMetaData.push({
           body: node.data.trim(),
           xpath: encodeURIComponent(xpath),
