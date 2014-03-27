@@ -9452,28 +9452,28 @@ footer .sitemap-ul li:first-child {
   vertical-align: middle;
 }
 
-/* line 978, main.scss */
+/* line 974, main.scss */
 .partner-container {
   min-height: 160px;
   min-width: 170px;
 }
 
-/* line 982, main.scss */
+/* line 978, main.scss */
 .txt-partner {
   height: 10px;
 }
 
-/* line 985, main.scss */
+/* line 981, main.scss */
 .placeholder-partner {
   height: auto;
   padding: 5px 10px;
 }
-/* line 989, main.scss */
+/* line 985, main.scss */
 .placeholder-partner h5 {
   margin: 0;
 }
 
-/* line 993, main.scss */
+/* line 989, main.scss */
 .highlight {
   background-color: yellow;
   box-shadow: 1px 1px 5px #e8e800;
