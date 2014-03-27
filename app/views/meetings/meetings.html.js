@@ -125,7 +125,8 @@ define([
 
         function fetchMeetings(timeframe, country, year) {
           // we're looking only for EBSA meetings
-          var title = '*EBSA*';
+          // var title = '*EBSA*';
+          var title = '';
 
           if (timeframe && meetingsCache[timeframe]) {
             computeOptionLists(meetingsCache[timeframe]);

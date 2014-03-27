@@ -11,16 +11,16 @@
     </td>
   </tr> -->
 
-  <tr class="month" ng-repeat-start="(month, meetings) in year.months">
+  <tr class="month" ng-repeat-start="month in year.months">
     <td colspan="3">
-      <p class="important">{{getLocalizedMonth(month)}}</p>
+      <p class="important">{{getLocalizedMonth(month.month)}}</p>
     </td>
   </tr>
 
   <tr class="event" ng-repeat-end>
     <td colspan="3" ng-repeat-end>
       <table>
-        <tr ng-repeat="meeting in meetings">
+        <tr ng-repeat="meeting in month.meetings">
           <td>
             <p>
               {{meeting.startDay}} {{getLocalizedMonth(meeting.startMonth)}} -

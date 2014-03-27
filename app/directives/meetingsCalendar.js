@@ -39,9 +39,19 @@ define(['./module.js'], function(module) {
         angular.forEach(groupedByYear, function(meetings, year) {
           sortedByMonthAndYear.push({
             numeric: year,
-            months: _.groupBy(meetings, 'startMonth')
+            months: _.chain(meetings)
+              .groupBy('startMonth')
+              .each(function(val, index, list) {
+                list[index] = _.sortBy(list[index], 'startDay').reverse();
+              })
+              .pairs()
+              .each(function(val, index, list) {
+                list[index] = { month: val[0], meetings: val[1] };
+              })
+              .value()
           });
         });
+        console.log(sortedByMonthAndYear);
         meetings = _.sortBy(sortedByMonthAndYear, function(year) {
           return year.numeric;
         }).reverse();
