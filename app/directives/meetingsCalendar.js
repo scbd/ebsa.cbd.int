@@ -8,7 +8,6 @@ define(['./module.js'], function(module) {
       }
 
       function processMeetings(meetings, dir) {
-        console.log(dir);
         // dir == true is ASC and false is DESC
         if (!meetings) return meetings;
 
