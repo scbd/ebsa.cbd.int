@@ -30,23 +30,12 @@ app.configure(function() {
 
 var proxy = httpProxy.createProxyServer({});
 
-app.get   ('/api/search', siteSearch.route);
 app.get   ('/app/*'   , function(req, res) { res.send('404', 404); } );
-app.get   ('/public/*', function(req, res) { res.send('404', 404); } );
+app.get   ('/api/search', siteSearch.route);
 
-var proxyFn = function(req, res) {
-  proxy.web(req, res, {
-    target: 'https://api.cbd.int',
-    secure: false
-  });
-};
 // app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
-app.get   ('/api/*', proxyFn);
-app.put   ('/api/*', proxyFn);
-app.post  ('/api/*', proxyFn);
-app.delete('/api/*', proxyFn);
+app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false }); } );
 
-// Configure index.html
 
 app.get('/*', function(req, res) {
   fs.readFile(__dirname + '/app/templates/master.html', 'utf8', function (error, text) {
