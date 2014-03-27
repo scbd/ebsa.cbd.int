@@ -12,7 +12,7 @@ define(['./module.js', 'jquery'], function(module, $) {
 
         if ($el.length) {
           var matches = $el.text().match(searchTermRegEx);
-          if (matches.length) {
+          if (matches && matches.length) {
             var highlightedEl = ['<span class=', highlightClass, '>', matches[0], '</span>'].join('');
             $el.html($el.html().replace(searchTermRegEx, highlightedEl));
             scrollToElement($el);
