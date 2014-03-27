@@ -8,7 +8,7 @@ require.config({
     paths: {
         'angular'         : '../libs/angular/angular',
         'angular-route'   : '../libs/angular-route/angular-route',
-        'ng-breadcrumbs'   : '../libs/ng-breadcrumbs/dist/js/ng-breadcrumbs',
+        'ng-breadcrumbs'   : '../libs/ng-breadcrumbs/dist/ng-breadcrumbs',
         'async'           : '../libs/requirejs-plugins/src/async',
         'domReady'        : '../libs/requirejs-domready/domReady',
         'jquery'          : '../libs/jquery/jquery',

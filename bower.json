@@ -10,7 +10,7 @@
     "requirejs-plugins": "latest",
     "underscore": "latest",
     "jquery": "~2.0.3",
-    "ng-breadcrumbs": "https://github.com/ckm2k1/ng-breadcrumbs/archive/master.zip",
+    "ng-breadcrumbs": "0.0.6",
     "bootstrap-sass": "3.0.2",
     "angular-i18n": "~1.2.14",
     "angular-growl": "~0.4.0"
