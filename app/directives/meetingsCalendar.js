@@ -3,7 +3,8 @@ define(['./module.js'], function(module) {
     function(meetings, $locale, $http, $compile, $templateCache) {
 
       function getLocalizedMonth(index, format) {
-        return $locale.DATETIME_FORMATS.SHORTMONTH[index];
+        format = format === 'long' ? 'MONTH' : 'SHORTMONTH';
+        return $locale.DATETIME_FORMATS[format][index];
       }
 
       function processMeetings(meetings, timeframe) {
@@ -31,12 +32,14 @@ define(['./module.js'], function(module) {
         var sorted = _.chain(meetings)
           .groupBy('startYear')
           .pairs()
-          .map(function(year) { return { index: year[0], months: year[1] }; })
+          .map(function(year) { return { index: parseInt(year[0], 10), months: year[1] }; })
+          .sortBy('index')
           .each(function(year, index, list) {
             var sortedMonths = _.chain(year.months)
               .groupBy('startMonth')
               .pairs()
-              .map(function(month) { return { index: month[0], meetings: month[1] }; })
+              .map(function(month) { return { index: parseInt(month[0], 10), meetings: month[1] }; })
+              .sortBy('index')
               .each(function(month, index, list) {
                 var sortedDays = _.sortBy(month.meetings, 'startDay');
                 month.meetings = isUpcoming ? sortedDays : sortedDays.reverse();
@@ -67,7 +70,6 @@ define(['./module.js'], function(module) {
 
       return {
         restrict: 'EA',
-        // templateUrl: '/app/views/meetings/meetingsCalendar.html',
         replace: true,
         scope: {
           format: '@',
@@ -87,8 +89,12 @@ define(['./module.js'], function(module) {
           scope.$watch('meetingData', function(meetings) {
             if (!meetings) return;
 
-            scope.meetings = processMeetings(meetings, scope.timeframe)
-              .slice(0, isShortFormat ? scope.itemsPerTimeframe : meetings.length);
+            meetings = processMeetings(meetings, scope.timeframe);
+            meetings = isShortFormat ?
+              meetings.shift().months.shift().meetings.slice(0, scope.itemsPerTimeframe) :
+              meetings;
+
+            scope.meetings = meetings;
           });
           // inject the right template based on the required scope.format
           loader.success(function(html) {

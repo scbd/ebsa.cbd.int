@@ -5,15 +5,9 @@
     <th class="right">{{year.index}}</th>
   </tr>
 
-  <!-- <tr class="year">
-    <td colspan="3">
-      <p class="blue4">{{year}}</p>
-    </td>
-  </tr> -->
-
   <tr class="month" ng-repeat-start="month in year.months">
     <td colspan="3">
-      <p class="important">{{getLocalizedMonth(month.index)}}</p>
+      <p class="important">{{getLocalizedMonth(month.index, 'long')}}</p>
     </td>
   </tr>
 
@@ -23,8 +17,8 @@
         <tr ng-repeat="meeting in month.meetings">
           <td>
             <p>
-              {{meeting.startDay}} {{getLocalizedMonth(meeting.startMonth)}} -
-              {{meeting.endDay}} {{getLocalizedMonth(meeting.endMonth)}}<br />
+              {{meeting.startDay}} {{getLocalizedMonth(meeting.startMonth, 'short')}} -
+              {{meeting.endDay}} {{getLocalizedMonth(meeting.endMonth, 'short')}}<br />
 
               {{meeting.city}}, {{meeting.country}} <br />
 
