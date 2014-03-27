@@ -2,7 +2,7 @@
   <tr>
     <th ng-show="$first">Date and Venue</th>
     <th ng-show="$first">Event</th>
-    <th class="right">{{year.numeric}}</th>
+    <th class="right">{{year.index}}</th>
   </tr>
 
   <!-- <tr class="year">
@@ -13,7 +13,7 @@
 
   <tr class="month" ng-repeat-start="month in year.months">
     <td colspan="3">
-      <p class="important">{{getLocalizedMonth(month.month)}}</p>
+      <p class="important">{{getLocalizedMonth(month.index)}}</p>
     </td>
   </tr>
 

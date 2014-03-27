@@ -6,56 +6,47 @@ define(['./module.js'], function(module) {
         return $locale.DATETIME_FORMATS.SHORTMONTH[index];
       }
 
-      function sortByYear(meetings) {
-        return meetings.sort(function(a, b) {
-          return a.startYear < b.startYear;
-        });
-      }
-
-      // function normalizeDates(meetings) {
-      //   angular.forEach(meetings, function(month, meetings) {
-      //     angular.forEach(meetings, function(meeting) {
-      //       meeting.startMonth = scope.getLocalizedMonth(meeting.startMonth);
-      //       meeting.year = meeting.getFullYear();
-      //     });
-      //   });
-
-      //   return meetings;
-      // }
-
-      function processMeetings(meetings) {
+      function processMeetings(meetings, timeframe) {
         if (!meetings) return meetings;
-        // sorts meetings by date in descending order, localizes the dates, and groups the meeting by years
-        // and then subgroups by months.
-        // ex: {
-        //   2014: {
-        //     4: [{meeting}], // 4 is the ISO month index
-        //     5: [{meeting}]
-        //   }
-        // }
-        var groupedByYear = _.groupBy(meetings, 'startYear'),
-          sortedByMonthAndYear = [];
 
-        angular.forEach(groupedByYear, function(meetings, year) {
-          sortedByMonthAndYear.push({
-            numeric: year,
-            months: _.chain(meetings)
+        // Sorts the meetings array into grouped objects, ex:
+        //  {
+        //    index: 2014,
+        //    months: [{
+        //      index: 1,
+        //      meetings: [{
+        //        city: 'Montreal',
+        //        country: 'Canada',
+        //        startDay: 1
+        //        ...
+        //      }, {
+        //        city: 'New York',
+        //        country: 'United States',
+        //        startDay: 4
+        //        ...
+        //      }]
+        //    }]
+        //  }
+        var isUpcoming = timeframe === 'upcoming';
+        var sorted = _.chain(meetings)
+          .groupBy('startYear')
+          .pairs()
+          .map(function(year) { return { index: year[0], months: year[1] }; })
+          .each(function(year, index, list) {
+            var sortedMonths = _.chain(year.months)
               .groupBy('startMonth')
-              .each(function(val, index, list) {
-                list[index] = _.sortBy(list[index], 'startDay').reverse();
-              })
               .pairs()
-              .each(function(val, index, list) {
-                list[index] = { month: val[0], meetings: val[1] };
+              .map(function(month) { return { index: month[0], meetings: month[1] }; })
+              .each(function(month, index, list) {
+                var sortedDays = _.sortBy(month.meetings, 'startDay');
+                month.meetings = isUpcoming ? sortedDays : sortedDays.reverse();
               })
-              .value()
-          });
-        });
-        console.log(sortedByMonthAndYear);
-        meetings = _.sortBy(sortedByMonthAndYear, function(year) {
-          return year.numeric;
-        }).reverse();
-        return meetings;
+              .value();
+            year.months = isUpcoming ? sortedMonths : sortedMonths.reverse();
+          })
+          .value();
+
+        return isUpcoming ? sorted : sorted.reverse();
       }
 
       var getTemplate = function(format) {
@@ -82,10 +73,12 @@ define(['./module.js'], function(module) {
           format: '@',
           meetingData: '=',
           itemsPerTimeframe: '@',
-          tableTitle: '@'
+          tableTitle: '@',
+          timeframe: '=',
+          hashTag: '@'
         },
         link: function(scope, element, attrs) {
-          var isShort = scope.format === 'short';
+          var isShortFormat = scope.format === 'short';
           scope.getLocalizedMonth = getLocalizedMonth;
           scope.itemsPerTimeframe = scope.itemsPerTimeframe || 0;
 
@@ -94,21 +87,13 @@ define(['./module.js'], function(module) {
           scope.$watch('meetingData', function(meetings) {
             if (!meetings) return;
 
-            meetings = sortByYear(meetings).slice(0, scope.itemsPerTimeframe || meetings.length);
-            if (isShort) {
-              scope.meetings = meetings;
-              return;
-            }
-
-            scope.meetings = processMeetings(meetings);
+            scope.meetings = processMeetings(meetings, scope.timeframe)
+              .slice(0, isShortFormat ? scope.itemsPerTimeframe : meetings.length);
           });
-
+          // inject the right template based on the required scope.format
           loader.success(function(html) {
             element.replaceWith($compile(html)(scope));
           });
-
-          // Provide a proper hashTag link to the right tab on the meetings page
-          scope.hashTag = scope.tableTitle && scope.tableTitle === 'Upcoming Meetings' ? 'upcoming' : 'previous';
         }
       };
     }

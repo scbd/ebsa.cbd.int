@@ -147,7 +147,6 @@ define([
           });
         }
 
-        // fetchMeetings('upcoming', filters.country, filters.year);
       }
     ]);
 
