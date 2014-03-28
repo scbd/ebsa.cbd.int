@@ -9480,6 +9480,22 @@ footer .sitemap-ul li:first-child {
   border-radius: 5px;
 }
 
+/* line 1000, main.scss */
+.loading {
+  width: 100%;
+  height: 100%;
+  background: rgba(178, 224, 237, 0.43);
+  z-index: 9999;
+  position: absolute;
+}
+
+/* line 1008, main.scss */
+.loading-helper {
+  vertical-align: middle;
+  height: 100%;
+  display: inline-block;
+}
+
 /*Google maps CSS*/
 /* line 1, google.scss */
 html, body, #map {

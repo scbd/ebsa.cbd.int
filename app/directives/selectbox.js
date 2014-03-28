@@ -40,7 +40,7 @@ define(['./module.js'], function(module) {
           });
 
         },
-        link: function(scope, element, attrs, controller) {}
+        // link: function(scope, element, attrs, controller) {}
       };
     }
   ]);

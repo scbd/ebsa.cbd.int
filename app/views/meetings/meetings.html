@@ -58,6 +58,7 @@
           <!-- ARTICLE  -->
           <div class="col-xs-8 col-lg-8 wraparticle">
             <div class="article">
+              <div class="loading" ng-show="loading"></div>
               <!-- Table -->
               <pre class="pull-right pagination-totals">{{pagination.totalPages}} Pages</pre>
               <pagination
@@ -87,7 +88,11 @@
               </tr>
             </table>
 
-            <meetings-calendar format="long" meeting-data="meetings" dir="timeframe === 'upcoming'"></meetings-calendar>
+            <div meetings-calendar
+              format="long"
+              meeting-data="meetings"
+              dir="timeframe === 'upcoming'">
+            </div>
 
           </div>
         </div>
