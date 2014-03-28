@@ -18,30 +18,11 @@ define([
 
         function resetFilters() {
           filters.country = filters.year = undefined;
-          setSelectedTitle('country', 'All');
-          setSelectedTitle('year', 'All');
         }
 
-        $scope.setFilterParam = function(paramName, value) {
-          var country,
-            isCountry = paramName === 'country',
-            // normalize
-            filterValue = (/[a|A]ll/.test(value)) ? null : value;
-
-
-          if (!angular.equals(filters[paramName], filterValue)) {
-            if (isCountry) {
-              country = _.findWhere($scope.memberCountries, {
-                countryCode: value
-              });
-            }
-            setSelectedTitle(paramName, isCountry ? country.name : value);
-            filterValue = isCountry && filterValue ? value : filterValue;
-
-            filters[paramName] = filterValue;
-
-            updateMeetingData(filterMeetings(filters));
-          }
+        $scope.setFilter = function(filterName, selection) {
+          filters[filterName] = selection.value;
+          updateMeetingData(filterMeetings(filters));
         };
 
         function filterMeetings(filters) {
@@ -76,28 +57,32 @@ define([
           fetchMeetings(timeframe);
         };
 
-        function setSelectedTitle(paramName, title) {
-          $scope['selected' + strings.capitalise(paramName)] = title;
-        }
-
         function generateCountryList(meetings) {
           Lists.getCountries(function(json) {
-            var countryNames = [];
+            var filteredCountries = [];
             meetings.forEach(function(meeting) {
-              countryNames.push(_.findWhere(json, {
+              filteredCountries.push(_.findWhere(json, {
                 countryCode: meeting.countryCode
               }));
             });
-            $scope.memberCountries = _.sortBy(_.uniq(countryNames), function(country) {
-              return country && country.name;
-            });
+            $scope.countryList = _.chain(filteredCountries)
+              .uniq()
+              .sortBy(function(country) {
+                return country && country.name;
+              })
+              .map(function(country) {
+                return {
+                  text: country.name,
+                  value: country.countryCode
+                };
+              })
+              .value();
             // set the default option to be all meetings
             // see below in setSelectedCountry for handling of special case.
-            $scope.memberCountries.unshift({
-              name: 'All',
-              countryCode: 'All'
+            $scope.countryList.unshift({
+              text: 'All',
+              value: 'All'
             });
-            setSelectedTitle('country', $scope.memberCountries[0].name);
           });
         }
 
@@ -106,12 +91,18 @@ define([
             return meeting.startYear;
           });
           yearList.unshift('All');
-          $scope.yearList = _.uniq(yearList);
+          return _.uniq(yearList)
+            .map(function(year) {
+              return {
+                text: year.toString(),
+                value: year
+              };
+            });
         }
 
         function computeOptionLists(meetingSet) {
-          generateCountryList(meetingSet);
-          generateYearList(meetingSet);
+          $scope.countryList = generateCountryList(meetingSet);
+          $scope.yearList = generateYearList(meetingSet);
         }
 
         function updateMeetingData(meetings) {
@@ -146,7 +137,6 @@ define([
             computeOptionLists(meetingSet);
           });
         }
-
       }
     ]);
 

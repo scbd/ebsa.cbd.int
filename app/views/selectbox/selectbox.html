@@ -1,0 +1,12 @@
+<h4>{{title}}</h4>
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
+    <p>{{selectedTitle}}</p>
+    <span class="pull-right caret"></span>
+  </button>
+  <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
+    <li ng-repeat="item in items" role="presentation">
+      <a role="menuitem" tabindex="-3" href="#" ng-click="setSelection(item)">{{item.text}}</a>
+    </li>
+  </ul>
+</div>

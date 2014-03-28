@@ -33,33 +33,25 @@
             <h2 ng-show="timeframe == 'previous'">Previous meetings</h2>
 
             <div class="push20"></div>
-            <h4 ng-show="timeframe === 'previous'">Year</h4>
-            <div class="dropdown" ng-show="timeframe === 'previous'">
-              <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
-                <p>{{selectedYear}}</p>
-                <span class="pull-right caret"></span>
-              </button>
-              <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li ng-repeat="year in yearList" role="presentation">
-                  <a role="menuitem" tabindex="-3" href="#" ng-click="setFilterParam('year', year)">{{year}}</a>
-                </li>
-              </ul>
+            <div selectbox
+              on-select="setFilter"
+              name="year"
+              title="Year"
+              ng-show="timeframe==='previous'"
+              items="yearList"
+              default-item="yearList[0]">
             </div>
+
             <div class="push20"></div>
-            <h4>Country</h4>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="DateOfEvents" data-toggle="dropdown">
-                <p>{{selectedCountry}}</p>
-                <span class="pull-right caret"></span>
-              </button>
 
-              <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                <li ng-repeat="country in memberCountries track by country.countryCode" role="presentation">
-                  <a ng-click="setFilterParam('country', country.countryCode)" role="menuitem" tabindex="-{{$index}}" href="#">{{country.name}}</a>
-                </li>
-
-              </ul>
+            <div selectbox
+              on-select="setFilter"
+              name="country"
+              title="Country"
+              items="countryList"
+              default-item="countryList[0]">
             </div>
+
           </div>
           <div class="push20"></div>
 
