@@ -14,12 +14,16 @@ define(['./module.js'], function(module) {
         controller: function($scope, $element, $attrs) {
           var self = this;
 
-          $scope.setSelection = function(selection) {
+          $scope.updateSelection = function(selection) {
             if (!angular.equals(this.selection, selection)) {
-              self.selection = selection;
-              self.setSelectedTitle(self.selection.text);
+              self.setSelection(selection);
               $scope.onSelect()($scope.name, self.selection);
             }
+          };
+
+          this.setSelection = function(selection) {
+            self.selection = selection;
+            self.setSelectedTitle(self.selection.text);
           };
 
           this.setSelectedTitle = function(newTitle) {
@@ -32,12 +36,11 @@ define(['./module.js'], function(module) {
 
           $scope.$watch('items', function(newList) {
             if (newList && newList.length) self.setList(newList);
-            if (!_.isEmpty($scope.defaultItem)) $scope.setSelection($scope.defaultItem);
+            if (!_.isEmpty($scope.defaultItem)) self.setSelection($scope.defaultItem);
           });
 
         },
-        link: function(scope, element, attrs, controller) {
-        }
+        link: function(scope, element, attrs, controller) {}
       };
     }
   ]);

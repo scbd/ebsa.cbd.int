@@ -21,7 +21,7 @@ define([
         }
 
         $scope.setFilter = function(filterName, selection) {
-          filters[filterName] = selection.value;
+          filters[filterName] = selection.value === 'All' ? undefined : selection.value;
           updateMeetingData(filterMeetings(filters));
         };
 
