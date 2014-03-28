@@ -663,16 +663,18 @@ PARTNERS */
 .partners .col-lg-3 {
   text-align: center;
 }
-.txt-partner {
+.txt-partner{
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
-  background: url($img-path + "/partners-bg.jpg") no-repeat center top #F1F1F1;
-  height: 180px;
+  min-height: 2px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-top: 20px;
   text-align: left;
   padding: 20px 0px 0px 15px;
+  line-height: 17px;
+  color: #1C5573;
+  text-align: center;
 }
 
 /* *
@@ -962,6 +964,9 @@ footer .sitemap-ul li:first-child {
 .marginleft {
   margin-left: 15px;
 }
+
+
+/*Partners*/
 .partner-img-container {
   height: 117px;
   text-align: center;
@@ -975,9 +980,6 @@ footer .sitemap-ul li:first-child {
   min-height: 160px;
   min-width: 170px;
 }
-.txt-partner {
-  height: 10px;
-}
 .placeholder-partner {
   height: auto;
   padding: 5px 10px;
@@ -986,10 +988,14 @@ footer .sitemap-ul li:first-child {
     margin: 0;
   }
 }
+
+/*Highlight search matches*/
 .highlight {
   background-color: yellow;
   box-shadow: 1px 1px 5px rgb(232, 232, 0);
   border: 1px solid rgb(241, 241, 0);
   border-radius: 5px;
 }
+
+/*Google maps CSS*/
 @import 'google';
