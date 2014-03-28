@@ -40,7 +40,3 @@ module.exports.create = function(callback) {
     });
   });
 };
-
-if (process.argv[2] === 'cl') module.exports.create(function(msg) {
-  console.log(msg);
-});
