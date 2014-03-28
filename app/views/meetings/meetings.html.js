@@ -7,8 +7,8 @@ define([
     'use strict';
 
     app.controller('MeetingsCtrl', [
-      '$http', '$scope', '$locale', '$location', 'meetings', 'lists', 'paginator', 'growl',
-      function($http, $scope, $locale, $location, Meetings, Lists, paginator, growl) {
+      '$http', '$scope', '$locale', '$location', 'meetings', 'lists', 'paginator',
+      function($http, $scope, $locale, $location, Meetings, Lists, paginator) {
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
 
