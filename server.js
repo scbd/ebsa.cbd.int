@@ -36,7 +36,7 @@ app.get   ('/api/search', siteSearch.route);
 // app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
 app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false }); } );
 
-
+// For everything else there's master-template...
 app.get('/*', function(req, res) {
   fs.readFile(__dirname + '/app/templates/master.html', 'utf8', function (error, text) {
     res.send(text);
