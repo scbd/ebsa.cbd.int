@@ -6,15 +6,15 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 require.config({
     baseUrl : './',
     paths: {
-        'angular'         : '/libs/angular/angular',
-        'angular-route'   : '/libs/angular-route/angular-route',
-        'ng-breadcrumbs'  : '/libs/ng-breadcrumbs/dist/ng-breadcrumbs',
-        'async'           : '/libs/requirejs-plugins/src/async',
-        'domReady'        : '/libs/requirejs-domready/domReady',
-        'jquery'          : '/libs/jquery/jquery',
-        'bootstrap'       : '/libs/bootstrap-sass/dist/js/bootstrap',
-        'underscore'      : '/libs/underscore/underscore',
-        'angular-growl'   : '/libs/angular-growl/build/angular-growl',
+        'angular'         : 'libs/angular/angular',
+        'angular-route'   : 'libs/angular-route/angular-route',
+        'ng-breadcrumbs'  : 'libs/ng-breadcrumbs/dist/ng-breadcrumbs',
+        'async'           : 'libs/requirejs-plugins/src/async',
+        'domReady'        : 'libs/requirejs-domready/domReady',
+        'jquery'          : 'libs/jquery/jquery',
+        'bootstrap'       : 'libs/bootstrap-sass/dist/js/bootstrap',
+        'underscore'      : 'libs/underscore/underscore',
+        'angular-growl'   : 'libs/angular-growl/build/angular-growl',
         'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
     },
     shim: {
