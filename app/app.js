@@ -1,4 +1,10 @@
 define([
+    'jquery',
+    'angular',
+    'angular-route',
+    'bootstrap',
+    'ng-breadcrumbs',
+    'angular-growl',
     '/directives/index.js',
     '/services/index.js',
     '/filters/index.js'

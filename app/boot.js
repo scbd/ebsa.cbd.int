@@ -27,7 +27,7 @@ require.config({
     }
 });
 
-require(['angular', 'angular-route', 'bootstrap', 'ng-breadcrumbs', 'domReady', 'angular-growl'],
+require(['angular', 'domReady'],
  function (ng) {
 
     // NOTE: place operations that need to initialize prior to app start here using the `run` function on the top-level module

@@ -9,26 +9,27 @@ define([
     app.controller('MeetingsCtrl', [
       '$http', '$scope', '$locale', '$location', 'meetings', 'lists', 'paginator',
       function($http, $scope, $locale, $location, Meetings, Lists, paginator) {
+        var self = this;
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
 
-        var filters = {
+        self.filters = {
           country: undefined,
           year: undefined
         };
 
-        function resetFilters() {
-          filters.country = filters.year = undefined;
-        }
-
-        $scope.setFilter = function(filterName, selection) {
-          filters[filterName] = selection.value === 'All' ? undefined : selection.value;
-          updateMeetingData(filterMeetings(filters));
+        this.resetFilters = function() {
+          self.filters.country = self.filters.year = undefined;
         };
 
-        function filterMeetings(filters) {
+        $scope.setFilter = function(filterName, selection) {
+          self.filters[filterName] = selection.value === 'All' ? undefined : selection.value;
+          self.updateMeetingData(self.filterMeetings(self.filters));
+        };
+
+        this.filterMeetings = function(filters) {
           var filtered,
-            meetings = meetingsCache[$scope.timeframe];
+            meetings = self.meetingsCache[$scope.timeframe];
 
           if (!filters.country && !filters.year) return meetings;
           filtered = meetings;
@@ -44,7 +45,7 @@ define([
             });
           }
           return filtered;
-        }
+        };
 
         $scope.setPage = function(page, countryCode, year) {
           paginator.setPage(page);
@@ -53,12 +54,12 @@ define([
 
         $scope.setTimeframe = function(timeframe) {
           timeframe = timeframe || 'upcoming';
-          resetFilters();
+          self.resetFilters();
           $scope.timeframe = timeframe;
-          fetchMeetings(timeframe);
+          self.fetchMeetings(timeframe);
         };
 
-        function generateCountryList(meetings) {
+        this.generateCountryList = function(meetings) {
           Lists.getCountries(function(json) {
             var filteredCountries,
               countries = json,
@@ -83,9 +84,9 @@ define([
             });
             $scope.countryList = filteredCountries;
           });
-        }
+        };
 
-        function generateYearList(meetings) {
+        this.generateYearList = function(meetings) {
           var yearList = meetings.map(function(meeting) {
             return meeting.startYear;
           });
@@ -97,33 +98,33 @@ define([
                 value: year
               };
             });
-        }
+        };
 
-        function computeOptionLists(meetingSet) {
-          $scope.countryList = generateCountryList(meetingSet);
-          $scope.yearList = generateYearList(meetingSet);
-        }
+        self.computeOptionLists = function(meetingSet) {
+          $scope.countryList = self.generateCountryList(meetingSet);
+          $scope.yearList = self.generateYearList(meetingSet);
+        };
 
-        function updateMeetingData(meetings) {
+        this.updateMeetingData = function(meetings) {
           if (meetings) paginator.resetCollection(meetings);
           var page = paginator.getCurrentPage();
           $scope.meetings = page.data;
           $scope.pagination = page.pagination;
-        }
+        };
 
-        var meetingsCache = {};
-
-        function fetchMeetings(timeframe, country, year) {
+        self.meetingsCache = {};
+        self.fetchMeetings = function(timeframe, country, year) {
           // we're looking only for EBSA meetings
           var title = '*EBSA*';
           // var title = '';
 
-          if (timeframe && meetingsCache[timeframe]) {
-            computeOptionLists(meetingsCache[timeframe]);
-            return updateMeetingData(meetingsCache[timeframe]);
+          if (timeframe && self.meetingsCache[timeframe]) {
+            computeOptionLists(self.meetingsCache[timeframe]);
+            return updateMeetingData(self.meetingsCache[timeframe]);
           }
+
           $scope.loading = true;
-          Meetings.getMeetingsPage({
+          return Meetings.getMeetingsPage({
             timeframe: timeframe,
             title: title,
             countryCode: country,
@@ -132,11 +133,11 @@ define([
             .then(function(meetingSet) {
               $scope.loading = false;
               // cache the results since we ask the backend for all rows.
-              meetingsCache[timeframe] = meetingSet;
-              computeOptionLists(meetingSet);
-              updateMeetingData(meetingSet);
+              self.meetingsCache[timeframe] = meetingSet;
+              self.computeOptionLists(meetingSet);
+              self.updateMeetingData(meetingSet);
             });
-        }
+        };
       }
     ]);
 

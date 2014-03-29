@@ -1,16 +1,69 @@
-define(['angular', 'app', 'angular-mocks', 'base/app/views/meetings/meetings.html.js'], function(angular, app, mocks, meetingsCtrl) {
-  describe('meetingsCtrl', function() {
-    var $http, $scope, $locale, $location, Meetings, Lists, paginator;
+define([
+    'angular',
+    'app',
+    'angular-mocks',
+    '/views/meetings/meetings.html.js',
+    'text!/base/test/unit/fixtures/meetings.json'
+  ],
+  function(angular, app, mocks, ctrl, fixtureMeetings) {
+    describe('MeetingsCtrl', function() {
+      var $http, $scope, $locale, $location, Meetings, Lists, paginator;
 
-    beforeEach(module('app'));
+      var fixtures = JSON.parse(fixtureMeetings),
+        upcomingMeetings = fixtures.upcoming,
+        previousMeetings = fixtures.previous;
 
-    beforeEach(inject(function($injector) {
-      $http = $injector.get('$http');
-      $scope = $injector.get('$http');
-      $locale = $injector.get('$http');
-      Meetings = $injector.get('meetings');
-      Lists = $injector.get('lists');
-      paginator = $injector.get('paginator');
-    }));
+      var scope, controller, timeout;
+      beforeEach(function() {
+        debugger;
+        mocks.module('app');
+
+        mocks.inject(function($q, $timeout, $http, $rootScope, $locale, $location, $controller, lists, paginator) {
+          timeout = $timeout;
+          var meetings = {
+            getMeetingsPage: function(options) {
+              var deferred = $q.defer(),
+                meetings = (options.timeframe === 'upcoming') ? upcomingMeetings : previousMeetings;
+
+              $timeout(function() {
+                deferred.resolve(meetings);
+              }, 10);
+
+              return deferred.promise;
+            }
+          };
+
+          scope = $rootScope.$new();
+          controller = $controller('MeetingsCtrl', {
+            $http: $http,
+            $scope: scope,
+            $locale: $locale,
+            $location: $location,
+            meetings: meetings,
+            lists: lists,
+            paginator: paginator
+          });
+
+          var promise = controller.fetchMeetings({timeframe: 'upcoming'});
+        });
+      });
+
+      it('should have a default timeframe', function() {
+        expect(scope.timeframe).to.eql('upcoming');
+      });
+
+      it('should set filter when calling setFilter()', function() {
+        // stub out update so we don't trigger requests.
+        controller.updateMeetingData = sinon.stub().returns(undefined);
+        controller.filterMeetings = sinon.stub().returns(undefined);
+        controller.generateCountryList = sinon.stub().returns(undefined);
+        controller.generateYearList = sinon.stub().returns(undefined);
+        timeout.flush();
+
+        scope.setFilter('country', {value: 'CA'});
+        expect(controller.filters.country).to.eql('CA');
+      });
+
+    });
+
   });
-});
