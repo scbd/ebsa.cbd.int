@@ -58,7 +58,10 @@ define([
         controller.filterMeetings = sinon.stub().returns(undefined);
         controller.generateCountryList = sinon.stub().returns(undefined);
         controller.generateYearList = sinon.stub().returns(undefined);
+
+        expect(scope.loading).to.be.true;
         timeout.flush();
+        expect(scope.loading).to.be.false;
 
         scope.setFilter('country', {value: 'CA'});
         expect(controller.filters.country).to.eql('CA');
