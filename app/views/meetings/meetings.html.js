@@ -100,7 +100,7 @@ define([
             });
         };
 
-        self.computeOptionLists = function(meetingSet) {
+        this.computeOptionLists = function(meetingSet) {
           $scope.countryList = self.generateCountryList(meetingSet);
           $scope.yearList = self.generateYearList(meetingSet);
         };
@@ -112,8 +112,8 @@ define([
           $scope.pagination = page.pagination;
         };
 
-        self.meetingsCache = {};
-        self.fetchMeetings = function(timeframe, country, year) {
+        this.meetingsCache = {};
+        this.fetchMeetings = function(timeframe, country, year) {
           // we're looking only for EBSA meetings
           var title = '*EBSA*';
           // var title = '';
