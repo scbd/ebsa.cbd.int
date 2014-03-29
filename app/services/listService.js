@@ -4,7 +4,7 @@ define(['./module.js', 'underscore'], function(module, _) {
       var lists = {};
 
       lists.getCountries = function(cb) {
-        $http.get('/app/langs/en/countries.json')
+        $http.get('langs/en/countries.json')
           .then(function(response) {
             cb(response.data);
           });
@@ -22,7 +22,7 @@ define(['./module.js', 'underscore'], function(module, _) {
 
       lists.getEbsas = function(regionName) {
         var deferred = $q.defer();
-        $http.get('/app/ebsaData/' + regionName + '.json')
+        $http.get('ebsaData/' + regionName + '.json')
           .then(function(response) {
             deferred.resolve(response.data);
           });

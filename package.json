@@ -21,7 +21,16 @@
     "lunr": "^0.4.5"
   },
   "devDependencies": {
-    "awsbox": "*"
+    "awsbox": "*",
+    "karma": "^0.12.1",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.3",
+    "karma-requirejs": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-ng-scenario": "~0.1.0"
   },
   "engine": "node >= 0.10.18",
   "scripts": {

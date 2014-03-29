@@ -4,17 +4,17 @@
 window.name = 'NG_DEFER_BOOTSTRAP!';
 
 require.config({
-    baseUrl : '/app/js',
+    baseUrl : './',
     paths: {
-        'angular'         : '../libs/angular/angular',
-        'angular-route'   : '../libs/angular-route/angular-route',
-        'ng-breadcrumbs'   : '../libs/ng-breadcrumbs/dist/ng-breadcrumbs',
-        'async'           : '../libs/requirejs-plugins/src/async',
-        'domReady'        : '../libs/requirejs-domready/domReady',
-        'jquery'          : '../libs/jquery/jquery',
-        'bootstrap'       : '../libs/bootstrap-sass/dist/js/bootstrap',
-        'underscore'      : '../libs/underscore/underscore',
-        'angular-growl'   : '../libs/angular-growl/build/angular-growl',
+        'angular'         : '/libs/angular/angular',
+        'angular-route'   : '/libs/angular-route/angular-route',
+        'ng-breadcrumbs'  : '/libs/ng-breadcrumbs/dist/ng-breadcrumbs',
+        'async'           : '/libs/requirejs-plugins/src/async',
+        'domReady'        : '/libs/requirejs-domready/domReady',
+        'jquery'          : '/libs/jquery/jquery',
+        'bootstrap'       : '/libs/bootstrap-sass/dist/js/bootstrap',
+        'underscore'      : '/libs/underscore/underscore',
+        'angular-growl'   : '/libs/angular-growl/build/angular-growl',
         'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
     },
     shim: {
@@ -32,7 +32,7 @@ require(['angular', 'angular-route', 'bootstrap', 'ng-breadcrumbs', 'domReady', 
 
     // NOTE: place operations that need to initialize prior to app start here using the `run` function on the top-level module
 
-    require(['domReady!', 'main'], function (document) {
+    require(['domReady!', './main'], function (document) {
         ng.bootstrap(document, ['app']);
         ng.resumeBootstrap();
     });

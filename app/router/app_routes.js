@@ -8,7 +8,7 @@ define(['app'], function(app) {
 
       $routeProvider.
       when('/', {
-        templateUrl: '/app/views/index/index.html',
+        templateUrl: 'views/index/index.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -17,7 +17,7 @@ define(['app'], function(app) {
 
       }).
       when('/about', {
-        templateUrl: '/app/views/about/about.html',
+        templateUrl: 'views/about/about.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -26,7 +26,7 @@ define(['app'], function(app) {
 
       }).
       when('/meetings', {
-        templateUrl: '/app/views/meetings/meetings.html',
+        templateUrl: 'views/meetings/meetings.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -35,7 +35,7 @@ define(['app'], function(app) {
 
       }).
       when('/ebsas', {
-        templateUrl: '/app/views/ebsas/ebsas.html',
+        templateUrl: 'views/ebsas/ebsas.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -44,7 +44,7 @@ define(['app'], function(app) {
 
       }).
       when('/resources', {
-        templateUrl: '/app/views/resources/resources.html',
+        templateUrl: 'views/resources/resources.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -53,7 +53,7 @@ define(['app'], function(app) {
 
       }).
       when('/partners', {
-        templateUrl: '/app/views/partners/partners.html',
+        templateUrl: 'views/partners/partners.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -62,7 +62,7 @@ define(['app'], function(app) {
 
       }).
       when('/search', {
-        templateUrl: '/app/views/search/search.html',
+        templateUrl: 'views/search/search.html',
         // reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
@@ -71,7 +71,7 @@ define(['app'], function(app) {
 
       }).
       when('/404', {
-        templateUrl: '/app/views/404.html',
+        templateUrl: 'views/404.html',
         resolve: {},
         label: '404'
 

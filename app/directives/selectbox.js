@@ -2,7 +2,7 @@ define(['./module.js'], function(module) {
   return module.directive('selectbox', ['$locale',
     function($locale) {
       return {
-        templateUrl: '/app/views/selectbox/selectbox.html',
+        templateUrl: 'views/selectbox/selectbox.html',
         restrict: 'EA',
         scope: {
           onSelect: '&',

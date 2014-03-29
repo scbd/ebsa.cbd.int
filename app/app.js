@@ -1,7 +1,7 @@
 define([
-    '/app/directives/index.js',
-    '/app/services/index.js',
-    '/app/filters/index.js'
+    '/directives/index.js',
+    '/services/index.js',
+    '/filters/index.js'
   ],
   function() {
     'use strict';

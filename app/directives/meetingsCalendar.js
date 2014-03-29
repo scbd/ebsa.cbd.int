@@ -54,7 +54,7 @@ define(['./module.js'], function(module) {
 
       var getTemplate = function(format) {
         var templateLoader,
-          baseUrl = '/app/views/meetings/',
+          baseUrl = 'views/meetings/',
           templateMap = {
             'short': 'meetingsCalendar.short.html',
             'long': 'meetingsCalendar.html',

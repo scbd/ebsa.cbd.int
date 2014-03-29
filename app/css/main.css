@@ -8455,7 +8455,7 @@ HOME PAGE */
 /* HEADER */
 /* line 278, main.scss */
 .header-bg {
-  background: url("/app/img/bg-header.jpg") no-repeat center top #999999;
+  background: url("/img/bg-header.jpg") no-repeat center top #999999;
   border-bottom: 3px solid #999;
   width: 100%;
   background-size: cover;
@@ -8492,7 +8492,7 @@ img[src*="logo.png"] {
 
 /* line 306, main.scss */
 .searchBox button.submit {
-  background: url("/app/img/search-btn.jpg") no-repeat right top;
+  background: url("/img/search-btn.jpg") no-repeat right top;
   width: 25px;
   height: 25px;
   border: none;
@@ -8522,7 +8522,7 @@ div.header h1 {
 
 /* line 329, main.scss */
 .head-about {
-  background: url("/app/img/header-about.jpg") center top no-repeat;
+  background: url("/img/header-about.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8530,7 +8530,7 @@ div.header h1 {
 
 /* line 335, main.scss */
 .head-ebsas {
-  background: url("/app/img/header-ebsas.jpg") center top no-repeat;
+  background: url("/img/header-ebsas.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8538,7 +8538,7 @@ div.header h1 {
 
 /* line 341, main.scss */
 .head-meetings {
-  background: url("/app/img/header-meetings.jpg") center top no-repeat;
+  background: url("/img/header-meetings.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8546,7 +8546,7 @@ div.header h1 {
 
 /* line 347, main.scss */
 .head-partners {
-  background: url("/app/img/header-partners.jpg") center top no-repeat;
+  background: url("/img/header-partners.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8554,7 +8554,7 @@ div.header h1 {
 
 /* line 353, main.scss */
 .head-resources {
-  background: url("/app/img/header-resources.jpg") center top no-repeat;
+  background: url("/img/header-resources.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -9055,14 +9055,14 @@ BREADCRUMB */
 
 /* line 685, main.scss */
 .breadcrumb:before {
-  content: url("/app/img/globe.png");
+  content: url("/img/globe.png");
   padding-right: 10px;
   padding-top: 10px;
 }
 
 /* line 690, main.scss */
 .breadcrumb > li + li:before {
-  content: url("/app/img/separator.png");
+  content: url("/img/separator.png");
 }
 
 /* line 693, main.scss */
@@ -9087,7 +9087,7 @@ BREADCRUMB */
 SEARCH RESULTS PAGE */
 /* line 710, main.scss */
 .search-result {
-  background: url("/app/img/search.png") no-repeat center top;
+  background: url("/img/search.png") no-repeat center top;
   padding: 5px 25px 0px;
   text-align: center;
 }
@@ -9169,7 +9169,7 @@ SIDEBAR */
 
 /* line 771, main.scss */
 .bs-sidebar h4:before {
-  content: url("/app/img/sub-menu.png");
+  content: url("/img/sub-menu.png");
   padding-right: 10px;
 }
 
@@ -9182,7 +9182,7 @@ SIDEBAR */
 
 /* line 780, main.scss */
 .bs-sidebar ul li.active {
-  list-style: none outside url("/app/img/bullet.png");
+  list-style: none outside url("/img/bullet.png");
   display: list-item;
   margin-left: 20px;
 }
@@ -9269,7 +9269,7 @@ footer {
   box-sizing: border-box;
   margin-top: 50px;
   padding-top: 180px;
-  background: url("/app/img/bg-footer.png") no-repeat center top;
+  background: url("/img/bg-footer.png") no-repeat center top;
   background-size: cover;
   height: 420px;
 }
