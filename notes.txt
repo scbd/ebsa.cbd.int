@@ -49,25 +49,39 @@ Merged Pages:
 
 
 A few quick comments, that hopefully shouldn't take too long to address:
---Also, on this page, please make a downloadable screenshot of the report referred to in the last line of the page -- SATYA
+--Also, on this page, please make a downloadable screenshot of the report referred to in the last line of the page -- DONE
 
 
---For a few of the pages, namely "Background on EBSA process", "Relevant Decisions of the Conference of the Parties to the CBD", and Strategic Plan for Biodiversity 2011-2020 and Aichi Biodiversity Targets," there is lots of unused space because the text is relegated to the right.  It would be good to spread this text out and use this blank space under the photos. -- SATYA
+--For a few of the pages, namely "Background on EBSA process", "Relevant Decisions of the Conference of the Parties to the CBD", and Strategic Plan for Biodiversity 2011-2020 and Aichi Biodiversity Targets," there is lots of unused space because the text is relegated to the right.  It would be good to spread this text out and use this blank space under the photos. -- DONE
 
---Under "Workshop Report", we have the report of the North Pacific Regional EBSA workshop available.  It's located at http://www.cbd.int/doc/meetings/mar/ebsa-np-01/official/ebsa-np-01-04-en.pdf.  Please put this screenshot and link on the page -- SATYA
+--Under "Workshop Report", we have the report of the North Pacific Regional EBSA workshop available.  It's located at http://www.cbd.int/doc/meetings/mar/ebsa-np-01/official/ebsa-np-01-04-en.pdf.  Please put this screenshot and link on the page -- DONE
 
---Also the search function doesn't work--Will this come later? -- STEVE
-
-
+--Also the search function doesn't work--Will this come later? -- DONE
 
 
+--------------------------------------------------------------------------------
+Update timestamp: Match 28th, 2014
 
+Now, some comments:
+HOME page
+--on the map, there is an odd vertical line going through some of the EBSAs in the South Pacific.  Can you remove this? -- WORKING
 
+FOOTER
+--the “ r” in Workshop reports and the “d” in Relevant COP decisions should be capitalized -- DONE
 
+--when you click on the ABOUT link in the site map on the bottom, it brings you to the middle of the ABOUT page rather than the top -- DONE
+--same with Resources and Partners -- DONE
 
+--The wave pattern blends in to “Quick Links” and “Site Map” making it a bit hard to see—Can you move the wave up slightly and away from the text? -- SATYA
 
+ABOUT
+--Under Relevant Decisions of the Conference of the Parties to the CBD
+  The font of the headers and sub-headers in the text are too similar—For example, the font and size of “Decision IX/20” and “EBSA Scientific Criteria” are so similar that it’s immediately clear that EBSA Scientific Criteria is a sub-section—Please distinguish the font size and type to make this clear -- SATYA
 
+  also, the spacing of the text before and after the sub-headers are the same—so, its hard to see the organization of the page—For example, the space above “Encouraging Government to Adopt Management Measures” should be greater than the space below it so its clear that it is the title of the section that follows -- SATYA
 
+--Under Strategic Plan for Biodiversity 2011-2020, including the Aichi Biodiversity Targets
+  remove all of the text on the Targets 1-20—But keep the Strategic Goals A, B, C, and D -- DONE
 
 
 
