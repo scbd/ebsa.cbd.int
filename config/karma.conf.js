@@ -11,7 +11,7 @@ module.exports = function(config) {
       // needs to be last http://karma-runner.github.io/0.10/plus/requirejs.html
       'test/main-test.js'
   ],
-  exclude: ['app/js/main.js'],
+  exclude: ['app/main.js'],
 
   autoWatch: true,
 
