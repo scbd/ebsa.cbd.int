@@ -16,7 +16,7 @@ define([
       countryList = JSON.parse(countryList);
 
 
-      var scope, controller, timeout;
+      var scope, controller, timeout, paginatorService;
       beforeEach(function() {
         mocks.module('app');
 
@@ -24,6 +24,7 @@ define([
           $location, $controller, lists, paginator) {
 
           timeout = $timeout;
+          paginatorService = paginator;
 
           var mockMeetings = {
             getMeetingsPage: function(options) {
@@ -149,6 +150,25 @@ define([
 
         controller.resetFilters();
         expect(controller.filters).to.deep.equal({country: undefined, year: undefined});
+      });
+
+      it('should set the time frame and reset filters when calling setTimeframe()', function() {
+        controller.fetchMeetings = sinon.stub().returns(undefined);
+        scope.setTimeframe('previous');
+
+        expect(scope.timeframe).to.equal('previous');
+        expect(controller.filters).to.deep.equal({country: undefined, year: undefined});
+      });
+
+      it('should set the proper page on the paginator when calling setPage', function() {
+        controller.fetchMeetings({timeframe: 'previous'});
+        timeout.flush();
+
+        controller.updateMeetingData = sinon.spy();
+        scope.setPage(1);
+
+        expect(paginatorService.getPage(1).pagination.currentPage).to.be.equal(1);
+        expect(controller.updateMeetingData).to.have.been.called;
       });
 
     });

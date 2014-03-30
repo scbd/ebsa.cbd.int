@@ -49,7 +49,7 @@ define([
 
         $scope.setPage = function(page) {
           paginator.setPage(page);
-          updateMeetingData();
+          self.updateMeetingData();
         };
 
         $scope.setTimeframe = function(timeframe) {
