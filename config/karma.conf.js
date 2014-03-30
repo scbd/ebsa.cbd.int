@@ -30,7 +30,9 @@ module.exports = function(config) {
       '/': 'http://localhost:2010/'
     },
 
-    colors: true
+    colors: true,
+
+    reporters: ['dots', 'osx']
 
   });
 };
