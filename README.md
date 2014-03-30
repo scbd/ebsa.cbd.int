@@ -18,8 +18,7 @@ text search implementation. All code is under project_folder/siteSearch.
 Run `grunt index` to generate a fresh search index. This is required every
 time the about or resources page markup changes.
 
-Technical description
-######
+######Technical description
 The indexer works in a few simple stages:
 
 1. The main indexer files patches in views.js and textNodeProcessor.js
