@@ -15,7 +15,6 @@ define([
 
       var scope, controller, timeout;
       beforeEach(function() {
-        debugger;
         mocks.module('app');
 
         mocks.inject(function($q, $timeout, $http, $rootScope, $locale, $location, $controller, lists, paginator) {
