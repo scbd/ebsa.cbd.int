@@ -40,7 +40,6 @@ function createPathCalculatorPlugin(jQuery) {
       };
     },
     getPath: function() {
-      debugger;
       var path, node = this;
       while (node.length) {
         var realNode = node[0],
