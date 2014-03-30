@@ -21,7 +21,7 @@ define([
         mocks.module('app');
 
         mocks.inject(function($q, $timeout, $http, $rootScope, $locale,
-            $location, $controller, lists, paginator) {
+          $location, $controller, lists, paginator) {
 
           timeout = $timeout;
 
@@ -32,7 +32,9 @@ define([
                   upcomingMeetings :
                   previousMeetings;
 
-              $timeout(function() { deferred.resolve(meetings); }, 0);
+              $timeout(function() {
+                deferred.resolve(meetings);
+              }, 0);
               return deferred.promise;
             }
           };
@@ -40,7 +42,9 @@ define([
           var mockLists = {
             getCountries: function(cb) {
               var deferred = $q.defer();
-              $timeout(function() { deferred.resolve(countryList); }, 0);
+              $timeout(function() {
+                deferred.resolve(countryList);
+              }, 0);
               return deferred.promise;
             }
           };
@@ -80,6 +84,12 @@ define([
           value: 'CA'
         });
         expect(controller.filters.country).to.eql('CA');
+
+        // check handling for special case 'All'
+        scope.setFilter('country', {
+          value: 'All'
+        });
+        expect(controller.filters.country).to.be.undefined;
       });
 
       it('should return a list of conutries filtered by those that appear in the meeting set', function() {
@@ -95,6 +105,12 @@ define([
         }]);
       });
 
+      it('should cache the countries JSON after generating the country list for the first time', function() {
+        var list = controller.generateCountryList(upcomingMeetings);
+        timeout.flush();
+        expect(controller.countriesCache).to.be.an('Array').and.not.be.empty;
+      });
+
       it('should return a list of years filtered by those that appear in the meeting set', function() {
         var list = controller.generateYearList(upcomingMeetings);
         expect(list).to.deep.equal([{
@@ -105,6 +121,36 @@ define([
           value: 2014
         }]);
       });
+
+      it('should filter meetings by selected country filter', function() {
+        controller.meetingsCache.previous = previousMeetings;
+        scope.timeframe = 'previous';
+        var filtered = controller.filterMeetings({
+          country: 'BR'
+        });
+
+        expect(filtered).to.be.an('Array')
+          .and.have.length(1)
+          .with.deep.property('[0]')
+          .that.have.property('country')
+          .that.equals('Brazil');
+
+        // Check that undefined filters return all meetings.
+        filtered = controller.filterMeetings({});
+        expect(filtered).to.be.an('Array')
+          .and.to.be.deep.equal(previousMeetings);
+      });
+
+      it('should reset filters to undefined on resetFilters()', function() {
+        controller.filters = {
+          country: 'All',
+          year: 2014
+        };
+
+        controller.resetFilters();
+        expect(controller.filters).to.deep.equal({country: undefined, year: undefined});
+      });
+
     });
 
   });

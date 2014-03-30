@@ -47,7 +47,7 @@ define([
           return filtered;
         };
 
-        $scope.setPage = function(page, countryCode, year) {
+        $scope.setPage = function(page) {
           paginator.setPage(page);
           updateMeetingData();
         };
