@@ -11,12 +11,15 @@ auto-compile.
 4. `grunt karma` to start a Karma server and run all tests
 
 
-#####Search Index:
+####Search Index:
 The website uses [lunr.js](lunrjs.com) to power a simple but flexible
 text search implementation. All code is under project_folder/siteSearch.
 
+Run `grunt index` to generate a fresh search index. This is required every
+time the about or resources page markup changes.
+
 Technical description
----------------
+######
 The indexer works in a few simple stages:
 
 1. The main indexer files patches in views.js and textNodeProcessor.js
