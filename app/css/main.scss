@@ -29,7 +29,7 @@ html {
 /* * REGULAR TITLES STYLES */
 h1 {
   font-size: 32px;
-  font-family: 'Source Sans Pro', Georgia;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
   line-height: 29px;
   text-transform: uppercase;
@@ -44,7 +44,7 @@ h1.ebsas {
 }
 h2 {
   font-size: 22px;
-  font-family: 'Source Sans Pro', Georgia;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
   line-height: 26px;
   color: #247080;
@@ -52,7 +52,7 @@ h2 {
 }
 h3 {
   font-size: 18px;
-  font-family: 'Source Sans Pro', Georgia;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   line-height: 22px;
   font-weight: 700;
   color: #1C5573;
@@ -62,7 +62,7 @@ h4 {
   font-size: 14px;
   font-family: Helvetica, Verdana, sans-serif;
   line-height: 14px;
-  color: #154157;
+  color: #176CA0;
   font-weight: bold;
 }
 p {
@@ -84,6 +84,10 @@ a:hover {
 a:hover {
   text-decoration: underline;
 }
+.article a,
+.article a:hover {
+  color: #3687C2;
+}
 
 /* * Header TITLES STYLES */
 .website-title a:hover {
@@ -91,12 +95,15 @@ a:hover {
 }
 .website-title h2 {
   font-family: 'Overlock', cursive;
+  font-weight: 700;
   color: #B2E0ED;
   font-size: 22px;
+  letter-spacing: normal;
   line-height: 11px;
 }
 .website-title h3 {
   font-family: 'Overlock', cursive;
+  font-weight: 700;
   color: #f1f1f1;
   font-size: 17px;
   letter-spacing: 1px;
@@ -114,7 +121,7 @@ div.button {
 }
 div.button div.link {
   border: 2px solid #247080;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #247080;
@@ -127,13 +134,13 @@ div.button div.link:hover {
   color: #fff;
 }
 div.button div.link a {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #247080;
 }
 div.button div.link:hover a {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #fff;
@@ -227,7 +234,7 @@ form.searchBox {
   font-size: 16px;
   color: #999;
   padding: 10px 15px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
 }
 .navbar-nav li a:hover {
@@ -252,7 +259,7 @@ form.searchBox {
 }
 .main-navbar .navbar-nav li {
   margin: 0px 57px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   padding: 0px;
@@ -383,7 +390,7 @@ TABLE */
 }
 .table th {
   color: #1C5573;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   border-bottom: 2px solid #196680;
@@ -663,7 +670,7 @@ PARTNERS */
 .partners .col-lg-3 {
   text-align: center;
 }
-.txt-partner{
+.txt-partner {
   border-top: 2px solid #40BCEE;
   border-radius: 3px;
   min-height: 2px;
@@ -722,7 +729,6 @@ p.bg-info {
   color: #000;
 }
 
-
 /* *
 ARTICLE STYLES */
 .article ul li {
@@ -764,7 +770,7 @@ SIDEBAR */
   color: #000;
   padding: 7px 0px 7px 10px;
   font-size: 14px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -853,7 +859,7 @@ footer div.row {
   box-sizing: border-box;
 }
 footer h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 22px;
   color: #fff;
@@ -965,8 +971,7 @@ footer .sitemap-ul li:first-child {
   margin-left: 15px;
 }
 
-
-/*Partners*/
+/* Partners */
 .partner-img-container {
   height: 117px;
   text-align: center;
@@ -983,20 +988,18 @@ footer .sitemap-ul li:first-child {
 .placeholder-partner {
   height: auto;
   padding: 5px 10px;
-
   h5 {
     margin: 0;
   }
 }
 
-/*Highlight search matches*/
+/* Highlight search matches */
 .highlight {
   background-color: yellow;
   box-shadow: 1px 1px 5px rgb(232, 232, 0);
   border: 1px solid rgb(241, 241, 0);
   border-radius: 5px;
 }
-
 .loading {
   width: 100%;
   height: 100%;
@@ -1004,12 +1007,11 @@ footer .sitemap-ul li:first-child {
   z-index: 9999;
   position: absolute;
 }
-
 .loading-helper {
   vertical-align: middle;
   height: 100%;
   display: inline-block;
 }
 
-/*Google maps CSS*/
+/* Google maps CSS */
 @import 'google';
