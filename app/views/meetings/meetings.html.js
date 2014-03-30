@@ -68,7 +68,7 @@ define([
                 _.pluck(self.countriesCache, 'countryCode')
               );
 
-            $scope.countryList =_.chain(self.countriesCache)
+            return _.chain(self.countriesCache)
               .filter(function(country) {
                 return _.indexOf(filteredCodes, country.countryCode) !== -1;
               })
@@ -84,10 +84,11 @@ define([
 
           return self.countriesCache ?
             genList(self.countriesCache) :
-            Lists.getCountries().then(function(countries) {
-              self.countriesCache = countries;
-              genList();
-            });
+            Lists.getCountries()
+              .then(function(countries) {
+                self.countriesCache = countries;
+                $scope.countryList = genList(self.countriesCache);
+              });
         };
 
         this.generateYearList = function(meetings) {
