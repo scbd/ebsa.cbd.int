@@ -3,11 +3,13 @@ define(['./module.js', 'underscore'], function(module, _) {
     function($http, $locale, $q) {
       var lists = {};
 
-      lists.getCountries = function(cb) {
+      lists.getCountries = function() {
+        var deferred = $q.defer();
         $http.get('langs/en/countries.json')
           .then(function(response) {
-            cb(response.data);
+            deferred.resolve(response.data);
           });
+        return deferred.promise;
       };
 
       lists.getYears = function(rstart, rend, callback) {

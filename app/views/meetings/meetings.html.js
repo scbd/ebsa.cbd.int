@@ -60,30 +60,34 @@ define([
         };
 
         this.generateCountryList = function(meetings) {
-          Lists.getCountries(function(json) {
+
+          function genList(countries) {
             var filteredCountries,
-              countries = json,
               filteredCodes = _.intersection(
                 _.pluck(meetings, 'countryCode'),
-                _.pluck(countries, 'countryCode')
+                _.pluck(self.countriesCache, 'countryCode')
               );
 
-            filteredCountries = countries.filter(function(country) {
-              return _.indexOf(filteredCodes, country.countryCode) !== -1;
-            })
-            .map(function(country) {
-              return {
-                text: country.name,
-                value: country.countryCode
-              };
-            });
+            $scope.countryList =_.chain(self.countriesCache)
+              .filter(function(country) {
+                return _.indexOf(filteredCodes, country.countryCode) !== -1;
+              })
+              .unshift({name: 'All', countryCode: 'All'})
+              .map(function(country) {
+                return {
+                  text: country.name,
+                  value: country.countryCode
+                };
+              })
+              .value();
+          }
 
-            filteredCountries.unshift({
-              text: 'All',
-              value: 'All'
+          return self.countriesCache ?
+            genList(self.countriesCache) :
+            Lists.getCountries().then(function(countries) {
+              self.countriesCache = countries;
+              genList();
             });
-            $scope.countryList = filteredCountries;
-          });
         };
 
         this.generateYearList = function(meetings) {
@@ -100,7 +104,7 @@ define([
             });
         };
 
-        this.computeOptionLists = function(meetingSet) {
+        this.updateOptionLists = function(meetingSet) {
           $scope.countryList = self.generateCountryList(meetingSet);
           $scope.yearList = self.generateYearList(meetingSet);
         };
@@ -119,8 +123,8 @@ define([
           // var title = '';
 
           if (timeframe && self.meetingsCache[timeframe]) {
-            computeOptionLists(self.meetingsCache[timeframe]);
-            return updateMeetingData(self.meetingsCache[timeframe]);
+            self.updateOptionLists(self.meetingsCache[timeframe]);
+            return self.updateMeetingData(self.meetingsCache[timeframe]);
           }
 
           $scope.loading = true;
@@ -134,7 +138,7 @@ define([
               $scope.loading = false;
               // cache the results since we ask the backend for all rows.
               self.meetingsCache[timeframe] = meetingSet;
-              self.computeOptionLists(meetingSet);
+              self.updateOptionLists(meetingSet);
               self.updateMeetingData(meetingSet);
             });
         };
