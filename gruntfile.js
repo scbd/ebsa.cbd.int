@@ -23,6 +23,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    karma: {
+      unit: {
+        configFile: 'config/karma.conf.js'
+      }
+    },
     autoprefixer: {
       options: {
         browsers: ['last 10 version', 'ie 7', 'ie 8', 'ie 9']
