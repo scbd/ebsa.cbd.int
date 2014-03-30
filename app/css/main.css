@@ -9483,10 +9483,10 @@ footer .sitemap-ul li:first-child {
 /* Highlight search matches */
 /* line 997, main.scss */
 .highlight {
-  background-color: yellow;
-  box-shadow: 1px 1px 5px #e8e800;
-  border: 1px solid #f1f100;
-  border-radius: 5px;
+  background-color: yellow !important;
+  box-shadow: 1px 1px 5px #e8e800 !important;
+  border: 1px solid #f1f100 !important;
+  border-radius: 5px !important;
 }
 
 /* line 1003, main.scss */

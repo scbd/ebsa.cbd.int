@@ -1,3 +1,4 @@
+/*jshint quotmark:false*/
 define(['./module.js', 'jquery'], function(module, $) {
   return module.directive('highlighter', ['$location', '$route', '$rootScope',
     function($location, $route, $rootScope) {
@@ -15,8 +16,10 @@ define(['./module.js', 'jquery'], function(module, $) {
           if (matches && matches.length) {
             var highlightedEl = ['<span class=', highlightClass, '>', matches[0], '</span>'].join('');
             $el.html($el.html().replace(searchTermRegEx, highlightedEl));
-            scrollToElement($el);
           }
+          else $el.addClass(highlightClass);
+
+          scrollToElement($el);
         }
       }
 
