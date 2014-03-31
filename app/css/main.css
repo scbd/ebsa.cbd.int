@@ -9438,50 +9438,51 @@ footer .sitemap-ul li:first-child {
 .pacific,
 .all-regions {
   outline: none;
+  white-space: normal;
 }
 
-/* line 967, main.scss */
+/* line 968, main.scss */
 .marginright {
   margin-right: 15px;
 }
 
-/* line 970, main.scss */
+/* line 971, main.scss */
 .marginleft {
   margin-left: 15px;
 }
 
 /* Partners */
-/* line 975, main.scss */
+/* line 976, main.scss */
 .partner-img-container {
   height: 117px;
   text-align: center;
 }
 
-/* line 979, main.scss */
+/* line 980, main.scss */
 .partner-logo-helper {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
 
-/* line 984, main.scss */
+/* line 985, main.scss */
 .partner-container {
   min-height: 160px;
   min-width: 170px;
 }
 
-/* line 988, main.scss */
+/* line 989, main.scss */
 .placeholder-partner {
   height: auto;
   padding: 5px 10px;
 }
-/* line 991, main.scss */
+/* line 992, main.scss */
 .placeholder-partner h5 {
   margin: 0;
 }
 
 /* Highlight search matches */
-/* line 997, main.scss */
+/* line 998, main.scss */
 .highlight {
   background-color: yellow !important;
   box-shadow: 1px 1px 5px #e8e800 !important;
@@ -9489,7 +9490,7 @@ footer .sitemap-ul li:first-child {
   border-radius: 5px !important;
 }
 
-/* line 1003, main.scss */
+/* line 1004, main.scss */
 .loading {
   width: 100%;
   height: 100%;
@@ -9498,14 +9499,14 @@ footer .sitemap-ul li:first-child {
   position: absolute;
 }
 
-/* line 1010, main.scss */
+/* line 1011, main.scss */
 .loading-helper {
   vertical-align: middle;
   height: 100%;
   display: inline-block;
 }
 
-/* line 1016, main.scss */
+/* line 1017, main.scss */
 .scrollFix {
   line-height: 1.35;
   overflow: hidden;
@@ -9536,10 +9537,10 @@ html, body, #map {
 }
 
 /* line 17, google.scss */
-.col-lg-2 input {
+input.region-select {
   text-align: left;
   width: 110%;
-  height: 45px;
+  height: 55px;
   margin-left: 0px;
   padding: 5px 0px 5px 5px;
   font-family: Helvetica, verdana, sans-serif;
