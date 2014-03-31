@@ -26,10 +26,10 @@ app.configure(function() {
   });
 
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'app')));
+  app.use('/ebsa', express.static(path.join(__dirname, 'app')));
 
   // catch all handler
-  app.use(function(req, res) {
+  app.use('/ebsa', function(req, res) {
     res.sendfile(__dirname + '/app/index.html');
   });
 });
@@ -38,7 +38,7 @@ app.configure(function() {
 
 var proxy = httpProxy.createProxyServer({});
 
-app.get   ('/api/search', siteSearch.route);
+app.get   ('/ebsa/api/search', siteSearch.route);
 // app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
 app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false }); } );
 

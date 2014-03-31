@@ -5,9 +5,9 @@ define([
     'bootstrap',
     'ng-breadcrumbs',
     'angular-growl',
-    '/directives/index.js',
-    '/services/index.js',
-    '/filters/index.js'
+    'directives/index.js',
+    'services/index.js',
+    'filters/index.js'
   ],
   function() {
     'use strict';

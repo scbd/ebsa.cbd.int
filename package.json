@@ -16,24 +16,12 @@
     "connect-livereload": "^0.3.2",
     "grunt-cli": "~0.1.13",
     "async": "^0.2.10",
-    "jsdom": "^0.10.3",
     "jquery": "^2.1.0",
-    "lunr": "^0.4.5"
+    "lunr": "^0.4.5",
+    "jsdom": "~0.10.1"
   },
   "devDependencies": {
-    "awsbox": "*",
-    "karma": "^0.12.1",
-    "karma-script-launcher": "~0.1.0",
-    "karma-chrome-launcher": "~0.1.0",
-    "karma-firefox-launcher": "~0.1.0",
-    "karma-html2js-preprocessor": "~0.1.0",
-    "karma-requirejs": "~0.1.0",
-    "karma-phantomjs-launcher": "~0.1.0",
-    "karma-ng-scenario": "~0.1.0",
-    "karma-mocha": "^0.1.3",
-    "karma-sinon-chai": "^0.1.5",
-    "grunt-karma": "^0.8.2",
-    "karma-osx-reporter": "0.0.4"
+    "awsbox": "*"
   },
   "engine": "node >= 0.10.18",
   "scripts": {
