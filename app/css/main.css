@@ -8464,7 +8464,7 @@ HOME PAGE */
 /* HEADER */
 /* line 285, main.scss */
 .header-bg {
-  background: url("/ebsa/app/img/bg-header.jpg") no-repeat center top #999999;
+  background: url("/ebsa/img/bg-header.jpg") no-repeat center top #999999;
   border-bottom: 3px solid #999;
   width: 100%;
   background-size: cover;
@@ -8501,7 +8501,7 @@ img[src*="logo.png"] {
 
 /* line 313, main.scss */
 .searchBox button.submit {
-  background: url("/ebsa/app/img/search-btn.jpg") no-repeat right top;
+  background: url("/ebsa/img/search-btn.jpg") no-repeat right top;
   width: 25px;
   height: 25px;
   border: none;
@@ -8531,7 +8531,7 @@ div.header h1 {
 
 /* line 336, main.scss */
 .head-about {
-  background: url("/ebsa/app/img/header-about.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-about.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8539,7 +8539,7 @@ div.header h1 {
 
 /* line 342, main.scss */
 .head-ebsas {
-  background: url("/ebsa/app/img/header-ebsas.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-ebsas.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8547,7 +8547,7 @@ div.header h1 {
 
 /* line 348, main.scss */
 .head-meetings {
-  background: url("/ebsa/app/img/header-meetings.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-meetings.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8555,7 +8555,7 @@ div.header h1 {
 
 /* line 354, main.scss */
 .head-partners {
-  background: url("/ebsa/app/img/header-partners.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-partners.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8563,7 +8563,7 @@ div.header h1 {
 
 /* line 360, main.scss */
 .head-resources {
-  background: url("/ebsa/app/img/header-resources.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-resources.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -9064,14 +9064,14 @@ BREADCRUMB */
 
 /* line 692, main.scss */
 .breadcrumb:before {
-  content: url("/ebsa/app/img/globe.png");
+  content: url("/ebsa/img/globe.png");
   padding-right: 10px;
   padding-top: 10px;
 }
 
 /* line 697, main.scss */
 .breadcrumb > li + li:before {
-  content: url("/ebsa/app/img/separator.png");
+  content: url("/ebsa/img/separator.png");
 }
 
 /* line 700, main.scss */
@@ -9096,7 +9096,7 @@ BREADCRUMB */
 SEARCH RESULTS PAGE */
 /* line 717, main.scss */
 .search-result {
-  background: url("/ebsa/app/img/search.png") no-repeat center top;
+  background: url("/ebsa/img/search.png") no-repeat center top;
   padding: 5px 25px 0px;
   text-align: center;
 }
@@ -9178,7 +9178,7 @@ SIDEBAR */
 
 /* line 777, main.scss */
 .bs-sidebar h4:before {
-  content: url("/ebsa/app/img/sub-menu.png");
+  content: url("/ebsa/img/sub-menu.png");
   padding-right: 10px;
 }
 
@@ -9191,7 +9191,7 @@ SIDEBAR */
 
 /* line 786, main.scss */
 .bs-sidebar ul li.active {
-  list-style: none outside url("/ebsa/app/img/bullet.png");
+  list-style: none outside url("/ebsa/img/bullet.png");
   display: list-item;
   margin-left: 20px;
 }
@@ -9278,7 +9278,7 @@ footer {
   box-sizing: border-box;
   margin-top: 50px;
   padding-top: 180px;
-  background: url("/ebsa/app/img/bg-footer.png") no-repeat center top;
+  background: url("/ebsa/img/bg-footer.png") no-repeat center top;
   background-size: cover;
   height: 420px;
 }
