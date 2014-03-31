@@ -24,10 +24,10 @@ module.exports = function(config) {
 
     singleRun: false,
 
-    urlRoot: '__karma__',
+    // urlRoot: '__karma__',
 
     proxies: {
-      '/': 'http://localhost:2010/'
+      '/': 'http://localhost:2010/ebsa/'
     },
 
     colors: true,
