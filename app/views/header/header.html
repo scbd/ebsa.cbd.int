@@ -3,13 +3,13 @@
     <div class="container">
       <div class="col-xs-12 col-lg-12 logo-title">
         <div class="col-xs-1">
-          <a href="/" title="Ecologically or Biologically Significant Marine Areas">
+          <a href="/ebsa" title="Ecologically or Biologically Significant Marine Areas">
             <img src="img/logo.png" alt="EBSAs logo" />
           </a>
         </div>
         <div class="col-lg-6 col-xs-6 website-title">
           <div class="push15"></div>
-          <a href="/" title="Ecologically or Biologically Significant Marine Areas">
+          <a href="/ebsa" title="Ecologically or Biologically Significant Marine Areas">
             <h2>Ecologically or Biologically Significant Marine Areas</h2>
             <h3>Special places in the world oceans</h3>
           </a>
@@ -56,7 +56,7 @@
         <ng-switch on="$last">
           <span ng-switch-when="true">{{breadcrumb.label}}</span>
           <span ng-switch-default>
-            <a ng-href="{{breadcrumb.path}}">{{breadcrumb.label}}</a>
+            <a ng-href="/ebsa{{breadcrumb.path}}">{{breadcrumb.label}}</a>
           </span>
         </ng-switch>
     </li>
