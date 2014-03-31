@@ -119,10 +119,6 @@ define([
 
         this.meetingsCache = {};
         this.fetchMeetings = function(timeframe, country, year) {
-          // we're looking only for EBSA meetings
-          var title = '*EBSA*';
-          // var title = '';
-
           if (timeframe && self.meetingsCache[timeframe]) {
             self.updateOptionLists(self.meetingsCache[timeframe]);
             return self.updateMeetingData(self.meetingsCache[timeframe]);
@@ -131,7 +127,6 @@ define([
           $scope.loading = true;
           return Meetings.getMeetingsPage({
             timeframe: timeframe,
-            title: title,
             countryCode: country,
             year: year
           })

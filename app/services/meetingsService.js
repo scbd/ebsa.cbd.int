@@ -158,7 +158,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           country: options.countryCode,
           year: options.year,
           sort: [sortField, dir],
-          title_t: options.title,
+          title_t: options.title || '*EBSA*',
           rows: (currentPage - 1) * perPage || 100000
         });
 
