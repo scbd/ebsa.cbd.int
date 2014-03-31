@@ -37,6 +37,6 @@
   },
   "engine": "node >= 0.10.18",
   "scripts": {
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt bower"
+    "postinstall": "./node_modules/grunt-cli/bin/grunt bower"
   }
 }
