@@ -31,7 +31,7 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
         }
 
         function setInfoWindow(event) {
-          var content = '<div id="infoBox">',
+          var content = '<div id="infoBox" class="scrollFix">',
             key,
             CBDbaseUrl = 'https://chm.cbd.int/database/record?documentID=',
             ebsaID = event.feature.getProperty('KEY');

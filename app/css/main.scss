@@ -1013,5 +1013,11 @@ footer .sitemap-ul li:first-child {
   display: inline-block;
 }
 
+.scrollFix {
+    line-height: 1.35;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 /* Google maps CSS */
 @import 'google';
