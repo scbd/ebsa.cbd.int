@@ -4,22 +4,22 @@ define(['app'], function(app) {
   app.controller('NavbarCtrl', ['$scope', '$location', '$sce', function($scope, $location, $sce) {
       var menu = [{
         'title': 'Home',
-        'link': '/'
+        'link': '/ebsa'
       }, {
         'title': 'About',
-        'link': '/about'
+        'link': 'about'
       }, {
         'title': 'EBSA<span class="lower">s</span>',
-        'link': '/ebsas'
+        'link': 'ebsas'
       }, {
         'title': 'Meetings',
-        'link': '/meetings'
+        'link': 'meetings'
       }, {
         'title': 'Resources',
-        'link': '/resources'
+        'link': 'resources'
       }, {
         'title': 'Partners',
-        'link': '/partners'
+        'link': 'partners'
       }];
       // bad hack to accomodate the one item that has HTML in it...
       angular.forEach(menu, function(menuItem) {
