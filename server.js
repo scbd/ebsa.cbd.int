@@ -14,9 +14,6 @@ var oneDay = 24*60*60*1000;
 app.configure(function() {
   app.set('port', process.env.PORT || 2010, '127.0.0.1');
 
-  // app.set('views', __dirname + '/app');
-  // app.set('view engine', 'html');
-
   app.use(express.favicon(path.join(__dirname, 'app/img/favicon.png')));
   app.use(express.logger('dev'));
   app.use(express.compress());

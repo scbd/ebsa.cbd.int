@@ -2,7 +2,7 @@ define(['app', 'underscore', '../../util/strings.js'], function(app, _, strings)
   app.controller('SearchCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
       function search(query) {
-        $http.get('/api/search', {params: {q: query}})
+        $http.get('api/search', {params: {q: query}})
           .then(function(response) {
             $scope.matchCount = response.data.length;
             $scope.searchResults = _.groupBy(response.data, 'pageName');
