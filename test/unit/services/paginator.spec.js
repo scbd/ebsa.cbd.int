@@ -73,6 +73,16 @@ define([
         expect(page.data).to.deep.equal(comparisonPage);
       });
 
+      it('should return an empty array when calling nextPage() if there\'s no data', function() {
+        paginator.init();
+
+        // console.log(paginator.state);
+        // var page = paginator.nextPage();
+        // console.log(paginator.state);
+
+        // console.log(page);
+      });
+
       it('should return the prev page when calling prevPage()', function() {
         paginator.init(mockCollection);
 
@@ -105,7 +115,7 @@ define([
       });
 
       it('should correctly calculate totals', function() {
-        var totals = paginator._computeTotals(mockCollection.length, paginatorDefaultConfig.perPage);
+        var totals = paginator._calculateTotals(mockCollection.length, paginatorDefaultConfig.perPage);
 
         expect(totals.totalItems).to.equal(mockCollection.length);
         expect(totals.totalPages).to.equal(3);
@@ -114,33 +124,48 @@ define([
       it('should correctly calculate the indices for a desired slice', function() {
         paginator.init(mockCollection);
 
-        var indices = paginator._computeSlice(1);
-        expect(indices.start).to.equal(0);
-        expect(indices.end).to.equal(10);
+        var slice = paginator._getSlice(0);
+        expect(slice).to.deep.equal(paginator.getPage(1).data);
 
-        indices = paginator._computeSlice(2);
-        expect(indices.start).to.equal(10);
-        expect(indices.end).to.equal(20);
+        slice = paginator._getSlice(1);
+        expect(slice).to.deep.equal(paginator.getPage(2).data);
 
-        indices = paginator._computeSlice(3);
-        expect(indices.start).to.equal(20);
-        expect(indices.end).to.equal(mockCollection.length);
+        slice = paginator._getSlice(2);
+        expect(slice).to.deep.equal(paginator.getPage(3).data);
+
       });
 
       it('should wrap around the top egde when calling with a page larger than the collection', function() {
         paginator.init(mockCollection);
 
-        var indices = paginator._computeSlice(4);
-        expect(indices.start).to.equal(0);
-        expect(indices.end).to.equal(10);
+        var page = paginator._calculatePage(mockCollection.length + 1);
+        expect(page).to.equal(0);
       });
 
       it('should wrap around the bottom egde calling with a page smaller than 1', function() {
         paginator.init(mockCollection);
 
-        var indices = paginator._computeSlice(-1);
-        expect(indices.start).to.equal(20);
-        expect(indices.end).to.equal(mockCollection.length);
+        var page = paginator._calculatePage(0);
+        expect(page).to.equal(paginator.state.totalPages - 1);
+      });
+
+      it('should return an empty array when calling any method with an empty collection', function() {
+        paginator.init();
+
+        expect(paginator.getPage(1).data).to.be.an('Array').and.have.length(0);
+        expect(paginator.nextPage().data).to.be.an('Array').and.have.length(0);
+        expect(paginator.prevPage().data).to.be.an('Array').and.have.length(0);
+        expect(paginator.getCurrentPage().data).to.be.an('Array').and.have.length(0);
+      });
+
+      it('should return the same page when there\'s only one in the collection', function() {
+        var reducedCol = mockCollection.slice(0, 10);
+        paginator.init(reducedCol);
+
+        expect(paginator.getPage(1).data).to.deep.equal(reducedCol);
+        expect(paginator.getPage(2).data).to.deep.equal(reducedCol);
+        expect(paginator.nextPage().data).to.deep.equal(reducedCol);
+        expect(paginator.prevPage().data).to.deep.equal(reducedCol);
       });
 
       it('should reset collection and state when calling reset()', function() {

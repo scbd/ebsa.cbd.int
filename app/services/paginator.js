@@ -17,63 +17,69 @@ define(['./module.js', 'underscore'], function(module, _) {
         this.collection = collection || [];
         settings = settings || {};
 
-        var pagination = this._computeTotals(this.collection.length, settings.perPage || defaultConfig.perPage);
+        var pagination = this._calculateTotals(this.collection.length, settings.perPage || defaultConfig.perPage);
         this.state = angular.extend({}, defaultConfig, pagination);
 
         return this;
       };
 
-      paginator._computeTotals = function(total, perPage) {
+      paginator._calculateTotals = function(total, perPage) {
         return {
           totalItems: total,
           totalPages: Math.ceil(total / perPage)
         };
       };
 
-      paginator._computeSlice = function(page) {
-        // If we exceed the top end wrap around to the first page and vice versa.
-        page = page > this.state.totalPages ? 0 :
-          page < 0 ? this.state.totalPages - 1 : page - 1;
+      paginator._calculatePage = function(page) {
+        page = --page;
 
-        var start = (page * this.state.perPage),
-          lastPossbileIndex = this.state.totalItems,
-          endIndex = start + this.state.perPage;
-        end = endIndex > lastPossbileIndex ? lastPossbileIndex : endIndex;
-        return {
-          start: start,
-          end: end
-        };
+        // If we exceed the top end wrap around to the first page and vice versa.
+        if (page > this.state.totalPages - 1) return 0;
+        if (page < 0) return this.state.totalPages - 1;
+        else return page;
       };
 
       paginator.setPage = function(page) {
         this.state.currentPage = page;
-        return this;
       };
 
       paginator.nextPage = function() {
-        var maybeNextPage = this.state.currentPage + 1,
-          nextPage = maybeNextPage > this.state.totalPage ? 1 : maybeNextPage;
-
-        return this.setPage(nextPage).getCurrentPage();
+        this.setPage(this.state.currentPage + 1);
+        return this._getPage(this.state.currentPage);
       };
 
       paginator.prevPage = function() {
-        var maybePrevPage = this.state.currentPage - 1,
-          prevPage = !maybePrevPage ? this.state.totalPages : maybePrevPage;
-
-        return this.setPage(prevPage).getCurrentPage();
+        this.setPage(this.state.currentPage - 1);
+        return this._getPage(this.state.currentPage);
       };
 
       paginator.getCurrentPage = function() {
-        return this.getPage(this.state.currentPage);
+        return this._getPage(this.state.currentPage);
+      };
+
+      paginator._getSlice = function(page) {
+        var start = (page * this.state.perPage),
+          lastPossbileIndex = this.state.totalItems,
+          endIndex = start + this.state.perPage;
+        end = endIndex > lastPossbileIndex ? lastPossbileIndex : endIndex;
+
+        return this.collection.slice(start, end);
+      };
+
+      paginator._makePage = function(slice) {
+        return {
+          pagination: this.state,
+          data: slice
+        };
+      };
+
+      paginator._getPage = function(page) {
+        var internalPage = this._calculatePage(page);
+        return this._makePage(this._getSlice(internalPage));
       };
 
       paginator.getPage = function(page) {
-        var indices = this._computeSlice(page);
-        return {
-          pagination: this.state,
-          data: this.collection.slice(indices.start, indices.end)
-        };
+        return this._getPage(page);
       };
 
       paginator.reset = function() {
