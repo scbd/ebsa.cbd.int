@@ -166,10 +166,11 @@ define([
 
       it('should call reset() when calling destroy()', function() {
         paginator.init(mockCollection);
-        paginator.reset = sinon.spy();
+        paginator.reset = sinon.spy(paginator.reset);
 
         paginator.destroy();
         expect(paginator.reset).to.have.been.called;
+        expect(paginator.collection).to.be.undefined;
       });
 
     });
