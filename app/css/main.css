@@ -8531,7 +8531,7 @@ div.header h1 {
 
 /* line 336, main.scss */
 .head-about {
-  background: url("/ebsa/img/header-about.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-about-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8539,7 +8539,7 @@ div.header h1 {
 
 /* line 342, main.scss */
 .head-ebsas {
-  background: url("/ebsa/img/header-ebsas.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-ebsas-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8547,7 +8547,7 @@ div.header h1 {
 
 /* line 348, main.scss */
 .head-meetings {
-  background: url("/ebsa/img/header-meetings.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-meetings-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8555,7 +8555,7 @@ div.header h1 {
 
 /* line 354, main.scss */
 .head-partners {
-  background: url("/ebsa/img/header-partners.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-partners-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -8563,7 +8563,7 @@ div.header h1 {
 
 /* line 360, main.scss */
 .head-resources {
-  background: url("/ebsa/img/header-resources.jpg") center top no-repeat;
+  background: url("/ebsa/img/header-resources-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -9278,7 +9278,7 @@ footer {
   box-sizing: border-box;
   margin-top: 50px;
   padding-top: 180px;
-  background: url("/ebsa/img/bg-footer.png") no-repeat center top;
+  background: url("/ebsa/img/bg-footer-opt.png") no-repeat center top;
   background-size: cover;
   height: 420px;
 }

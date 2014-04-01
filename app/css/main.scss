@@ -334,31 +334,31 @@ div.header h1 {
   margin: 90px 20px 15px 0px;
 }
 .head-about {
-  background: url($img-path + "/header-about.jpg") center top no-repeat;
+  background: url($img-path + "/header-about-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
 }
 .head-ebsas {
-  background: url($img-path + "/header-ebsas.jpg") center top no-repeat;
+  background: url($img-path + "/header-ebsas-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
 }
 .head-meetings {
-  background: url($img-path + "/header-meetings.jpg") center top no-repeat;
+  background: url($img-path + "/header-meetings-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
 }
 .head-partners {
-  background: url($img-path + "/header-partners.jpg") center top no-repeat;
+  background: url($img-path + "/header-partners-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
 }
 .head-resources {
-  background: url($img-path + "/header-resources.jpg") center top no-repeat;
+  background: url($img-path + "/header-resources-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -847,7 +847,7 @@ footer {
   box-sizing: border-box;
   margin-top: 50px;
   padding-top: 180px;
-  background: url($img-path + "/bg-footer.png") no-repeat center top;
+  background: url($img-path + "/bg-footer-opt.png") no-repeat center top;
   background-size: cover;
   height: 420px;
 }
