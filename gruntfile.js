@@ -28,6 +28,12 @@ module.exports = function(grunt) {
         configFile: 'config/karma.conf.js'
       }
     },
+    protractor: {
+      e2e: {
+        configFile: 'config/protractor-conf.js',
+        keepAlive: true
+      }
+    },
     autoprefixer: {
       options: {
         browsers: ['last 10 version', 'ie 7', 'ie 8', 'ie 9']
@@ -149,4 +155,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['bower']);
+  grunt.registerTask('prot', ['protractor']);
 };
