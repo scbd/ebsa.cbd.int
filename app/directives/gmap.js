@@ -1,8 +1,7 @@
-define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false', '../util/colors.js', 'underscore'],
+define(['./module.js', '../util/colors.js', 'underscore'],
   function(module, google, colors, _) {
     return module.directive('gmap', ['$window',
       function($window, regions) {
-
         var map,
           currentFeatures = null,
           infowindow,
@@ -100,18 +99,20 @@ define(['./module.js', 'async!http://maps.google.com/maps/api/js?v=3.exp&sensor=
             selectedRegion: '='
           },
           link: function(scope, element, attrs) {
-            init(element.get(0));
+            require(['async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false'], function(maps) {
+              init(element.get(0));
 
 
-            scope.$watch('selectedRegion', updateSelectedRegion);
+              scope.$watch('selectedRegion', updateSelectedRegion);
 
-            scope.$watch('regions', function(regions) {
-              if (!regions) return;
-              geojsonCache = regions;
-              updateSelectedRegion(null);
+              scope.$watch('regions', function(regions) {
+                if (!regions) return;
+                geojsonCache = regions;
+                updateSelectedRegion(null);
+              });
+
+              scope.$on('$destroy', cleanupListeners);
             });
-
-            scope.$on('$destroy', cleanupListeners);
           }
         };
 
