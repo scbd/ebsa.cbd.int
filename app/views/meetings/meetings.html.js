@@ -1,9 +1,9 @@
 define([
     'app',
     'underscore',
-    '../../util/strings.js'
+    '../../services/lists.js'
   ],
-  function(app, _, strings) {
+  function(app, _) {
     'use strict';
 
     app.controller('MeetingsCtrl', [
