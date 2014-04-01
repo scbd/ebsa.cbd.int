@@ -8792,7 +8792,7 @@ Dropdown */
 }
 
 /* line 523, main.scss */
-button#DateOfEvents {
+button.meetings-filter {
   background: #E6E6E6;
   /* Old browsers */
   border-bottom: 1px solid #999;
@@ -8807,13 +8807,13 @@ button#DateOfEvents {
 }
 
 /* line 535, main.scss */
-button#DateOfEvents p {
+button.meetings-filter p {
   margin-bottom: 2px;
   float: left;
 }
 
 /* line 539, main.scss */
-button#DateOfEvents span {
+button.meetings-filter span {
   margin-top: 8px;
 }
 
