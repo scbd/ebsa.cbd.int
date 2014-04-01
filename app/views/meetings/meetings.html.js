@@ -106,6 +106,10 @@ define([
         };
 
         this.updateOptionLists = function(meetingSet) {
+          // Angular 1.2.0 no longer automatically unwraps promises so technically
+          // assigning the possible promise from generateCountryList is useless here.
+          // This line only works as expected when the function uses the cache and returns
+          // a synchronous response.
           $scope.countryList = self.generateCountryList(meetingSet);
           $scope.yearList = self.generateYearList(meetingSet);
         };

@@ -26,6 +26,9 @@ define([
           timeout = $timeout;
           paginatorService = paginator;
 
+          // We could use httpBackend instead of these mocks but then we'll
+          // be testing the meetingService as well and generally violating
+          // single responsibility.
           var mockMeetings = {
             getMeetingsPage: function(options) {
               var deferred = $q.defer(),
