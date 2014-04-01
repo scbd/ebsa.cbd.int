@@ -4,9 +4,8 @@ module.exports = function(config) {
 
     frameworks: ['mocha', 'requirejs', 'sinon-chai'],
     files: [
-      {pattern: 'app/**/*.js', included: false},
-      {pattern: 'test/unit.js', included: false},
-      {pattern: 'test/unit/*.js', included: false},
+      {pattern: 'app/**/*.js', included: false, watched: false},
+      // {pattern: 'test/unit.js', included: false},
       {pattern: 'test/unit/**/*.js', included: false},
       {pattern: 'test/unit/fixtures/**/*.json', watched: true, included: false, served: true},
       {pattern: 'app/libs/**/*.js', included: false},
