@@ -2,11 +2,12 @@ define([
     'angular',
     'app',
     'angular-mocks',
+    '/services/lists.js',
     '/views/meetings/meetings.html.js',
     'text!/base/test/unit/fixtures/meetings.json',
     'text!/langs/en/countries.json',
   ],
-  function(angular, app, mocks, ctrl, fixtureMeetings, countryList) {
+  function(angular, app, mocks, ctrl, lists, fixtureMeetings, countryList) {
     describe('MeetingsCtrl', function() {
 
       var fixtures = JSON.parse(fixtureMeetings),
@@ -16,7 +17,7 @@ define([
       countryList = JSON.parse(countryList);
 
 
-      var scope, controller, timeout, paginatorService;
+      var scope, controller, timeout, paginatorService, mockMeetings;
       beforeEach(function() {
         mocks.module('app');
 
@@ -29,7 +30,7 @@ define([
           // We could use httpBackend instead of these mocks but then we'll
           // be testing the meetingService as well and generally violating
           // single responsibility.
-          var mockMeetings = {
+          mockMeetings = {
             getMeetingsPage: function(options) {
               var deferred = $q.defer(),
                 meetings = (options.timeframe === 'upcoming') ?
@@ -71,9 +72,7 @@ define([
       });
 
       it('should set filter when calling setFilter()', function() {
-        var promise = controller.fetchMeetings({
-          timeframe: 'upcoming'
-        });
+        var promise = controller.fetchMeetings('upcoming');
         // stub out update so we don't trigger requests.
         controller.updateMeetingData = sinon.stub().returns(undefined);
         controller.filterMeetings = sinon.stub().returns(undefined);
@@ -164,7 +163,7 @@ define([
       });
 
       it('should set the proper page on the paginator when calling setPage', function() {
-        controller.fetchMeetings({timeframe: 'previous'});
+        controller.fetchMeetings('previous');
         timeout.flush();
 
         controller.updateMeetingData = sinon.spy();
@@ -172,6 +171,25 @@ define([
 
         expect(paginatorService.getPage(1).pagination.currentPage).to.be.equal(1);
         expect(controller.updateMeetingData).to.have.been.called;
+      });
+
+      it('should fetch meetings and populate cache when calling fetchMeetings()', function() {
+        controller.fetchMeetings('previous');
+        timeout.flush();
+
+        expect(scope.meetings).to.deep.equal(previousMeetings);
+        expect(controller.meetingsCache.previous).to.be.deep.equal(previousMeetings);
+      });
+
+      it('should deliver any subsequent call to fetchMeetings from cache', function() {
+        controller.fetchMeetings('previous');
+        timeout.flush();
+
+        mockMeetings.getMeetingsPage = sinon.spy(mockMeetings.getMeetingsPage);
+        controller.fetchMeetings('previous');
+
+        expect(mockMeetings.getMeetingsPage).not.to.have.been.called;
+        expect(controller.meetingsCache.previous).to.deep.equal(previousMeetings);
       });
 
     });

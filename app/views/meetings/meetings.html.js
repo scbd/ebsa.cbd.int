@@ -1,7 +1,6 @@
 define([
     'app',
-    'underscore',
-    '../../services/lists.js'
+    'underscore'
   ],
   function(app, _) {
     'use strict';
