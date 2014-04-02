@@ -1,4 +1,4 @@
-define(['./module.js', './solrQuery.js'], function(module, Query) {
+define(['./module.js', './solrQuery.js'], function(module, Query) {;
   return module.factory('meetings', ['$http', '$locale', 'growl', '$q',
     function($http, $locale, growl, $q) {
 
@@ -21,7 +21,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
           sort: 'sort'
         };
 
-      function normalizeMeetings(response) {
+      meetings.normalizeMeetings = function(response) {
         processed = [];
 
         response.docs.forEach(function(meeting) {
@@ -48,7 +48,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         });
 
         return processed;
-      }
+      };
 
       meetings.getAll = function(cb) {
         $http.get(baseUrl, { params: {q: baseQuery } })
@@ -64,7 +64,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         var deferred = $q.defer();
         $http.get([baseUrl, query].join('?'))
           .then(function(results) {
-            deferred.resolve(normalizeMeetings(results.data.response));
+            deferred.resolve(meetings.normalizeMeetings(results.data.response));
           })
           .catch(function(results) {
             if (results.status !== 200) {
@@ -76,11 +76,11 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         return deferred.promise;
       }
 
-      function createDateRange (start, end) {
+      meetings.createDateRange = function(start, end) {
         return '[' + start.toISOString() + ' TO ' + end.toISOString() + ']';
-      }
+      };
 
-      function buildSolrQuery(paramMap) {
+      meetings._buildSolrQuery = function(paramMap) {
         // clean out any keys that have falsy values so that we don't
         // send empty params to Solr.
         var cleanMap = _.chain(paramMap)
@@ -97,11 +97,11 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         angular.forEach(cleanMap, function(val, fname) {
           switch (fname) {
             case 'schema':
-              q[translateFieldName(fname)] = val;
+              q[meetings._translateFieldName(fname)] = val;
               break;
 
             case 'country':
-              q[translateFieldName(fname)] = val;
+              q[meetings._translateFieldName(fname)] = val;
               break;
 
             case 'startDate':
@@ -109,17 +109,17 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               // it over startDate's wider range.
               if (cleanMap.year) break;
               var startRange = val === 'upcoming' ? queryUpcoming : queryPrevious;
-              q[translateFieldName(fname)] = startRange;
+              q[meetings._translateFieldName(fname)] = startRange;
               break;
 
             case 'year': //TODO: handling for year
               //create a range from [Jan 1st, yearGiven TO Dec 31st, yearGiven]
-              var range = createDateRange(new Date(val, 0), new Date(val, 11, 31));
-              q[translateFieldName(fname)] = range;
+              var range = meetings.createDateRange(new Date(val, 0), new Date(val, 11, 31));
+              q[meetings._translateFieldName(fname)] = range;
               break;
 
             case 'sort':
-              sortParams = _.object([val.map(translateFieldName)]);
+              sortParams = _.object([val.map(meetings._translateFieldName)]);
               break;
 
             case 'start':
@@ -131,7 +131,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               break;
 
             default:
-              q[translateFieldName(fname)] = val;
+              q[meetings._translateFieldName(fname)] = val;
               break;
           }
         });
@@ -141,18 +141,18 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         if (_.keys(sortParams).length) query.sort(sortParams);
 
         return query.build();
-      }
+      };
 
-      function translateFieldName(fieldName) {
+      meetings._translateFieldName = function(fieldName) {
         return fieldMap[fieldName] || fieldName;
-      }
+      };
 
       meetings.getMeetingsPage = function(options) {
         options = options || {};
 
         currentPage = options.pageNum || 1;
         var dir = options.timeframe === 'upcoming' ? dirUp : dirDown;
-        var solrQuery = buildSolrQuery({
+        var solrQuery = meetings._buildSolrQuery({
           schema: 'meeting',
           startDate: options.timeframe,
           country: options.countryCode,
