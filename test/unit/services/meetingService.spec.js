@@ -51,7 +51,10 @@ define([
       });
 
       it('should create correctly formatted date ranges for Solr consumption', function() {
-        var range = meetings.createDateRange(new Date(2013, 0), new Date(2013, 11, 31));
+        var start = (new Date(2013, 0)).toISOString(),
+          end = (new Date(2013, 11, 31)).toISOString();
+
+        var range = meetings.createDateRange(start, end);
         expect(range).to.equal('[2013-01-01T05:00:00.000Z TO 2013-12-31T05:00:00.000Z]');
       });
 
@@ -67,11 +70,28 @@ define([
         };
         var q = meetings._buildSolrQuery(defaultOptions);
 
-        compQ = 'rows=100000&q=schema_s:meeting%20AND%20startDate_dt:%5BNOW%20TO%20*%5D%20AND%20title_t:*EBSA*&sort=startDate_dt%20asc';
+        var compQ = 'rows=100000&q=schema_s:meeting%20AND%20startDate_dt:%5BNOW%20TO%20*%5D%20AND%20title_t:*EBSA*&sort=startDate_dt%20asc';
         expect(q).to.be.equal(compQ);
 
         var qc = angular.extend({}, defaultOptions);
         qc.sort[1] = 'desc';
+        qc.startDate = 'previous';
+        q = meetings._buildSolrQuery(qc);
+
+        compQ = 'rows=100000&q=schema_s:meeting%20AND%20startDate_dt:%5B*%20TO%20NOW%5D%20AND%20title_t:*EBSA*&sort=startDate_dt%20desc';
+        expect(q).to.be.equal(compQ);
+
+        qc = angular.extend({}, defaultOptions);
+        qc.schema = 'news';
+        qc.sort = ['sortField', 'desc'];
+        qc.title_t = 'test_title';
+        qc.country = 'BA';
+        qc.year = 2014;
+        qc.rows = 400;
+        q = meetings._buildSolrQuery(qc);
+
+        compQ = 'rows=400&q=schema_s:news%20AND%20eventCountry_s:BA%20AND%20startDate_dt:%5B2014-01-01T05%3A00%3A00.000Z%20TO%202014-12-31T05%3A00%3A00.000Z%5D%20AND%20title_t:test_title&sort=sortField%20desc';
+        expect(q).to.be.equal(compQ);
       });
 
     });

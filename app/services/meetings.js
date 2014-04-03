@@ -10,9 +10,6 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
         perPage = 10,
         dirUp = 'asc',
         dirDown = 'desc',
-        queryUpcoming = '[NOW TO *]',
-        queryPrevious = '[* TO NOW]',
-        // querySort = [sortField, dir].join(' '),
         fieldMap = {
           schema: 'schema_s',
           country: 'eventCountry_s',
@@ -77,7 +74,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
       }
 
       meetings.createDateRange = function(start, end) {
-        return '[' + start.toISOString() + ' TO ' + end.toISOString() + ']';
+        return '[' + start + ' TO ' + end + ']';
       };
 
       meetings._buildSolrQuery = function(paramMap) {
@@ -108,13 +105,20 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               // the year param is more specific than startDate and we favour
               // it over startDate's wider range.
               if (cleanMap.year) break;
-              var startRange = val === 'upcoming' ? queryUpcoming : queryPrevious;
+              var ranges = ['NOW', '*'],
+                startRange = meetings.createDateRange.apply(
+                  this,
+                  val === 'upcoming' ? ranges : ranges.reverse()
+                );
+
               q[meetings._translateFieldName(fname)] = startRange;
               break;
 
             case 'year': //TODO: handling for year
               //create a range from [Jan 1st, yearGiven TO Dec 31st, yearGiven]
-              var range = meetings.createDateRange(new Date(val, 0), new Date(val, 11, 31));
+              var start = (new Date(val, 0)).toISOString(),
+                end = (new Date(val, 11, 31)).toISOString();
+              var range = meetings.createDateRange(start, end);
               q[meetings._translateFieldName(fname)] = range;
               break;
 
