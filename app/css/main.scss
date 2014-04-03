@@ -520,7 +520,7 @@ Dropdown */
 .dropdown-menu {
   width: 100%;
 }
-button.meetings-filter {
+button.list-filter {
   background: #E6E6E6; /* Old browsers */
   border-bottom: 1px solid #999;
   border-radius: 3px;
@@ -532,11 +532,11 @@ button.meetings-filter {
   font-weight: bold;
   color: #515151;
 }
-button.meetings-filter p {
+button.list-filter p {
   margin-bottom: 2px;
   float: left;
 }
-button.meetings-filter span {
+button.list-filter span {
   margin-top: 8px;
 }
 .menuDates>li>a:hover,
