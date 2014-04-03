@@ -1,5 +1,5 @@
 define(['./module.js', '../util/colors.js', 'underscore'],
-  function(module, google, colors, _) {
+  function(module, colors, _) {
     return module.directive('gmap', ['$window',
       function($window, regions) {
         var map,
@@ -54,6 +54,9 @@ define(['./module.js', '../util/colors.js', 'underscore'],
 
         function cleanupListeners(e) {
           $window.google.maps.event.removeListener(listener);
+          $window.google.maps.event.clearInstanceListeners($window);
+          $window.google.maps.event.clearInstanceListeners($window.document);
+          $window.google.maps.event.clearInstanceListeners(map);
         }
 
         function clearMap(map) {
