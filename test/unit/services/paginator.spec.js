@@ -73,16 +73,6 @@ define([
         expect(page.data).to.deep.equal(comparisonPage);
       });
 
-      it('should return an empty array when calling nextPage() if there\'s no data', function() {
-        paginator.init();
-
-        // console.log(paginator.state);
-        // var page = paginator.nextPage();
-        // console.log(paginator.state);
-
-        // console.log(page);
-      });
-
       it('should return the prev page when calling prevPage()', function() {
         paginator.init(mockCollection);
 
