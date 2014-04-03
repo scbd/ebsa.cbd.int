@@ -55,5 +55,24 @@ define([
         expect(range).to.equal('[2013-01-01T05:00:00.000Z TO 2013-12-31T05:00:00.000Z]');
       });
 
+      it('should construct a proper query for Solr consumtption', function() {
+        var defaultOptions = {
+          schema: 'meeting',
+          startDate: 'upcoming',
+          country: null,
+          year: null,
+          sort: ['startDate_dt', 'asc'],
+          title_t: '*EBSA*',
+          rows: 100000
+        };
+        var q = meetings._buildSolrQuery(defaultOptions);
+
+        compQ = 'rows=100000&q=schema_s:meeting%20AND%20startDate_dt:%5BNOW%20TO%20*%5D%20AND%20title_t:*EBSA*&sort=startDate_dt%20asc';
+        expect(q).to.be.equal(compQ);
+
+        var qc = angular.extend({}, defaultOptions);
+        qc.sort[1] = 'desc';
+      });
+
     });
   });

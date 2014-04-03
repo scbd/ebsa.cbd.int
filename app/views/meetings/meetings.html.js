@@ -8,6 +8,11 @@ define([
     app.controller('MeetingsCtrl', [
       '$http', '$scope', '$locale', '$location', 'meetings', 'lists', 'paginator',
       function($http, $scope, $locale, $location, Meetings, Lists, paginator) {
+        // The initial call to fetchMeetings() is triggered by the showtab
+        // directive which has $scope.setTimeframe assigned to it's onclick
+        // event handler. When the page loads showtab will select the proper
+        // tab and execute it's onclick if there is one.
+        // See meetings.html, line 12.
         var self = this;
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
