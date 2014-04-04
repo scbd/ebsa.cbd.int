@@ -2,13 +2,14 @@ define(['app'], function(app) {
 
   return app.controller('BreadcrumbsCtrl', ['$rootScope', '$scope', '$location', 'breadcrumbs',
     function($rootScope, $scope, $location, breadcrumbs) {
+      var self = this;
 
-      function computeCrumbs() {
+      this.computeCrumbs = function() {
         $scope.breadcrumbs = breadcrumbs.get();
         $scope.showCrumbs = $location.path() !== '/';
-      }
+      };
 
-      function addCrumb(title, url) {
+      this.addCrumb = function(title, url) {
         // if the last current crumbs is dynamic, we replace it with the
         // new incoming one;
         if ($scope.breadcrumbs[$scope.breadcrumbs.length-1].dynamic)
@@ -19,14 +20,14 @@ define(['app'], function(app) {
           path: url,
           dynamic: true
         });
-      }
+      };
 
       var crumblistener = $rootScope.$on('breadcrumbs:add', function(event, title, url) {
-        addCrumb(title, url);
+        self.addCrumb(title, url);
       });
 
       var routeChangeListener = $rootScope.$on('$routeChangeSuccess', function(e, route) {
-        computeCrumbs();
+        self.computeCrumbs();
       });
 
       $scope.$on('$destroy', function() {
