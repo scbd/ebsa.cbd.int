@@ -3,11 +3,13 @@ define(['./module.js', 'jquery'], function(module, $) {
   return module.directive('highlighter', ['$location', '$route', '$rootScope',
     function($location, $route, $rootScope) {
 
+      // Helper that will escape thigs like . and * that are normaly
+      // special characters for a regex.
       function escapeRegExp(str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
       }
 
-      function searchAndHighlight(searchTerm, selector, highlightClass, removePreviousHighlights) {
+      function searchAndHighlight(searchTerm, selector, highlightClass) {
         var $el = angular.element(selector),
           searchTermRegEx = new RegExp('(' + escapeRegExp(searchTerm) + ')', 'gi');
 
@@ -38,7 +40,8 @@ define(['./module.js', 'jquery'], function(module, $) {
         var highlightParam = searchParams.highlight,
           termParam = searchParams.term;
 
-        var shouldHighlight = angular.isString(highlightParam) && highlightParam;
+        // not sure about this line...
+        // var shouldHighlight = angular.isString(highlightParam) && highlightParam;
 
         return {
           highlight: highlightParam,
@@ -50,12 +53,15 @@ define(['./module.js', 'jquery'], function(module, $) {
         var params = extractUrlParams();
 
         if (params.highlight) {
-          searchAndHighlight(params.term, params.highlight, 'highlight', true);
+          searchAndHighlight(params.term, params.highlight, 'highlight');
         }
       }
 
       return {
         restrict: 'A',
+        // we force the lowest possible priority because we want the directive
+        // to instantiate once everything else on the page is rendered to ensure
+        // the DOM the directive is looking is actually present.
         priority: -1,
         link: function(scope, element, attrs) {
           scope.$on('$locationChangeSuccess', function(event) {
