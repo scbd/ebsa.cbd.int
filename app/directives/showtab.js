@@ -45,7 +45,7 @@ define(['./module.js'], function(module) {
             // event will handle the rest. This covers both cases where we load fresh
             // or a change is triggered by user click.
             // PLEASE DON'T BE CLEVER AND SWITCH THIS TO USING HASHES. THIS WILL FAIL BECAUSE
-            // OF Html5Mode(true) IN app_routes.js.
+            // OF Html5Mode(true) IN routes.js.
             scope.$apply(function() {
               $location.search({
                 'tab': $a.attr('href').slice(1)
