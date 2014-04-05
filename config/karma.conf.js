@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
     basePath: '../',
 
-    frameworks: ['mocha', 'requirejs', 'sinon-chai'],
+    frameworks: ['mocha', 'requirejs', 'chai-things', 'sinon-chai'],
     files: [
       {pattern: 'app/**/*.js', included: false, watched: false},
       // {pattern: 'test/unit.js', included: false},
