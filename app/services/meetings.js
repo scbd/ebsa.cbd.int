@@ -114,7 +114,7 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
               q[meetings._translateFieldName(fname)] = startRange;
               break;
 
-            case 'year': //TODO: handling for year
+            case 'year':
               //create a range from [Jan 1st, yearGiven TO Dec 31st, yearGiven]
               var start = (new Date(val, 0)).toISOString(),
                 end = (new Date(val, 11, 31)).toISOString();
