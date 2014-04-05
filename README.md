@@ -9,6 +9,7 @@ Ecologically  or Biologically  Significant Marine  Areas (EBSAs) - Website
 3. `grunt serve` to start dev server with livereload, watch files and compass
 auto-compile.
 4. `grunt karma` to start a Karma server and run all tests
+5. `grunt prot` to start protractor and run e2e tests.
 
 
 ####Search Index:
