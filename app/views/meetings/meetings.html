@@ -34,7 +34,7 @@
 
             <div class="push20"></div>
             <div selectbox
-              on-select="setFilter"
+              on-select="setFilter(name, selection)"
               name="year"
               title="Year"
               ng-show="timeframe==='previous'"
@@ -45,7 +45,7 @@
             <div class="push20"></div>
 
             <div selectbox
-              on-select="setFilter"
+              on-select="setFilter(name, selection)"
               name="country"
               title="Country"
               items="countryList"
