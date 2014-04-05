@@ -15,7 +15,7 @@ define(['./module.js'], function(module) {
           var self = this;
 
           $scope.updateSelection = function(selection) {
-            if (!angular.equals(this.selection, selection)) {
+            if (!angular.equals(self.selection, selection)) {
               self.setSelection(selection);
               $scope.onSelect({name: $scope.name, selection: self.selection});
             }
