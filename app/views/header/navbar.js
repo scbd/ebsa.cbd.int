@@ -30,7 +30,6 @@ define(['app'], function(app) {
 
       $scope.isActive = function(route) {
         route = route === '/ebsa' ? '' : route;
-        console.log(route, $location.path());
         return '/' + route === $location.path();
       };
   }]);
