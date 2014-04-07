@@ -87,11 +87,13 @@ define(['./module.js'], function(module) {
           var loader = getTemplate(scope.format);
 
           scope.$watch('meetingData', function(meetings) {
-            if (!meetings || !meetings.length) return;
+            if (!meetings) return;
 
             meetings = processMeetings(meetings, scope.dir);
-            meetings = isShortFormat ?
-              meetings.shift().months.shift().meetings.slice(0, scope.itemsPerTimeframe) :
+            meetings = isShortFormat && meetings.length ?
+              meetings.shift()
+                .months.shift()
+                .meetings.slice(0, scope.itemsPerTimeframe) :
               meetings;
 
             scope.meetings = meetings;
