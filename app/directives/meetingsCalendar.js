@@ -87,7 +87,7 @@ define(['./module.js'], function(module) {
           var loader = getTemplate(scope.format);
 
           scope.$watch('meetingData', function(meetings) {
-            if (!meetings) return;
+            if (!meetings || !meetings.length) return;
 
             meetings = processMeetings(meetings, scope.dir);
             meetings = isShortFormat ?
