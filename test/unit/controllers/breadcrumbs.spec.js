@@ -15,7 +15,7 @@ define([
 
       mocks.inject(function(_$rootScope_, _$location_, $controller, _breadcrumbs_) {
         $rootScope = _$rootScope_;
-        $location = _$location_,
+        $location = _$location_;
         ngBreadcrumbs = _breadcrumbs_;
 
         scope = $rootScope.$new();
