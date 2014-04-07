@@ -29,7 +29,9 @@ define(['app'], function(app) {
       $scope.menu = menu;
 
       $scope.isActive = function(route) {
-        return route === $location.path();
+        route = route === '/ebsa' ? '' : route;
+        console.log(route, $location.path());
+        return '/' + route === $location.path();
       };
   }]);
 });
