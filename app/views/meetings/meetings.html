@@ -10,11 +10,11 @@
           <h4>Meetings</h4>
 
           <ul class="nav nav-tabs" showtab on-click="setTimeframe">
-            <li class="active">
+            <li ng-class="{active: timeframe == 'upcoming'}">
               <!-- <a href="#upcoming" data-toggle="tab" ng-click="setTimeframe('upcoming')">Upcoming meetings</a> -->
               <a href="#upcoming">Upcoming meetings</a>
             </li>
-            <li>
+            <li ng-class="{active: timeframe == 'previous'}">
               <!-- <a href="#previous" data-toggle="tab" ng-click="setTimeframe('previous')">Previous meetings</a> -->
               <a href="#previous">Previous meetings</a>
             </li>

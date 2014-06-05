@@ -52,6 +52,22 @@ define(['./module.js'], function(module) {
         return dir ? sorted : sorted.reverse();
       }
 
+      function getMeetingsPerTimeFrame (meetings, numItems) {
+        var latestMeetings = [];
+        if (!meetings.length) return latestMeetings;
+
+        while(latestMeetings.length < numItems) {
+          var year = meetings.shift();
+          while(year.months.length) {
+            latestMeetings = latestMeetings.concat(year.months.shift().meetings);
+            if (latestMeetings.length > numItems) return latestMeetings.slice(0, numItems);
+            else if (latestMeetings.length === numItems) return latestMeetings;
+          }
+        }
+
+        return latestMeetings;
+      }
+
       var getTemplate = function(format) {
         var templateLoader,
           baseUrl = 'views/meetings/',
@@ -91,9 +107,7 @@ define(['./module.js'], function(module) {
 
             meetings = processMeetings(meetings, scope.dir);
             meetings = isShortFormat && meetings.length ?
-              meetings.shift()
-                .months.shift()
-                .meetings.slice(0, scope.itemsPerTimeframe) :
+              getMeetingsPerTimeFrame(meetings, parseInt(scope.itemsPerTimeframe)) :
               meetings;
 
             scope.meetings = meetings;

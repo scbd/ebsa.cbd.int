@@ -17,6 +17,9 @@ define([
         // default timeframe for meetings
         $scope.timeframe = 'upcoming';
 
+        var firstLoad = true;
+
+
         self.filters = {
           country: undefined,
           year: undefined
@@ -140,10 +143,17 @@ define([
           })
             .then(function(meetingSet) {
               $scope.loading = false;
+
+              if (!meetingSet.length && firstLoad) {
+                $scope.setTimeframe('previous');
+                return;
+              }
               // cache the results since we ask the backend for all rows.
               self.meetingsCache[timeframe] = meetingSet;
               self.updateOptionLists(meetingSet);
               self.updateMeetingData(meetingSet);
+
+              firstLoad = false;
             });
         };
       }
