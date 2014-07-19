@@ -37,7 +37,18 @@ var proxy = httpProxy.createProxyServer({});
 
 app.get   ('/ebsa/api/search', siteSearch.route);
 // app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
-app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false }); } );
+app.all('/api/*', function(req, res) {  
+    proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } );  
+} );
+
+// LOG PROXY ERROR & RETURN http:500
+
+proxy.on('error', function (e, req, res) {
+    console.error(new Date().toUTCString() + ' error proxying: '+req.url);
+    console.error('proxy error:', e);
+    res.send( { code: 500, source:'www.infra/proxy', message : 'proxy error', proxyError: e }, 500);
+});
+
 
 // Start server
 console.log('Server listening on port ' + app.get('port'));
