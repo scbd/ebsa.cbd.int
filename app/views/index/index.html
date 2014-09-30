@@ -8,7 +8,7 @@
 
         <div>
           <input
-          class="region-select all-regions"
+          ng-class="{'region-select':true, 'all-regions':true, 'active-region': selectedRegion === null}"
           type="button"
           value="All Regions"
           ng-click="showFeature(null)" />
@@ -16,7 +16,7 @@
 
         <div>
           <input
-          class="region-select pacific"
+          ng-class="{'region-select':true, pacific:true, 'active-region': selectedRegion === 'southPacific'}"
           type="button"
           value="Western South Pacific Region"
           ng-click="showFeature('southPacific')" />
@@ -24,7 +24,7 @@
 
         <div>
           <input
-          class="region-select caribbean"
+          ng-class="{'region-select':true, caribbean:true, 'active-region': selectedRegion === 'caribbean'}"
           type="button"
           value="Wider Caribbean And Western Mid-Atlantic Region"
           ng-click="showFeature('caribbean')" />

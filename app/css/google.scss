@@ -16,7 +16,7 @@ html, body, #map {
 }
 input.region-select {
   text-align: left;
-  width: 107%;
+  width: 110%;
   height: 55px;
   margin-left: 0px;
   padding: 5px 0px 5px 5px;
@@ -30,6 +30,11 @@ input.region-select {
 .col-lg-2 input:hover {
   font-weight: bold;
 }
+
+.active-region {
+  font-weight: bold !important;
+}
+
 .col-lg-2 input.all-regions {
   border-top: 2px solid #247080;
 }
