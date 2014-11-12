@@ -27,6 +27,7 @@
   },
   "engine": "node >= 0.10.18",
   "scripts": {
-    "postinstall": "node ./node_modules/.bin/bower install --config.interactive=false"
+    "postinstall": "node ./node_modules/.bin/bower install --config.interactive=false",
+    "start": "node server.js"
   }
 }
