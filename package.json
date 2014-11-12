@@ -27,6 +27,6 @@
   },
   "engine": "node >= 0.10.18",
   "scripts": {
-    "postinstall": "./node_modules/grunt-cli/bin/grunt bower"
+    "postinstall": "node ./node_modules/.bin/bower install --config.interactive=false"
   }
 }
