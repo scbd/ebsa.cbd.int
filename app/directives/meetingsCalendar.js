@@ -58,8 +58,10 @@ define(['./module.js'], function(module) {
 
         while(latestMeetings.length < numItems) {
           var year = meetings.shift();
-           if(!year)
+
+          if(!year)
               break;
+
           while(year.months.length) {
             latestMeetings = latestMeetings.concat(year.months.shift().meetings);
             if (latestMeetings.length > numItems) return latestMeetings.slice(0, numItems);
