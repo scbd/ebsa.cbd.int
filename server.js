@@ -18,10 +18,6 @@ app.configure(function() {
   app.use(express.logger('dev'));
   app.use(express.compress());
 
-  app.configure('development', function() {
-    app.use(require('connect-livereload')());
-  });
-
   app.use(app.router);
   app.use('/ebsa', express.static(path.join(__dirname, 'app')));
 
