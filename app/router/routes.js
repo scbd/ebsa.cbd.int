@@ -52,13 +52,13 @@ define(['app'], function(app) {
         label: 'Resources'
 
       }).
-      when('/partners', {
-        templateUrl: 'views/partners/partners.html',
+      when('/collaborators', {
+        templateUrl: 'views/collaborators/collaborators.html',
         reloadOnSearch: false,
         resolve: {
           dependencies: resolveJS()
         },
-        label: 'Partners'
+        label: 'Collaborators'
 
       }).
       when('/search', {
@@ -75,6 +75,9 @@ define(['app'], function(app) {
         resolve: {},
         label: '404'
 
+      }).
+      when('/partners', {
+        redirectTo: '/collaborators'
       }).
       otherwise({
         redirectTo: '/404'

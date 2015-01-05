@@ -8430,7 +8430,7 @@ form.searchBox {
 
 /* line 260, main.scss */
 .main-navbar .navbar-nav li {
-  margin: 0px 57px;
+  margin: 0px 52px;
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -8554,7 +8554,7 @@ div.header h1 {
 }
 
 /* line 354, main.scss */
-.head-partners {
+.head-collaborators {
   background: url("/ebsa/img/header-partners-opt.jpg") center top no-repeat;
   width: 100%;
   height: 200px;

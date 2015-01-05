@@ -18,8 +18,8 @@ define(['app'], function(app) {
         'title': 'Resources',
         'link': 'resources'
       }, {
-        'title': 'Partners',
-        'link': 'partners'
+        'title': 'Collaborators',
+        'link': 'collaborators'
       }];
       // bad hack to accomodate the one item that has HTML in it...
       angular.forEach(menu, function(menuItem) {
