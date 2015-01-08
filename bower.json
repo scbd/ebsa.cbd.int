@@ -11,6 +11,7 @@
     "underscore": "latest",
     "jquery": "~2.0.3",
     "ng-breadcrumbs": "0.0.6",
+    "bootstrap": "~3.0.3",
     "angular-i18n": "~1.2.14",
     "angular-growl": "~0.4.0"
   },

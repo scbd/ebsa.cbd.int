@@ -12,7 +12,7 @@ require.config({
         'async'           : 'libs/requirejs-plugins/src/async',
         'domReady'        : 'libs/requirejs-domready/domReady',
         'jquery'          : 'libs/jquery/jquery',
-        'bootstrap'       : 'libs/bootstrap-sass/dist/js/bootstrap',
+        'bootstrap'       : 'libs/bootstrap/dist/js/bootstrap',
         'underscore'      : 'libs/underscore/underscore',
         'angular-growl'   : 'libs/angular-growl/build/angular-growl',
         'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
