@@ -5,16 +5,17 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 
 require.config({
     baseUrl : './',
+    waitSeconds : 120,
     paths: {
-        'angular'         : 'libs/angular/angular',
-        'angular-route'   : 'libs/angular-route/angular-route',
-        'ng-breadcrumbs'  : 'libs/ng-breadcrumbs/dist/ng-breadcrumbs',
+        'angular'         : 'libs/angular/angular.min',
+        'angular-route'   : 'libs/angular-route/angular-route.min',
+        'ng-breadcrumbs'  : 'libs/ng-breadcrumbs/dist/ng-breadcrumbs.min',
         'async'           : 'libs/requirejs-plugins/src/async',
         'domReady'        : 'libs/requirejs-domready/domReady',
-        'jquery'          : 'libs/jquery/jquery',
-        'bootstrap'       : 'libs/bootstrap/dist/js/bootstrap',
-        'underscore'      : 'libs/underscore/underscore',
-        'angular-growl'   : 'libs/angular-growl/build/angular-growl',
+        'jquery'          : 'libs/jquery/jquery.min',
+        'bootstrap'       : 'libs/bootstrap/dist/js/bootstrap.min',
+        'underscore'      : 'libs/underscore/underscore-min',
+        'angular-growl'   : 'libs/angular-growl/build/angular-growl.min',
         'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
     },
     shim: {
@@ -37,4 +38,3 @@ require(['angular', 'domReady'],
         ng.resumeBootstrap();
     });
 });
-
