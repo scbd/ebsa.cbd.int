@@ -1,41 +1,33 @@
-/* jshint node:true */
-var fs = require('fs');
-var http = require('http');
-var express = require('express');
+/* jshint node: true, browser: false */
 var path = require('path');
 var httpProxy = require('http-proxy');
 var siteSearch = require('./siteSearch');
 
 // Create server
 
-var app = express();
-var oneDay = 24*60*60*1000;
+var app = require('express')();
 
-app.configure(function() {
-  app.set('port', process.env.PORT || 2010, '127.0.0.1');
+app.set('port', process.env.PORT || 2010, '127.0.0.1');
 
-  app.use(express.favicon(path.join(__dirname, 'app/img/favicon.png')));
-  app.use(express.logger('dev'));
-  app.use(express.compress());
-
-  app.use(app.router);
-  app.use('/ebsa', express.static(path.join(__dirname, 'app')));
-
-  // catch all handler
-  app.use('/ebsa', function(req, res) {
-    res.sendfile(__dirname + '/app/index.html');
-  });
+app.use(function(req, res, next) {
+    if(req.url.indexOf('.geojson')>0)
+        res.contentType('application/json');
+    next();
 });
+
+app.use(require('morgan')('dev'));
+app.use(require('compression')({ threshold : false }));
+app.use(require('serve-static')(path.join(__dirname, 'app/img/favicon.png')));
 
 // Configure routes
 
 var proxy = httpProxy.createProxyServer({});
 
-app.get   ('/ebsa/api/search', siteSearch.route);
-// app.get   ('/api/*', function(req, res) { res.send(502); } ); //emulate failure of backend api;
-app.all('/api/*', function(req, res) {  
-    proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } );  
-} );
+app.get( '/ebsa/api/search',    siteSearch.route);
+app.use( '/ebsa/app',           require('serve-static')(path.join(__dirname, 'app')));
+app.use( '/ebsa',               require('serve-static')(path.join(__dirname, 'app'))); // hack
+app.use( '/ebsa',               function(req, res) { res.sendfile(__dirname + '/app/index.html'); } );
+app.all( '/api/*' ,             function(req, res) {  proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
 
 // LOG PROXY ERROR & RETURN http:500
 
@@ -47,5 +39,6 @@ proxy.on('error', function (e, req, res) {
 
 
 // Start server
-console.log('Server listening on port ' + app.get('port'));
-http.createServer(app).listen(app.get('port'));
+app.listen(app.get('port'), function () {
+	console.log('Server listening on %j', this.address());
+});

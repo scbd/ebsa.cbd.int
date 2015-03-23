@@ -154,6 +154,6 @@ module.exports = function(grunt) {
     });
   });
 
-  grunt.registerTask('default', ['bower']);
+  grunt.registerTask('default', ['bower', 'index']);
   grunt.registerTask('prot', ['protractor']);
 };
