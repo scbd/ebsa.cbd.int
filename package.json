@@ -2,6 +2,7 @@
   "name": "ebsa.cbd.int",
   "description": "Ecologically or Biologically Significant Marine Areas (EBSAs)",
   "dependencies": {
+    "async": "^0.9.0",
     "compression": "~1.4.3",
     "express": "~4.12.3",
     "grunt": "^0.4.5",
