@@ -9,18 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="img/favicon.png">
 
+    <link rel="stylesheet" href="libs/angular-growl/build/angular-growl.min.css">
+
     <!--  Download Font from Google  -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Overlock:700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Overlock:700italic' rel='stylesheet' type='text/css'>
-
-
-    <link rel="stylesheet" href="libs/angular-growl/build/angular-growl.min.css">
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="/app/css/bootstrap-theme.min.css" rel="stylesheet"> -->
-
-    <!-- Custom styles for this template -->
-    <!-- <link rel="stylesheet" href="/app/libs/font-awesome/css/font-awesome.min.css"> -->
-
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -36,9 +29,136 @@
 <body ng-controller="MasterTemplateController">
 
     <div class="fluid-container">
-        <div ng-include="'views/header/header.html'"></div>
+        <div>
+            <div class="wrapper" ng-controller="HeaderCtrl">
+              <div class="header-bg">
+                <div class="container">
+                  <div class="col-xs-12 col-lg-12 logo-title">
+                    <div class="col-xs-1 col-lg-1">
+                      <a href="/ebsa" title="Ecologically or Biologically Significant Marine Areas">
+                        <img src="img/logo.png" alt="EBSAs logo" />
+                      </a>
+                    </div>
+                    <div class="col-lg-6 col-xs-6 website-title">
+                      <div class="push15"></div>
+                      <a href="/ebsa" title="Ecologically or Biologically Significant Marine Areas">
+                        <h2>Ecologically or Biologically Significant Marine Areas</h2>
+                        <h3>Special places in the world's oceans</h3>
+                      </a>
+                    </div>
+                    <div class="col-lg-5 col-xs-5">
+                      <form class="navbar-form navbar-right searchBox" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search" ng-model="searchQuery">
+                          <button type="submit" class="submit" ng-click="searchSite()"></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="head-{{page.class}} col-xs-12" ng-show="page.hasHeadImg">
+                <div class="container">
+                  <div class="header">
+                    <h1 ng-cloak>{{page.title}}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="wrapper menu-bg" ng-controller="NavbarCtrl">
+              <div class="container">
+                <div class="main-navbar" role="navigation">
+                  <ul class="nav navbar-nav">
+                    <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+                      <a ng-href="{{item.link}}" class="nav-link" ng-bind-html="item.title"></a>
+                    </li>
+                  </ul>
+                </div><!-- /.navbar -->
+              </div>
+            </div>
+
+            <div ng-controller="BreadcrumbsCtrl" ng-cloak>
+            <div class="push20" ng-show="showCrumbs">&nbsp;</div>
+            <div class="container" ng-show="showCrumbs">
+              <ol class="breadcrumb">
+              <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{'no-before': $first}">
+                    <ng-switch on="$last">
+                      <span ng-switch-when="true">{{breadcrumb.label}}</span>
+                      <span ng-switch-default>
+                        <a ng-href="/ebsa{{breadcrumb.path}}">{{breadcrumb.label}}</a>
+                      </span>
+                    </ng-switch>
+                </li>
+              </ol>
+            </div>
+            </div>
+        </div>
+
+
         <div ng-view></div ng-view>
-        <footer ng-include="'views/footer/footer.html'"></footer>
+
+
+        <footer>
+            <div class="container">
+              <div class="col-xs-3 col-lg-3">
+                <div class="push15">&nbsp;</div>
+                <a href="//www.cbd.int/" target="_blank">
+                  <img src="img/cbd-whitelogo.png" alt="Convention on Biological Diversity" />
+                </a>
+                <small class="white">This website was developed with kind financial support from the Federal Ministry for the Environment, Nature Conservation, Building and Nuclear Safety of Germany (BMUB).</small>
+              </div>
+              <div class="col-xs-3 col-lg-3">
+                <div class="push50">&nbsp;</div>
+                <div class="push15">&nbsp;</div>
+                <img src="img/icon-pin.png" alt="icon quick links" />
+                <h2>Quick links</h2>
+                <div class="clear"></div>
+                <ul>
+                  <li><a href="//www.cbd.int/marine/doc/azores-brochure-en.pdf" target="_blank">EBSA Criteria</a></li>
+                  <li><a href="resources?tab=workshop-reports">Workshop Reports</a></li>
+                  <li><a href="about?tab=relevantDecisions">Relevant COP Decisions</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-3 col-lg-3">
+                <div class="push50">&nbsp;</div>
+                <div class="push15">&nbsp;</div>
+                <img src="img/icon-sitemap.png" alt="icon site map" />
+                <h2>Site Map</h2>
+                <div class="clear"></div>
+                <ul>
+                  <li><a href="about">About</a></li>
+                  <li><a href="ebsas">EBSAs</a></li>
+                  <li><a href="meetings">Meetings</a></li>
+                  <li><a href="resources">Resources</a></li>
+                  <li><a href="collaborators">Collaborators</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-3 col-lg-3">
+                <div class="push15">&nbsp;</div>
+                <img src="img/icon-contact.png" alt="icon contact" />
+                <h2>Contact</h2>
+                <div class="clear"></div>
+                <h4 class="white">CBD Secretariat</h4>
+
+                <p>413, Saint Jacques Street, suite 800<br />
+                  Montreal QC<br />
+                  H2Y 1N9  Canada
+                </p>
+                <h4><a class="white" href="mailto:secretariat@cbd.int">secretariat@cbd.int »</a></h4>
+                <h4><a class="white" href="//www.cbd.int/contact/default.shtml" target="_blank">www.cbd.int »</a></h4>
+              </div>
+              <div class="clear"></div>
+              <div class="col-xs-6 col-lg-offset-3 col-xs-offset-3">
+                <a href="//www.cbd.int/terms" target="_blank" class="copyright">Terms of Use</a>
+                <a href="//www.cbd.int/privacy" target="_blank" class="copyright">Privacy Policy</a>
+                <a href="//www.cbd.int/credits" target="_blank" class="copyright">Credits</a>
+                <a href="//www.cbd.int/copyright" target="_blank" class="copyright">&copy; CBD Secretariat</a>
+              </div>
+            </div>
+        </footer>
     </div>
 
 
