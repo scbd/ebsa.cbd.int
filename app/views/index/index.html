@@ -15,19 +15,11 @@
         </div>
 
         <div>
-          <input
+          <input ng-repeat="region in regionList"
           ng-class="{'region-select':true, pacific:true, 'active-region': selectedRegion === 'southPacific'}"
           type="button"
-          value="Western South Pacific Region"
-          ng-click="showFeature('southPacific')" />
-        </div>
-
-        <div>
-          <input
-          ng-class="{'region-select':true, caribbean:true, 'active-region': selectedRegion === 'caribbean'}"
-          type="button"
-          value="Wider Caribbean And Western Mid-Atlantic Region"
-          ng-click="showFeature('caribbean')" />
+          value="{{region.title.en}}"
+          ng-click="showFeature(region)" />
         </div>
 
       </div>

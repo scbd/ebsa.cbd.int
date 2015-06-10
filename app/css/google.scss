@@ -2,7 +2,7 @@ html, body, #map {
   height: 100%;
 }
 .google-map > .col-lg-10 {
-  height: 500px;
+  height: 650px;
   width: 910px;
   padding-right: 0px;
   background: #e6e6e6;
@@ -10,7 +10,7 @@ html, body, #map {
 }
 .google-map > .col-lg-2 {
   background: #e6e6e6;
-  height: 500px;
+  height: 650px;
   background: #e6e6e6;
   border-top: 2px solid #999;
 }
@@ -42,7 +42,14 @@ input.region-select {
   border-top: 1px solid #247080;
   border-bottom: 1px solid #247080;
 }
-.col-lg-2 input.caribbean {
+.col-lg-2 input.caribbean,
+.col-lg-2 input.southernIndianOcean,
+.col-lg-2 input.easternTropical,
+.col-lg-2 input.northPacific,
+.col-lg-2 input.southEasternAtlantic,
+.col-lg-2 input.arctic,
+.col-lg-2 input.northWestAtlantic,
+.col-lg-2 input.mediterranean {
   border-bottom: 2px solid #247080;
 }
 .col-lg-2 p {

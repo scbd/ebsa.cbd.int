@@ -3,21 +3,26 @@ define(['app'], function(app) {
 
   app.controller('EbsasCtrl', ['$scope', 'lists',
     function($scope, Lists) {
-      $scope.caribbeanData = Lists.getEbsas('caribbean')
-        .then(function(ebsas) {
-          $scope.caribbeanData = ebsas;
+
+    var regionMappingList = Lists.getEbsasRegionMapping();
+
+
+      $scope.setActiveRegion = function(region) {
+        $scope.activeRegion = region;
+        $scope.regionData=undefined;
+        Lists.getEbsasRegionDocuments(region.identifier)
+        .then(function(res) {
+            $scope.regionData = res.data.response.docs;;
         });
 
-      $scope.southPacificData = Lists.getEbsas('southPacific')
-        .then(function(ebsas) {
-          $scope.southPacificData = ebsas;
-        });
-
-      $scope.setActiveRegion = function(regionName) {
-        $scope.activeRegion = regionName;
       };
 
-      $scope.activeRegion = 'southPacific';
+      Lists.getEbsasRegions()
+      .then(function(regions){
+          $scope.regionList = regions
+          $scope.setActiveRegion($scope.regionList[0]);
+      });
+
     }
   ]);
 

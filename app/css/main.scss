@@ -961,6 +961,13 @@ footer .sitemap-ul li:first-child {
 }
 .caribbean,
 .pacific,
+.southernIndianOcean,
+.easternTropical,
+.northPacific,
+.southEasternAtlantic,
+.arctic,
+.northWestAtlantic,
+.mediterranean,
 .all-regions {
   outline: none;
   white-space: normal;
@@ -1019,6 +1026,9 @@ footer .sitemap-ul li:first-child {
     overflow: hidden;
     white-space: nowrap;
 }
-
+.push100 {
+  height: 100px;
+  display: block;
+}
 /* Google maps CSS */
 @import 'google';

@@ -7,7 +7,7 @@ var siteSearch = require('./siteSearch');
 
 var app = require('express')();
 
-app.set('port', process.env.PORT || 2010, '127.0.0.1');
+app.set('port', process.env.PORT || 2040, '127.0.0.1');
 
 app.use(function(req, res, next) {
     if(req.url.indexOf('.geojson')>0)

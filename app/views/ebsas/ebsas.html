@@ -30,18 +30,15 @@
             <div class="wraptitle col-lg-4 col-xs-4">
               <h2>Considered by COP</h2>
               <div class="push20"></div>
-              <h4>Regions</h4>
+              <h4>EBSAs Regions</h4>
               <div class="dropdown">
                 <button class="btn dropdown-toggle list-filter" type="button" data-toggle="dropdown">
-                  <p>EBSAs regions</p>
+                  <p>{{activeRegion.title.en}}</p>
                   <span class="pull-right caret"></span>
                 </button>
                 <ul class="dropdown-menu menuDates" role="menu" aria-labelledby="DateOfEvents">
-                  <li role="presentation">
-                    <a role="menuitem" tabindex="-1" href="" ng-click="setActiveRegion('southPacific')">Western South Pacific region</a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" tabindex="-2" href="" ng-click="setActiveRegion('caribbean')">Wider Caribbean and Western Mid-Atlantic region</a>
+                  <li role="presentation" ng-repeat="region in regionList">
+                    <a role="menuitem" tabindex="-1" href="" ng-click="setActiveRegion(region)">{{region.title.en}}</a>
                   </li>
                 </ul>
               </div>
@@ -51,31 +48,16 @@
             <div class="wraparticle col-lg-8 col-xs-8 past-events">
               <div class="article">
                 <!-- Table -->
-                <table class="ebsa-table table" ng-show="activeRegion === 'southPacific'">
+                <table class="ebsa-table table">
                   <tr>
-                    <th colspan="2">Western South Pacific region</th>
+                    <th colspan="2">{{activeRegion.title.en}}</th>
                   </tr>
-                  <tr ng-repeat="ebsa in southPacificData">
-                    <td><p>{{ebsa.title}}</p></td>
+                  <tr ng-repeat="ebsa in regionData">
+                    <td><p>{{ebsa.title_t}}</p></td>
                     <td>
                       <a target="_blank" ng-href="{{ebsa.url}}" class="pull-right">Details »</a>
                     </td>
                   </tr>
-                </table>
-
-                <!-- Table -->
-                <table class="ebsa-table table" ng-show="activeRegion === 'caribbean'">
-                  <tr>
-                    <th colspan="2">Wider Caribbean and Western Mid-Atlantic region</th>
-                  </tr>
-
-                  <tr ng-repeat="ebsa in caribbeanData">
-                    <td><p>{{ebsa.title}}</p></td>
-                    <td>
-                      <a target="_blank" ng-href="{{ebsa.url}}" class="pull-right">Details »</a>
-                    </td>
-                  </tr>
-
                 </table>
               </div>
             </div>

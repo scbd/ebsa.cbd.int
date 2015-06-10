@@ -9436,6 +9436,13 @@ footer .sitemap-ul li:first-child {
 /* line 964, main.scss */
 .caribbean,
 .pacific,
+.southernIndianOcean,
+.easternTropical,
+.northPacific,
+.southEasternAtlantic,
+.arctic,
+.northWestAtlantic,
+.mediterranean,
 .all-regions {
   outline: none;
   white-space: normal;
@@ -9521,7 +9528,7 @@ html, body, #map {
 
 /* line 4, google.scss */
 .google-map > .col-lg-10 {
-  height: 500px;
+  height: 650px;
   width: 910px;
   padding-right: 0px;
   background: #e6e6e6;
@@ -9531,7 +9538,7 @@ html, body, #map {
 /* line 11, google.scss */
 .google-map > .col-lg-2 {
   background: #e6e6e6;
-  height: 500px;
+  height: 650px;
   background: #e6e6e6;
   border-top: 2px solid #999;
 }
@@ -9573,11 +9580,23 @@ input.region-select {
 }
 
 /* line 45, google.scss */
-.col-lg-2 input.caribbean {
+.col-lg-2 input.caribbean ,
+.col-lg-2 input.southernIndianOcean,
+.col-lg-2 input.easternTropical,
+.col-lg-2 input.northPacific,
+.col-lg-2 input.southEasternAtlantic,
+.col-lg-2 input.arctic,
+.col-lg-2 input.northWestAtlantic,
+.col-lg-2 input.mediterranean {
   border-bottom: 2px solid #247080;
 }
 
 /* line 48, google.scss */
 .col-lg-2 p {
   color: #000;
+}
+
+.push100 {
+  height: 100px;
+  display: block;
 }
