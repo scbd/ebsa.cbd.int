@@ -102,7 +102,7 @@ define(['./module.js', '../util/colors.js', 'underscore'],
             selectedRegion: '='
           },
           link: function(scope, element, attrs) {
-            require(['async!http://maps.google.com/maps/api/js?v=3.exp&sensor=false'], function(maps) {
+            require(['async!https://maps.google.com/maps/api/js?v=3.exp&sensor=false'], function(maps) {
               init(element.get(0));
 
 
