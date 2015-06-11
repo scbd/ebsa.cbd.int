@@ -7,21 +7,20 @@
         <div class="push20"></div>
 
         <div>
-          <input
-          ng-class="{'region-select':true, 'all-regions':true, 'active-region': selectedRegion === null}"
+          <input class= "region-select"
+          ng-class="{'active-region': !selectedRegion}"
           type="button"
           value="All Regions"
-          ng-click="showFeature(null)" />
+          ng-click="selectedRegion = null" />
         </div>
 
         <div>
-          <input ng-repeat="region in regionList"
-          ng-class="{'region-select':true, pacific:true, 'active-region': selectedRegion === 'southPacific'}"
+          <input ng-repeat="region in regionList" class= "region-select"
+          ng-class="{'active-region': selectedRegion == region.identifier}"
           type="button"
           value="{{region.title.en}}"
-          ng-click="showFeature(region)" />
+          ng-click="$parent.selectedRegion = region.identifier" />
         </div>
-
       </div>
       <div class="col-lg-10 col-xs-10">
         <gmap regions="regionData" selected-region="selectedRegion"></gmap>

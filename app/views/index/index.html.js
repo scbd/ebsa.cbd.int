@@ -1,56 +1,43 @@
-define(['app'], function(app) {
-  'use strict';
+define(['app', 'underscore'], function(app, _) { 'use strict';
 
-  return app.controller('IndexCtrl', ['$scope', 'geojson', 'meetings','lists',
-    function($scope, regions, Meetings, lists) {
+    return app.controller('IndexCtrl', ['$scope', 'geojson', 'meetings','lists', '$q', function($scope, geojson, Meetings, lists, $q) {
 
-      var regionData = {};
-    //   var regionList = ['caribbean', 'southPacific','southernIndianOcean', 'easternTropical', 'northPacific', 'southEasternAtlantic',
-    //                     'arctic', 'northWestAtlantic', 'mediterranean'];
+        $scope.loading = 3;
 
-      $scope.showFeature = function(region) {
-        $scope.selectedRegion = region ? regionMappingList[region.identifier].name : region;
-      };
+        lists.getEbsasRegions().then(function(regions) {
 
+            $scope.regionList = regions;
 
+            return $q.all(_.map(regions, function(region) {
+                return geojson.getRegionById(region.identifier).then(function(regionGeojson) {
+                    return {
+                        identifier : region.identifier,
+                        shapes : regionGeojson
+                    };
+                });
+            }));
 
-     var regionMappingList = lists.getEbsasRegionMapping();
-     lists.getEbsasRegions()
-     .then(function(regionList){
-         $scope.regionList = regionList;
+        }).then(function(data){
 
-         $scope.loading = 2 + regionList.length;
-         regionList.forEach(function(region) {
-           regions.getRegionByName(regionMappingList[region.identifier].name, function(regionGeojson) {
+            $scope.regionData = _.reduce(data, function(result, e) {
 
-             regionData[regionMappingList[region.identifier].name] = regionGeojson;
-             // check to see if we loaded everything and update the $scope.
-             if (Object.keys(regionData).length === regionList.length) {
-               $scope.regionData = regionData;
-             }
-             $scope.loading --;
-           });
-         });
+                result[e.identifier] = e.shapes;
 
-         Meetings.getMeetingsPage({timeframe: 'upcoming'})
-           .then(function(meetingSet) {
-             $scope.meetingsUpcoming = meetingSet;
-             $scope.loading --;
-           });
+                return result;
+            }, {});
 
-         Meetings.getMeetingsPage({timeframe: 'previous'})
-           .then(function(meetingSet) {
-             $scope.meetingsPrevious = meetingSet;
-             $scope.loading --;
-           });
+        }).finally(function() {
+            $scope.loading --;
+        });
 
+        Meetings.getMeetingsPage({timeframe: 'upcoming'}).then(function(meetingSet) {
+            $scope.meetingsUpcoming = meetingSet;
+            $scope.loading --;
+        });
 
-     });
-
-
-
-
-
-    }
-  ]);
+        Meetings.getMeetingsPage({timeframe: 'previous'}).then(function(meetingSet) {
+            $scope.meetingsPrevious = meetingSet;
+            $scope.loading --;
+        });
+    }]);
 });
