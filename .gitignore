@@ -18,5 +18,4 @@ app_build
 lib
 
 .sass-cache
-
-.bower-work
+bower_components

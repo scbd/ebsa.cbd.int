@@ -6,10 +6,10 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     bower: {
-      install: {
-        //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
-      }
+        install: {
+         }
     },
     // configurable paths
     app: require('./bower.json').appPath || 'app',
@@ -154,6 +154,6 @@ module.exports = function(grunt) {
     });
   });
 
-  grunt.registerTask('default', ['bower', 'index']);
+  grunt.registerTask('default', ['bower']);
   grunt.registerTask('prot', ['protractor']);
 };
