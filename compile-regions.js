@@ -13,9 +13,9 @@ var regions = agent.get("https://api.cbd.int/api/v2013/thesaurus/domains/0AE9166
     .then(function(res){
         return _.union([{
             "identifier": "other",
-            "name": "No regions assigned",
+            "name": "",
             "title": {
-                "en": "No regions assigned"
+                "en": ""
             },
         }], res.body);
     });
@@ -101,7 +101,10 @@ when.map(regions, guard(guard.n(1), function(region){
                             ru : record.description_RU_t,
                             zh : record.description_ZH_t
                         },
-                        region : region.identifier,
+                        region : {
+                            identifier : region.identifier,
+                            title : region.title
+                        },
                         url   : _.first(record.url_ss)
                     }
                 });

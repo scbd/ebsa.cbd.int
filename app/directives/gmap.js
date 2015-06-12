@@ -37,6 +37,7 @@ define(['./module.js', '../util/colors.js', 'underscore'],
                     '<p><b>'+htmlEncode(record.title.en)+'</b></p>'+
                     '<p style="white-space:normal">'+htmlEncode(record.description.en)+'</p>'+
                     '<a class="pull-right" target="ebsa" href="' + record.url + '">Details »</a>'+
+                    '<em>'+htmlEncode(record.region.title.en)+'</em>'+
                 '</div>';
 
           infowindow.setContent(content);
