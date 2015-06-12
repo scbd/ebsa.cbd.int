@@ -55,7 +55,7 @@
                   <tr ng-repeat="ebsa in regionData">
                     <td><p>{{ebsa.title_t}}</p></td>
                     <td>
-                      <a target="_blank" ng-href="{{ebsa.url}}" class="pull-right">Details »</a>
+                      <a target="_blank" ng-href="{{ebsa.url_ss[0]}}" class="pull-right">Details »</a>
                     </td>
                   </tr>
                   <tr ng-show="regionData.length==0">
