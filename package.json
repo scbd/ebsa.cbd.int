@@ -15,11 +15,19 @@
     "load-grunt-tasks": "^3.1.0",
     "lunr": "0.4.5",
     "morgan": "~1.5.2",
-    "serve-static": "~1.9.2"
+    "serve-static": "~1.9.2",
+    "superagent": "^1.2.0",
+    "superagent-promise": "^1.0.0"
   },
   "engine": "node >= 0.10.18",
   "scripts": {
     "postinstall": "bash -c './node_modules/.bin/grunt default'",
     "start": "node server.js"
+  },
+  "devDependencies": {
+    "lodash": "^3.9.3",
+    "superagent": "^1.2.0",
+    "superagent-promise": "^1.0.0",
+    "when": "^3.7.3"
   }
 }
