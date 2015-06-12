@@ -1,6 +1,6 @@
 define(['app', 'underscore'], function(app, _) { 'use strict';
 
-    return app.controller('IndexCtrl', ['$scope', 'geojson', 'meetings','lists', '$q', function($scope, geojson, Meetings, lists, $q) {
+    return app.controller('IndexCtrl', ['$scope', '$http', 'meetings','lists', '$q', function($scope, $http, Meetings, lists, $q) {
 
         $scope.loading = 3;
 
@@ -9,10 +9,11 @@ define(['app', 'underscore'], function(app, _) { 'use strict';
             $scope.regionList = regions;
 
             return $q.all(_.map(regions, function(region) {
-                return geojson.getRegionById(region.identifier).then(function(regionGeojson) {
+
+                return $http.get('regions/' + region.identifier + '.json').then(function(res) {
                     return {
                         identifier : region.identifier,
-                        shapes : regionGeojson
+                        shapes : res.data
                     };
                 });
             }));

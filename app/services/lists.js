@@ -19,12 +19,6 @@ define(['./module.js', 'underscore'], function(module, _) {
         return callback(_.range(start, end).reverse());
       };
 
-      lists.getEbsas = function(regionName) {
-
-        return $http.get('ebsaData/' + regionName + '.json', {cache:true}).then(function(response) {
-            return response.data;
-        });
-      };
 
     lists.getEbsasRegions = function() {
 
@@ -36,7 +30,7 @@ define(['./module.js', 'underscore'], function(module, _) {
     lists.getEbsasRegionDocuments = function(region) {
         var qsParams =
           {
-              "q"  : "schema_s:marineEbsa AND region_s:" + region,
+              "q"  : "schema_s:marineEbsa AND NOT version_s:* AND region_s:" + region,
               "fl" : "title_t, url_ss",
               "sort"  : "updatedDate_dt desc",
               "start" : 0,

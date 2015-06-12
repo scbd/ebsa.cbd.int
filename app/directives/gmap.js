@@ -30,26 +30,24 @@ define(['./module.js', '../util/colors.js', 'underscore'],
         }
 
         function setInfoWindow(event) {
-          var content = '<div id="infoBox" class="scrollFix">',
-            key,
-            CBDbaseUrl = 'https://chm.cbd.int/database/record?documentID=',
-            ebsaID = event.feature.getProperty('KEY');
+            var record = event.feature.getProperty('__record');
 
-          event.feature.forEachProperty(function(propVal, propName) {
-            if (propName == 'NAME') {
-              content += '<strong>' + propVal + '</strong><br /><br />';
-            } else if (_.indexOf(['KEY', 'style', 'WORKSHOP'] !== -1)) {
-              return;
-            } else {
-              content += propName + ': ' + propVal + '<br /><br />';
-            }
-          });
+            var content =
+                '<div id="infoBox" class="scrollFix">'+
+                    '<p><b>'+htmlEncode(record.title.en)+'</b></p>'+
+                    '<p style="white-space:normal">'+htmlEncode(record.description.en)+'</p>'+
+                    '<a class="pull-right" target="_blank" href="' + record.url + '">Details »</a>'+
+                '</div>';
 
-          content += '<a class="pull-right" target="_blank" href="' + CBDbaseUrl + ebsaID + '">Details »</a>';
-          content += '</div>';
           infowindow.setContent(content);
           infowindow.setPosition(event.latLng);
           infowindow.open(map);
+        }
+
+        function htmlEncode(value){
+          //create a in-memory div, set it's inner text(which jQuery automatically encodes)
+          //then grab the encoded contents back out.  The div never exists on the page.
+          return $('<div/>').text(value).html();
         }
 
         function cleanupListeners(e) {
