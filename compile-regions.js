@@ -11,16 +11,25 @@ var regions = agent.get("https://api.cbd.int/api/v2013/thesaurus/domains/0AE9166
     .accept("application/json")
     .end()
     .then(function(res){
-        return res.body;
+        return _.union([{
+            "identifier": "other",
+            "name": "No regions assigned",
+            "title": {
+                "en": "No regions assigned"
+            },
+        }], res.body);
     });
 
 // LOAD Regions
 when.map(regions, guard(guard.n(1), function(region){
 
     // Load Records
+
+    var regionCriteria = region.identifier == "other" ? "NOT region_s:*" : "region_s:"+region.identifier;
+
     var records = agent.get("https://api.cbd.int/api/v2013/index")
         .accept("application/json")
-        .query({ q  : 'schema_s:marineEbsa AND NOT version_s:* AND region_s:'+region.identifier })
+        .query({ q  : 'schema_s:marineEbsa AND NOT version_s:* AND ' + regionCriteria})
         .query({ fl : 'url_ss, shapeUrl_ss,title_AR_t,title_EN_t,title_ES_t,title_FR_t,title_RU_t,title_ZH_t,description_AR_t,description_EN_t,description_ES_t,description_FR_t,description_RU_t,description_ZH_t'})
         .query({ rows : 999999})
         .end()

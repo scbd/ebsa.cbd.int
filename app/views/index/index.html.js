@@ -8,7 +8,7 @@ define(['app', 'underscore'], function(app, _) { 'use strict';
 
             $scope.regionList = regions;
 
-            return $q.all(_.map(regions, function(region) {
+            return $q.all(_.map(_.union([{ "identifier": "other" } ], regions), function(region) {
 
                 return $http.get('regions/' + region.identifier + '.json').then(function(res) {
                     return {
