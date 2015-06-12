@@ -36,7 +36,7 @@ define(['./module.js', '../util/colors.js', 'underscore'],
                 '<div id="infoBox" class="scrollFix">'+
                     '<p><b>'+htmlEncode(record.title.en)+'</b></p>'+
                     '<p style="white-space:normal">'+htmlEncode(record.description.en)+'</p>'+
-                    '<a class="pull-right" target="_blank" href="' + record.url + '">Details »</a>'+
+                    '<a class="pull-right" target="ebsa" href="' + record.url + '">Details »</a>'+
                 '</div>';
 
           infowindow.setContent(content);
