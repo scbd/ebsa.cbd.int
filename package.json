@@ -15,9 +15,7 @@
     "load-grunt-tasks": "^3.1.0",
     "lunr": "0.4.5",
     "morgan": "~1.5.2",
-    "serve-static": "~1.9.2",
-    "superagent": "^1.2.0",
-    "superagent-promise": "^1.0.0"
+    "serve-static": "~1.9.2"
   },
   "engine": "node >= 0.10.18",
   "scripts": {
