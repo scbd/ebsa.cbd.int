@@ -34,13 +34,99 @@ define(['./module.js', 'underscore'], function(module, _) {
               "fl" : "title_t, url_ss",
               "sort"  : "updatedDate_dt desc",
               "start" : 0,
-              "rows"  : 1000,
+              "rows"  : 999999,
           };
 
          return $http.get("/api/v2013/index", { params : qsParams, cache:true });
     };
 
-      return lists;
-    }
-  ]);
+
+    var _shapes = null;
+
+    lists.getShapes = function(regionId) {
+
+        if(_shapes) {
+            return $q.when(_shapes[regionId]);
+        }
+
+        var qsParams =
+        {
+            "q"  : "schema_s:marineEbsa AND NOT version_s:*",
+            "fl" : "url_ss,region_s,title_t,description_t,shapeUrl_ss,simplifiedShape_ss",
+            "sort"  : "updatedDate_dt desc",
+            "start" : 0,
+            "rows"  : 999999,
+        };
+
+        var qRegions = lists.getEbsasRegions();
+
+        var qRecords = $http.get("https://api.cbd.int/api/v2013/index", { params : qsParams, cache:true }).then(function(response) {
+
+            return _.map(response.data.response.docs, function(record) {
+                 record.simplifiedShape_ss = _.map(record.simplifiedShape_ss, JSON.parse);
+                 return record;
+            });
+        });
+
+        return $q.all([qRegions, qRecords]).then(function(results) {
+
+            var regions = results[0];
+            var records = results[1];
+
+            var allFeatures = _.map(records, function(record) {
+
+                var region   = _.findWhere(regions, {identifier : record.region_s }) || { identifier : record.region_s, title : { en : "" } };
+
+                var features = _.map(record.simplifiedShape_ss, function(fc) {
+                    return fc.features;
+                });
+
+                features = _.flatten(features);
+
+                features = _.map(features, function(f) {
+
+                    f.properties = f.properties || {};
+                    f.properties.style =  {
+                        strokeColor: "#FFFFFF",
+                        fillColor  : "#FFFFFF"
+                    };
+
+                    f.properties.__record = {
+                        url         : _.first(record.url_ss),
+                        title       : { en : record.title_t },
+                        description : { en : record.description_t },
+                        region      : {
+                            identifier : region.identifier,
+                            title : region.title
+                        }
+                    };
+
+                    return f;
+                });
+
+                return features;
+            });
+
+            allFeatures = _.flatten(allFeatures);
+
+            _shapes = {};
+
+            _.each(regions, function(region){
+
+                _shapes[region.identifier] = {
+                     type: "FeatureCollection",
+                     features : _.filter(allFeatures, function(f){
+
+                         return f.properties.__record.region.identifier == region.identifier;
+                     })
+                 };
+            });
+
+            return _shapes[regionId];
+        });
+    };
+
+    return lists;
+
+}]);
 });

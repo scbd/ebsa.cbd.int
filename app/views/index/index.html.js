@@ -10,10 +10,10 @@ define(['app', 'underscore'], function(app, _) { 'use strict';
 
             return $q.all(_.map(_.union([{ "identifier": "other" } ], regions), function(region) {
 
-                return $http.get('regions/' + region.identifier + '.json').then(function(res) {
+                return lists.getShapes(region.identifier).then(function(shapes) {
                     return {
                         identifier : region.identifier,
-                        shapes : res.data
+                        shapes : shapes
                     };
                 });
             }));
