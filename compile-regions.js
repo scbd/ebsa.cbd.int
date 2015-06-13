@@ -5,7 +5,7 @@ var when  = require('when');
 var keys  = require('when/keys');
 var guard = require('when/guard');
 var agent = require('superagent-promise')(require('superagent'), this.Promise || require('when/es6-shim/Promise'));
-
+var simplify = require('simplify-geojson');
 
 var regions = agent.get("https://api.cbd.int/api/v2013/thesaurus/domains/0AE91664-5C43-46FB-9959-0744AD1B0E91/terms")
     .accept("application/json")
@@ -53,7 +53,8 @@ when.map(regions, guard(guard.n(1), function(region){
               .accept("application/json")
               .end()
               .then(function(res){
-                  return res.body.features;
+
+                  return simplify(res.body, 0.01).features;
               });
 
         }).then(function(shapes){

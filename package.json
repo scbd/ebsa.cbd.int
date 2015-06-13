@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "lodash": "^3.9.3",
+    "simplify-geojson": "0.0.2",
     "superagent": "^1.2.0",
     "superagent-promise": "^1.0.0",
     "when": "^3.7.3"
