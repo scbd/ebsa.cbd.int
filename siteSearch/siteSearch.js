@@ -22,7 +22,7 @@ module.exports.search = function(query, callback) {
     results = [];
   matches.forEach(function(match) {
     var doc = documents.filter(function(doc) {
-      return doc.id.toString() === match.ref;
+      return doc.id === match.ref;
     })[0];
 
     if (doc) doc.score = match.score;
