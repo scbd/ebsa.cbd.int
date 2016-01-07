@@ -1,6 +1,8 @@
 ebsa.cbd.int
 ============
 
+[![Dependency Status](https://david-dm.org/scbd/ebsa-portal.svg)](https://david-dm.org/scbd/ebsa-portal)
+
 Ecologically  or Biologically  Significant Marine  Areas (EBSAs) - Website
 
 #####Dev Instructions:
