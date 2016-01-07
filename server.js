@@ -1,11 +1,12 @@
 /* jshint node: true, browser: false */
+var express = require('express');
 var path = require('path');
 var httpProxy = require('http-proxy');
 var siteSearch = require('./siteSearch');
 
 // Create server
 
-var app = require('express')();
+var app = express();
 
 app.set('port', process.env.PORT || 2040, '127.0.0.1');
 
@@ -15,17 +16,15 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(require('morgan')('dev'));
-app.use(require('compression')({ threshold : false }));
-app.use(require('serve-static')(path.join(__dirname, 'app/img/favicon.png')));
+app.use(express.static(path.join(__dirname, 'app/img/favicon.png')));
 
 // Configure routes
 
 var proxy = httpProxy.createProxyServer({});
 
 app.get( '/ebsa/api/search',    siteSearch.route);
-app.use( '/ebsa/app',           require('serve-static')(path.join(__dirname, 'app')));
-app.use( '/ebsa',               require('serve-static')(path.join(__dirname, 'app'))); // hack
+app.use( '/ebsa/app',           express.static(path.join(__dirname, 'app')));
+app.use( '/ebsa',               express.static(path.join(__dirname, 'app'))); // hack
 app.use( '/ebsa',               function(req, res) { res.sendfile(__dirname + '/app/index.html'); } );
 app.all( '/api/*' ,             function(req, res) {  proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
 
