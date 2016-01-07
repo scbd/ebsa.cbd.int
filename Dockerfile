@@ -12,4 +12,6 @@ EXPOSE 8000
 
 COPY . ./
 
+RUN node siteSearch/indexer/index.js
+
 CMD [ "node", "server" ]
