@@ -5,8 +5,6 @@ var lunr = require('lunr'),
   config = require('../config'),
   path = require('path');
 
-
-module.exports.create = function(callback) {
   var nodeMetaData;
   views.loadAllViews(function(fileContentMap) {
     textNodes.process(fileContentMap, function(nodes) {
@@ -36,7 +34,6 @@ module.exports.create = function(callback) {
       fs.writeFileSync(path.join(config.dataDir, 'lunr-docs.json'), JSON.stringify(indexedDocs));
       fs.writeFileSync(path.join(config.dataDir, 'lunr-index.json'), JSON.stringify(index.toJSON()));
 
-      callback('Index successfully generated!');
+      console.log('Index successfully generated!');
     });
   });
-};
