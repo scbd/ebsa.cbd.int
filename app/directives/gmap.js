@@ -31,11 +31,11 @@ define(['./module.js', '../util/colors.js', 'underscore'],
 
         function setInfoWindow(event) {
             var record = event.feature.getProperty('__record');
-
+            var summary = record.description.en.replace(/\r\n|\r|\n/g, '<br />');
             var content =
                 '<div id="infoBox" class="scrollFix">'+
                     '<p><b>'+htmlEncode(record.title.en)+'</b></p>'+
-                    '<p style="white-space:normal">'+htmlEncode(record.description.en)+'</p>'+
+                    '<p style="white-space:normal">'+summary+'</p>'+
                     '<a class="pull-right" target="ebsa" href="' + record.url + '">Details »</a>'+
                     '<em>'+htmlEncode(record.region.title.en)+'</em>'+
                 '</div>';
