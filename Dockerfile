@@ -14,4 +14,7 @@ COPY . ./
 
 RUN node siteSearch/indexer/index.js
 
+ARG VERSION
+ENV VERSION $VERSION
+
 CMD [ "node", "server" ]
