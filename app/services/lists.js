@@ -1,4 +1,4 @@
-define(['./module.js', 'underscore'], function(module, _) {
+define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojsonArea) {
   return module.factory('lists', ['$http', '$locale', '$q','$filter',
     function($http, $locale, $q, $filter) {
       var lists = {};
@@ -72,6 +72,7 @@ define(['./module.js', 'underscore'], function(module, _) {
 
             var regions = results[0];
             var records = results[1];
+            var maxArea = 0;
 
             var allFeatures = _.map(records, function(record) {
 
@@ -86,6 +87,7 @@ define(['./module.js', 'underscore'], function(module, _) {
                 features = _.map(features, function(f) {
 
                     f.properties = f.properties || {};
+                    f.properties.area  = Math.abs(geojsonArea.geometry(f.geometry));
                     f.properties.style =  {
                         strokeColor: "#FFFFFF",
                         fillColor  : "#FFFFFF"
@@ -101,6 +103,8 @@ define(['./module.js', 'underscore'], function(module, _) {
                         }
                     };
 
+                    maxArea = Math.max(maxArea, Math.abs(f.properties.area));
+
                     return f;
                 });
 
@@ -108,6 +112,10 @@ define(['./module.js', 'underscore'], function(module, _) {
             });
 
             allFeatures = _.flatten(allFeatures);
+
+            for(var i=0; i<allFeatures.length; ++i) {
+                allFeatures[i].properties.style.zIndex = Math.floor(maxArea/allFeatures[i].properties.area);
+            }
 
             _shapes = {};
 

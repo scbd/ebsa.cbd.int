@@ -16,6 +16,7 @@ require.config({
         'bootstrap'       : 'libs/bootstrap/dist/js/bootstrap.min',
         'underscore'      : 'libs/underscore/underscore-min',
         'angular-growl'   : 'libs/angular-growl/build/angular-growl.min',
+        'geojson-area'    : 'libs/geojson-area/index',
         'gmapsapi'         : '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
     },
     shim: {
