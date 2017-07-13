@@ -9558,6 +9558,28 @@ input.region-select {
   background: #e6e6e6;
 }
 
+/* line 17, google.scss */
+div.region-select {
+  text-align: left;
+  width: 110%;
+  height: auto;
+  margin-left: 0px;
+  margin-bottom: 7px;
+  margin-left: 0px;
+  padding: 5px 0px 5px 5px;
+  font-family: Helvetica, verdana, sans-serif;
+  color: #247080;
+  font-weight: normal;
+  font-size: 12px;
+  border: none;
+  background: #e6e6e6;
+  cursor: pointer; 
+  cursor: hand; 
+}
+/* line 30, google.scss */
+.col-lg-2 div:hover {
+  font-weight: bold;
+}
 /* line 30, google.scss */
 .col-lg-2 input:hover {
   font-weight: bold;

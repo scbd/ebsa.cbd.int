@@ -6,20 +6,25 @@
         <h3>View Areas Meeting the EBSA Criteria</h3>
         <div class="push20"></div>
 
-        <div>
+        <!--div>
           <input class= "region-select"
           ng-class="{'active-region': !selectedRegion}"
           type="button"
           value="All Regions"
           ng-click="selectedRegion = null" />
+        </div-->
+        <div>
+          <div class= "region-select"
+            ng-class="{'active-region': !selectedRegion}"
+            ng-click="selectedRegion = null">All Regions
+          </div>
         </div>
 
         <div>
-          <input ng-repeat="region in regionList" class= "region-select"
-          ng-class="{'active-region': selectedRegion == region.identifier}"
-          type="button"
-          value="{{region.title.en}}"
-          ng-click="$parent.selectedRegion = region.identifier" />
+          <div ng-repeat="region in regionList" class= "region-select"
+              ng-class="{'active-region': selectedRegion == region.identifier}"
+              ng-click="$parent.selectedRegion = region.identifier" >{{region.title.en}}
+          </div>
         </div>
       </div>
       <div class="col-lg-10 col-xs-10">
