@@ -26,7 +26,7 @@ app.get( '/ebsa/api/search',    siteSearch.route);
 app.use( '/ebsa/app',           express.static(path.join(__dirname, 'app')));
 app.use( '/ebsa',               express.static(path.join(__dirname, 'app'))); // hack
 app.use( '/ebsa',               function(req, res) { res.sendfile(__dirname + '/app/index.html'); } );
-app.all( '/api/*' ,             function(req, res) {  proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
+app.all( '/api/*' ,             function(req, res) {  proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false, changeOrigin:true } ); } );
 
 // LOG PROXY ERROR & RETURN http:500
 

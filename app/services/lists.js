@@ -52,7 +52,7 @@ define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojso
         var qsParams =
         {
             "q"  : "schema_s:marineEbsa AND NOT version_s:*",
-            "fl" : "url_ss,region_s,title_t,description_t,shapeUrl_ss,simplifiedShape_ss",
+            "fl" : "url_ss,region_s,title_t,description_t,shapeUrl_ss,simplifiedShape_txt",
             "sort"  : "updatedDate_dt desc",
             "start" : 0,
             "rows"  : 999999,
@@ -60,10 +60,10 @@ define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojso
 
         var qRegions = lists.getEbsasRegions();
 
-        var qRecords = $http.get("https://api.cbd.int/api/v2013/index", { params : qsParams, cache:true }).then(function(response) {
+        var qRecords = $http.get("/api/v2013/index", { params : qsParams, cache:true }).then(function(response) {
 
             return _.map(response.data.response.docs, function(record) {
-                 record.simplifiedShape_ss = _.map(record.simplifiedShape_ss, JSON.parse);
+                 record.simplifiedShape_txt = _.map(record.simplifiedShape_txt, JSON.parse);
                  return record;
             });
         });
@@ -78,11 +78,11 @@ define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojso
 
                 var region   = _.findWhere(regions, {identifier : record.region_s }) || { identifier : record.region_s, title : { en : "" } };
 
-                var features = _.map(record.simplifiedShape_ss, function(fc) {
+                var features = _.map(record.simplifiedShape_txt, function(fc) {
                     return fc.features;
                 });
 
-                features = _.flatten(features);
+                features = _.compact(_.flatten(features));
 
                 features = _.map(features, function(f) {
 
