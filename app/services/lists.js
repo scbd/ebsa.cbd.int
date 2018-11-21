@@ -30,7 +30,7 @@ define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojso
     lists.getEbsasRegionDocuments = function(region) {
         var qsParams =
           {
-              "q"  : "schema_s:marineEbsa AND NOT version_s:* AND region_s:" + region,
+              "q"  : "realm_ss:CHM AND schema_s:marineEbsa AND NOT version_s:* AND region_s:" + region,
               "fl" : "title_t, url_ss",
               "sort"  : "updatedDate_dt desc",
               "start" : 0,
@@ -51,7 +51,7 @@ define(['./module.js', 'underscore', 'geojson-area'], function(module, _, geojso
 
         var qsParams =
         {
-            "q"  : "schema_s:marineEbsa AND NOT version_s:*",
+            "q"  : "realm_ss:CHM AND schema_s:marineEbsa AND NOT version_s:*",
             "fl" : "url_ss,region_s,title_t,description_t,shapeUrl_ss,simplifiedShape_txt",
             "sort"  : "updatedDate_dt desc",
             "start" : 0,
