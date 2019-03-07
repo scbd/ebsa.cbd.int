@@ -32,12 +32,12 @@ define(['./module.js', './solrQuery.js'], function(module, Query) {
             startDate: startDate,
             endDate: endDate,
             documentsUrl: documentsBaseUrl + meeting.symbol_s,
-            startMonth: startDate.getMonth(),
-            endMonth: endDate.getMonth(),
-            startDay: startDate.getDate(),
-            endDay: endDate.getDate(),
-            startYear: startDate.getFullYear(),
-            endYear: endDate.getFullYear(),
+            startMonth: startDate.getUTCMonth(),
+            endMonth: endDate.getUTCMonth(),
+            startDay: startDate.getUTCDate(),
+            endDay: endDate.getUTCDate(),
+            startYear: startDate.getUTCFullYear(),
+            endYear: endDate.getUTCFullYear(),
             countryCode: meeting.eventCountry_s && meeting.eventCountry_s.toUpperCase()
           };
 
