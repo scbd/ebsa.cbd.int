@@ -1,4 +1,4 @@
-define(['./module.js'], function(module) {
+define(['./module.js', 'underscore'], function(module, _) {
   return module.directive('selectbox', ['$locale',
     function($locale) {
       return {
