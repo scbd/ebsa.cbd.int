@@ -1,19 +1,23 @@
 {
-    "name": "ebsa.cbd.int",
-    "description": "Ecologically or Biologically Significant Marine Areas (EBSAs)",
-    "dependencies": {
-        "async": "1.5.1",
-        "bower": "1.8.8",
-        "express": "^4.16.4",
-        "http-proxy": "1.12.0",
-        "jquery": "2.1.4",
-        "jsdom": "7.2.2",
-        "lunr": "0.6.0"
-    },
-    "engine": "node >= 4.2",
-    "private": "true",
-    "scripts": {
-        "postinstall": "./node_modules/.bin/bower install --allow-root",
-        "start": "node server"
-    }
+  "name": "ebsa.cbd.int",
+  "description": "Ecologically or Biologically Significant Marine Areas (EBSAs)",
+  "dependencies": {
+    "async": "1.5.1",
+    "express": "^4.16.4",
+    "http-proxy": "1.12.0",
+    "jquery": "2.1.4",
+    "jsdom": "7.2.2",
+    "lunr": "0.6.0",
+    "@bower_components/angular-growl": "https://github.com/marcorinck/angular-growl#0.4.0",
+    "@bower_components/es-breadcrumbs": "https://github.com/egesu/ng-breadcrumbs#v0.4.1",
+    "@bower_components/geojson-area": "https://github.com/cloudnapps/geojson-area#v0.2.3"
+  },
+  "engine": "node >= 10",
+  "private": "true",
+  "scripts": {
+    "start": "node server"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
+  }
 }
