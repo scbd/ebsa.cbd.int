@@ -1,4 +1,4 @@
-define(['./module.js'], function(module) {
+define(['./module.js', 'underscore'], function(module, _) {
   return module.directive('meetingsCalendar', ['meetings', '$locale', '$http', '$compile', '$templateCache',
     function(meetings, $locale, $http, $compile, $templateCache) {
 
