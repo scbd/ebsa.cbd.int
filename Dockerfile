@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json .npmrc ./
 
-RUN apk add git && \
+RUN apk add git curl && \
     yarn install -q
 
 ENV PORT 8000
