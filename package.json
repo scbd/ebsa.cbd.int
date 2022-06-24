@@ -6,7 +6,7 @@
     "express": "^4.16.4",
     "http-proxy": "1.12.0",
     "jquery": "2.1.4",
-    "jsdom": "7.2.2",
+    "jsdom": "16.5.0",
     "lunr": "0.6.0",
     "@bower_components/angular-growl": "https://github.com/marcorinck/angular-growl#0.4.0",
     "@bower_components/es-breadcrumbs": "https://github.com/egesu/ng-breadcrumbs#v0.4.1",
