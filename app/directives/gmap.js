@@ -101,7 +101,7 @@ define(['./module.js', '../util/colors.js', 'underscore'],
             selectedRegion: '='
           },
           link: function(scope, element, attrs) {
-            require(['async!https://maps.google.com/maps/api/js?key=AIzaSyDC1KQQR7tWeLvAEIRXmzH8VZAUr9P7_WY&v=3.exp'], function(maps) {
+            require(['async!https://maps.google.com/maps/api/js?key=AIzaSyChDxcviTjT9cDSxijRueZEQVBul3TpahE&v=3.exp'], function(maps) {
               init(element.get(0));
 
 
