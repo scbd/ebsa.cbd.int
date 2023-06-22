@@ -7,8 +7,9 @@ define(['app', 'jquery', 'router/routes', 'views/header/header'], function(app, 
         // snap the page back to the top on route change.
         $anchorScroll();
         $rootScope.$on('$routeChangeSuccess', function(){
-            $window.ga('set',  'page', basePath() + $location.path());
-            $window.ga('send', 'pageview');
+            $window.gtag('event', 'page_view', {
+              'page_location' : basePath+$location.path()
+            });
         });
 
         function basePath() {
