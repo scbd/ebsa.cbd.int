@@ -162,7 +162,8 @@ define(['./module.js', './solrQuery.js', 'underscore'], function(module, Query, 
           country: options.countryCode,
           year: options.year,
           sort: [sortField, dir],
-          title_t: options.title || '*EBSA*',
+          symbol_s: '*EBSA*',
+          title_t: options.title,
           rows: (currentPage - 1) * perPage || 100000
         });
 
